@@ -1,97 +1,113 @@
 # Changelog
 
-## Version 1.5.0
+## May 20, 2017
 
-*February 23, 2017*
+### Added
 
-- Add [multiple tabs per programming language](https://github.com/lord/slate/wiki/Multiple-language-tabs-per-programming-language) feature
-- Upgrade Middleman to add Ruby 1.4.0 compatibility
-- Switch default code highlighting color scheme to better highlight JSON
-- Various small typo and bug fixes
+- Meeting: "option_auto_record_type" parameter to create/update API.
+- Meeting: "share_application" added to the response of the get API
+- Meeting: "share_desktop" added to the response of the get API
+- Meeting: "share_whiteboard" added to the response of the get API
+- Meeting: "recording" added to the response of the get API
+- Webinar: "option_auto_record_type" parameter to create/update API.
+- Webinar: "registrant_id" to registration API.
+- User: "status" parameter to list/get/getbyemail API.
 
-## Version 1.4.0
+### Notes
 
-*November 24, 2016*
+The following attributes would inherit Webinar Account level Settings when create Webinar via API:
+- Close registration after event date
+- Allow attendees to join from multiple devices
+- Show social share buttons on registration page
+- Add call log for telehealth API.
 
-- Upgrade Middleman and Rouge gems, should hopefully solve a number of bugs
-- Update some links in README
-- Fix broken Vagrant startup script
-- Fix some problems with deploy.sh help message
-- Fix bug with language tabs not hiding properly if no error
-- Add `!default` to SASS variables
-- Fix bug with logo margin
-- Bump tested Ruby versions in .travis.yml
+## April 8, 2017
 
-## Version 1.3.3
+### Added
 
-*June 11, 2016*
+- "v1/user/deactivate" API.
+- "v1/h323/device/add" API.
+- "v1/h323/device/update" API.
+- "v1/h323/device/delete" API.
+- "v1/h323/device/list" API.
+- "enable_attention_tracking" and "enable_waiting_room" parameters to User Create/AutoCreate/CustCreate/Update API.
+- "enable_use_pmi" parameter to User AutoCreate/CustCreate/Update API.
+- access control to "v1/report/getaudioreport" API.
 
-Documentation and example changes.
+## February 25, 2017
 
-## Version 1.3.2
+### Added
 
-*February 3, 2016*
+- "v1/webinar/polls" API.
+- "v1/webinar/questions" API.
+- "password" and "option_practice_session" parameters to Webinar Create/Update API.
+- "enable_phone_participants_password", "enable_auto_delete_cmr" and "auto_delete_cmr_days" parameters to User Create/AutoCreate/CustCreate/Update API
+- "enable_only_host_download_cmr" and "enable_same_account_access_cmr" parameters to Account Create/Update API.
 
-A small bugfix for slightly incorrect background colors on code samples in some cases.
+### Notes
 
-## Version 1.3.1
+- Support recurring Webinar feature in Webinar Create/Update/Get/List/Registration List/Delete/Registration API.
 
-*January 31, 2016*
+## January 15, 2017
 
-A small bugfix for incorrect whitespace in code blocks.
+### Added
 
-## Version 1.3
+- "v1/meeting/register" API.
+- "v1/ma/account/plan/subscribe" API.
+- "v1/ma/account/plan/add" API.
+- "v1/ma/account/plan/update" API.
+- "v1/ma/account/plan/get" API.
+- "v1/ma/account/billing/update" API.
 
-*January 27, 2016*
+Add the following parameters to Account Create/Update API
+- enable_share_rc
+- share_rc
+- enable_share_mc
+- share_mc
+- pay_mode
+- collection_method
 
-We've upgraded Middleman and a number of other dependencies, which should fix quite a few bugs.
+### Notes
 
-Instead of `rake build` and `rake deploy`, you should now run `bundle exec middleman build --clean` to build your server, and `./deploy.sh` to deploy it to Github Pages.
+- Support recurring meeting feature in Meeting Create/Update/Get/List/Delete API.
+- Support CPU usage metrics in Qos API.
 
-## Version 1.2
+## December 3, 2016
 
-*June 20, 2015*
+## Added
 
-**Fixes:**
+-  "option_host_video" and "option_panelist_video" to Webinar create/update API.
+-  "network_type" parameter to "v1/metrics/meetings" API.
+-  "meeting_capacity" parameter to Account create/update API.
+-  "option_use_pmi" parameter to Meeting create/update API.
+-  "v1/webinar/rgistrants/list" API.
+-  "v1/webinar/registrants/approve" API.
+-  "v1/webinar/panelists" API.
+-  "v1/webinar/registration/cancel" API.
 
-- Remove crash on invalid languages
-- Update Tocify to scroll to the highlighted header in the Table of Contents
-- Fix variable leak and update search algorithms
-- Update Python examples to be valid Python
-- Update gems
-- More misc. bugfixes of Javascript errors
-- Add Dockerfile
-- Remove unused gems
-- Optimize images, fonts, and generated asset files
-- Add chinese font support
-- Remove RedCarpet header ID patch
-- Update language tabs to not disturb existing query strings
+Add the following parameters to user API - create/autocreate/autocreate2/custcreate
+- disable_private_chat
+- disable_group_hd
+- enable_e2e_encryption
+- enable_silent_mode
+- disable_feedback
+- disable_cancel_meeting_notification
+- enable_breakout_room
+- enable_polling
+- enable_annotation
+- enable_auto_saving_chats
+- enable_co_host
+- enable_enter_exit_chime
+- option_enter_exit_chime_type
+- enable_remote_support
+- enable_file_transfer
+- enable_virtual_background
+- enable_closed_caption
+- enable_far_end_camera_control
+- enable_share_dual_camera
 
-## Version 1.1
+### Notes
 
-*July 27, 2014*
-
-**Fixes:**
-
-- Finally, a fix for the redcarpet upgrade bug
-
-## Version 1.0
-
-*July 2, 2014*
-
-[View Issues](https://github.com/tripit/slate/issues?milestone=1&state=closed)
-
-**Features:**
-
-- Responsive designs for phones and tablets
-- Started tagging versions
-
-**Fixes:**
-
-- Fixed 'unrecognized expression' error
-- Fixed #undefined hash bug
-- Fixed bug where the current language tab would be unselected
-- Fixed bug where tocify wouldn't highlight the current section while searching
-- Fixed bug where ids of header tags would have special characters that caused problems
-- Updated layout so that pages with disabled search wouldn't load search.js
-- Cleaned up Javascript
+- Support to update pending users in API
+- Support to delete invite user in API
+- Support to get pending user in API
