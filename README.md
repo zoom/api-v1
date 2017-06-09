@@ -1,6 +1,6 @@
 # Zoom REST API
 
-This repo is the source code for our documentation. You can view the documentation [here].(https://zoom.github.io/api)
+This repo is the source code for our documentation. You can view the documentation [here](https://zoom.github.io/api).
 
 Feel free to submit [issues](https://github.com/zoom/api/issues) or [fork](https://github.com/zoom/api/edit/master/README.md#fork-destination-box) this repo and contribute changes.
 
