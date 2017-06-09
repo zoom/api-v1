@@ -1,6 +1,6 @@
-# Changelog
+# CHANGELOG
 
-## May 20, 2017
+## 2017-05-20
 
 ### Added
 
@@ -21,7 +21,7 @@ The following attributes would inherit Webinar Account level Settings when creat
 - Show social share buttons on registration page
 - Add call log for telehealth API.
 
-## April 8, 2017
+## 2017-04-08
 
 ### Added
 
@@ -34,7 +34,7 @@ The following attributes would inherit Webinar Account level Settings when creat
 - "enable_use_pmi" parameter to User AutoCreate/CustCreate/Update API.
 - access control to "v1/report/getaudioreport" API.
 
-## February 25, 2017
+## 2017-02-25
 
 ### Added
 
@@ -48,7 +48,7 @@ The following attributes would inherit Webinar Account level Settings when creat
 
 - Support recurring Webinar feature in Webinar Create/Update/Get/List/Registration List/Delete/Registration API.
 
-## January 15, 2017
+## 2017-01-15
 
 ### Added
 
@@ -72,7 +72,7 @@ Add the following parameters to Account Create/Update API
 - Support recurring meeting feature in Meeting Create/Update/Get/List/Delete API.
 - Support CPU usage metrics in Qos API.
 
-## December 3, 2016
+## 2016-12-03
 
 ## Added
 
