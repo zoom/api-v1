@@ -1,0 +1,35 @@
+## Revoke SSO Token
+
+Revoke a user's SSO token.
+
+> Definition
+
+```text
+POST <%= config[:api_host] %>user/revoketoken
+```
+
+> Example Request
+
+```shell
+$ curl <%= config[:api_host] %>user/revoketoken \
+    -d api_key=<%= config[:ex_api_key] %> \
+    -d api_secret=<%= config[:ex_api_secret] %> \
+    -d id=<%= config[:ex_uuid] %>
+```
+
+> Example Response
+
+```json
+{
+  "id": "<%= config[:ex_uuid] %>",
+  "email": "<%= config[:ex_email] %>",
+  "updated_at": "2013-09-02T12:00:00Z"
+}
+```
+
+<aside class="notice">Either <strong>id</strong> or <strong>email</strong> is required, if id is passed then email is ignored</aside>
+
+Arguments | &nbsp;
+--- | ---
+id *optional* | The SSO user’s user id.
+email *optional* | The SSO user’s email address.

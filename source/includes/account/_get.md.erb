@@ -1,0 +1,37 @@
+## Get a sub account
+
+Get a sub account of the master account on Zoom, return the created sub account id and owner id.
+
+<aside class="notice">Your account must be a master account and have this privilege to get sub account. Zoom only assign this privilege to trusted partner.</aside>
+
+<aside class="notice">This API will let the master account owner to get sub account API key pair. This is a private feature and needs to be enabled by zoom support. If you need this function, please open a case with support to enable this API.</aside>
+
+> Definition
+
+```text
+POST  <%= config[:api_host] %>ma/account/get
+```
+
+> Example Request
+
+```shell
+$ curl <%= config[:api_host] %>ma/account/get \
+    -d api_key=<%= config[:ex_api_key] %> \
+    -d api_secret=<%= config[:ex_api_secret] %> \
+    -d account_id=<%= config[:ex_uuid] %>
+```
+
+> Example Response
+
+```json
+{
+  "id": "<%= config[:ex_uuid] %>",
+  "owner_id": "<%= config[:ex_uuid] %>",
+  "owner_email": "<%= config[:ex_email] %>",
+  "created_at": "2012-11-25T12:00:00Z"
+}
+```
+
+Arguments | &nbsp;
+--- | ---
+account_id **required** | The sub account ID.

@@ -1,0 +1,33 @@
+## Upload User Picture
+
+Upload and update user's profile picture on Zoom via user ID.
+
+> Definition
+
+```text
+POST <%= config[:api_host] %>user/uploadpicture
+```
+
+> Example Request
+
+```shell
+$ curl <%= config[:api_host] %>user/updatepassword \
+    -d api_key=<%= config[:ex_api_key] %> \
+    -d api_secret=<%= config[:ex_api_secret] %> \
+    -d id=<%= config[:ex_uuid] %> \
+    -d pic_file="http://url.com/picture.jpg"
+```
+
+> Example Response
+
+```json
+{
+  "id": "<%= config[:ex_uuid] %>",
+  "updated_at": "2013-09-02T12:00:00Z"
+}
+```
+
+Arguments | &nbsp;
+--- | ---
+id **required** | User id.
+pic_file **required** | User picture file, must be a jpg/jpeg file.

@@ -1,2 +1,3 @@
-# api
-Zoom REST API Documentation
+# Zoom Api Documentation
+
+[View](https://zoom.github.io/api)

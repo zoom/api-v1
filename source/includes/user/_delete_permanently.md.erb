@@ -1,0 +1,33 @@
+## Delete User Permanently
+
+Delete a user from Zoom system permanently.
+
+> Definition
+
+```text
+POST <%= config[:api_host] %>user/permanentdelete
+```
+
+> Example Request
+
+```shell
+$ curl <%= config[:api_host] %>user/permanentdelete \
+    -d api_key=<%= config[:ex_api_key] %> \
+    -d api_secret=<%= config[:ex_api_secret] %> \
+    -d id=<%= config[:ex_uuid] %>
+```
+
+> Example Response
+
+```json
+{
+  "id": "<%= config[:ex_uuid] %>",
+  "email": "<%= config[:ex_email] %>",
+  "deleted_at": "2013-09-02T12:00:00Z"
+}
+```
+
+Arguments | &nbsp;
+--- | ---
+id *optional* | The user’s user id.
+email *optional* | The user’s email address. Must have id or email, if given id, the email is ignored.

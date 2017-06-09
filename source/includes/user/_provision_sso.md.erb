@@ -1,0 +1,81 @@
+## Pre Provisioning SSO User
+
+Create a SSO user on Zoom, return the created user ID.
+
+<aside class="notice">The API is provided for enabled 'Pre-provisioning SSO User' option's API partner only. User created in this way has no password. If it is not a basic user, will generate a Personal Vanity URL using user name (no domain) of the provisioning email. If user name or pmi is invalid or occupied, will use random number/random personal vanity URL.</aside>
+
+> Definition
+
+```text
+POST <%= config[:api_host] %>user/ssocreate
+```
+
+> Example Request
+
+```shell
+$ curl <%= config[:api_host] %>user/ssocreate \
+    -d api_key=<%= config[:ex_api_key] %> \
+    -d api_secret=<%= config[:ex_api_secret] %> \
+    -d email=<%= config[:ex_email] %> \
+    -d type=1
+```
+
+> Example Response
+
+```json
+{
+  "id": "<%= config[:ex_uuid] %>",
+  "email": "<%= config[:ex_email] %>",
+  "first_name": "<%= config[:ex_first_name] %>",
+  "last_name": "<%= config[:ex_last_name] %>",
+  "pic_url": "",
+  "type": 2,
+  "disable_chat": true,
+  "disable_private_chat": false,
+  "enable_e2e_encryption": false,
+  "enable_silent_mode": true,
+  "disable_group_hd": false,
+  "disable_recording": true,
+  "enable_cmr": false,
+  "enable_record_speaker_view": false,
+  "enable_record_gallery_view": false,
+  "enable_record_audio_file": false,
+  "enable_auto_recording": false,
+  "enable_cloud_auto_recording": false,
+  "verified": 0,
+  "pmi": 0,
+  "vanity_url": "https://abc.zoom.us/my/test126",
+  "meeting_capacity": 0,
+  "enable_webinar": true,
+  "webinar_capacity": 100,
+  "enable_large": false,
+  "large_capacity": 0,
+  "disable_feedback": false,
+  "disable_jbh_reminder": false,
+  "enable_breakout_room": true,
+  "enable_polling": false,
+  "enable_annotation": false,
+  "dept": "Engineer",
+  "timezone": "",
+  "created_at": "2015-03-12T05:45:45Z",
+  "lastClientVersion": "",
+  "lastLoginTime": "",
+  "token": "",
+  "zpk": ""
+}
+```
+
+Arguments | &nbsp;
+--- | ---
+email **required** | A valid email address. It must be unique in Zoom service.
+type **required** | User’s type. 1 means it is a basic user. 2 means a pro user, 3 means a corp user. Basic user can host up to 40 minutes meeting.
+first_name *optional* | User’s first name.
+last_name *optional* | User’s last name.
+meeting_capacity *optional* | User’s meeting capacity, 0 means following account’s meeting capacity. *Default: 0*
+enable_webinar *optional* | Enable webinar feature true or false.
+webinar_capacity *optional* | Enable webinar capacity, can be 100, 500, 1000, 3000, 5000 or 10000, depends on if having related webinar capacity plan subscription or not. *Default: 0*
+enable_large *optional* | Enable large meting feature true or false.
+large_capacity *optional* | Enable large meeting capacity, can be 100, 200, 300 or 500, depends on if having related webinar capacity plan subscription or not. *Default: 0*
+pmi *optional* | Personal Meeting ID, long, length must be 10.
+group_id *optional* | User Group ID. If set default user group, the parameter’s default value is the default user group.
+imgroup_id *optional* | IM Group ID. If set default im group, the parameter’s default value is the default im group.

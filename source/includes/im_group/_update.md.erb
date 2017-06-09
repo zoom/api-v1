@@ -1,0 +1,42 @@
+## Edit A IM Group
+
+Edit a IM group on Zoom, return the new group info.
+
+> Definition
+
+```text
+POST <%= config[:api_host] %>im/group/edit
+```
+
+> Example Request
+
+```shell
+$ curl <%= config[:api_host] %>im/group/edit \
+    -d api_key=<%= config[:ex_api_key] %> \
+    -d api_secret=<%= config[:ex_api_secret] %> \
+    -d id=<%= config[:ex_uuid] %>
+```
+
+
+> Example Response
+
+```json
+{
+    "group_id": "<%= config[:ex_uuid] %>",
+    "account_id": "<%= config[:ex_uuid] %>",
+    "name": "New Group Test",
+    "total_members": 0,
+    "option_search_by_domain": false,
+    "option_search_by_account": true,
+    "option_search_by_ma_account": false
+}
+```
+
+Arguments | &nbsp;
+--- | ---
+id **required** | Group ID.
+name *optional* | Group name, must be unique in one account.
+type *optional* | Group type, Normal: normal group, Restricted: Restricted group, Shared: Shared group. *Default: Normal*
+option_search_by_domain *optional* | Others in the same email domain can search members. *Default: false*
+option_search_by_account *optional* | Others under same account can search members. *Default: false*
+option_search_by_ma *optional* | Others under same master account, including all sub accounts can search members. *Default: false*

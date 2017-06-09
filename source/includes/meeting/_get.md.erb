@@ -1,0 +1,63 @@
+## Get Meeting Info
+
+Get a meeting on Zoom via meeting ID, return the meeting info.
+
+> Definition
+
+```text
+POST <%= config[:api_host] %>meeting/get
+```
+
+> Example Request
+
+```shell
+$ curl <%= config[:api_host] %>meeting/get \
+    -d api_key=<%= config[:ex_api_key] %> \
+    -d api_secret=<%= config[:ex_api_secret] %> \
+    -d id=<%= config[:ex_uuid] %> \
+    -d host_id=<%= config[:ex_uuid] %>
+```
+
+> Example Response
+
+```json
+{
+  "uuid": "<%= config[:ex_uuid] %>",
+  "id": <%= config[:ex_meeting_number] %>,
+  "host_id": "<%= config[:ex_uuid] %>",
+  "topic": "Zoom Meeting",
+  "password": "",
+  "h323_password": "",
+  "status": 0,
+  "option_jbh": false,
+  "option_start_type": "video",
+  "option_host_video": true,
+  "option_participants_video": true,
+  "option_cn_meeting": false,
+  "option_enforce_login": false,
+  "option_enforce_login_domains": "",
+  "option_in_meeting": false,
+  "option_audio": "both",
+  "option_alternative_hosts": "",
+  "option_use_pmi": false,
+  "type": 8,
+  "start_time": "",
+  "duration": 0,
+  "timezone": "Asia/Hong_Kong",
+  "start_url": "https://www.zoom.us/s/<%= config[:ex_meeting_number] %>?zpk=xxxx",
+  "join_url": "https://www.zoom.us/j/<%= config[:ex_meeting_number] %>",
+  "created_at": "2016-12-20T02:51:42Z",
+  "occurrences": [
+    {
+      "occurrence_id": "1483210260000",
+      "start_time": "2017-01-01T02:51:00Z",
+      "duration": 60
+    }
+  ]
+}
+```
+
+Arguments | &nbsp;
+--- | ---
+id **required** | Meeting ID.
+host_id **required** | Meeting host user ID. Can be any user under this account.

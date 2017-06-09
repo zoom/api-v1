@@ -1,0 +1,31 @@
+## Delete a sub account
+
+Delete the sub account.
+
+> Definition
+
+```text
+POST <%= config[:api_host] %>ma/account/delete
+```
+
+> Example Request
+
+```shell
+$ curl <%= config[:api_host] %>ma/account/delete \
+    -d api_key=<%= config[:ex_api_key] %> \
+    -d api_secret=<%= config[:ex_api_secret] %> \
+    -d account_id=<%= config[:ex_uuid] %>
+```
+
+> Example Response
+
+```json
+{
+  "id": "<%= config[:ex_uuid] %>",
+  "deleted_at": "2012-11-25T12:00:00Z"
+}
+```
+
+Arguments | &nbsp;
+--- | ---
+account_id **required** | The sub account ID.

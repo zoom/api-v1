@@ -1,0 +1,41 @@
+## List IM Groups
+
+List all IM groups on your Zoom account.
+
+> Definition
+
+```text
+POST <%= config[:api_host] %>im/group/list
+```
+
+> Example Request
+
+```shell
+$ curl <%= config[:api_host] %>im/group/list \
+    -d api_key=<%= config[:ex_api_key] %> \
+    -d api_secret=<%= config[:ex_api_secret] %>
+```
+
+
+> Example Response
+
+```json
+{
+  "total_records": 1,
+  "groups": [
+    {
+        "group_id": "<%= config[:ex_uuid] %>",
+        "account_id": "<%= config[:ex_uuid] %>",
+        "name": "Group Test1",
+        "total_members": 40,
+        "option_search_by_domain": false,
+        "option_search_by_account": true,
+        "option_search_by_ma_account": false,
+        "last_modified_time": "2016-04-16T07:45:41Z
+    }
+  ]
+}
+```
+
+Arguments | &nbsp;
+--- | ---

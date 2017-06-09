@@ -1,0 +1,54 @@
+## List Registration Webinars
+
+List all the upcoming registration-based Webinars on Zoom
+
+> Definition
+
+```text
+POST <%= config[:api_host] %>webinar/list/registration
+```
+
+> Example Request
+
+```shell
+$ curl <%= config[:api_host] %>webinar/list/registration \
+    -d api_key=<%= config[:ex_api_key] %> \
+    -d api_secret=<%= config[:ex_api_secret] %> \
+    -d host_id="<%= config[:ex_uuid] %>"
+```
+
+> Example Response
+
+```json
+{
+  "page_count": 5,
+  "total_records": 235,
+  "page_number": 1,
+  "page_size": 50,
+  "webinars": [
+    {
+      "uuid": "<%= config[:ex_uuid] %>",
+      "id": "<%= config[:ex_meeting_number] %>",
+      "start_url": "https://zoom.us/s/<%= config[:ex_meeting_number] %>?zpk=hs65q23kd9sqliy612h23k",
+      "join_url": "https://zoom.us/j/<%= config[:ex_meeting_number] %>",
+      "created_at": "2012-11-25T12:00:00Z",
+      "host_id": "<%= config[:ex_uuid] %>",
+      "topic": "Topic for this Webinar",
+      "type": 5,
+      "start_time": "2012-11-25T12:00:00Z",
+      "duration": 30,
+      "timezone": "America/Los_Angeles",
+      "agenda": "",
+      "option_start_type": "video",
+      "option_audio": "both",
+      "status": 0
+    }
+  ]
+}
+```
+
+Arguments | &nbsp;
+--- | ---
+host_id **required** | Webinar host user ID. Can be any user who enabled webinar under this account.
+page_size *optional* | The amount of records returns within a single API call. Defaults to 30. Max of 300 meetings. *Default: 30*
+page_number *optional* | Current page number of returned records. Default to 1. *Default: 1*

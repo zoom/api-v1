@@ -1,0 +1,31 @@
+## Delete a H.323/SIP Device
+
+Delete a H.323/SIP Device on your Zoom account.
+
+> Definition
+
+```text
+POST <%= config[:api_host] %>h323/device/delete
+```
+
+> Example Request
+
+```shell
+$ curl <%= config[:api_host] %>h323/device/delete \
+    -d api_key=<%= config[:ex_api_key] %> \
+    -d api_secret=<%= config[:ex_api_secret] %> \
+    -d id="<%= config[:ex_uuid] %>"
+```
+
+> Example Response
+
+```json
+{
+  "id": "<%= config[:ex_uuid] %>",
+  "deleted_at": "2017-03-14T09:27:15Z"
+}
+```
+
+Arguments | &nbsp;
+--- | ---
+id **required** | Device ID.

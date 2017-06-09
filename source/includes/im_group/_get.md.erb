@@ -1,0 +1,37 @@
+## Get IM Group Info
+
+Get a IM group on Zoom via ID, return the group info.
+
+> Definition
+
+```text
+POST <%= config[:api_host] %>im/group/get
+```
+
+> Example Request
+
+```shell
+$ curl <%= config[:api_host] %>im/group/get \
+    -d api_key=<%= config[:ex_api_key] %> \
+    -d api_secret=<%= config[:ex_api_secret] %> \
+    -d id=<%= config[:ex_uuid] %>
+```
+
+
+> Example Response
+
+```json
+{
+    "group_id": "<%= config[:ex_uuid] %>",
+    "account_id": "<%= config[:ex_uuid] %>",
+    "name": "Group Test",
+    "total_members": 2,
+    "option_search_by_domain": false,
+    "option_search_by_account": true,
+    "option_search_by_ma_account": false
+}
+```
+
+Arguments | &nbsp;
+--- | ---
+id **required** | Group ID.

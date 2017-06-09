@@ -1,0 +1,35 @@
+## Update a H.323/SIP Device
+
+Update a H.323/SIP Device on your Zoom account.
+
+> Definition
+
+```text
+POST <%= config[:api_host] %>h323/device/update
+```
+
+> Example Request
+
+```shell
+$ curl <%= config[:api_host] %>h323/device/update \
+    -d api_key=<%= config[:ex_api_key] %> \
+    -d api_secret=<%= config[:ex_api_secret] %>
+    -d id=<%= config[:ex_uuid] %>
+```
+
+> Example Response
+
+```json
+{
+  "id": "<%= config[:ex_uuid] %>",
+  "updated_at": "2017-03-14T09:27:03Z"
+}
+```
+
+Arguments | &nbsp;
+--- | ---
+id **required** | Device ID.
+name *optional* | Display Name.
+ip *optional* | IP Address or H.323 Extension.
+protocol_type *optional* | Protocol type. 1 means H.323, 2 means SIP. *Default: 1*
+encryption_type *optional* | Encryption type. 0 means No, 1 means Yes, 2 means Auto. *Default: 2*

@@ -1,0 +1,48 @@
+## List Manually Approve Webinar Registrants info
+
+List manually approve webinar registrants on Zoom, include pending approval registrants and approved registrants.
+
+> Definition
+
+```text
+POST <%= config[:api_host] %>webinar/registrants/list
+```
+
+> Example Request
+
+```shell
+$ curl <%= config[:api_host] %>webinar/registrants/list \
+    -d api_key=<%= config[:ex_api_key] %> \
+    -d api_secret=<%= config[:ex_api_secret] %> \
+    -d id="<%= config[:ex_uuid] %>" \
+    -d host_id="<%= config[:ex_uuid] %>"
+```
+
+> Example Response
+
+```json
+{
+  "page_count": 1,
+  "page_number": 1,
+  "page_size": 30,
+  "total_records": 1,
+  "type": 0,
+  "users": [
+    {
+      "id": "<%= config[:ex_uuid] %>",
+      "first_name": "<%= config[:ex_first_name] %>",
+      "last_name": "<%= config[:ex_last_name] %>",
+      "email": "<%= config[:ex_email] %>",
+      "registration_time": "2016-08-18T01:45:26Z"
+    }
+  ]
+}
+```
+
+Arguments | &nbsp;
+--- | ---
+id **required** | Webinar ID.
+host_id **required** | Webinar host user ID. Can be any user who enabled webinar under this account.
+type *optional* | 0 means pending approval registrants, 1 means approved registrants. *Default: 0*
+page_size *optional* | The amount of records returns within a single API call. Defaults to 30. *Default: 30*
+page_number *optional* | Current page number of returned records. Default to 1. *Default: 1*

@@ -1,0 +1,57 @@
+## Create a sub account
+
+Create a sub account of the master account on Zoom, return the created sub account id and owner id.
+
+<aside class="notice">Your account must be a master account and have this privilege to create sub account. Zoom only assign this privilege to trusted partner.</aside>
+
+<aside class="notice">User will not receive the confirmation email.</aside>
+
+> Definition
+
+```text
+POST <%= config[:api_host] %>ma/account/create
+```
+
+> Example Request
+
+```shell
+$ curl <%= config[:api_host] %>ma/account/create \
+    -d api_key=<%= config[:ex_api_key] %> \
+    -d api_secret=<%= config[:ex_api_secret] %> \
+    -d account_id=<%= config[:ex_email] %> \
+    -d first_name=<%= config[:ex_first_name] %> \
+    -d last_name=<%= config[:ex_last_name] %> \
+    -d password=<%= config[:ex_password] %>
+```
+
+> Example Response
+
+```json
+{
+  "id": "<%= config[:ex_uuid] %>",
+  "owner_id": "<%= config[:ex_uuid] %>",
+  "owner_email": "<%= config[:ex_email] %>",
+  "created_at": "2012-11-25T12:00:00Z"
+}
+```
+
+Arguments | &nbsp;
+--- | ---
+email **required** | A valid email address. It must be unique in Zoom service. If an email address is existed, a "user existing" error message will be return.
+first_name **required** | User’s first name.
+last_name **required** | User’s last name.
+password **required** | User’s password.
+enable_share_rc *optional* | Enable Share Virtual Room Connector. *Default: false*
+share_rc *optional* | Virtual Room Connector, multiple value separated by comma.
+enable_share_mc *optional* | Enable Share Meeting Connector. *Default: false*
+share_mc *optional* | Meeting Connector, multiple value separated by comma.
+pay_mode *optional* | Who will pay for this account? 0 means Sub Account Holders Pays, 1 means Master Account Holder Pays. *Default: 1*
+collection_method *optional* | Collection Method? 0 means Automatic (billing online), 1 means Manual (send invoice). *Default: 1*
+enable_pstn *optional* | The value should be true or false, by default is true. *Default: true*
+enable_enforce_login *optional* | Only signed-in users can join this meeting. *Default: false*
+enable_enforce_login_sd *optional* | Only signed-in users with specified domains can join meetings. *Default: false*
+enforce_login_domains *optional* | Domains of signed-in users.
+meeting_capacity *optional* | Account’ meeting capacity, max of 100.
+disable_cmr_reminder *optional* | Disable cloud recording reminder. *Default: false*
+enable_only_host_download_cmr *optional* | Enable Only the host can download cloud recordings. *Default: false*
+enable_same_account_access_cmr *optional* | Enable Only users on my account can access cloud recordings. *Default: false*

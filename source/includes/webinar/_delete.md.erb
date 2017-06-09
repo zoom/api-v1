@@ -1,0 +1,34 @@
+## Delete A Webinar
+
+Delete a webinar on Zoom, return the deleted webinar ID.
+
+> Definition
+
+```text
+POST <%= config[:api_host] %>webinar/delete
+```
+
+> Example Request
+
+```shell
+$ curl <%= config[:api_host] %>webinar/delete \
+    -d api_key=<%= config[:ex_api_key] %> \
+    -d api_secret=<%= config[:ex_api_secret] %> \
+    -d id="<%= config[:ex_uuid] %>" \
+    -d host_id="<%= config[:ex_uuid] %>"
+```
+
+> Example Response
+
+```json
+{
+  "id": "<%= config[:ex_meeting_number] %>",
+  "deleted_at": "2012-11-25T12:00:00Z"
+}
+```
+
+Arguments | &nbsp;
+--- | ---
+id **required** | Webinar ID.
+host_id **required** | webinar host user ID. Can be any user who enabled webinar under this account.
+occurrence_id *optional* | Occurrence ID, could get this value from Webinar Get API.

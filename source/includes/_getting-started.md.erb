@@ -1,0 +1,37 @@
+# Getting Started
+
+Zoom exposes REST interfaces which allows the developers and solution providers to manage meetings, users, recordings, settings and get usage reports. These APIs will be useful when you as a solution provider, build your own web portal to front end Zoom services and present as a login point to your end users.
+
+These management APIs are auto-enabled if you have a paid Zoom account. If you don't have a zoom account, go ahead, create a [free account](https://zoom.us/signup) and sign up for a 60 days free trial of our developer platform.
+
+### Zoom REST APIs allows you to manage:
+* Users
+* Meetings
+* Reports
+* Groups
+* IM Groups
+* Cloud Recordings (Business and Education)
+* Webinars
+* Sub-Accounts
+
+### Quick Start
+* Sign up for a [Free Trial](https://zoom.us/signup), [Pro](https://zoom.us/buy?plan=pro), [Business](https://zoom.us/buy?plan=biz) or [API Partner](https://zoom.us/plan/api) subscription. If you already have a zoom license, you have full access to the developer platform.
+* Login to your account, then select "Credential tab" and generate a pair of API key and secret. You can re-generate a new API secret at any time.
+* Using REST API to create a user if your account has the privilege to provisioning user.
+* Using REST API to create a meeting for that user. If success, you will get a start meeting URL like `https://zoom.us/s/123456789?zpk=xxxxx` and a join meeting URL without token, like `https://zoom.us/j/123456789`
+* Now you can open a new browser window to launch `https://zoom.us/s/123456789?zpk=xxxx` to start meeting. Zoom will handle the client download, installation and launching.
+* Anybody who gets the join meeting URL can open it in a browser and join the meeting.
+
+<aside>
+<strong>Note: For Business plan</strong><br><br>
+<code>/user/autocreate</code><br><br>
+An enterprise customer who has an approved managed domain can create users without email verification. All new user email addresses must satisfy "managed domain" criteria.
+</aside>
+
+<aside>
+<strong>Note: For API per minute plan</strong><br><br>
+<code>/user/custcreate</code><br><br>
+An API partner can create a user type with no password authentication with Zoom. This user type will login to the partner site only and will not have access to Zoom's site.<br><br>
+<code>/report/</code><br><br>
+API partner can also call the report API to get the meeting reports. To become an API partner, please sign up via <a href="https://zoom.us/plan/api" target="_blank">https://zoom.us/plan/api</a><br><br>
+</aside>

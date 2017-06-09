@@ -1,0 +1,64 @@
+## List Recording For MC (On Premise)
+
+Lists all the cloud recordings meetings on a Meeting Connector
+
+> Definition
+
+```text
+POST <%= config[:api_host] %>mc/recording/list
+```
+
+> Example Request
+
+```shell
+$ curl <%= config[:api_host] %>mc/recording/list \
+    -d api_key=<%= config[:ex_api_key] %> \
+    -d api_secret=<%= config[:ex_api_secret] %> \
+    -d host_id=<%= config[:ex_uuid] %>
+```
+
+> Example Response
+
+```json
+{
+  "page_count": 1,
+  "page_number": 1,
+  "page_size": 15,
+  "total_records": 1,
+  "meetings": [
+    {
+      "uuid": "<%= config[:ex_uuid] %>",
+      "meeting_number": "<%= config[:ex_meeting_number] %>",
+      "host_id": "<%= config[:ex_uuid] %>",
+      "account_id": "<%= config[:ex_uuid] %>",
+      "topic": "Meeting Topic",
+      "start_time": "2014-11-06T04:10:10Z",
+      "timezone": "America/Los_Angeles",
+      "duration": 999,
+      "total_size": 4324324324,
+      "recording_count": 1,
+      "recording_files": [
+        {
+          "id": "<%= config[:ex_uuid] %>",
+          "meeting_id": "<%= config[:ex_uuid] %>",
+          "recording_start": "2014-11-06T04:14:10Z",
+          "recording_end": "2014-11-06T04:24:10Z",
+          "file_type": "M4A",
+          "file_size": 432432,
+          "play_url": "https://brand.zoom.us/recording/play/HzMyuI23bqxlJLVJLrww3L9ZuFeZEvYtG0vQ6pHhp6Twr6GPjX4Qks_CJak7jrU2",
+          "download_url": "https://brand.zoom.us/recording/download/HzMyuI23bqxlJLVJLrww3L9ZuFeZEvYtG0vQ6pHhp6Twr6GPjX4Qks_CJak7jrU2"
+        }
+      ]
+    }
+  ]
+}
+```
+
+Arguments | &nbsp;
+--- | ---
+host_id **required** | Meeting host user ID. Can be any user under this account.
+meeting_number *optional* | The meeting number.
+from *optional* | The meeting start time after this date, MM/dd/yyyy hh:mm a. For example: 11/05/2014 09:05 pm. Use the host’s time zone, if host has not set time zone, will use GMT.
+to *optional* | The meeting start time before this date, MM/dd/yyyy hh:mm a.
+page_size *optional* | The amount of records returns within a single API call. Defaults to 30. Max of 300 meetings. *Default: 30*
+page_number *optional* | Current page number of returned records. Default to 1. *Default: 1*

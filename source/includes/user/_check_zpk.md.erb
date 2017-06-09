@@ -1,0 +1,30 @@
+## Check User ZPK
+
+Check if the zpk is expired. The zpk is used to authenticate a user.
+
+> Definition
+
+```text
+POST <%= config[:api_host] %>user/checkzpk
+```
+
+> Example Request
+
+```shell
+$ curl <%= config[:api_host] %>user/checkzpk \
+    -d api_key=<%= config[:ex_api_key] %> \
+    -d api_secret=<%= config[:ex_api_secret] %> \
+    -d zpk=<USER_ZPK> 
+```
+
+> Example Response
+
+```json
+{
+  "expire_in": 7187
+}
+```
+
+Arguments | &nbsp;
+--- | ---
+zpk **required** | User zpk.

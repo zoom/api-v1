@@ -1,0 +1,35 @@
+## Delete Group Members
+
+Delete members of a group on Zoom.
+
+> Definition
+
+```text
+POST <%= config[:api_host] %>group/member/delete
+```
+
+> Example Request
+
+```shell
+$ curl <%= config[:api_host] %>group/member/delete \
+    -d api_key=<%= config[:ex_api_key] %> \
+    -d api_secret=<%= config[:ex_api_secret] %> \
+    -d id="<%= config[:ex_uuid] %>" \
+    -d member_ids="<%= config[:ex_uuid] %>,<%= config[:ex_uuid] %>"
+```
+
+
+> Example Response
+
+```json
+{
+  "id": "<%= config[:ex_uuid] %>",
+  "deleted_at": "2015-08-20T08:57:38Z",
+  "deleted_count": 2
+}
+```
+
+Arguments | &nbsp;
+--- | ---
+id **required** | Group ID.
+member_ids **required** | The member IDs, separated by comma

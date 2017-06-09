@@ -1,0 +1,25 @@
+## Cancel Webinar Registration
+
+Cancel Webinar Registration
+
+> Definition
+
+```text
+POST <%= config[:api_host] %>webinar/registration/cancel
+```
+
+> Example Response
+
+```json
+{
+  "id": "844495467",
+  "updated_at": "2016-11-29T01:26:43Z"
+}
+```
+
+Arguments | &nbsp;
+--- | ---
+id **required** | Webinar ID.
+host_id **required** | Webinar host user ID. Can be any user who enabled webinar under this account.
+occurrence_id *optional* | Occurrence ID, could get this value from Webinar Get API.
+registrant_ids **required** | Webinar registrant IDs, separated by comma. Max of 15 registrants.

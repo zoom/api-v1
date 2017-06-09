@@ -1,0 +1,37 @@
+## Get Ended Webinar UUID
+
+Get ended webinar UUID.
+
+> Definition
+
+```text
+POST <%= config[:api_host] %>webinar/uuid/list
+```
+
+> Example Request
+
+```shell
+$ curl <%= config[:api_host] %>webinar/uuid/list \
+    -d api_key=<%= config[:ex_api_key] %> \
+    -d api_secret=<%= config[:ex_api_secret] %> \
+    -d id="<%= config[:ex_uuid] %>" \
+    -d host_id="<%= config[:ex_uuid] %>"
+```
+
+> Example Response
+
+```json
+{
+  "webinars": [
+    {
+      "uuid": "<%= config[:ex_uuid] %>",
+      "start_time": "2015-08-23T03:03:48Z"
+    }
+  ]
+}
+```
+
+Arguments | &nbsp;
+--- | ---
+id **required** | Webinar ID.
+host_id **required** | Webinar host user ID. Can be any user who enabled webinar under this account.

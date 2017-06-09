@@ -1,0 +1,34 @@
+# Basics
+
+All the REST API calls should be POST HTTP requests server-side. This request cannot be initiated on the web client using AJAX approaches.
+
+## Endpoint
+
+`<%= config[:api_host] %>`
+
+<aside class="notice">You must use HTTPS, otherwise you will get a 302 redirect response code</aside>
+
+## Common Parameters
+
+The following are common parameters that should be included in each REST API request
+
+Arguments | &nbsp;
+-------- | -------- 
+api_key **required** | API Key
+api_secret **required** | API Secret
+data_type *optional* | The type of data that you're expecting back from the server `JSON` or `XML` *Default: JSON*
+
+## Error Handle
+
+> Example Error Response
+
+```json
+{
+  "error": {
+    "code": 102,
+    "message": "You app key and secret doesn't match."
+  }
+}
+```
+
+When getting a response from the server, you should first check the response body for the "error" section. The "error" section indicates this is a failed request, and then you can get the failed code and message from this section.

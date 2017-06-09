@@ -1,0 +1,33 @@
+## End A Meeting
+
+End a meeting on Zoom, return the deleted meeting ID.
+
+> Definition
+
+```text
+POST <%= config[:api_host] %>meeting/end
+```
+
+> Example Request
+
+```shell
+$ curl <%= config[:api_host] %>meeting/end \
+    -d api_key=<%= config[:ex_api_key] %> \
+    -d api_secret=<%= config[:ex_api_secret] %> \
+    -d id=<%= config[:ex_uuid] %> \
+    -d host_id=<%= config[:ex_uuid] %>
+```
+
+> Example Response
+
+```json
+{
+  "id": "<%= config[:ex_meeting_number] %>",
+  "ended_at": "2012-11-25T12:00:00Z"
+}
+```
+
+Arguments | &nbsp;
+--- | ---
+id **required** | Meeting ID.
+host_id **required** | Meeting host user ID. Can be any user under this account.

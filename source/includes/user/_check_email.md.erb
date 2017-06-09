@@ -1,0 +1,30 @@
+## Check User Email
+
+Check if the user email exists.
+
+> Definition
+
+```text
+POST <%= config[:api_host] %>user/checkemail
+```
+
+> Example Request
+
+```shell
+$ curl <%= config[:api_host] %>user/checkemail \
+    -d api_key=<%= config[:ex_api_key] %> \
+    -d api_secret=<%= config[:ex_api_secret] %> \
+    -d email=<%= config[:ex_email] %>
+```
+
+> Example Response
+
+```json
+{
+  "existed_email": true
+}
+```
+
+Arguments | &nbsp;
+--- | ---
+email **required** | User email.

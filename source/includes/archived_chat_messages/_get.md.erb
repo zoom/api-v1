@@ -1,0 +1,51 @@
+## Get Chat Messages
+
+Get chat messages for a specified period.
+
+> Definition
+
+```text
+POST <%= config[:api_host] %>chat/get
+```
+
+> Example Request
+
+```shell
+$ curl <%= config[:api_host] %>chat/get \
+    -d api_key=<%= config[:ex_api_key] %> \
+    -d api_secret=<%= config[:ex_api_secret] %> \
+    -d access_token=<%= config[:ex_uuid] %> \
+    -d session_id=<%= config[:ex_uuid] %> \
+    -d from="2017-03-10" \
+    -d to="2-17-03-10"
+```
+
+> Example Response
+
+```json
+{
+  "session_id": "<%= config[:ex_uuid] %>",
+  "group_name": "zoom",
+  "from": "2016-01-16",
+  "to": "2016-01-22",
+  "page_size": 30,
+  "page_count": 1,
+  "next_page_token": "",
+  "chat_messages": [
+    {
+      "message": "test1",
+      "sender": "",
+      "date_time": "2016-01-18T06:40:56Z"
+    }
+  ]
+}
+```
+
+Arguments | &nbsp;
+--- | ---
+access_token **required** | Archived chat messages access token. Admin who has the view privilege of Archived chat messages will get it.
+session_id **required** | Session Id of chat messages.
+from **required** | Start date.
+to **required** | End date.
+page_size *optional* | The amount of records returns within a single API call. Defaults to 30. Max of 30 records. *Default: 30*
+next_page_token *optional* | Used to paginate through large result sets.  A next page token will be returned whenever the set of available chat history list exceeds 100.  The expiration period is 30 minutes.

@@ -1,0 +1,56 @@
+## Update Meeting Info
+
+Update meeting info on Zoom via meeting ID.
+
+> Definition
+
+```text
+POST <%= config[:api_host] %>meeting/update
+```
+
+> Example Request
+
+```shell
+$ curl <%= config[:api_host] %>meeting/update \
+    -d api_key=<%= config[:ex_api_key] %> \
+    -d api_secret=<%= config[:ex_api_secret] %> \
+    -d id=<%= config[:ex_uuid] %> \
+    -d host_id=<%= config[:ex_uuid] %> \
+    -d type=1
+```
+
+> Example Response
+
+```json
+{
+  "id": "<%= config[:ex_uuid] %>",
+  "updated_at": "2012-11-25T12:00:00Z"
+}
+```
+
+Arguments | &nbsp;
+--- | ---
+id **required** | Meeting ID.
+host_id **required** | Meeting host user ID. Can be any user under this account. Used to retrieve a meeting, cannot be updated.
+type **required** | Meeting type: 1 means instant meeting (Only used for host to start it as soon as created). 2 means normal scheduled meeting. 3 means a recurring meeting with no fixed time. 8 means a recurring meeting with fixed time. *Default: 2*
+topic *optional* | Meeting topic. Max of 300 characters.
+start_time *optional* | Meeting start time in ISO datetime format. For scheduled meeting only. Should be UTC time, such as 2012-11-25T12:00:00Z.
+duration *optional* | Meeting duration (minutes). For scheduled meeting only.
+timezone *optional* | Timezone to format start_time, like "America/Los_Angeles". For scheduled meeting only. For this parameter value please refer to the id value in timezone list JSON file.
+password *optional* | Meeting password. Password may only contain the following characters: [a-z A-Z 0-9 @ - _ *]. Max of 10 characters.
+recurrence *optional* | Recurrence Meeting Settings. For recurring meeting with fixed time only. See [Recurrence Object](#recurrence-object) for more details.
+option_registration *optional* | Registration required. *Default: false*
+registration_type *optional* | Registration type. 1 means Attendees register once and can attend any of the occurrences, 2 means Attendees need to register for each occurrence to attend, 3 means Attendees register once and can choose one or more occurrences to attend. For recurring meeting with fixed time only. *Default: 1*
+option_jbh *optional* | Join meeting before host start the meeting. Only for scheduled or recurring meetings. *Default: false*
+option_start_type *optional* | Meeting start type. Can be "video" or "screen_share". (deprecated) *Default: video*
+option_host_video *optional* | Start video when host join meeting. *Default: true*
+option_participants_video *optional* | Start video when participants join meeting. *Default: true*
+option_cn_meeting *optional* | Host meeting in China. *Default: false*
+option_in_meeting *optional* | Host meeting in India. *Default: false*
+option_audio *optional* | Meeting audio options. Can be "both", "telephony", "voip". *Default: both*
+option_enforce_login *optional* | Only signed-in users can join this meeting. *Default: false*
+option_enforce_login_domains *optional* | Only signed-in users with specified domains can join meetings.
+option_alternative_hosts *optional* | Alternative hosts.
+option_alternative_host_ids *optional* | Alternative hosts IDs.
+option_use_pmi *optional* | Use Personal Meeting ID. Only for scheduled meetings. *Default: false*
+option_auto_record_type *optional* | Automatically record type. Can be "local", "cloud" or "none". *Default: local*

@@ -1,0 +1,34 @@
+## Create A Group
+
+Create a group on Zoom, return the new group info.
+
+> Definition
+
+```text
+POST <%= config[:api_host] %>group/create
+```
+
+> Example Request
+
+```shell
+$ curl <%= config[:api_host] %>group/create \
+    -d api_key=<%= config[:ex_api_key] %> \
+    -d api_secret=<%= config[:ex_api_secret] %> \
+    -d name="New Group Test"
+```
+
+
+> Example Response
+
+```json
+{
+  "group_id": "<%= config[:ex_uuid] %>",
+  "account_id": "<%= config[:ex_uuid] %>",
+  "name": "New Group Test",
+  "total_members": 0
+}
+```
+
+Arguments | &nbsp;
+--- | ---
+name **required** | Group name, must be unique in one account.

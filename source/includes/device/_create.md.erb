@@ -1,0 +1,38 @@
+## Create a H.323/SIP Device
+
+Create a H.323/SIP Device on your Zoom account.
+
+> Definition
+
+```text
+POST <%= config[:api_host] %>h323/device/create
+```
+
+> Example Request
+
+```shell
+$ curl <%= config[:api_host] %>h323/device/create \
+    -d api_key=<%= config[:ex_api_key] %> \
+    -d api_secret=<%= config[:ex_api_secret] %> \
+    -d name="New Device" \
+    -d ip="192.168.1.10" \
+```
+
+> Example Response
+
+```json
+{
+  "id": "<%= config[:ex_uuid] %>",
+  "name": "New Device",
+  "ip": "192.168.1.10",
+  "protocol_type": 1,
+  "encryption_type": 2
+}
+```
+
+Arguments | &nbsp;
+--- | ---
+name **required** | Display Name.
+ip **required** | IP Address or H.323 Extension.
+protocol_type *optional* | Protocol type. 1 means H.323, 2 means SIP. *Default: 1*
+encryption_type *optional* | Encryption type. 0 means No, 1 means Yes, 2 means Auto. *Default: 2*

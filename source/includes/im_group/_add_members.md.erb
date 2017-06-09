@@ -1,0 +1,35 @@
+## Add Group Members
+
+Add members to a group on Zoom.
+
+> Definition
+
+```text
+POST <%= config[:api_host] %>group/member/add
+```
+
+> Example Request
+
+```shell
+$ curl <%= config[:api_host] %>group/member/add \
+    -d api_key=<%= config[:ex_api_key] %> \
+    -d api_secret=<%= config[:ex_api_secret] %> \
+    -d id="<%= config[:ex_uuid] %>" \
+    -d member_ids="<%= config[:ex_uuid] %>,<%= config[:ex_uuid] %>"
+```
+
+
+> Example Response
+
+```json
+{
+  "id": "<%= config[:ex_uuid] %>",
+  "add_at": "2015-08-20T08:57:38Z",
+  "add_count": 2
+}
+```
+
+Arguments | &nbsp;
+--- | ---
+id **required** | Group ID.
+member_ids **required** | The member IDs, separated by comma

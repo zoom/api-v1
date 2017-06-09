@@ -1,0 +1,103 @@
+## Get plans information for a sub account
+
+Get plans information for a sub account of the master account on Zoom.
+
+> Definition
+
+```text
+POST <%= config[:api_host] %>ma/account/plan/get
+```
+
+> Example Request
+
+```shell
+$ curl <%= config[:api_host] %>ma/account/plan/get \
+    -d api_key=<%= config[:ex_api_key] %> \
+    -d api_secret=<%= config[:ex_api_secret] %> \
+    -d account_id=<%= config[:ex_uuid] %>
+```
+
+> Example Response
+
+```json
+{
+  "email": "<%= config[:ex_email] %>",
+  "first_name": "<%= config[:ex_first_name] %>",
+  "last_name": "<%= config[:ex_last_name] %>",
+  "phone_number": "123456789",
+  "address": "address",
+  "apt": "apt",
+  "city": "city",
+  "state": "state",
+  "zip": "12345",
+  "country": "country",
+  "plan_base": {
+    "type": "monthly",
+    "hosts": 9
+  },
+  "plan_zoom_rooms": {
+    "type": "zroom_monthly",
+    "hosts": 9
+  },
+  "plan_room_connector": {
+    "type": "roomconnector_yearly",
+    "hosts": 9
+  },
+  "plan_large_meeting": [
+    {
+      "type": "large100_monthly",
+      "hosts": 9
+    },
+    {
+      "type": "large200_monthly",
+      "hosts": 9
+    },
+    {
+      "type": "large300_yearly",
+      "hosts": 9
+    },
+    {
+      "type": "large500_yearly",
+      "hosts": 9
+    }
+  ],
+  "plan_webinar": [
+    {
+      "type": "webinar100_monthly",
+      "hosts": 9
+    },
+    {
+      "type": "webinar500_yearly",
+      "hosts": 9
+    },
+    {
+      "type": "webinar1000_yearly",
+      "hosts": 9
+    },
+    {
+      "type": "webinar3000_monthly",
+      "hosts": 9
+    },
+    {
+      "type": "webinar5000_monthly",
+      "hosts": 9
+    },
+    {
+      "type": "webinar10000_monthly",
+      "hosts": 9
+    }
+  ],
+  "plan_recording": "cmr_monthly_commitment_500",
+  "plan_audio": {
+    "type": "tollfree_monthly_commitment_100",
+    "tollfree_country": "AT",
+    "premium_country": "TW",
+    "callout": 1,
+    "ddi_numbers": 66
+  }
+}
+```
+
+Arguments | &nbsp;
+--- | ---
+account_id **required** | The sub account ID.

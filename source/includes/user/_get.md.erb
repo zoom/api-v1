@@ -1,0 +1,71 @@
+## Get User
+
+Get a user info on Zoom via user ID
+
+> Definition
+
+```text
+POST <%= config[:api_host] %>user/get
+```
+
+> Example Request
+
+```shell
+$ curl <%= config[:api_host] %>user/get \
+    -d api_key=<%= config[:ex_api_key] %> \
+    -d api_secret=<%= config[:ex_api_secret] %> \
+    -d id=<%= config[:ex_uuid] %>
+```
+
+
+> Example Response
+
+```json
+{
+  "email": "<%= config[:ex_email] %>",
+  "id": "<%= config[:ex_uuid] %>",
+  "account_id": "8af3444232345",
+  "created_at": "2012-11-25T12:00:00Z",
+  "first_name": "<%= config[:ex_first_name] %>",
+  "last_name": "<%= config[:ex_last_name] %>",
+  "type": 1,
+  "token": "adlfjadslfkjasdkljfkjalkadfskjdsafkjdfsajkllajsdfaljsdf",
+  "pic_url": "https://www.zoom.us/p/bNsPi",
+  "disable_chat": false,
+  "enable_e2e_encryption": false,
+  "enable_silent_mode": true,
+  "disable_group_hd": false,
+  "disable_recording": false,
+  "enable_cmr": false,
+  "enable_record_speaker_view": false,
+  "enable_record_gallery_view": false,
+  "enable_record_audio_file": false,
+  "enable_auto_recording": false,
+  "enable_cloud_auto_recording": false,
+  "verified": 1,
+  "pmi": 2035134243,
+  "vanity_url": "https://zoom.us/my/test",
+  "meeting_capacity": 0,
+  "enable_webinar": true,
+  "webinar_capacity": 100,
+  "enable_large": false,
+  "large_capacity": 0,
+  "disable_feedback": false,
+  "disable_jbh_reminder": true,
+  "enable_breakout_room": true,
+  "enable_polling": false,
+  "enable_annotation": false,
+  "dept": "Engineer",
+  "timezone": "America/Los_Angeles",
+  "lastClientVersion": "3.5.44664.0321(mac)",
+  "lastLoginTime": "2016-03-23T09:54:41Z",
+  "status": 0,
+  "zpk": "ABzyF_DKLzVcPd-5Wu6zCwlZ3978jn7ZcTHONHrP7Vs.BwYAAAFTY-4XnwAAHCAkMTRlMzRjYzUtMjJmZC00MTQ1LTg2MzUtZmVmYjk3ZDI0NGMyFlYydzlQTzgxUl8yS1pmREtvTWVybVEWVjJ3OVBPODFSXzJLWmZES29NZXJtUQxzb3BoaWUgc3VuNjZkALM0VUVtMTFHTmh3cGFTWlJNMGkxYjhXSXNIZEIzbXZ0VlZwOGg0Q1Jhb1B3LkJnSWdUMjlLVG1KR1YySjNTVnBDZDFwUlpXb3Zhamh1TUUwd2VVVkVaU3QyTDNCQVpUSTNabVJtWkRNNFpqSmhZall5TXpRMk9XVTVOMkUwT1RNeVlUa3lPV1UyTlRnMk5qTm1OV0prT0RVek5URmhNR1l5WTJObVpUTTVNV0V6TTJabU1RQQAAFi1YZ0gzWVg2VDNTZmRqVEI5dEJLMXcAAgE"
+}
+```
+
+Arguments | &nbsp; 
+-------- | -----------
+id **required** | User ID
+
+<aside class="notice">The response 'token' variable can be used to generate start meeting zoomus protocol URL</aside>

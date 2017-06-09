@@ -1,0 +1,39 @@
+## Get Webinar Panelists
+
+Get all the Webinar Panelists on Zoom
+
+> Definition
+
+```text
+POST <%= config[:api_host] %>webinar/panelists
+```
+
+> Example Request
+
+```shell
+$ curl <%= config[:api_host] %>webinar/panelists \
+    -d api_key=<%= config[:ex_api_key] %> \
+    -d api_secret=<%= config[:ex_api_secret] %> \
+    -d id="<%= config[:ex_uuid] %>" \
+    -d host_id="<%= config[:ex_uuid] %>"
+```
+
+> Example Response
+
+```json
+{
+  "total_records": 1,
+  "panelists": [
+    {
+      "name": "<%= config[:ex_first_name] %> <%= config[:ex_last_name] %>",
+      "email": "<%= config[:ex_email] %>",
+      "join_url": "https://www.zoom.us/w/552681828?tk=TMnju_IjiU7Fx3eSkrajn2irvyMBNQ4XCW6cutSPntg.DQEAAAAAIPFBZBYwbzhKUUlXVVN3bW9Ed05QUmdvU2hBAA"
+    }
+  ]
+}
+```
+
+Arguments | &nbsp;
+--- | ---
+id **required** | Webinar ID.
+host_id **required** | Webinar host user ID. Can be any user who enabled webinar under this account.
