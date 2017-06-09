@@ -17,6 +17,17 @@ $ curl <%= config[:api_host] %>user/checkzpk \
     -d zpk=<USER_ZPK> 
 ```
 
+```javascript
+var Zoom = require("zoomus")({
+    key : "<YOUR_API_KEY>",
+    secret : "<YOUR_API_SECRET>"
+});
+
+Zoom.user.checkZPK({
+    zpk : "<USER_ZPK>"
+});
+```
+
 > Example Response
 
 ```json

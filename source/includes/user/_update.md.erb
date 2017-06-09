@@ -17,6 +17,19 @@ $ curl <%= config[:api_host] %>user/update \
     -d id=<%= config[:ex_uuid] %>
 ```
 
+```javascript
+var Zoom = require("zoomus")({
+    key : "<YOUR_API_KEY>",
+    secret : "<YOUR_API_SECRET>"
+});
+
+Zoom.user.update({
+    email: "user@company.com",
+    login_type: 100,
+    id : "<USER_ID>"
+});
+```
+
 > Example Response
 
 ```json

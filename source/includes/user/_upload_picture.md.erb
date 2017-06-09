@@ -18,6 +18,18 @@ $ curl <%= config[:api_host] %>user/updatepassword \
     -d pic_file="http://url.com/picture.jpg"
 ```
 
+```javascript
+var Zoom = require("zoomus")({
+    key : "<YOUR_API_KEY>",
+    secret : "<YOUR_API_SECRET>"
+});
+
+Zoom.user.updatePassword({
+    id : "<USER_ID>",
+    pic_file : "<PIC_FILE>"
+});
+```
+
 > Example Response
 
 ```json

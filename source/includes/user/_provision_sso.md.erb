@@ -20,6 +20,18 @@ $ curl <%= config[:api_host] %>user/ssocreate \
     -d type=1
 ```
 
+```javascript
+var Zoom = require("zoomus")({
+    key : "<YOUR_API_KEY>",
+    secret : "<YOUR_API_SECRET>"
+});
+
+Zoom.user.ssoCreate({
+    email : "user@company.com",
+    type : 1
+});
+```
+
 > Example Response
 
 ```json

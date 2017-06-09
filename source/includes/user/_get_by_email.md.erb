@@ -18,6 +18,18 @@ $ curl <%= config[:api_host] %>user/getbyemail \
     -d login_type=100
 ```
 
+```javascript
+var Zoom = require("zoomus")({
+    key : "<YOUR_API_KEY>",
+    secret : "<YOUR_API_SECRET>"
+});
+
+Zoom.user.getByEmail({
+    email: "user@company.com",
+    login_type: 100
+});
+```
+
 
 > Example Response
 

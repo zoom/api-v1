@@ -27,6 +27,19 @@ $ curl <%= config[:api_host] %>user/autocreate \
     -d password=<%= config[:ex_password] %>
 ```
 
+```javascript
+var Zoom = require("zoomus")({
+    key : "<YOUR_API_KEY>",
+    secret : "<YOUR_API_SECRET>"
+});
+
+Zoom.user.autocreate({
+    email: "user.email@company.com",
+    type: 2,
+    password: "<SECURE_PASSWORD>"
+});
+```
+
 > Example Response
 
 ```json

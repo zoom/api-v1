@@ -26,6 +26,18 @@ $ curl <%= config[:api_host] %>user/custcreate \
     -d type=1 \
 ```
 
+```javascript
+var Zoom = require("zoomus")({
+    key : "<YOUR_API_KEY>",
+    secret : "<YOUR_API_SECRET>"
+});
+
+Zoom.user.custcreate({
+    email: "user.email@company.com",
+    type: 2
+});
+```
+
 > Example Response
 
 ```json

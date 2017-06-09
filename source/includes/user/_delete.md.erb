@@ -17,6 +17,17 @@ $ curl <%= config[:api_host] %>user/delete \
     -d id=<%= config[:ex_uuid] %>
 ```
 
+```javascript
+var Zoom = require("zoomus")({
+    key : "<YOUR_API_KEY>",
+    secret : "<YOUR_API_SECRET>"
+});
+
+Zoom.user.delete({
+    id : "<USER_ID>"
+});
+```
+
 > Example Response
 
 ```json
