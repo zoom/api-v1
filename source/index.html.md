@@ -3,7 +3,6 @@ title: Zoom REST API
 
 language_tabs:
   - shell: curl
-  - javascript: Node
 
 toc_footers:
   - <a href='https://zoom.us/developer'>Zoom Developers</a>
