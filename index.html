@@ -408,6 +408,15 @@ User will get an email sent from Zoom. There is a confirmation link in this emai
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">email</span><span class="o">=</span><span class="s2">"user@company.com"</span> <span class="se">\</span>
     -d <span class="nb">type</span><span class="o">=</span>1
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">Zoom</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"zoomus"</span><span class="p">)({</span>
+    <span class="na">key</span> <span class="p">:</span> <span class="s2">"&lt;YOUR_API_KEY&gt;"</span><span class="p">,</span>
+    <span class="na">secret</span> <span class="p">:</span> <span class="s2">"&lt;YOUR_API_SECRET&gt;"</span>
+<span class="p">});</span>
+
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+    <span class="na">email</span> <span class="p">:</span> <span class="s2">"user.email@company.com"</span><span class="p">,</span>
+    <span class="na">type</span> <span class="p">:</span> <span class="mi">2</span>
+<span class="p">});</span>
 </code></pre>
 <blockquote>
 <p>Example Response</p>
@@ -669,6 +678,16 @@ This feature is disabled by default because of the security risk involved in cre
     -d <span class="nv">email</span><span class="o">=</span><span class="s2">"user@company.com"</span> <span class="se">\</span>
     -d <span class="nb">type</span><span class="o">=</span>1 <span class="se">\</span>
     -d <span class="nv">password</span><span class="o">=</span>P@55w0rd
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">Zoom</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"zoomus"</span><span class="p">)({</span>
+    <span class="na">key</span> <span class="p">:</span> <span class="s2">"&lt;YOUR_API_KEY&gt;"</span><span class="p">,</span>
+    <span class="na">secret</span> <span class="p">:</span> <span class="s2">"&lt;YOUR_API_SECRET&gt;"</span>
+<span class="p">});</span>
+
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">autocreate</span><span class="p">({</span>
+    <span class="na">email</span><span class="p">:</span> <span class="s2">"user.email@company.com"</span><span class="p">,</span>
+    <span class="na">type</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="na">password</span><span class="p">:</span> <span class="s2">"&lt;SECURE_PASSWORD&gt;"</span>
+<span class="p">});</span>
 </code></pre>
 <blockquote>
 <p>Example Response</p>
@@ -933,6 +952,15 @@ User created in this way has no password and is not able to log into the Zoom we
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">email</span><span class="o">=</span><span class="s2">"user@company.com"</span> <span class="se">\</span>
     -d <span class="nb">type</span><span class="o">=</span>1 <span class="se">\</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">Zoom</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"zoomus"</span><span class="p">)({</span>
+    <span class="na">key</span> <span class="p">:</span> <span class="s2">"&lt;YOUR_API_KEY&gt;"</span><span class="p">,</span>
+    <span class="na">secret</span> <span class="p">:</span> <span class="s2">"&lt;YOUR_API_SECRET&gt;"</span>
+<span class="p">});</span>
+
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">custcreate</span><span class="p">({</span>
+    <span class="na">email</span><span class="p">:</span> <span class="s2">"user.email@company.com"</span><span class="p">,</span>
+    <span class="na">type</span><span class="p">:</span> <span class="mi">2</span>
+<span class="p">});</span>
 </code></pre>
 <blockquote>
 <p>Example Response</p>
@@ -1183,6 +1211,12 @@ User created in this way has no password and is not able to log into the Zoom we
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/user/list <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">Zoom</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"zoomus"</span><span class="p">)({</span>
+    <span class="na">key</span> <span class="p">:</span> <span class="s2">"&lt;YOUR_API_KEY&gt;"</span><span class="p">,</span>
+    <span class="na">secret</span> <span class="p">:</span> <span class="s2">"&lt;YOUR_API_SECRET&gt;"</span>
+<span class="p">});</span>
+
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">list</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Response</p>
@@ -1261,6 +1295,12 @@ User created in this way has no password and is not able to log into the Zoom we
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/user/pending <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">Zoom</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"zoomus"</span><span class="p">)({</span>
+    <span class="na">key</span> <span class="p">:</span> <span class="s2">"&lt;YOUR_API_KEY&gt;"</span><span class="p">,</span>
+    <span class="na">secret</span> <span class="p">:</span> <span class="s2">"&lt;YOUR_API_SECRET&gt;"</span>
+<span class="p">});</span>
+
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">pending</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Response</p>
@@ -1340,6 +1380,14 @@ User created in this way has no password and is not able to log into the Zoom we
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span>unique_id
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">Zoom</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"zoomus"</span><span class="p">)({</span>
+    <span class="na">key</span> <span class="p">:</span> <span class="s2">"&lt;YOUR_API_KEY&gt;"</span><span class="p">,</span>
+    <span class="na">secret</span> <span class="p">:</span> <span class="s2">"&lt;YOUR_API_SECRET&gt;"</span>
+<span class="p">});</span>
+
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">get</span><span class="p">({</span>
+    <span class="na">id</span><span class="p">:</span> <span class="s2">"&lt;USER_ID&gt;"</span>
+<span class="p">});</span>
 </code></pre>
 <blockquote>
 <p>Example Response</p>
@@ -1417,6 +1465,15 @@ User created in this way has no password and is not able to log into the Zoom we
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">email</span><span class="o">=</span>user@company.com <span class="se">\</span>
     -d <span class="nv">login_type</span><span class="o">=</span>100
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">Zoom</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"zoomus"</span><span class="p">)({</span>
+    <span class="na">key</span> <span class="p">:</span> <span class="s2">"&lt;YOUR_API_KEY&gt;"</span><span class="p">,</span>
+    <span class="na">secret</span> <span class="p">:</span> <span class="s2">"&lt;YOUR_API_SECRET&gt;"</span>
+<span class="p">});</span>
+
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">getByEmail</span><span class="p">({</span>
+    <span class="na">email</span><span class="p">:</span> <span class="s2">"user@company.com"</span><span class="p">,</span>
+    <span class="na">login_type</span><span class="p">:</span> <span class="mi">100</span>
+<span class="p">});</span>
 </code></pre>
 <blockquote>
 <p>Example Response</p>
@@ -1493,6 +1550,16 @@ User created in this way has no password and is not able to log into the Zoom we
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span>unique_id
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">Zoom</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"zoomus"</span><span class="p">)({</span>
+    <span class="na">key</span> <span class="p">:</span> <span class="s2">"&lt;YOUR_API_KEY&gt;"</span><span class="p">,</span>
+    <span class="na">secret</span> <span class="p">:</span> <span class="s2">"&lt;YOUR_API_SECRET&gt;"</span>
+<span class="p">});</span>
+
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">update</span><span class="p">({</span>
+    <span class="na">email</span><span class="p">:</span> <span class="s2">"user@company.com"</span><span class="p">,</span>
+    <span class="na">login_type</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="na">id</span> <span class="p">:</span> <span class="s2">"&lt;USER_ID&gt;"</span>
+<span class="p">});</span>
 </code></pre>
 <blockquote>
 <p>Example Response</p>
@@ -1772,6 +1839,15 @@ User created in this way has no password and is not able to log into the Zoom we
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span>unique_id <span class="se">\</span>
     -d <span class="nv">pic_file</span><span class="o">=</span><span class="s2">"http://url.com/picture.jpg"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">Zoom</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"zoomus"</span><span class="p">)({</span>
+    <span class="na">key</span> <span class="p">:</span> <span class="s2">"&lt;YOUR_API_KEY&gt;"</span><span class="p">,</span>
+    <span class="na">secret</span> <span class="p">:</span> <span class="s2">"&lt;YOUR_API_SECRET&gt;"</span>
+<span class="p">});</span>
+
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">updatePassword</span><span class="p">({</span>
+    <span class="na">id</span> <span class="p">:</span> <span class="s2">"&lt;USER_ID&gt;"</span><span class="p">,</span>
+    <span class="na">pic_file</span> <span class="p">:</span> <span class="s2">"&lt;PIC_FILE&gt;"</span>
+<span class="p">});</span>
 </code></pre>
 <blockquote>
 <p>Example Response</p>
@@ -1850,6 +1926,14 @@ User created in this way has no password and is not able to log into the Zoom we
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span>unique_id
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">Zoom</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"zoomus"</span><span class="p">)({</span>
+    <span class="na">key</span> <span class="p">:</span> <span class="s2">"&lt;YOUR_API_KEY&gt;"</span><span class="p">,</span>
+    <span class="na">secret</span> <span class="p">:</span> <span class="s2">"&lt;YOUR_API_SECRET&gt;"</span>
+<span class="p">});</span>
+
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="k">delete</span><span class="p">({</span>
+    <span class="na">id</span> <span class="p">:</span> <span class="s2">"&lt;USER_ID&gt;"</span>
+<span class="p">});</span>
 </code></pre>
 <blockquote>
 <p>Example Response</p>
@@ -1937,6 +2021,15 @@ User created in this way has no password and is not able to log into the Zoom we
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">email</span><span class="o">=</span>user@company.com <span class="se">\</span>
     -d <span class="nb">type</span><span class="o">=</span>1
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">Zoom</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"zoomus"</span><span class="p">)({</span>
+    <span class="na">key</span> <span class="p">:</span> <span class="s2">"&lt;YOUR_API_KEY&gt;"</span><span class="p">,</span>
+    <span class="na">secret</span> <span class="p">:</span> <span class="s2">"&lt;YOUR_API_SECRET&gt;"</span>
+<span class="p">});</span>
+
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">ssoCreate</span><span class="p">({</span>
+    <span class="na">email</span> <span class="p">:</span> <span class="s2">"user@company.com"</span><span class="p">,</span>
+    <span class="na">type</span> <span class="p">:</span> <span class="mi">1</span>
+<span class="p">});</span>
 </code></pre>
 <blockquote>
 <p>Example Response</p>
@@ -2054,6 +2147,14 @@ User created in this way has no password and is not able to log into the Zoom we
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span>unique_id
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">Zoom</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"zoomus"</span><span class="p">)({</span>
+    <span class="na">key</span> <span class="p">:</span> <span class="s2">"&lt;YOUR_API_KEY&gt;"</span><span class="p">,</span>
+    <span class="na">secret</span> <span class="p">:</span> <span class="s2">"&lt;YOUR_API_SECRET&gt;"</span>
+<span class="p">});</span>
+
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">revokeToken</span><span class="p">({</span>
+    <span class="na">id</span> <span class="p">:</span> <span class="s2">"&lt;USER_ID&gt;"</span>
+<span class="p">});</span>
 </code></pre>
 <blockquote>
 <p>Example Response</p>
@@ -2099,6 +2200,15 @@ User created in this way has no password and is not able to log into the Zoom we
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span>unique_id <span class="se">\</span>
     -d <span class="nv">assistant_email</span><span class="o">=</span>user@company.com
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">Zoom</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"zoomus"</span><span class="p">)({</span>
+    <span class="na">key</span> <span class="p">:</span> <span class="s2">"&lt;YOUR_API_KEY&gt;"</span><span class="p">,</span>
+    <span class="na">secret</span> <span class="p">:</span> <span class="s2">"&lt;YOUR_API_SECRET&gt;"</span>
+<span class="p">});</span>
+
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">setAssistant</span><span class="p">({</span>
+    <span class="na">id</span> <span class="p">:</span> <span class="s2">"&lt;USER_ID"</span><span class="p">,</span>
+    <span class="na">assistant_email</span> <span class="p">:</span> <span class="s2">"user@company.com"</span>
+<span class="p">});</span>
 </code></pre>
 <blockquote>
 <p>Example Response</p>
@@ -2147,6 +2257,14 @@ User created in this way has no password and is not able to log into the Zoom we
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span>unique_id
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">Zoom</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"zoomus"</span><span class="p">)({</span>
+    <span class="na">key</span> <span class="p">:</span> <span class="s2">"&lt;YOUR_API_KEY&gt;"</span><span class="p">,</span>
+    <span class="na">secret</span> <span class="p">:</span> <span class="s2">"&lt;YOUR_API_SECRET&gt;"</span>
+<span class="p">});</span>
+
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">setAssistant</span><span class="p">({</span>
+    <span class="na">id</span> <span class="p">:</span> <span class="s2">"&lt;USER_ID"</span>
+<span class="p">});</span>
 </code></pre>
 <blockquote>
 <p>Example Response</p>
@@ -2277,6 +2395,14 @@ User created in this way has no password and is not able to log into the Zoom we
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">zpk</span><span class="o">=</span>&lt;USER_ZPK&gt; 
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">Zoom</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"zoomus"</span><span class="p">)({</span>
+    <span class="na">key</span> <span class="p">:</span> <span class="s2">"&lt;YOUR_API_KEY&gt;"</span><span class="p">,</span>
+    <span class="na">secret</span> <span class="p">:</span> <span class="s2">"&lt;YOUR_API_SECRET&gt;"</span>
+<span class="p">});</span>
+
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">checkZPK</span><span class="p">({</span>
+    <span class="na">zpk</span> <span class="p">:</span> <span class="s2">"&lt;USER_ZPK&gt;"</span>
+<span class="p">});</span>
 </code></pre>
 <blockquote>
 <p>Example Response</p>
@@ -7643,5 +7769,15 @@ User created in this way has no password and is not able to log into the Zoom we
           </div>
       </div>
     </div>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-100806380-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
   </body>
 </html>
