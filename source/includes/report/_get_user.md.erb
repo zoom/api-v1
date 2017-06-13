@@ -32,7 +32,7 @@ $ curl <%= config[:api_host] %>report/getuserreport \
   "meetings": [
     {
       "number": 111111111,
-      "topic": "meeting topic",
+      "topic": "<%= config[:ex_meeting_topic] %>",
       "start_time": "2013-02-11T08:18:09Z",
       "end_time": "2013-02-11T09:18:09Z",
       "duration": 60,
