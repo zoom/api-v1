@@ -18,6 +18,17 @@ $ curl <%= config[:api_host] %>report/getdailyreport \
     -d month=5
 ```
 
+```javascript
+<%= config[:ex_node_init] %>
+
+var report = {
+    year: 2017,
+    month: 6
+}
+
+Zoom.report.getDaily(report, <%= config[:ex_node_res] %>);
+```
+
 > Example Response
 
 ```json

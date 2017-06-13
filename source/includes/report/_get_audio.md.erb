@@ -22,6 +22,17 @@ $ curl <%= config[:api_host] %>report/getaudioreport \
     -d to="2013-02-11T08:18:09Z"
 ```
 
+```javascript
+<%= config[:ex_node_init] %>
+
+var report = {
+    from: "2013-01-11T08:18:09Z",
+    to: "2013-02-11T08:18:09Z"
+}
+
+Zoom.report.getAudio(report, <%= config[:ex_node_res] %>);
+```
+
 > Example Response
 
 ```json

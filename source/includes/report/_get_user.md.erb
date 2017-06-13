@@ -19,6 +19,18 @@ $ curl <%= config[:api_host] %>report/getuserreport \
     -d to="2013-02-11T08:18:09Z"
 ```
 
+```javascript
+<%= config[:ex_node_init] %>
+
+var report = {
+    user_id: "<%= config[:ex_uuid] %>",
+    from: "2013-01-11T08:18:09Z",
+    to: "2013-02-11T08:18:09Z"
+}
+
+Zoom.report.getUser(report, <%= config[:ex_node_res] %>);
+```
+
 > Example Response
 
 ```json
