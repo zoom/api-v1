@@ -1,4 +1,4 @@
-## Webinar Registration
+## Register for Webinar
 
 Register for a webinar
 
@@ -18,6 +18,19 @@ $ curl <%= config[:api_host] %>webinar/register \
     -d email="<%= config[:ex_email] %>" \
     -d first_name="<%= config[:ex_first_name] %>" \
     -d last_name="<%= config[:ex_last_name] %>"
+```
+
+```javascript
+<%= config[:ex_node_init] %>
+
+var registration = {
+    id: "<%= config[:ex_uuid] %>",
+    email: "<%= config[:ex_email] %>",
+    first_name: "<%= config[:ex_first_name] %>",
+    last_name: "<%= config[:ex_last_name] %>"
+}
+
+Zoom.webinar.register(registration, <%= config[:ex_node_res] %>);
 ```
 
 > Example Response

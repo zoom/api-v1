@@ -1,6 +1,6 @@
-## Approve Pending Approval Registrants
+## Approve Pending Registrants
 
-Approve pending approval registrants on Zoom Webinar.
+Approve pending registrants on Zoom Webinar.
 
 > Definition
 
@@ -17,6 +17,18 @@ $ curl <%= config[:api_host] %>webinar/registrants/approve \
     -d id="<%= config[:ex_uuid] %>" \
     -d host_id="<%= config[:ex_uuid] %>" \
     -d registrants_ids="<%= config[:ex_uuid] %>,<%= config[:ex_uuid] %>"
+```
+
+```javascript
+<%= config[:ex_node_init] %>
+
+var webinar = {
+    id: "<%= config[:ex_uuid] %>",
+    host_id: "<%= config[:ex_uuid] %>",
+    registrants_ids: "<%= config[:ex_uuid] %>,<%= config[:ex_uuid] %>"
+}
+
+Zoom.webinar.approveRegistration(webinar, <%= config[:ex_node_res] %>);
 ```
 
 > Example Response

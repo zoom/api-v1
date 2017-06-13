@@ -15,8 +15,20 @@ $ curl <%= config[:api_host] %>webinar/create \
     -d api_key=<%= config[:ex_api_key] %> \
     -d api_secret=<%= config[:ex_api_secret] %> \
     -d host_id="<%= config[:ex_uuid] %>" \
-    -d topic="Meeting Topid" \
+    -d topic="<%= config[:ex_meeting_topic] %>" \
     -d type=1
+```
+
+```javascript
+<%= config[:ex_node_init] %>
+
+var webinar = {
+    host_id: "<%= config[:ex_uuid] %>",
+    topic: "<%= config[:ex_meeting_topic] %>",
+    type: 1
+}
+
+Zoom.webinar.create(webinar, <%= config[:ex_node_res] %>);
 ```
 
 > Example Response

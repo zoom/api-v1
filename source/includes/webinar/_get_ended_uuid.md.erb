@@ -18,6 +18,17 @@ $ curl <%= config[:api_host] %>webinar/uuid/list \
     -d host_id="<%= config[:ex_uuid] %>"
 ```
 
+```javascript
+<%= config[:ex_node_init] %>
+
+var webinar = {
+    id: "<%= config[:ex_uuid] %>",
+    host_id: "<%= config[:ex_uuid] %>"
+}
+
+Zoom.webinar.getUUID(webinar, <%= config[:ex_node_res] %>);
+```
+
 > Example Response
 
 ```json

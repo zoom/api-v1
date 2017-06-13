@@ -8,6 +8,27 @@ Cancel Webinar Registration
 POST <%= config[:api_host] %>webinar/registration/cancel
 ```
 
+```shell
+$ curl <%= config[:api_host] %>webinar/registration/cancel \
+    -d api_key=<%= config[:ex_api_key] %> \
+    -d api_secret=<%= config[:ex_api_secret] %> \
+    -d id="<%= config[:ex_uuid] %>" \
+    -d host_id="<%= config[:ex_uuid] %>"
+    -d registrants_ids="<%= config[:ex_uuid] %>,<%= config[:ex_uuid] %>"
+```
+
+```javascript
+<%= config[:ex_node_init] %>
+
+var webinar = {
+    id: "<%= config[:ex_uuid] %>",
+    host_id: "<%= config[:ex_uuid] %>",
+    registrants_ids: "<%= config[:ex_uuid] %>,<%= config[:ex_uuid] %>"
+}
+
+Zoom.webinar.cancelRegistration(webinar, <%= config[:ex_node_res] %>);
+```
+
 > Example Response
 
 ```json

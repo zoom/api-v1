@@ -82,7 +82,7 @@ includes:
     - webinar/update
     - webinar/delete
     - webinar/end
-    - webinar/registration
+    - webinar/register
     - webinar/list_registration
     - webinar/get_registration
     - webinar/delete_registration

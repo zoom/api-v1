@@ -1,6 +1,6 @@
-## List Manually Approve Webinar Registrants info
+## List Webinar Registrants
 
-List manually approve webinar registrants on Zoom, include pending approval registrants and approved registrants.
+List webinar registrants on Zoom, include pending approval registrants and approved registrants.
 
 > Definition
 
@@ -16,6 +16,17 @@ $ curl <%= config[:api_host] %>webinar/registrants/list \
     -d api_secret=<%= config[:ex_api_secret] %> \
     -d id="<%= config[:ex_uuid] %>" \
     -d host_id="<%= config[:ex_uuid] %>"
+```
+
+```javascript
+<%= config[:ex_node_init] %>
+
+var webinar = {
+    id: "<%= config[:ex_uuid] %>",
+    host_id: "<%= config[:ex_uuid] %>"
+}
+
+Zoom.webinar.listRegistrations(webinar, <%= config[:ex_node_res] %>);
 ```
 
 > Example Response
