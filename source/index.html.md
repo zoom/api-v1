@@ -95,12 +95,12 @@ includes:
     - webinar/get_ended_qa
     
     - dashboard/index
-    - dashboard/get-meeting-list
-    - dashboard/get-meeting-detail
-    - dashboard/get-webinar-list
-    - dashboard/get-webinar-detail
-    - dashboard/list-zoom-rooms
-    - dashboard/get-zoom-room-detail
+    - dashboard/list-meeting
+    - dashboard/get-meeting
+    - dashboard/list-webinar
+    - dashboard/get-webinar
+    - dashboard/list-zoom-room
+    - dashboard/get-zoom-room
     - dashboard/get-user-qos
     - dashboard/get-crc-port-usage
     - dashboard/get-im
