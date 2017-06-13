@@ -19,6 +19,18 @@ $ curl <%= config[:api_host] %>meeting/update \
     -d type=1
 ```
 
+```javascript
+<%= config[:ex_node_init] %>
+
+var meeting = {
+    id: "<%= config[:ex_uuid] %>",
+    host_id: "<%= config[:ex_uuid] %>",
+    type: 1
+}
+
+Zoom.meeting.update(meeting, <%= config[:ex_node_res] %>);
+```
+
 > Example Response
 
 ```json

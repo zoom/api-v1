@@ -17,6 +17,16 @@ $ curl <%= config[:api_host] %>meeting/list \
     -d host_id=<%= config[:ex_uuid] %>
 ```
 
+```javascript
+<%= config[:ex_node_init] %>
+
+var meeting = {
+    host_id: "<%= config[:ex_uuid] %>"
+}
+
+Zoom.meeting.list(meeting, <%= config[:ex_node_res] %>);
+```
+
 > Example Response
 
 ```json

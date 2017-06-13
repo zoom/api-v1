@@ -18,6 +18,17 @@ $ curl <%= config[:api_host] %>meeting/delete \
     -d host_id=<%= config[:ex_uuid] %>
 ```
 
+```javascript
+<%= config[:ex_node_init] %>
+
+var meeting = {
+    id: "<%= config[:ex_uuid] %>",
+    host_id: "<%= config[:ex_uuid] %>"
+}
+
+Zoom.meeting.delete(meeting, <%= config[:ex_node_res] %>);
+```
+
 > Example Response
 
 ```json
