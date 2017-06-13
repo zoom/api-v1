@@ -21,6 +21,16 @@ $ curl <%= config[:api_host] %>ma/account/get \
     -d account_id=<%= config[:ex_uuid] %>
 ```
 
+```javascript
+<%= config[:ex_node_init] %>
+
+var account = {
+    account_id: "<%= config[:ex_uuid] %>"
+}
+
+Zoom.account.create(account, <%= config[:ex_node_res] %>);
+```
+
 > Example Response
 
 ```json

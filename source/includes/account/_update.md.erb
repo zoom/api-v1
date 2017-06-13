@@ -17,6 +17,16 @@ $ curl <%= config[:api_host] %>ma/account/update \
     -d account_id=<%= config[:ex_uuid] %> 
 ```
 
+```javascript
+<%= config[:ex_node_init] %>
+
+var account = {
+    account_id: "<%= config[:ex_uuid] %>"
+}
+
+Zoom.account.update(account, <%= config[:ex_node_res] %>);
+```
+
 > Example Response
 
 ```json

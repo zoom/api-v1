@@ -24,6 +24,19 @@ $ curl <%= config[:api_host] %>ma/account/create \
     -d password=<%= config[:ex_password] %>
 ```
 
+```javascript
+<%= config[:ex_node_init] %>
+
+var account = {
+    account_id: "<%= config[:ex_uuid] %>",
+    first_name: "<%= config[:ex_first_name] %>",
+    last_name: "<%= config[:ex_last_name] %>",
+    password: "<%= config[:ex_password] %>",
+}
+
+Zoom.account.create(account, <%= config[:ex_node_res] %>);
+```
+
 > Example Response
 
 ```json
