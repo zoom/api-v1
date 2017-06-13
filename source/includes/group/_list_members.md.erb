@@ -17,6 +17,15 @@ $ curl <%= config[:api_host] %>group/member/list \
     -d id=<%= config[:ex_uuid] %>
 ```
 
+```javascript
+<%= config[:ex_node_init] %>
+
+var group = {
+    id: "<%= config[:ex_uuid] %>"
+}
+
+Zoom.group.memberList(group, <%= config[:ex_node_res] %>);
+```
 
 > Example Response
 
