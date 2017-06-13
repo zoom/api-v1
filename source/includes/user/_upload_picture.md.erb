@@ -15,19 +15,18 @@ $ curl <%= config[:api_host] %>user/updatepassword \
     -d api_key=<%= config[:ex_api_key] %> \
     -d api_secret=<%= config[:ex_api_secret] %> \
     -d id=<%= config[:ex_uuid] %> \
-    -d pic_file="http://url.com/picture.jpg"
+    -d pic_file="https://domain.com/path/to/pic.jpg"
 ```
 
 ```javascript
-var Zoom = require("zoomus")({
-    key : "<YOUR_API_KEY>",
-    secret : "<YOUR_API_SECRET>"
-});
+<%= config[:ex_node_init] %>
 
-Zoom.user.updatePassword({
-    id : "<USER_ID>",
-    pic_file : "<PIC_FILE>"
-});
+var user = {
+    id : "<%= config[:ex_uuid] %>",
+    pic_file: "https://domain.com/path/to/pic.jpg"
+}
+
+Zoom.user.updatePicture(user, <%= config[:ex_node_res] %>);
 ```
 
 > Example Response

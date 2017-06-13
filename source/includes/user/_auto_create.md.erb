@@ -28,16 +28,15 @@ $ curl <%= config[:api_host] %>user/autocreate \
 ```
 
 ```javascript
-var Zoom = require("zoomus")({
-    key : "<YOUR_API_KEY>",
-    secret : "<YOUR_API_SECRET>"
-});
+<%= config[:ex_node_init] %>
 
-Zoom.user.autocreate({
-    email: "user.email@company.com",
-    type: 2,
-    password: "<SECURE_PASSWORD>"
-});
+var user = {
+    email: "<%= config[:ex_email] %>",
+    type: 1,
+    password: "<%= config[:ex_password] %>"
+}
+
+Zoom.user.autoCreate(user, <%= config[:ex_node_res] %>);
 ```
 
 > Example Response

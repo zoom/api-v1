@@ -21,15 +21,14 @@ $ curl <%= config[:api_host] %>user/ssocreate \
 ```
 
 ```javascript
-var Zoom = require("zoomus")({
-    key : "<YOUR_API_KEY>",
-    secret : "<YOUR_API_SECRET>"
-});
+<%= config[:ex_node_init] %>
 
-Zoom.user.ssoCreate({
-    email : "user@company.com",
-    type : 1
-});
+var user = {
+    email: "<%= config[:ex_email] %>",
+    type: 1
+}
+
+Zoom.user.ssoCreate(user, <%= config[:ex_node_res] %>);
 ```
 
 > Example Response

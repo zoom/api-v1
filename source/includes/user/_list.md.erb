@@ -17,12 +17,9 @@ $ curl <%= config[:api_host] %>user/list \
 ```
 
 ```javascript
-var Zoom = require("zoomus")({
-    key : "<YOUR_API_KEY>",
-    secret : "<YOUR_API_SECRET>"
-});
+<%= config[:ex_node_init] %>
 
-Zoom.user.list();
+Zoom.user.list(<%= config[:ex_node_res] %>);
 ```
 
 > Example Response

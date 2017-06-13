@@ -19,17 +19,10 @@ $ curl <%= config[:api_host] %>user/getbyemail \
 ```
 
 ```javascript
-var Zoom = require("zoomus")({
-    key : "<YOUR_API_KEY>",
-    secret : "<YOUR_API_SECRET>"
-});
+<%= config[:ex_node_init] %>
 
-Zoom.user.getByEmail({
-    email: "user@company.com",
-    login_type: 100
-});
+Zoom.user.getByEmail({email: '<%= config[:ex_email] %>', type: 100}, <%= config[:ex_node_res] %>);
 ```
-
 
 > Example Response
 

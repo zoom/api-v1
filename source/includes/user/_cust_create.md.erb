@@ -27,15 +27,14 @@ $ curl <%= config[:api_host] %>user/custcreate \
 ```
 
 ```javascript
-var Zoom = require("zoomus")({
-    key : "<YOUR_API_KEY>",
-    secret : "<YOUR_API_SECRET>"
-});
+<%= config[:ex_node_init] %>
 
-Zoom.user.custcreate({
-    email: "user.email@company.com",
-    type: 2
-});
+var user = {
+    email: "<%= config[:ex_email] %>",
+    type: 1
+}
+
+Zoom.user.custCreate(user, <%= config[:ex_node_res] %>);
 ```
 
 > Example Response

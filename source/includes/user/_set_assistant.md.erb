@@ -19,15 +19,14 @@ $ curl <%= config[:api_host] %>user/assistant/set \
 ```
 
 ```javascript
-var Zoom = require("zoomus")({
-    key : "<YOUR_API_KEY>",
-    secret : "<YOUR_API_SECRET>"
-});
+<%= config[:ex_node_init] %>
 
-Zoom.user.setAssistant({
-    id : "<USER_ID",
-    assistant_email : "user@company.com"
-});
+var user = {
+    host_email: "<%= config[:ex_email] %>",
+    assistant_email: "assistant_<%= config[:ex_email] %>"
+}
+
+Zoom.user.setAssistant(user, <%= config[:ex_node_res] %>);
 ```
 
 > Example Response

@@ -17,6 +17,16 @@ $ curl <%= config[:api_host] %>user/scheduleforhost/list \
     -d id=<%= config[:ex_uuid] %>
 ```
 
+```javascript
+<%= config[:ex_node_init] %>
+
+var user = {
+    host_email: "<%= config[:ex_email] %>"
+}
+
+Zoom.user.schedulers(user, <%= config[:ex_node_res] %>);
+```
+
 > Example Response
 
 ```json

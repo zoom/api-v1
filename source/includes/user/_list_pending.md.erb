@@ -17,12 +17,9 @@ $ curl <%= config[:api_host] %>user/pending \
 ```
 
 ```javascript
-var Zoom = require("zoomus")({
-    key : "<YOUR_API_KEY>",
-    secret : "<YOUR_API_SECRET>"
-});
+<%= config[:ex_node_init] %>
 
-Zoom.user.pending();
+Zoom.user.listPending(<%= config[:ex_node_res] %>);
 ```
 
 > Example Response

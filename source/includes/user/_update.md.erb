@@ -18,16 +18,15 @@ $ curl <%= config[:api_host] %>user/update \
 ```
 
 ```javascript
-var Zoom = require("zoomus")({
-    key : "<YOUR_API_KEY>",
-    secret : "<YOUR_API_SECRET>"
-});
+<%= config[:ex_node_init] %>
 
-Zoom.user.update({
-    email: "user@company.com",
-    login_type: 100,
-    id : "<USER_ID>"
-});
+var user = {
+    id : "<%= config[:ex_uuid] %>",
+    first_name: "<%= config[:ex_first_name] %>",
+    lasst_name: "<%= config[:ex_last_name] %>"
+}
+
+Zoom.user.update(user, <%= config[:ex_node_res] %>);
 ```
 
 > Example Response

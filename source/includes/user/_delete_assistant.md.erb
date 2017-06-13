@@ -18,14 +18,13 @@ $ curl <%= config[:api_host] %>user/assistant/delete \
 ```
 
 ```javascript
-var Zoom = require("zoomus")({
-    key : "<YOUR_API_KEY>",
-    secret : "<YOUR_API_SECRET>"
-});
+<%= config[:ex_node_init] %>
 
-Zoom.user.setAssistant({
-    id : "<USER_ID"
-});
+var user = {
+    host_email: "<%= config[:ex_email] %>"
+}
+
+Zoom.user.deleteAssistant(user, <%= config[:ex_node_res] %>);
 ```
 
 > Example Response

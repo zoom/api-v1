@@ -18,14 +18,9 @@ $ curl <%= config[:api_host] %>user/revoketoken \
 ```
 
 ```javascript
-var Zoom = require("zoomus")({
-    key : "<YOUR_API_KEY>",
-    secret : "<YOUR_API_SECRET>"
-});
+<%= config[:ex_node_init] %>
 
-Zoom.user.revokeToken({
-    id : "<USER_ID>"
-});
+Zoom.user.revokeToken({id: '<%= config[:ex_uuid] %>'}, <%= config[:ex_node_res] %>);
 ```
 
 > Example Response
