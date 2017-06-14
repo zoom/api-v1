@@ -431,8 +431,8 @@ User will get an email sent from Zoom. There is a confirmation link in this emai
     <span class="na">type</span><span class="p">:</span> <span class="mi">1</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -710,8 +710,8 @@ This feature is disabled by default because of the security risk involved in cre
     <span class="na">password</span><span class="p">:</span> <span class="s2">"P@55w0rd"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">autoCreate</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">autoCreate</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -991,8 +991,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">type</span><span class="p">:</span> <span class="mi">1</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">custCreate</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">custCreate</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -1253,8 +1253,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">secret</span> <span class="p">:</span> <span class="s2">"your_api_secret"</span>
 <span class="p">});</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">list</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">list</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -1343,8 +1343,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">secret</span> <span class="p">:</span> <span class="s2">"your_api_secret"</span>
 <span class="p">});</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">listPending</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">listPending</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -1434,8 +1434,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">secret</span> <span class="p">:</span> <span class="s2">"your_api_secret"</span>
 <span class="p">});</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">get</span><span class="p">({</span><span class="na">id</span><span class="p">:</span> <span class="s1">'unique_id'</span><span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">get</span><span class="p">({</span><span class="na">id</span><span class="p">:</span> <span class="s1">'unique_id'</span><span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -1523,8 +1523,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">secret</span> <span class="p">:</span> <span class="s2">"your_api_secret"</span>
 <span class="p">});</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">getByEmail</span><span class="p">({</span><span class="na">email</span><span class="p">:</span> <span class="s1">'user@company.com'</span><span class="p">,</span> <span class="na">type</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">getByEmail</span><span class="p">({</span><span class="na">email</span><span class="p">:</span> <span class="s1">'user@company.com'</span><span class="p">,</span> <span class="na">type</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -1617,8 +1617,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">lasst_name</span><span class="p">:</span> <span class="s2">"Userton"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -1872,8 +1872,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">password</span><span class="p">:</span> <span class="s2">"P@55w0rd"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">updatePassword</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">updatePassword</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -1931,8 +1931,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">pic_file</span><span class="p">:</span> <span class="s2">"https://domain.com/path/to/pic.jpg"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">updatePicture</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">updatePicture</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -1984,8 +1984,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">secret</span> <span class="p">:</span> <span class="s2">"your_api_secret"</span>
 <span class="p">});</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">deactivate</span><span class="p">({</span><span class="na">id</span><span class="p">:</span> <span class="s1">'unique_id'</span><span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">deactivate</span><span class="p">({</span><span class="na">id</span><span class="p">:</span> <span class="s1">'unique_id'</span><span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -2033,8 +2033,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">secret</span> <span class="p">:</span> <span class="s2">"your_api_secret"</span>
 <span class="p">});</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="k">delete</span><span class="p">({</span><span class="na">id</span><span class="p">:</span> <span class="s1">'unique_id'</span><span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="k">delete</span><span class="p">({</span><span class="na">id</span><span class="p">:</span> <span class="s1">'unique_id'</span><span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -2087,8 +2087,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">secret</span> <span class="p">:</span> <span class="s2">"your_api_secret"</span>
 <span class="p">});</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">permanentDelete</span><span class="p">({</span><span class="na">id</span><span class="p">:</span> <span class="s1">'unique_id'</span><span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">permanentDelete</span><span class="p">({</span><span class="na">id</span><span class="p">:</span> <span class="s1">'unique_id'</span><span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -2149,8 +2149,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">type</span><span class="p">:</span> <span class="mi">1</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">ssoCreate</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">ssoCreate</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -2278,8 +2278,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">secret</span> <span class="p">:</span> <span class="s2">"your_api_secret"</span>
 <span class="p">});</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">revokeToken</span><span class="p">({</span><span class="na">id</span><span class="p">:</span> <span class="s1">'unique_id'</span><span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">revokeToken</span><span class="p">({</span><span class="na">id</span><span class="p">:</span> <span class="s1">'unique_id'</span><span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -2340,8 +2340,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">assistant_email</span><span class="p">:</span> <span class="s2">"assistant_user@company.com"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">setAssistant</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">setAssistant</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -2404,8 +2404,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">host_email</span><span class="p">:</span> <span class="s2">"user@company.com"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">deleteAssistant</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">deleteAssistant</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -2464,8 +2464,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">host_email</span><span class="p">:</span> <span class="s2">"user@company.com"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">schedulers</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">schedulers</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -2526,8 +2526,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">secret</span> <span class="p">:</span> <span class="s2">"your_api_secret"</span>
 <span class="p">});</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">checkEmail</span><span class="p">({</span><span class="na">email</span><span class="p">:</span> <span class="s2">"user@company.com"</span><span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">checkEmail</span><span class="p">({</span><span class="na">email</span><span class="p">:</span> <span class="s2">"user@company.com"</span><span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -2574,8 +2574,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">secret</span> <span class="p">:</span> <span class="s2">"your_api_secret"</span>
 <span class="p">});</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">checkZPK</span><span class="p">({</span><span class="na">zpk</span><span class="p">:</span> <span class="s2">"unique_zpk"</span><span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">checkZPK</span><span class="p">({</span><span class="na">zpk</span><span class="p">:</span> <span class="s2">"unique_zpk"</span><span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -2634,8 +2634,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">topic</span><span class="p">:</span> <span class="s2">"Meeting Topic"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">meeting</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">meeting</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">meeting</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">meeting</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -2795,8 +2795,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">host_id</span><span class="p">:</span> <span class="s2">"unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">meeting</span><span class="p">.</span><span class="nx">list</span><span class="p">(</span><span class="nx">meeting</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">meeting</span><span class="p">.</span><span class="nx">list</span><span class="p">(</span><span class="nx">meeting</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -2879,8 +2879,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">secret</span> <span class="p">:</span> <span class="s2">"your_api_secret"</span>
 <span class="p">});</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">meeting</span><span class="p">.</span><span class="nx">listLive</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">meeting</span><span class="p">.</span><span class="nx">listLive</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -2950,8 +2950,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">host_id</span><span class="p">:</span> <span class="s2">"unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">meeting</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">meeting</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">meeting</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">meeting</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -3041,8 +3041,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">type</span><span class="p">:</span> <span class="mi">1</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">meeting</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">meeting</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">meeting</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">meeting</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -3188,8 +3188,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">host_id</span><span class="p">:</span> <span class="s2">"unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">meeting</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="nx">meeting</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">meeting</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="nx">meeting</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -3251,8 +3251,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">host_id</span><span class="p">:</span> <span class="s2">"unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">meeting</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="nx">meeting</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">meeting</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="nx">meeting</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -3314,8 +3314,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">last_name</span><span class="p">:</span> <span class="s2">"Userton"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">meeting</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="nx">registration</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">meeting</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="nx">registration</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -3452,8 +3452,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">to</span><span class="p">:</span> <span class="s2">"2013-02-11T08:18:09Z"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">report</span><span class="p">.</span><span class="nx">getAccount</span><span class="p">(</span><span class="nx">report</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">report</span><span class="p">.</span><span class="nx">getAccount</span><span class="p">(</span><span class="nx">report</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -3542,8 +3542,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">to</span><span class="p">:</span> <span class="s2">"2013-02-11T08:18:09Z"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">report</span><span class="p">.</span><span class="nx">getAudio</span><span class="p">(</span><span class="nx">report</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">report</span><span class="p">.</span><span class="nx">getAudio</span><span class="p">(</span><span class="nx">report</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -3631,8 +3631,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">month</span><span class="p">:</span> <span class="mi">6</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">report</span><span class="p">.</span><span class="nx">getDaily</span><span class="p">(</span><span class="nx">report</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">report</span><span class="p">.</span><span class="nx">getDaily</span><span class="p">(</span><span class="nx">report</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -3701,8 +3701,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">to</span><span class="p">:</span> <span class="s2">"2013-02-11T08:18:09Z"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">report</span><span class="p">.</span><span class="nx">getUser</span><span class="p">(</span><span class="nx">report</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">report</span><span class="p">.</span><span class="nx">getUser</span><span class="p">(</span><span class="nx">report</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -3794,8 +3794,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">name</span><span class="p">:</span> <span class="s2">"Group Name"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">group</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">group</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -3844,8 +3844,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">secret</span> <span class="p">:</span> <span class="s2">"your_api_secret"</span>
 <span class="p">});</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">group</span><span class="p">.</span><span class="nx">list</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">group</span><span class="p">.</span><span class="nx">list</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -3900,8 +3900,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">id</span><span class="p">:</span> <span class="s2">"unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">group</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">group</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -3956,8 +3956,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">ame</span><span class="p">:</span> <span class="s2">"Group Name"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">group</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">group</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -4015,8 +4015,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">id</span><span class="p">:</span> <span class="s2">"unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">group</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">group</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -4069,8 +4069,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">id</span><span class="p">:</span> <span class="s2">"unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">group</span><span class="p">.</span><span class="nx">memberList</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">group</span><span class="p">.</span><span class="nx">memberList</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -4143,8 +4143,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">member_ids</span><span class="p">:</span> <span class="s2">"unique_id,unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">group</span><span class="p">.</span><span class="nx">memberAdd</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">group</span><span class="p">.</span><span class="nx">memberAdd</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -4203,8 +4203,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">member_ids</span><span class="p">:</span> <span class="s2">"unique_id,unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">group</span><span class="p">.</span><span class="nx">memberDelete</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">group</span><span class="p">.</span><span class="nx">memberDelete</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -4265,8 +4265,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">name</span><span class="p">:</span> <span class="s2">"Group Name"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">iMGroup</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">iMGroup</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -4334,8 +4334,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">secret</span> <span class="p">:</span> <span class="s2">"your_api_secret"</span>
 <span class="p">});</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">iMGroup</span><span class="p">.</span><span class="nx">list</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">iMGroup</span><span class="p">.</span><span class="nx">list</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -4394,8 +4394,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">id</span><span class="p">:</span> <span class="s2">"unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">iMGroup</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">iMGroup</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -4453,8 +4453,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">ame</span><span class="p">:</span> <span class="s2">"Group Name"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">iMGroup</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">iMGroup</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -4531,8 +4531,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">id</span><span class="p">:</span> <span class="s2">"unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">iMGroup</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">iMGroup</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -4585,8 +4585,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">id</span><span class="p">:</span> <span class="s2">"unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">iMGroup</span><span class="p">.</span><span class="nx">memberList</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">iMGroup</span><span class="p">.</span><span class="nx">memberList</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -4659,8 +4659,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">member_ids</span><span class="p">:</span> <span class="s2">"unique_id,unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">iMGroup</span><span class="p">.</span><span class="nx">memberAdd</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">iMGroup</span><span class="p">.</span><span class="nx">memberAdd</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -4719,8 +4719,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">member_ids</span><span class="p">:</span> <span class="s2">"unique_id,unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">iMGroup</span><span class="p">.</span><span class="nx">memberDelete</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">iMGroup</span><span class="p">.</span><span class="nx">memberDelete</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -4785,8 +4785,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">type</span><span class="p">:</span> <span class="mi">1</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">webinar</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">webinar</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -4939,8 +4939,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">host_id</span><span class="p">:</span> <span class="s2">"unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">list</span><span class="p">(</span><span class="nx">webinar</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">list</span><span class="p">(</span><span class="nx">webinar</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -5026,8 +5026,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">host_id</span><span class="p">:</span> <span class="s2">"unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">webinar</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">webinar</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -5109,8 +5109,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">host_id</span><span class="p">:</span> <span class="s2">"unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">webinar</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">webinar</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -5252,8 +5252,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">host_id</span><span class="p">:</span> <span class="s2">"unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="nx">webinar</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="nx">webinar</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -5315,8 +5315,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">host_id</span><span class="p">:</span> <span class="s2">"unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="nx">webinar</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="nx">webinar</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -5378,8 +5378,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">last_name</span><span class="p">:</span> <span class="s2">"Userton"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="nx">registration</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="nx">registration</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -5510,8 +5510,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">host_id</span><span class="p">:</span> <span class="s2">"unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">listRegistration</span><span class="p">(</span><span class="nx">webinar</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">listRegistration</span><span class="p">(</span><span class="nx">webinar</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -5594,8 +5594,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">host_id</span><span class="p">:</span> <span class="s2">"unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">getRegistration</span><span class="p">(</span><span class="nx">webinar</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">getRegistration</span><span class="p">(</span><span class="nx">webinar</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -5676,8 +5676,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">registrants_ids</span><span class="p">:</span> <span class="s2">"unique_id,unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">cancelRegistration</span><span class="p">(</span><span class="nx">webinar</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">cancelRegistration</span><span class="p">(</span><span class="nx">webinar</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -5743,8 +5743,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">host_id</span><span class="p">:</span> <span class="s2">"unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">listRegistrations</span><span class="p">(</span><span class="nx">webinar</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">listRegistrations</span><span class="p">(</span><span class="nx">webinar</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -5828,8 +5828,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">registrants_ids</span><span class="p">:</span> <span class="s2">"unique_id,unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">approveRegistration</span><span class="p">(</span><span class="nx">webinar</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">approveRegistration</span><span class="p">(</span><span class="nx">webinar</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -5891,8 +5891,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">host_id</span><span class="p">:</span> <span class="s2">"unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">listPanelists</span><span class="p">(</span><span class="nx">webinar</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">listPanelists</span><span class="p">(</span><span class="nx">webinar</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -5956,8 +5956,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">host_id</span><span class="p">:</span> <span class="s2">"unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">getUUID</span><span class="p">(</span><span class="nx">webinar</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">getUUID</span><span class="p">(</span><span class="nx">webinar</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -6019,8 +6019,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">host_id</span><span class="p">:</span> <span class="s2">"unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">getAttendees</span><span class="p">(</span><span class="nx">webinar</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">getAttendees</span><span class="p">(</span><span class="nx">webinar</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -6100,8 +6100,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">host_id</span><span class="p">:</span> <span class="s2">"unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">getPolls</span><span class="p">(</span><span class="nx">webinar</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">getPolls</span><span class="p">(</span><span class="nx">webinar</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -6176,8 +6176,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">host_id</span><span class="p">:</span> <span class="s2">"unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">getQuestions</span><span class="p">(</span><span class="nx">webinar</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">getQuestions</span><span class="p">(</span><span class="nx">webinar</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -6258,8 +6258,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">to</span><span class="p">:</span> <span class="s2">"2013-02-11T08:18:09Z"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">dashboard</span><span class="p">.</span><span class="nx">meetings</span><span class="p">(</span><span class="nx">dashboard</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">dashboard</span><span class="p">.</span><span class="nx">meetings</span><span class="p">(</span><span class="nx">dashboard</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -6353,8 +6353,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">type</span><span class="p">:</span> <span class="mi">1</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">dashboard</span><span class="p">.</span><span class="nx">meeting</span><span class="p">(</span><span class="nx">dashboard</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">dashboard</span><span class="p">.</span><span class="nx">meeting</span><span class="p">(</span><span class="nx">dashboard</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -6457,8 +6457,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">to</span><span class="p">:</span> <span class="s2">"2013-02-11T08:18:09Z"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">dashboard</span><span class="p">.</span><span class="nx">webinars</span><span class="p">(</span><span class="nx">dashboard</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">dashboard</span><span class="p">.</span><span class="nx">webinars</span><span class="p">(</span><span class="nx">dashboard</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -6552,8 +6552,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">type</span><span class="p">:</span> <span class="mi">1</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">dashboard</span><span class="p">.</span><span class="nx">webinar</span><span class="p">(</span><span class="nx">dashboard</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">dashboard</span><span class="p">.</span><span class="nx">webinar</span><span class="p">(</span><span class="nx">dashboard</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -6647,8 +6647,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">secret</span> <span class="p">:</span> <span class="s2">"your_api_secret"</span>
 <span class="p">});</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">dashboard</span><span class="p">.</span><span class="nx">rooms</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">dashboard</span><span class="p">.</span><span class="nx">rooms</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -6728,8 +6728,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">to</span><span class="p">:</span> <span class="s2">"2013-02-11T08:18:09Z"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">dashboard</span><span class="p">.</span><span class="nx">room</span><span class="p">(</span><span class="nx">dashboard</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">dashboard</span><span class="p">.</span><span class="nx">room</span><span class="p">(</span><span class="nx">dashboard</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -6855,8 +6855,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">type</span><span class="p">:</span> <span class="mi">1</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">dashboard</span><span class="p">.</span><span class="nx">qos</span><span class="p">(</span><span class="nx">dashboard</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">dashboard</span><span class="p">.</span><span class="nx">qos</span><span class="p">(</span><span class="nx">dashboard</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -6993,8 +6993,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">to</span><span class="p">:</span> <span class="s2">"2013-02-11T08:18:09Z"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">dashboard</span><span class="p">.</span><span class="nx">crc</span><span class="p">(</span><span class="nx">dashboard</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">dashboard</span><span class="p">.</span><span class="nx">crc</span><span class="p">(</span><span class="nx">dashboard</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -7064,8 +7064,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">to</span><span class="p">:</span> <span class="s2">"2013-02-11T08:18:09Z"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">dashboard</span><span class="p">.</span><span class="nx">im</span><span class="p">(</span><span class="nx">dashboard</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">dashboard</span><span class="p">.</span><span class="nx">im</span><span class="p">(</span><span class="nx">dashboard</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -7160,8 +7160,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">host_id</span><span class="p">:</span> <span class="s2">"unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">recording</span><span class="p">.</span><span class="nx">list</span><span class="p">(</span><span class="nx">recording</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">recording</span><span class="p">.</span><span class="nx">list</span><span class="p">(</span><span class="nx">recording</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -7346,8 +7346,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">meeting_id</span><span class="p">:</span> <span class="s2">"unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">recording</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">recording</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">recording</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">recording</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -7419,8 +7419,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">meeting_id</span><span class="p">:</span> <span class="s2">"unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">recording</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="nx">recording</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">recording</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="nx">recording</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -7484,8 +7484,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">to</span><span class="p">:</span> <span class="s2">"2013-02-11T08:18:09Z"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">chat</span><span class="p">.</span><span class="nx">list</span><span class="p">(</span><span class="nx">chat</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">chat</span><span class="p">.</span><span class="nx">list</span><span class="p">(</span><span class="nx">chat</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -7575,8 +7575,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">to</span><span class="p">:</span> <span class="s2">"2013-02-11T08:18:09Z"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">chat</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">chat</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">chat</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">chat</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -7674,8 +7674,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">password</span><span class="p">:</span> <span class="s2">"P@55w0rd"</span><span class="p">,</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">account</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">account</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">account</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">account</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -7792,8 +7792,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">secret</span> <span class="p">:</span> <span class="s2">"your_api_secret"</span>
 <span class="p">});</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">account</span><span class="p">.</span><span class="nx">list</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">account</span><span class="p">.</span><span class="nx">list</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -7854,8 +7854,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">account_id</span><span class="p">:</span> <span class="s2">"unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">account</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">account</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">account</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">account</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -7909,8 +7909,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">account_id</span><span class="p">:</span> <span class="s2">"unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">account</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">account</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">account</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">account</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -8022,8 +8022,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">account_id</span><span class="p">:</span> <span class="s2">"unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">account</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="nx">account</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">account</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="nx">account</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -8093,8 +8093,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">plan_base</span><span class="p">:</span> <span class="s2">"monthly"</span><span class="p">,</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">account</span><span class="p">.</span><span class="nx">planSubscribe</span><span class="p">(</span><span class="nx">account</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">account</span><span class="p">.</span><span class="nx">planSubscribe</span><span class="p">(</span><span class="nx">account</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -8284,8 +8284,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">plan</span><span class="p">:</span> <span class="s2">"webinar100_monthly"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">account</span><span class="p">.</span><span class="nx">planAdd</span><span class="p">(</span><span class="nx">account</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">account</span><span class="p">.</span><span class="nx">planAdd</span><span class="p">(</span><span class="nx">account</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -8341,8 +8341,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">account_id</span><span class="p">:</span> <span class="s2">"unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">account</span><span class="p">.</span><span class="nx">planGet</span><span class="p">(</span><span class="nx">account</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">account</span><span class="p">.</span><span class="nx">planGet</span><span class="p">(</span><span class="nx">account</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -8474,8 +8474,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">plan</span><span class="p">:</span> <span class="s2">"monthly"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">account</span><span class="p">.</span><span class="nx">planUpdate</span><span class="p">(</span><span class="nx">account</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">account</span><span class="p">.</span><span class="nx">planUpdate</span><span class="p">(</span><span class="nx">account</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -8536,8 +8536,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">plan</span><span class="p">:</span> <span class="s2">"monthly"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">account</span><span class="p">.</span><span class="nx">updateBilling</span><span class="p">(</span><span class="nx">account</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">account</span><span class="p">.</span><span class="nx">updateBilling</span><span class="p">(</span><span class="nx">account</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -8631,8 +8631,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">ip</span><span class="p">:</span> <span class="s2">"192.168.1.10"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">device</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">device</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">device</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">device</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -8694,8 +8694,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">secret</span> <span class="p">:</span> <span class="s2">"your_api_secret"</span>
 <span class="p">});</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">device</span><span class="p">.</span><span class="nx">list</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">device</span><span class="p">.</span><span class="nx">list</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -8762,8 +8762,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">id</span><span class="p">:</span> <span class="s2">"unique_id"</span><span class="p">,</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">device</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">device</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">device</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">device</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
@@ -8831,8 +8831,8 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">id</span><span class="p">:</span> <span class="s2">"unique_id"</span><span class="p">,</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">device</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="nx">device</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">device</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="nx">device</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
