@@ -18,6 +18,17 @@ $ curl <%= config[:api_host] %>user/assistant/set \
     -d assistant_email=<%= config[:ex_email] %>
 ```
 
+```javascript
+<%= config[:ex_node_init] %>
+
+var user = {
+    host_email: "<%= config[:ex_email] %>",
+    assistant_email: "assistant_<%= config[:ex_email] %>"
+}
+
+Zoom.user.setAssistant(user, <%= config[:ex_node_res] %>);
+```
+
 > Example Response
 
 ```json

@@ -17,6 +17,16 @@ $ curl <%= config[:api_host] %>h323/device/update \
     -d id=<%= config[:ex_uuid] %>
 ```
 
+```javascript
+<%= config[:ex_node_init] %>
+
+var device = {
+    id: "<%= config[:ex_uuid] %>",
+}
+
+Zoom.device.update(device, <%= config[:ex_node_res] %>);
+```
+
 > Example Response
 
 ```json

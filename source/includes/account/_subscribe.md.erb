@@ -26,6 +26,25 @@ $ curl <%= config[:api_host] %>ma/account/plan/subscribe \
     -d plan_base="monthly"
 ```
 
+```javascript
+<%= config[:ex_node_init] %>
+
+var account = {
+    account_id: "<%= config[:ex_uuid] %>",
+    first_name: "<%= config[:ex_first_name] %>",
+    last_name: "<%= config[:ex_last_name] %>",
+    phone_number: "<%= config[:4085555555] %>",
+    addres: "1234 Some Street",
+    city: "Zoomville",
+    country: "US",
+    state: "CA",
+    zip: "95037",
+    plan_base: "monthly",
+}
+
+Zoom.account.planSubscribe(account, <%= config[:ex_node_res] %>);
+```
+
 > Example Response
 
 ```json

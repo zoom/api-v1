@@ -18,6 +18,16 @@ $ curl <%= config[:api_host] %>group/member/add \
     -d member_ids="<%= config[:ex_uuid] %>,<%= config[:ex_uuid] %>"
 ```
 
+```javascript
+<%= config[:ex_node_init] %>
+
+var group = {
+    id: "<%= config[:ex_uuid] %>",
+    member_ids: "<%= config[:ex_uuid] %>,<%= config[:ex_uuid] %>"
+}
+
+Zoom.iMGroup.memberAdd(group, <%= config[:ex_node_res] %>);
+```
 
 > Example Response
 

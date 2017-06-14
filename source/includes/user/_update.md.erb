@@ -17,6 +17,18 @@ $ curl <%= config[:api_host] %>user/update \
     -d id=<%= config[:ex_uuid] %>
 ```
 
+```javascript
+<%= config[:ex_node_init] %>
+
+var user = {
+    id : "<%= config[:ex_uuid] %>",
+    first_name: "<%= config[:ex_first_name] %>",
+    lasst_name: "<%= config[:ex_last_name] %>"
+}
+
+Zoom.user.update(user, <%= config[:ex_node_res] %>);
+```
+
 > Example Response
 
 ```json

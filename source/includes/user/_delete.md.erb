@@ -17,6 +17,12 @@ $ curl <%= config[:api_host] %>user/delete \
     -d id=<%= config[:ex_uuid] %>
 ```
 
+```javascript
+<%= config[:ex_node_init] %>
+
+Zoom.user.delete({id: '<%= config[:ex_uuid] %>'}, <%= config[:ex_node_res] %>);
+```
+
 > Example Response
 
 ```json

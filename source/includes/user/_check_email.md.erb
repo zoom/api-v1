@@ -17,6 +17,12 @@ $ curl <%= config[:api_host] %>user/checkemail \
     -d email=<%= config[:ex_email] %>
 ```
 
+```javascript
+<%= config[:ex_node_init] %>
+
+Zoom.user.checkEmail({email: "<%= config[:ex_email] %>"}, <%= config[:ex_node_res] %>);
+```
+
 > Example Response
 
 ```json

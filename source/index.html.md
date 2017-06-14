@@ -3,6 +3,7 @@ title: Zoom REST API
 
 language_tabs:
   - shell: curl
+  - javascript: Node
 
 toc_footers:
   - <a href='https://zoom.us/developer'>Zoom Developers</a>
@@ -81,7 +82,7 @@ includes:
     - webinar/update
     - webinar/delete
     - webinar/end
-    - webinar/registration
+    - webinar/register
     - webinar/list_registration
     - webinar/get_registration
     - webinar/delete_registration
@@ -94,12 +95,12 @@ includes:
     - webinar/get_ended_qa
     
     - dashboard/index
-    - dashboard/get-meeting-list
-    - dashboard/get-meeting-detail
-    - dashboard/get-webinar-list
-    - dashboard/get-webinar-detail
-    - dashboard/list-zoom-rooms
-    - dashboard/get-zoom-room-detail
+    - dashboard/list-meeting
+    - dashboard/get-meeting
+    - dashboard/list-webinar
+    - dashboard/get-webinar
+    - dashboard/list-zoom-room
+    - dashboard/get-zoom-room
     - dashboard/get-user-qos
     - dashboard/get-crc-port-usage
     - dashboard/get-im

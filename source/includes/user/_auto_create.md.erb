@@ -27,6 +27,18 @@ $ curl <%= config[:api_host] %>user/autocreate \
     -d password=<%= config[:ex_password] %>
 ```
 
+```javascript
+<%= config[:ex_node_init] %>
+
+var user = {
+    email: "<%= config[:ex_email] %>",
+    type: 1,
+    password: "<%= config[:ex_password] %>"
+}
+
+Zoom.user.autoCreate(user, <%= config[:ex_node_res] %>);
+```
+
 > Example Response
 
 ```json

@@ -15,7 +15,18 @@ $ curl <%= config[:api_host] %>user/updatepassword \
     -d api_key=<%= config[:ex_api_key] %> \
     -d api_secret=<%= config[:ex_api_secret] %> \
     -d id=<%= config[:ex_uuid] %> \
-    -d pic_file="http://url.com/picture.jpg"
+    -d pic_file="https://domain.com/path/to/pic.jpg"
+```
+
+```javascript
+<%= config[:ex_node_init] %>
+
+var user = {
+    id : "<%= config[:ex_uuid] %>",
+    pic_file: "https://domain.com/path/to/pic.jpg"
+}
+
+Zoom.user.updatePicture(user, <%= config[:ex_node_res] %>);
 ```
 
 > Example Response

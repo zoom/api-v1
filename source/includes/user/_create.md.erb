@@ -26,6 +26,17 @@ $ curl <%= config[:api_host] %>user/create \
     -d type=1
 ```
 
+```javascript
+<%= config[:ex_node_init] %>
+
+var user = {
+    email: "<%= config[:ex_email] %>",
+    type: 1
+}
+
+Zoom.user.create(user, <%= config[:ex_node_res] %>);
+```
+
 > Example Response
 
 ```json

@@ -17,6 +17,16 @@ $ curl <%= config[:api_host] %>recording/delete \
     -d meeting_id=<%= config[:ex_uuid] %>
 ```
 
+```javascript
+<%= config[:ex_node_init] %>
+
+var recording = {
+    meeting_id: "<%= config[:ex_uuid] %>"
+}
+
+Zoom.recording.delete(recording, <%= config[:ex_node_res] %>);
+```
+
 > Example Response
 
 ```json

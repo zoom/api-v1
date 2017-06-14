@@ -684,7 +684,7 @@
 
                         // Determines the index of the closest anchor
                         self.cachedAnchors.each(function(idx) {
-                            if (self.cachedHeights[idx] - scrollTop < 0) {
+                            if (self.cachedHeights[idx] - scrollTop + 50 < 0) {
                                 closestAnchorIdx = idx;
                             } else {
                                 return false;

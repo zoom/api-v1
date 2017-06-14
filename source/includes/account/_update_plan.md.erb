@@ -23,6 +23,18 @@ $ curl <%= config[:api_host] %>ma/account/plan/update \
     -d plan="yearly"
 ```
 
+```javascript
+<%= config[:ex_node_init] %>
+
+var account = {
+    account_id: "<%= config[:ex_uuid] %>",
+    type: 1,
+    plan: "monthly"
+}
+
+Zoom.account.planUpdate(account, <%= config[:ex_node_res] %>);
+```
+
 > Example Response
 
 ```json

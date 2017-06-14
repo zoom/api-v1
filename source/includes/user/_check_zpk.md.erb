@@ -17,6 +17,12 @@ $ curl <%= config[:api_host] %>user/checkzpk \
     -d zpk=<USER_ZPK> 
 ```
 
+```javascript
+<%= config[:ex_node_init] %>
+
+Zoom.user.checkZPK({zpk: "unique_zpk"}, <%= config[:ex_node_res] %>);
+```
+
 > Example Response
 
 ```json

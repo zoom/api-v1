@@ -4,11 +4,23 @@ config[:deveoper_portal]    = 'https://zoom.us/developer'
 config[:ex_api_key]         = 'your_api_key'
 config[:ex_api_secret]      = 'your_api_secret'
 config[:ex_meeting_number]  = '123456789'
+config[:ex_meeting_topic]   = 'Meeting Topic'
 config[:ex_email]           = 'user@company.com'
 config[:ex_password]        = 'P@55w0rd'
 config[:ex_uuid]            = 'unique_id'
 config[:ex_first_name]      = 'Zoomie'
 config[:ex_last_name]       = 'Userton'
+config[:ex_node_init]       = 'var Zoom = require("zoomus")({
+    key : "your_api_ley",
+    secret : "your_api_secret"
+});'
+config[:ex_node_res]        = 'function(err, res){
+    if(err){
+      //handle error
+    } else {
+      console.log(res);
+    }
+}'
 
 # Markdown
 set :markdown_engine, :redcarpet

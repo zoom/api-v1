@@ -18,6 +18,11 @@ $ curl <%= config[:api_host] %>user/getbyemail \
     -d login_type=100
 ```
 
+```javascript
+<%= config[:ex_node_init] %>
+
+Zoom.user.getByEmail({email: '<%= config[:ex_email] %>', type: 100}, <%= config[:ex_node_res] %>);
+```
 
 > Example Response
 

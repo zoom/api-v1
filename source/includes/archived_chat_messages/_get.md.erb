@@ -20,6 +20,19 @@ $ curl <%= config[:api_host] %>chat/get \
     -d to="2-17-03-10"
 ```
 
+```javascript
+<%= config[:ex_node_init] %>
+
+var chat = {
+    access_token: "<%= config[:ex_uuid] %>",
+    session_id: "<%= config[:ex_uuid] %>",
+    from: "2013-01-11T08:18:09Z",
+    to: "2013-02-11T08:18:09Z"
+}
+
+Zoom.chat.get(chat, <%= config[:ex_node_res] %>);
+```
+
 > Example Response
 
 ```json

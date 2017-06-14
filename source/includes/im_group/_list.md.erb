@@ -16,6 +16,11 @@ $ curl <%= config[:api_host] %>im/group/list \
     -d api_secret=<%= config[:ex_api_secret] %>
 ```
 
+```javascript
+<%= config[:ex_node_init] %>
+
+Zoom.iMGroup.list(<%= config[:ex_node_res] %>);
+```
 
 > Example Response
 
