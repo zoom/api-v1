@@ -14,8 +14,8 @@ config[:ex_node_init]       = 'var Zoom = require("zoomus")({
     key : "your_api_ley",
     secret : "your_api_secret"
 });'
-config[:ex_node_res]        = 'function(err, res){
-    if(err){
+config[:ex_node_res]        = 'function(res){
+    if(res.error){
       //handle error
     } else {
       console.log(res);
