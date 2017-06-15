@@ -275,6 +275,18 @@ An API partner can create a user type with no password authentication with Zoom.
 API partner can also call the report API to get the meeting reports. To become an API partner, please sign up via <a href="https://zoom.us/plan/api" target="_blank">https://zoom.us/plan/api</a><br><br>
 </aside>
 
+<h2 id="api-libraries">API Libraries</h2>
+
+<p>Zoom has created a library for Node.js with more coming soon</p>
+
+<h3 id="node-js">Node.js</h3>
+
+<p>Install via <a href="https://www.npmjs.com/package/zoomus">npm</a></p>
+
+<p><code class="prettyprint">npm install zoomus</code></p>
+
+<p>View the <a href="https://zoom.github.io/api/?javascript">Node.js API Docs</a> and view the source on <a href="https://github.com/zoom/zoom-lib-node">Github</a></p>
+
           <h1 id="basics">Basics</h1>
 
 <p>All the REST API calls should be POST HTTP requests server-side. This request cannot be initiated on the web client using AJAX approaches.</p>
@@ -322,18 +334,6 @@ API partner can also call the report API to get the meeting reports. To become a
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>When getting a response from the server, you should first check the response body for the &ldquo;error&rdquo; section. The &ldquo;error&rdquo; section indicates this is a failed request, and then you can get the failed code and message from this section.</p>
-
-<h2 id="api-libraries">API Libraries</h2>
-
-<p>Zoom has created a library for Node.js with more coming soon</p>
-
-<h3 id="node-js">Node.js</h3>
-
-<p>Install via <a href="https://www.npmjs.com/package/zoomus">npm</a></p>
-
-<p><code class="prettyprint">npm install zoomus</code></p>
-
-<p>View the <a href="https://zoom.github.io/api/?javascript">Node.js API Docs</a> and view the source on <a href="https://github.com/zoom/zoom-lib-node">Github</a></p>
 
           <h1 id="webhooks">Webhooks</h1>
 
