@@ -4,14 +4,19 @@ List webinar registrants on Zoom, include pending approval registrants and appro
 
 > Definition
 
-```text
+```shell
 POST <%= config[:api_host] %>webinar/registrants/list
+```
+
+```javascript
+Zoom.webinar.listRegistrations();
 ```
 
 > Example Request
 
 ```shell
 $ curl <%= config[:api_host] %>webinar/registrants/list \
+    -X POST \
     -d api_key=<%= config[:ex_api_key] %> \
     -d api_secret=<%= config[:ex_api_secret] %> \
     -d id="<%= config[:ex_uuid] %>" \

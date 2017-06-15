@@ -4,14 +4,19 @@ Get a Zoom Room on Zoom via Zoom ID, return the Zoom Room info.
 
 > Definition
 
-```text
+```shell
 POST <%= config[:api_host] %>metrics/zoomroomdetail
+```
+
+```javascript
+Zoom.dashboard.room();
 ```
 
 > Example Request
 
 ```shell
 $ curl <%= config[:api_host] %>metrics/zoomroomdetail \
+    -X POST \
     -d api_key=<%= config[:ex_api_key] %> \
     -d api_secret=<%= config[:ex_api_secret] %> \
     -d id=<%= config[:ex_uuid] %> \

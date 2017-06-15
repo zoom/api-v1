@@ -4,14 +4,19 @@ Create a IM group on Zoom, return the new group info.
 
 > Definition
 
-```text
+```shell
 POST <%= config[:api_host] %>im/group/create
+```
+
+```javascript
+Zoom.imGroup.create();
 ```
 
 > Example Request
 
 ```shell
 $ curl <%= config[:api_host] %>im/group/create \
+    -X POST \
     -d api_key=<%= config[:ex_api_key] %> \
     -d api_secret=<%= config[:ex_api_secret] %> \
     -d name="New Group Test"
@@ -24,7 +29,7 @@ var group = {
     name: "Group Name"
 }
 
-Zoom.iMGroup.create(group, <%= config[:ex_node_res] %>);
+Zoom.imGroup.create(group, <%= config[:ex_node_res] %>);
 ```
 
 > Example Response

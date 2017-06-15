@@ -4,14 +4,19 @@ Check if the zpk is expired. The zpk is used to authenticate a user.
 
 > Definition
 
-```text
+```shell
 POST <%= config[:api_host] %>user/checkzpk
+```
+
+```javascript
+Zoom.user.checkZPK();
 ```
 
 > Example Request
 
 ```shell
 $ curl <%= config[:api_host] %>user/checkzpk \
+    -X POST \
     -d api_key=<%= config[:ex_api_key] %> \
     -d api_secret=<%= config[:ex_api_secret] %> \
     -d zpk=<USER_ZPK> 

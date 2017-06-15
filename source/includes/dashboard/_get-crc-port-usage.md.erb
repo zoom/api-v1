@@ -4,14 +4,19 @@ Get CRC Port usage hour by hour for a specified time period.
 
 > Definition
 
-```text
+```shell
 POST <%= config[:api_host] %>metrics/crc
+```
+
+```javascript
+Zoom.dashboard.crc();
 ```
 
 > Example Request
 
 ```shell
 $ curl <%= config[:api_host] %>metrics/crc \
+    -X POST \
     -d api_key=<%= config[:ex_api_key] %> \
     -d api_secret=<%= config[:ex_api_secret] %> \
     -d from="2015-03-12" \

@@ -4,14 +4,19 @@ List all IM groups on your Zoom account.
 
 > Definition
 
-```text
+```shell
 POST <%= config[:api_host] %>im/group/list
+```
+
+```javascript
+Zoom.imGroup.list();
 ```
 
 > Example Request
 
 ```shell
 $ curl <%= config[:api_host] %>im/group/list \
+    -X POST \
     -d api_key=<%= config[:ex_api_key] %> \
     -d api_secret=<%= config[:ex_api_secret] %>
 ```
@@ -19,7 +24,7 @@ $ curl <%= config[:api_host] %>im/group/list \
 ```javascript
 <%= config[:ex_node_init] %>
 
-Zoom.iMGroup.list(<%= config[:ex_node_res] %>);
+Zoom.imGroup.list(<%= config[:ex_node_res] %>);
 ```
 
 > Example Response

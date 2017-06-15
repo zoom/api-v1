@@ -12,14 +12,19 @@ This feature is disabled by default because of the security risk involved in cre
 
 > Definition
 
-```text
+```shell
 POST <%= config[:api_host] %>user/autocreate
+```
+
+```javascript
+Zoom.user.autoCreate();
 ```
 
 > Example Request
 
 ```shell
 $ curl <%= config[:api_host] %>user/autocreate \
+    -X POST \
     -d api_key=<%= config[:ex_api_key] %> \
     -d api_secret=<%= config[:ex_api_secret] %> \
     -d email="<%= config[:ex_email] %>" \

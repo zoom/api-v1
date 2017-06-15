@@ -4,14 +4,19 @@ Delete members of a IM group on Zoom.
 
 > Definition
 
-```text
+```shell
 POST <%= config[:api_host] %>im/group/member/delete
+```
+
+```javascript
+Zoom.imGroup.memberDelete();
 ```
 
 > Example Request
 
 ```shell
 $ curl <%= config[:api_host] %>im/group/member/delete \
+    -X POST \
     -d api_key=<%= config[:ex_api_key] %> \
     -d api_secret=<%= config[:ex_api_secret] %> \
     -d id="<%= config[:ex_uuid] %>" \
@@ -26,7 +31,7 @@ var group = {
     member_ids: "<%= config[:ex_uuid] %>,<%= config[:ex_uuid] %>"
 }
 
-Zoom.iMGroup.memberDelete(group, <%= config[:ex_node_res] %>);
+Zoom.imGroup.memberDelete(group, <%= config[:ex_node_res] %>);
 ```
 
 > Example Response

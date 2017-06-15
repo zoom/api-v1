@@ -4,14 +4,19 @@ Get ended webinar attendees
 
 > Definition
 
-```text
+```shell
 POST <%= config[:api_host] %>webinar/attendees/list
+```
+
+```javascript
+Zoom.webinar.getAttendees();
 ```
 
 > Example Request
 
 ```shell
 $ curl <%= config[:api_host] %>webinar/attendees/list \
+    -X POST \
     -d api_key=<%= config[:ex_api_key] %> \
     -d api_secret=<%= config[:ex_api_secret] %> \
     -d id="<%= config[:ex_uuid] %>" \

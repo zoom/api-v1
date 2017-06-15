@@ -4,14 +4,19 @@ Get a user on Zoom via user email address and login type, return the user info.
 
 > Definition
 
-```text
+```shell
 POST <%= config[:api_host] %>user/getbyemail
+```
+
+```javascript
+Zoom.user.getByEmail();
 ```
 
 > Example Request
 
 ```shell
 $ curl <%= config[:api_host] %>user/getbyemail \
+    -X POST \
     -d api_key=<%= config[:ex_api_key] %> \
     -d api_secret=<%= config[:ex_api_secret] %> \
     -d email=<%= config[:ex_email] %> \

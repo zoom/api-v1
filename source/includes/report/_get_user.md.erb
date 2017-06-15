@@ -4,14 +4,19 @@ Get user report for a specified period.
 
 > Definition
 
-```text
+```shell
 POST <%= config[:api_host] %>report/getuserreport
+```
+
+```javascript
+Zoom.report.getUser();
 ```
 
 > Example Request
 
 ```shell
 $ curl <%= config[:api_host] %>report/getuserreport \
+    -X POST \
     -d api_key=<%= config[:ex_api_key] %> \
     -d api_secret=<%= config[:ex_api_secret] %> \
     -d user_id=<%= config[:ex_uuid] %> \

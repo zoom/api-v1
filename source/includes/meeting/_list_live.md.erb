@@ -4,14 +4,19 @@ Lists the live meetings on Zoom.
 
 > Definition
 
-```text
+```shell
 POST <%= config[:api_host] %>meeting/live
+```
+
+```javascript
+Zoom.meeting.listLive();
 ```
 
 > Example Request
 
 ```shell
 $ curl <%= config[:api_host] %>meeting/live \
+    -X POST \
     -d api_key=<%= config[:ex_api_key] %> \
     -d api_secret=<%= config[:ex_api_secret] %> \
 ```

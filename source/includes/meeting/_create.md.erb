@@ -4,14 +4,19 @@ Create a meeting on Zoom, return the created meeting URL
 
 > Definition
 
-```text
+```shell
 POST <%= config[:api_host] %>meeting/create
+```
+
+```javascript
+Zoom.meeting.create();
 ```
 
 > Example Request
 
 ```shell
 $ curl <%= config[:api_host] %>meeting/create \
+    -X POST \
     -d api_key=<%= config[:ex_api_key] %> \
     -d api_secret=<%= config[:ex_api_secret] %> \
     -d host_id=<%= config[:ex_uuid] %> \

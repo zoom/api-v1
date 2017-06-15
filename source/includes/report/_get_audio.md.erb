@@ -8,14 +8,19 @@ Get user report for a specified period.
 
 > Definition
 
-```text
+```shell
 POST <%= config[:api_host] %>report/getaudioreport
+```
+
+```javascript
+Zoom.report.getAudio();
 ```
 
 > Example Request
 
 ```shell
 $ curl <%= config[:api_host] %>report/getaudioreport \
+    -X POST \
     -d api_key=<%= config[:ex_api_key] %> \
     -d api_secret=<%= config[:ex_api_secret] %> \
     -d from="2013-01-11T08:18:09Z" \

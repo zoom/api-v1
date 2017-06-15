@@ -4,14 +4,19 @@ Get a group on Zoom via ID, return the group info.
 
 > Definition
 
-```text
+```shell
 POST <%= config[:api_host] %>group/get
+```
+
+```javascript
+Zoom.group.get();
 ```
 
 > Example Request
 
 ```shell
 $ curl <%= config[:api_host] %>group/get \
+    -X POST \
     -d api_key=<%= config[:ex_api_key] %> \
     -d api_secret=<%= config[:ex_api_secret] %> \
     -d id=<%= config[:ex_uuid] %>

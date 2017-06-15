@@ -4,14 +4,19 @@ List all the upcoming registration-based Webinars on Zoom
 
 > Definition
 
-```text
+```shell
 POST <%= config[:api_host] %>webinar/list/registration
+```
+
+```javascript
+Zoom.webinar.listRegistration();
 ```
 
 > Example Request
 
 ```shell
 $ curl <%= config[:api_host] %>webinar/list/registration \
+    -X POST \
     -d api_key=<%= config[:ex_api_key] %> \
     -d api_secret=<%= config[:ex_api_secret] %> \
     -d host_id="<%= config[:ex_uuid] %>"

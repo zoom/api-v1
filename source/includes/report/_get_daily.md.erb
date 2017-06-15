@@ -4,14 +4,19 @@ Get daily report for one month, can only get daily report for recent 3 months.
 
 > Definition
 
-```text
+```shell
 POST <%= config[:api_host] %>report/getdailyreport
+```
+
+```javascript
+Zoom.report.getDaily();
 ```
 
 > Example Request
 
 ```shell
 $ curl <%= config[:api_host] %>report/getdailyreport \
+    -X POST \
     -d api_key=<%= config[:ex_api_key] %> \
     -d api_secret=<%= config[:ex_api_secret] %> \
     -d year=2013 \

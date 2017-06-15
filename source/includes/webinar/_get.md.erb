@@ -4,14 +4,19 @@ Get a Webinar on Zoom via Webinar ID, return the Webinar info
 
 > Definition
 
-```text
+```shell
 POST <%= config[:api_host] %>webinar/get
+```
+
+```javascript
+Zoom.webinar.get();
 ```
 
 > Example Request
 
 ```shell
 $ curl <%= config[:api_host] %>webinar/get \
+    -X POST \
     -d api_key=<%= config[:ex_api_key] %> \
     -d api_secret=<%= config[:ex_api_secret] %> \
     -d id="<%= config[:ex_uuid] %>" \

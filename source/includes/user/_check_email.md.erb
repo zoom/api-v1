@@ -4,14 +4,19 @@ Check if the user email exists.
 
 > Definition
 
-```text
+```shell
 POST <%= config[:api_host] %>user/checkemail
+```
+
+```javascript
+Zoom.user.checkEmail();
 ```
 
 > Example Request
 
 ```shell
 $ curl <%= config[:api_host] %>user/checkemail \
+    -X POST \
     -d api_key=<%= config[:ex_api_key] %> \
     -d api_secret=<%= config[:ex_api_secret] %> \
     -d email=<%= config[:ex_email] %>

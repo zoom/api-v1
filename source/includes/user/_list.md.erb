@@ -4,14 +4,19 @@ List all the users on Zoom
 
 > Definition
 
-```text
+```shell
 POST <%= config[:api_host] %>user/list
+```
+
+```javascript
+Zoom.user.list();
 ```
 
 > Example Request
 
 ```shell
 $ curl <%= config[:api_host] %>user/list \
+    -X POST \
     -d api_key=<%= config[:ex_api_key] %> \
     -d api_secret=<%= config[:ex_api_secret] %>
 ```

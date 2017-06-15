@@ -4,14 +4,19 @@ Add members to a group on Zoom.
 
 > Definition
 
-```text
+```shell
 POST <%= config[:api_host] %>group/member/add
+```
+
+```javascript
+Zoom.group.memberAdd();
 ```
 
 > Example Request
 
 ```shell
 $ curl <%= config[:api_host] %>group/member/add \
+    -X POST \
     -d api_key=<%= config[:ex_api_key] %> \
     -d api_secret=<%= config[:ex_api_secret] %> \
     -d id="<%= config[:ex_uuid] %>" \
