@@ -411,12 +411,14 @@ User will get an email sent from Zoom. There is a confirmation link in this emai
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/user/create
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/user/create
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">create</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/user/create <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">email</span><span class="o">=</span><span class="s2">"user@company.com"</span> <span class="se">\</span>
@@ -688,12 +690,14 @@ This feature is disabled by default because of the security risk involved in cre
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/user/autocreate
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/user/autocreate
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">autoCreate</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/user/autocreate <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">email</span><span class="o">=</span><span class="s2">"user@company.com"</span> <span class="se">\</span>
@@ -971,12 +975,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/user/custcreate
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/user/custcreate
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">custCreate</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/user/custcreate <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">email</span><span class="o">=</span><span class="s2">"user@company.com"</span> <span class="se">\</span>
@@ -1240,12 +1246,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/user/list
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/user/list
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">list</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/user/list <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">Zoom</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"zoomus"</span><span class="p">)({</span>
@@ -1330,12 +1338,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/user/pending
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/user/pending
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">listPending</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/user/pending <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">Zoom</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"zoomus"</span><span class="p">)({</span>
@@ -1420,12 +1430,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/user/get
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/user/get
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/user/get <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span>unique_id
@@ -1508,12 +1520,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/user/getbyemail
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/user/getbyemail
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">getByEmail</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/user/getbyemail <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">email</span><span class="o">=</span>user@company.com <span class="se">\</span>
@@ -1597,12 +1611,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/user/update
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/user/update
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">update</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/user/update <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span>unique_id
@@ -1852,12 +1868,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/user/updatepassword
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/user/updatepassword
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">updatePassword</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/user/updatepassword <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span>unique_id <span class="se">\</span>
@@ -1911,12 +1929,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/user/uploadpicture
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/user/uploadpicture
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">updatePicture</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/user/updatepassword <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span>unique_id <span class="se">\</span>
@@ -1970,12 +1990,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/user/deactivate
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/user/deactivate
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">deactivate</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/user/deactivate <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span>unique_id
@@ -2019,12 +2041,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/user/delete
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/user/delete
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="k">delete</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/user/delete <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span>unique_id
@@ -2073,12 +2097,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/user/permanentdelete
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/user/permanentdelete
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">permanentDelete</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/user/permanentdelete <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span>unique_id
@@ -2129,12 +2155,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/user/ssocreate
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/user/ssocreate
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">ssoCreate</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/user/ssocreate <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">email</span><span class="o">=</span>user@company.com <span class="se">\</span>
@@ -2264,12 +2292,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/user/revoketoken
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/user/revoketoken
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">revokeToken</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/user/revoketoken <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span>unique_id
@@ -2320,12 +2350,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/user/assistant/set
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/user/assistant/set
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">setAssistant</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/user/assistant/set <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span>unique_id <span class="se">\</span>
@@ -2386,12 +2418,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/user/assistant/delete
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/user/assistant/delete
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">deleteAssistant</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/user/assistant/delete <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span>unique_id
@@ -2446,12 +2480,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/user/scheduleforhost/list
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/user/scheduleforhost/list
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">schedulers</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/user/scheduleforhost/list <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span>unique_id
@@ -2512,12 +2548,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/user/checkemail
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/user/checkemail
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">checkEmail</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/user/checkemail <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">email</span><span class="o">=</span>user@company.com
@@ -2560,12 +2598,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/user/checkzpk
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/user/checkzpk
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">checkZPK</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/user/checkzpk <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">zpk</span><span class="o">=</span>&lt;USER_ZPK&gt; 
@@ -2612,12 +2652,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/meeting/create
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/meeting/create
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">meeting</span><span class="p">.</span><span class="nx">create</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/meeting/create <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">host_id</span><span class="o">=</span>unique_id <span class="se">\</span>
@@ -2777,12 +2819,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/meeting/list
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/meeting/list
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">meeting</span><span class="p">.</span><span class="nx">list</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/meeting/list <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">host_id</span><span class="o">=</span>unique_id
@@ -2866,12 +2910,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/meeting/live
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/meeting/live
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">meeting</span><span class="p">.</span><span class="nx">listLive</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/meeting/live <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">Zoom</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"zoomus"</span><span class="p">)({</span>
@@ -2930,12 +2976,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/meeting/get
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/meeting/get
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">meeting</span><span class="p">.</span><span class="nx">end</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/meeting/get <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span>unique_id <span class="se">\</span>
@@ -3019,12 +3067,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/meeting/update
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/meeting/update
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">meeting</span><span class="p">.</span><span class="nx">update</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/meeting/update <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span>unique_id <span class="se">\</span>
@@ -3168,12 +3218,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/meeting/delete
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/meeting/delete
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">meeting</span><span class="p">.</span><span class="k">delete</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/meeting/delete <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span>unique_id <span class="se">\</span>
@@ -3231,12 +3283,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/meeting/end
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/meeting/end
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">meeting</span><span class="p">.</span><span class="nx">end</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/meeting/end <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span>unique_id <span class="se">\</span>
@@ -3290,12 +3344,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/meeting/register
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/meeting/register
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">meeting</span><span class="p">.</span><span class="nx">register</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/meeting/register <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span>unique_id <span class="se">\</span>
@@ -3432,12 +3488,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/report/getaccountreport
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/report/getaccountreport
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">report</span><span class="p">.</span><span class="nx">getAccount</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/report/getaccountreport <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">from</span><span class="o">=</span><span class="s2">"2013-01-11T08:18:09Z"</span> <span class="se">\</span>
@@ -3522,12 +3580,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/report/getaudioreport
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/report/getaudioreport
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">report</span><span class="p">.</span><span class="nx">getAudio</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/report/getaudioreport <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">from</span><span class="o">=</span><span class="s2">"2013-01-11T08:18:09Z"</span> <span class="se">\</span>
@@ -3611,12 +3671,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/report/getdailyreport
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/report/getdailyreport
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">report</span><span class="p">.</span><span class="nx">getDaily</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/report/getdailyreport <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">year</span><span class="o">=</span>2013 <span class="se">\</span>
@@ -3679,12 +3741,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/report/getuserreport
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/report/getuserreport
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">report</span><span class="p">.</span><span class="nx">getUser</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/report/getuserreport <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">user_id</span><span class="o">=</span>unique_id <span class="se">\</span>
@@ -3776,12 +3840,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/group/create
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/group/create
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">group</span><span class="p">.</span><span class="nx">create</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/group/create <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">name</span><span class="o">=</span><span class="s2">"New Group Test"</span>
@@ -3831,12 +3897,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/group/list
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/group/list
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">group</span><span class="p">.</span><span class="nx">list</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/group/list <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">Zoom</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"zoomus"</span><span class="p">)({</span>
@@ -3882,12 +3950,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/group/get
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/group/get
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">group</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/group/get <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span>unique_id
@@ -3937,12 +4007,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/group/edit
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/group/edit
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">group</span><span class="p">.</span><span class="nx">update</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/group/edit <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span>unique_id
@@ -3997,12 +4069,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/group/delete
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/group/delete
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">group</span><span class="p">.</span><span class="k">delete</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/group/delete <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span>unique_id
@@ -4051,12 +4125,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/group/member/list
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/group/member/list
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">group</span><span class="p">.</span><span class="nx">memberList</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/group/member/list <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span>unique_id
@@ -4123,12 +4199,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/group/member/add
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/group/member/add
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">group</span><span class="p">.</span><span class="nx">memberAdd</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/group/member/add <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span><span class="s2">"unique_id"</span> <span class="se">\</span>
@@ -4183,12 +4261,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/group/member/delete
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/group/member/delete
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">group</span><span class="p">.</span><span class="nx">memberDelete</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/group/member/delete <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span><span class="s2">"unique_id"</span> <span class="se">\</span>
@@ -4247,12 +4327,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/im/group/create
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/im/group/create
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">imGroup</span><span class="p">.</span><span class="nx">create</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/im/group/create <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">name</span><span class="o">=</span><span class="s2">"New Group Test"</span>
@@ -4265,7 +4347,7 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">name</span><span class="p">:</span> <span class="s2">"Group Name"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">iMGroup</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">imGroup</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
     <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
@@ -4321,12 +4403,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/im/group/list
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/im/group/list
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">imGroup</span><span class="p">.</span><span class="nx">list</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/im/group/list <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">Zoom</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"zoomus"</span><span class="p">)({</span>
@@ -4334,7 +4418,7 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">secret</span> <span class="p">:</span> <span class="s2">"your_api_secret"</span>
 <span class="p">});</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">iMGroup</span><span class="p">.</span><span class="nx">list</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">imGroup</span><span class="p">.</span><span class="nx">list</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
     <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
@@ -4376,12 +4460,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/im/group/get
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/im/group/get
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">imGroup</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/im/group/get <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span>unique_id
@@ -4394,7 +4480,7 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">id</span><span class="p">:</span> <span class="s2">"unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">iMGroup</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">imGroup</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
     <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
@@ -4434,12 +4520,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/im/group/edit
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/im/group/edit
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">imGroup</span><span class="p">.</span><span class="nx">update</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/im/group/edit <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span>unique_id
@@ -4453,7 +4541,7 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">ame</span><span class="p">:</span> <span class="s2">"Group Name"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">iMGroup</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">imGroup</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
     <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
@@ -4513,12 +4601,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/im/group/delete
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/im/group/delete
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">imGroup</span><span class="p">.</span><span class="k">delete</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/im/group/delete <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span>unique_id
@@ -4531,7 +4621,7 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">id</span><span class="p">:</span> <span class="s2">"unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">iMGroup</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">imGroup</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
     <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
@@ -4567,12 +4657,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/im/group/member/list
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/im/group/member/list
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">imGroup</span><span class="p">.</span><span class="nx">memberList</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/im/group/member/list <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span>unique_id
@@ -4585,7 +4677,7 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">id</span><span class="p">:</span> <span class="s2">"unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">iMGroup</span><span class="p">.</span><span class="nx">memberList</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">imGroup</span><span class="p">.</span><span class="nx">memberList</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
     <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
@@ -4639,12 +4731,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/group/member/add
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/group/member/add
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">imGroup</span><span class="p">.</span><span class="nx">memberAdd</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/group/member/add <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span><span class="s2">"unique_id"</span> <span class="se">\</span>
@@ -4659,7 +4753,7 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">member_ids</span><span class="p">:</span> <span class="s2">"unique_id,unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">iMGroup</span><span class="p">.</span><span class="nx">memberAdd</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">imGroup</span><span class="p">.</span><span class="nx">memberAdd</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
     <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
@@ -4699,12 +4793,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/im/group/member/delete
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/im/group/member/delete
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">imGroup</span><span class="p">.</span><span class="nx">memberDelete</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/im/group/member/delete <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span><span class="s2">"unique_id"</span> <span class="se">\</span>
@@ -4719,7 +4815,7 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">member_ids</span><span class="p">:</span> <span class="s2">"unique_id,unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">iMGroup</span><span class="p">.</span><span class="nx">memberDelete</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">imGroup</span><span class="p">.</span><span class="nx">memberDelete</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
     <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
@@ -4763,12 +4859,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/webinar/create
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/webinar/create
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">create</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/webinar/create <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">host_id</span><span class="o">=</span><span class="s2">"unique_id"</span> <span class="se">\</span>
@@ -4921,12 +5019,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/webinar/list
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/webinar/list
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">list</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/webinar/list <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">host_id</span><span class="o">=</span><span class="s2">"unique_id"</span>
@@ -5006,12 +5106,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/webinar/get
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/webinar/get
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/webinar/get <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span><span class="s2">"unique_id"</span> <span class="se">\</span>
@@ -5089,12 +5191,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/webinar/update
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/webinar/update
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">update</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/webinar/update <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span><span class="s2">"unique_id"</span> <span class="se">\</span>
@@ -5232,12 +5336,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/webinar/delete
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/webinar/delete
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="k">delete</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/webinar/delete <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span><span class="s2">"unique_id"</span> <span class="se">\</span>
@@ -5295,12 +5401,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/webinar/end
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/webinar/end
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">end</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/webinar/end <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span><span class="s2">"unique_id"</span> <span class="se">\</span>
@@ -5354,12 +5462,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/webinar/register
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/webinar/register
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">register</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/webinar/register <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span><span class="s2">"unique_id"</span> <span class="se">\</span>
@@ -5492,12 +5602,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/webinar/list/registration
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/webinar/list/registration
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">listRegistration</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/webinar/list/registration <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">host_id</span><span class="o">=</span><span class="s2">"unique_id"</span>
@@ -5574,12 +5686,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/webinar/registration
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/webinar/registration
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">getRegistration</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/webinar/registration <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span><span class="s2">"unique_id"</span> <span class="se">\</span>
@@ -5658,8 +5772,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/webinar/registration/cancel
-</code></pre><pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/webinar/registration/cancel <span class="se">\</span>
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/webinar/registration/cancel
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">cancelRegistration</span><span class="p">();</span>
+</code></pre>
+<blockquote>
+<p>Example Request</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/webinar/registration/cancel <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span><span class="s2">"unique_id"</span> <span class="se">\</span>
@@ -5723,12 +5843,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/webinar/registrants/list
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/webinar/registrants/list
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">listRegistrations</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/webinar/registrants/list <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span><span class="s2">"unique_id"</span> <span class="se">\</span>
@@ -5806,12 +5928,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/webinar/registrants/approve
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/webinar/registrants/approve
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">approveRegistration</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/webinar/registrants/approve <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span><span class="s2">"unique_id"</span> <span class="se">\</span>
@@ -5871,12 +5995,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/webinar/panelists
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/webinar/panelists
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">listPanelists</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/webinar/panelists <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span><span class="s2">"unique_id"</span> <span class="se">\</span>
@@ -5936,12 +6062,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/webinar/uuid/list
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/webinar/uuid/list
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">getUUID</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/webinar/uuid/list <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span><span class="s2">"unique_id"</span> <span class="se">\</span>
@@ -5999,12 +6127,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/webinar/attendees/list
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/webinar/attendees/list
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">getAttendees</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/webinar/attendees/list <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span><span class="s2">"unique_id"</span> <span class="se">\</span>
@@ -6080,12 +6210,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/webinar/polls
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/webinar/polls
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">getPolls</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/webinar/polls <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span><span class="s2">"unique_id"</span> <span class="se">\</span>
@@ -6156,12 +6288,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/webinar/questions
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/webinar/questions
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">webinar</span><span class="p">.</span><span class="nx">getQuestions</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/webinar/questions <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span><span class="s2">"unique_id"</span> <span class="se">\</span>
@@ -6236,12 +6370,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/metrics/meetings
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/metrics/meetings
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">dashboard</span><span class="p">.</span><span class="nx">meetings</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/metrics/meetings <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nb">type</span><span class="o">=</span>1 <span class="se">\</span>
@@ -6333,12 +6469,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/metrics/meetingdetail
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/metrics/meetingdetail
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">dashboard</span><span class="p">.</span><span class="nx">meeting</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/metrics/meetingdetail <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">meeting_id</span><span class="o">=</span><span class="s2">"unique_id"</span> <span class="se">\</span>
@@ -6435,12 +6573,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/metrics/webinars
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/metrics/webinars
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">dashboard</span><span class="p">.</span><span class="nx">webinars</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/metrics/webinars <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nb">type</span><span class="o">=</span>1 <span class="se">\</span>
@@ -6532,12 +6672,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/metrics/webinardetail
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/metrics/webinardetail
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">dashboard</span><span class="p">.</span><span class="nx">webinar</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/metrics/webinardetail <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">meeting_id</span><span class="o">=</span>unique_id <span class="se">\</span>
@@ -6634,12 +6776,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/metrics/zoomrooms
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/metrics/zoomrooms
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">dashboard</span><span class="p">.</span><span class="nx">rooms</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/metrics/zoomrooms <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">Zoom</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"zoomus"</span><span class="p">)({</span>
@@ -6706,12 +6850,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/metrics/zoomroomdetail
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/metrics/zoomroomdetail
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">dashboard</span><span class="p">.</span><span class="nx">room</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/metrics/zoomroomdetail <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span>unique_id <span class="se">\</span>
@@ -6835,12 +6981,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/metrics/qos
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/metrics/qos
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">dashboard</span><span class="p">.</span><span class="nx">qos</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/metrics/qos <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">meeting_id</span><span class="o">=</span>unique_id <span class="se">\</span>
@@ -6973,12 +7121,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/metrics/crc
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/metrics/crc
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">dashboard</span><span class="p">.</span><span class="nx">crc</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/metrics/crc <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">from</span><span class="o">=</span><span class="s2">"2015-03-12"</span> <span class="se">\</span>
@@ -7044,12 +7194,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/metrics/im
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/metrics/im
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">dashboard</span><span class="p">.</span><span class="nx">im</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/metrics/im <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">from</span><span class="o">=</span><span class="s2">"2015-03-12"</span> <span class="se">\</span>
@@ -7142,12 +7294,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/recording/list
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/recording/list
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">recording</span><span class="p">.</span><span class="nx">list</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/recording/list <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">host_id</span><span class="o">=</span>unique_id
@@ -7243,12 +7397,13 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/mc/recording/list
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/mc/recording/list
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/mc/recording/list <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">host_id</span><span class="o">=</span>unique_id
@@ -7328,12 +7483,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/recording/get
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/recording/get
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">recording</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/recording/get <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">meeting_id</span><span class="o">=</span>unique_id
@@ -7401,12 +7558,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/recording/delete
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/recording/delete
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">recording</span><span class="p">.</span><span class="k">delete</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/recording/delete <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">meeting_id</span><span class="o">=</span>unique_id
@@ -7462,12 +7621,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/chat/list
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/chat/list
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">chat</span><span class="p">.</span><span class="nx">list</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/chat/list <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">access_token</span><span class="o">=</span>unique_id <span class="se">\</span>
@@ -7551,12 +7712,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/chat/get
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/chat/get
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">chat</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/chat/get <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">access_token</span><span class="o">=</span>unique_id <span class="se">\</span>
@@ -7650,12 +7813,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/ma/account/create
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/ma/account/create
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">account</span><span class="p">.</span><span class="nx">create</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/ma/account/create <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">account_id</span><span class="o">=</span>user@company.com <span class="se">\</span>
@@ -7779,12 +7944,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/ma/account/list
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/ma/account/list
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">account</span><span class="p">.</span><span class="nx">list</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/ma/account/list <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">Zoom</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"zoomus"</span><span class="p">)({</span>
@@ -7836,12 +8003,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST  https://api.zoom.us/v1/ma/account/get
+<pre class="highlight shell tab-shell"><code>POST  https://api.zoom.us/v1/ma/account/get
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">account</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/ma/account/get <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">account_id</span><span class="o">=</span>unique_id
@@ -7854,7 +8023,7 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">account_id</span><span class="p">:</span> <span class="s2">"unique_id"</span>
 <span class="p">}</span>
 
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">account</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">account</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+<span class="nx">Zoom</span><span class="p">.</span><span class="nx">account</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">account</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
     <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
       <span class="c1">//handle error</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
@@ -7891,12 +8060,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/ma/account/update
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/ma/account/update
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">account</span><span class="p">.</span><span class="nx">update</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/ma/account/update <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">account_id</span><span class="o">=</span>unique_id 
@@ -8004,12 +8175,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/ma/account/delete
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/ma/account/delete
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">account</span><span class="p">.</span><span class="k">delete</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/ma/account/delete <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">account_id</span><span class="o">=</span>unique_id
@@ -8057,12 +8230,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/ma/account/plan/subscribe
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/ma/account/plan/subscribe
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">account</span><span class="p">.</span><span class="nx">planSubscribe</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/ma/account/plan/subscribe <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">account_id</span><span class="o">=</span>unique_id <span class="se">\</span>
@@ -8264,12 +8439,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/ma/account/plan/add
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/ma/account/plan/add
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">account</span><span class="p">.</span><span class="nx">planAdd</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/ma/account/plan/add <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">account_id</span><span class="o">=</span>unique_id <span class="se">\</span>
@@ -8323,12 +8500,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/ma/account/plan/get
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/ma/account/plan/get
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">account</span><span class="p">.</span><span class="nx">planGet</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/ma/account/plan/get <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">account_id</span><span class="o">=</span>unique_id
@@ -8452,12 +8631,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/ma/account/plan/update
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/ma/account/plan/update
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">account</span><span class="p">.</span><span class="nx">planUpdate</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/ma/account/plan/update <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">account_id</span><span class="o">=</span>unique_id <span class="se">\</span>
@@ -8517,12 +8698,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/ma/account/billing/update
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/ma/account/billing/update
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">account</span><span class="p">.</span><span class="nx">updateBilling</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/ma/account/billing/update <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">account_id</span><span class="o">=</span>unique_id 
@@ -8611,12 +8794,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/h323/device/create
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/h323/device/create
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">device</span><span class="p">.</span><span class="nx">create</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/h323/device/create <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">name</span><span class="o">=</span><span class="s2">"New Device"</span> <span class="se">\</span>
@@ -8681,12 +8866,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/h323/device/list
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/h323/device/list
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">device</span><span class="p">.</span><span class="nx">list</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/h323/device/list <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">Zoom</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"zoomus"</span><span class="p">)({</span>
@@ -8744,12 +8931,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/h323/device/update
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/h323/device/update
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">device</span><span class="p">.</span><span class="nx">update</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/h323/device/update <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret
     -d <span class="nv">id</span><span class="o">=</span>unique_id
@@ -8813,12 +9002,14 @@ User created in this way has no password and is not able to log into the Zoom we
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.zoom.us/v1/h323/device/delete
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/h323/device/delete
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">device</span><span class="p">.</span><span class="k">delete</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/h323/device/delete <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
     -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
     -d <span class="nv">id</span><span class="o">=</span><span class="s2">"unique_id"</span>
