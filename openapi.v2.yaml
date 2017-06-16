@@ -1,0 +1,3872 @@
+swagger: '2.0'
+info:
+  title: Zoom REST API
+  description: >
+    Zoom exposes REST interfaces which allows the developers and solution
+    providers to manage meetings, users, recordings, settings and get usage
+    reports. These APIs will be useful when you as a solution provider, build
+    your own web portal to front end Zoom services and present as a login point
+    to your end users.
+
+
+    These management APIs are auto-enabled if you have a paid Zoom account. If
+    you don't have a zoom account, go ahead, create a free account and sign up
+    for a 60 days free trial of our developer platform.
+  version: 1.0.0
+host: api.zoom.us
+schemes:
+  - https
+basePath: /v1
+consumes:
+  - application/x-www-form-urlencoded
+produces:
+  - application/json
+  - application/xml
+paths:
+  /ma/account/plan/add:
+    post:
+      description: Add a plan for a sub account of the master account on Zoom.
+      parameters:
+        - in: formData
+          type: string
+          name: account_id
+          required: true
+          description: The sub account ID.
+        - in: formData
+          type: string
+          name: plan
+          required: true
+          description: 'Additional Plan. See [Plans](#plans) for more details'
+      responses:
+        '200':
+          description: Success
+  /ma/account/create:
+    post:
+      description: >-
+        Create a sub account of the master account on Zoom, return the created
+        sub account id and owner id.
+      parameters:
+        - in: formData
+          type: string
+          name: email
+          required: true
+          description: >-
+            A valid email address. It must be unique in Zoom service. If an
+            email address is existed, a "user existing" error message will be
+            return.
+        - in: formData
+          type: string
+          name: first_name
+          required: true
+          description: User’s first name.
+        - in: formData
+          type: string
+          name: last_name
+          required: true
+          description: User’s last name.
+        - in: formData
+          type: string
+          name: password
+          required: true
+          description: User’s password.
+        - in: formData
+          type: boolean
+          name: enable_share_rc
+          default: false
+          description: Enable Share Virtual Room Connector.
+        - in: formData
+          type: string
+          name: share_rc
+          description: 'Virtual Room Connector, multiple value separated by comma.'
+        - in: formData
+          type: boolean
+          name: enable_share_mc
+          default: false
+          description: Enable Share Meeting Connector.
+        - in: formData
+          type: string
+          name: share_mc
+          description: 'Meeting Connector, multiple value separated by comma.'
+        - in: formData
+          type: string
+          name: pay_mode
+          default: '1'
+          description: >-
+            Who will pay for this account? 0 means Sub Account Holders Pays, 1
+            means Master Account Holder Pays.
+        - in: formData
+          type: string
+          name: collection_method
+          default: '1'
+          description: >-
+            Collection Method? 0 means Automatic (billing online), 1 means
+            Manual (send invoice).
+        - in: formData
+          type: boolean
+          name: enable_pstn
+          default: true
+          description: 'The value should be true or false, by default is true.'
+        - in: formData
+          type: boolean
+          name: enable_enforce_login
+          default: false
+          description: Only signed-in users can join this meeting.
+        - in: formData
+          type: boolean
+          name: enable_enforce_login_sd
+          default: false
+          description: Only signed-in users with specified domains can join meetings.
+        - in: formData
+          type: string
+          name: enforce_login_domains
+          description: Domains of signed-in users.
+        - in: formData
+          type: string
+          name: meeting_capacity
+          description: 'Account’ meeting capacity, max of 100.'
+        - in: formData
+          type: boolean
+          name: disable_cmr_reminder
+          default: false
+          description: Disable cloud recording reminder.
+        - in: formData
+          type: boolean
+          name: enable_only_host_download_cmr
+          default: false
+          description: Enable Only the host can download cloud recordings.
+        - in: formData
+          type: boolean
+          name: enable_same_account_access_cmr
+          default: false
+          description: Enable Only users on my account can access cloud recordings.
+      responses:
+        '200':
+          description: Success
+  /ma/account/delete:
+    post:
+      description: Delete the sub account.
+      parameters:
+        - in: formData
+          type: string
+          name: account_id
+          required: true
+          description: The sub account ID.
+      responses:
+        '200':
+          description: Success
+  /ma/account/get:
+    post:
+      description: >-
+        Get a sub account of the master account on Zoom, return the created sub
+        account id and owner id.
+      parameters:
+        - in: formData
+          type: string
+          name: account_id
+          required: true
+          description: The sub account ID.
+      responses:
+        '200':
+          description: Success
+  /ma/account/plan/get:
+    post:
+      description: Get plans information for a sub account of the master account on Zoom.
+      parameters:
+        - in: formData
+          type: string
+          name: account_id
+          required: true
+          description: The sub account ID.
+      responses:
+        '200':
+          description: Success
+  /ma/account/list:
+    post:
+      description: List all the sub account under the master account.
+      parameters: []
+      responses:
+        '200':
+          description: Success
+  /ma/account/plan/subscribe:
+    post:
+      description: Subscribe plans for a sub account of the master account on Zoom.
+      parameters:
+        - in: formData
+          type: string
+          name: account_id
+          required: true
+          description: The sub account ID.
+        - in: formData
+          type: string
+          name: first_name
+          required: true
+          description: Sold To Contact’s first name.
+        - in: formData
+          type: string
+          name: last_name
+          required: true
+          description: Sold To Contact’s last name.
+        - in: formData
+          type: string
+          name: phone_number
+          required: true
+          description: Sold To Contact’s phone number.
+        - in: formData
+          type: string
+          name: address
+          required: true
+          description: Sold To Contact’s address.
+        - in: formData
+          type: string
+          name: apt
+          description: Sold To Contact’s Apt/Suite.
+        - in: formData
+          type: string
+          name: city
+          required: true
+          description: Sold To Contact’s city.
+        - in: formData
+          type: string
+          name: country
+          required: true
+          description: >-
+            Sold To Contact’s country. For this parameter value please refer to
+            the id value in country list JSON file
+        - in: formData
+          type: string
+          name: state
+          required: true
+          description: >-
+            Sold To Contact’s state. If country value is "US" or "CA", for this
+            parameter value please refer to the id value in state list JSON file
+        - in: formData
+          type: string
+          name: zip
+          required: true
+          description: Sold To Contact’s zip/postal.
+        - in: formData
+          type: string
+          name: plan_base
+          required: true
+          description: 'Base Plan.  See [Plans](#plans) for more details'
+        - in: formData
+          type: string
+          name: plan_zoom_rooms
+          description: 'Additional Zoom Rooms Plan.  See [Plans](#plans) for more details'
+        - in: formData
+          type: string
+          name: plan_room_connector
+          description: >-
+            Additional H.323/SIP Room Connector Plan.  See [Plans](#plans) for
+            more details
+        - in: formData
+          type: string
+          name: plan_large_meeting
+          description: 'Additional Large Meeting Plan.  See [Plans](#plans) for more details'
+        - in: formData
+          type: string
+          name: plan_webinar
+          description: 'Additional Webinar Plan.  See [Plans](#plans) for more details'
+        - in: formData
+          type: string
+          name: plan_recording
+          description: >-
+            Additional Cloud Recording Plan.  See [Plans](#plans) for more
+            details
+        - in: formData
+          type: string
+          name: plan_audio
+          description: >-
+            Additional Audio Conferencing Plan.  See [Plans](#plans) for more
+            details
+      responses:
+        '200':
+          description: Success
+  /ma/account/update:
+    post:
+      description: >-
+        Update a sub account of the master account on Zoom, return the updated
+        sub account id.
+      parameters:
+        - in: formData
+          type: string
+          name: account_id
+          required: true
+          description: The sub account ID.
+        - in: formData
+          type: string
+          name: enable_share_rc
+          description: Enable Share Virtual Room Connector.
+        - in: formData
+          type: string
+          name: share_rc
+          description: 'Virtual Room Connector, multiple value separated by comma.'
+        - in: formData
+          type: string
+          name: enable_share_mc
+          description: Enable Share Meeting Connector.
+        - in: formData
+          type: string
+          name: share_mc
+          description: 'Meeting Connector, multiple value separated by comma.'
+        - in: formData
+          type: string
+          name: pay_mode
+          description: >-
+            Who will pay for this account? 0 means Sub Account Holders Pays, 1
+            means Master Account Holder Pays.
+        - in: formData
+          type: string
+          name: collection_method
+          description: >-
+            Collection Method? 0 means Automatic (billing online), 1 means
+            Manual (send invoice).
+        - in: formData
+          type: boolean
+          name: enable_pstn
+          default: true
+          description: 'The value should be true or false, by default is true.'
+        - in: formData
+          type: boolean
+          name: enable_call_out
+          default: false
+          description: >-
+            The value should be true or false. If it is true, the user under
+            this account will follow MA call out type.
+        - in: formData
+          type: boolean
+          name: enable_enforce_login
+          default: false
+          description: Only signed-in users can join this meeting.
+        - in: formData
+          type: boolean
+          name: enable_enforce_login_sd
+          default: false
+          description: Only signed-in users with specified domains can join meetings.
+        - in: formData
+          type: string
+          name: enforce_login_domains
+          description: Domains of signed-in users.
+        - in: formData
+          type: string
+          name: meeting_capacity
+          description: 'Account’ meeting capacity, max of 100.'
+        - in: formData
+          type: boolean
+          name: disable_cmr_reminder
+          default: false
+          description: Disable cloud recording reminder.
+        - in: formData
+          type: boolean
+          name: enable_only_host_download_cmr
+          default: false
+          description: Enable Only the host can download cloud recordings.
+        - in: formData
+          type: boolean
+          name: enable_same_account_access_cmr
+          default: false
+          description: Enable Only users on my account can access cloud recordings.
+      responses:
+        '200':
+          description: Success
+  /ma/account/billing/update:
+    post:
+      description: >-
+        Update Billing Information for a sub account of the master account on
+        Zoom.
+      parameters:
+        - in: formData
+          type: string
+          name: account_id
+          required: true
+          description: The sub account ID.
+        - in: formData
+          type: string
+          name: first_name
+          description: Sold To Contact’s first name.
+        - in: formData
+          type: string
+          name: last_name
+          description: Sold To Contact’s last name.
+        - in: formData
+          type: string
+          name: phone_number
+          description: Sold To Contact’s phone number.
+        - in: formData
+          type: string
+          name: address
+          description: Sold To Contact’s address.
+        - in: formData
+          type: string
+          name: apt
+          description: Sold To Contact’s Apt/Suite.
+        - in: formData
+          type: string
+          name: city
+          description: Sold To Contact’s city.
+        - in: formData
+          type: string
+          name: country
+          description: >-
+            Sold To Contact’s country. For this parameter value please refer to
+            the id value in country list JSON file
+        - in: formData
+          type: string
+          name: state
+          description: >-
+            Sold To Contact’s state. If country value is "US" or "CA", for this
+            parameter value please refer to the id value in state list JSON file
+        - in: formData
+          type: string
+          name: zip
+          description: Sold To Contact’s zip/postal.
+      responses:
+        '200':
+          description: Success
+  /ma/account/plan/update:
+    post:
+      description: Update a plan for a sub account of the master account on Zoom.
+      parameters:
+        - in: formData
+          type: string
+          name: account_id
+          required: true
+          description: The sub account ID.
+        - in: formData
+          type: string
+          name: type
+          required: true
+          default: '1'
+          description: 'Plan Type. 1 means Base Plan, 2 means Additional Plan.'
+        - in: formData
+          type: string
+          name: plan
+          required: true
+          description: >-
+            A Base Plan or an Additional Plan. See [Plans](#plans) for more
+            details
+      responses:
+        '200':
+          description: Success
+  /chat/get:
+    post:
+      description: Get chat messages for a specified period.
+      parameters:
+        - in: formData
+          type: string
+          name: access_token
+          required: true
+          description: >-
+            Archived chat messages access token. Admin who has the view
+            privilege of Archived chat messages will get it.
+        - in: formData
+          type: string
+          name: session_id
+          required: true
+          description: Session Id of chat messages.
+        - in: formData
+          type: string
+          name: from
+          required: true
+          description: Start date.
+        - in: formData
+          type: string
+          name: to
+          required: true
+          description: End date.
+        - in: formData
+          type: string
+          name: page_size
+          default: '30'
+          description: >-
+            The amount of records returns within a single API call. Defaults to
+            30. Max of 30 records.
+        - in: formData
+          type: string
+          name: next_page_token
+          description: >-
+            Used to paginate through large result sets.  A next page token will
+            be returned whenever the set of available chat history list exceeds
+            100.  The expiration period is 30 minutes.
+      responses:
+        '200':
+          description: Success
+  /chat/list:
+    post:
+      description: Get chat history list for a specified time period.
+      parameters:
+        - in: formData
+          type: string
+          name: access_token
+          required: true
+          description: >-
+            Archived chat messages access token. Admin who has the view
+            privilege of Archived chat messages will get it.
+        - in: formData
+          type: string
+          name: from
+          required: true
+          description: Start date.
+        - in: formData
+          type: string
+          name: to
+          required: true
+          description: End date.
+        - in: formData
+          type: string
+          name: page_size
+          default: '30'
+          description: >-
+            The amount of records returns within a single API call. Defaults to
+            30. Max of 30 records.
+        - in: formData
+          type: string
+          name: email
+          description: Email query condition.
+        - in: formData
+          type: string
+          name: next_page_token
+          description: >-
+            Used to paginate through large result sets.  A next page token will
+            be returned whenever the set of available chat history list exceeds
+            100.  The expiration period is 30 minutes.
+      responses:
+        '200':
+          description: Success
+  /recording/delete:
+    post:
+      description: Delete recorded meeting either on Zoom cloud or on-premise.
+      parameters:
+        - in: formData
+          type: string
+          name: meeting_id
+          required: true
+          description: >-
+            The meeting ID. Example: ucc69C82Q5mTNyCRWE29Aw== Or
+            B9C73AF4-2F36-4399-9337-2091584DBD03
+        - in: formData
+          type: string
+          name: file_id
+          description: >-
+            The file ID, if given this, will only delete this one file, if not
+            given this, will delete all files of the meeting
+      responses:
+        '200':
+          description: Success
+  /recording/get:
+    post:
+      description: Get the recorded meeting on either Zoom cloud or on-prem.
+      parameters:
+        - in: formData
+          type: string
+          name: meeting_id
+          required: true
+          description: The meeting ID.
+      responses:
+        '200':
+          description: Success
+  /recording/list:
+    post:
+      description: List all the cloud recording meetings on Zoom.
+      parameters:
+        - in: formData
+          type: string
+          name: host_id
+          required: true
+          description: Meeting host user ID. Can be any user under this account.
+        - in: formData
+          type: string
+          name: meeting_number
+          description: The meeting number.
+        - in: formData
+          type: string
+          name: from
+          description: >-
+            The meeting start time after this date, MM/dd/yyyy hh:mm a. For
+            example: 11/05/2014 09:05 pm. Use the host’s time zone, if host has
+            not set time zone, will use GMT.
+        - in: formData
+          type: string
+          name: to
+          description: 'The meeting start time before this date, MM/dd/yyyy hh:mm a.'
+        - in: formData
+          type: string
+          name: page_size
+          default: '30'
+          description: >-
+            The amount of records returns within a single API call. Defaults to
+            30. Max of 300 meetings.
+        - in: formData
+          type: string
+          name: page_number
+          default: '1'
+          description: Current page number of returned records. Default to 1.
+      responses:
+        '200':
+          description: Success
+  /mc/recording/list:
+    post:
+      description: Lists all the cloud recordings meetings on a Meeting Connector
+      parameters:
+        - in: formData
+          type: string
+          name: host_id
+          required: true
+          description: Meeting host user ID. Can be any user under this account.
+        - in: formData
+          type: string
+          name: meeting_number
+          description: The meeting number.
+        - in: formData
+          type: string
+          name: from
+          description: >-
+            The meeting start time after this date, MM/dd/yyyy hh:mm a. For
+            example: 11/05/2014 09:05 pm. Use the host’s time zone, if host has
+            not set time zone, will use GMT.
+        - in: formData
+          type: string
+          name: to
+          description: 'The meeting start time before this date, MM/dd/yyyy hh:mm a.'
+        - in: formData
+          type: string
+          name: page_size
+          default: '30'
+          description: >-
+            The amount of records returns within a single API call. Defaults to
+            30. Max of 300 meetings.
+        - in: formData
+          type: string
+          name: page_number
+          default: '1'
+          description: Current page number of returned records. Default to 1.
+      responses:
+        '200':
+          description: Success
+  /metrics/crc:
+    post:
+      description: Get CRC Port usage hour by hour for a specified time period.
+      parameters:
+        - in: formData
+          type: string
+          name: from
+          required: true
+          description: Start date.
+        - in: formData
+          type: string
+          name: to
+          required: true
+          description: End date.
+      responses:
+        '200':
+          description: Success
+  /metrics/im:
+    post:
+      description: Get statistics of Zoom IM
+      parameters:
+        - in: formData
+          type: string
+          name: from
+          required: true
+          description: Start date.
+        - in: formData
+          type: string
+          name: to
+          required: true
+          description: End date.
+        - in: formData
+          type: string
+          name: page_size
+          default: '30'
+          description: >-
+            The amount of records returns within a single API call. Defaults to
+            30. Max of 30 records.
+        - in: formData
+          type: string
+          name: page_number
+          default: '1'
+          description: Current page number of returned records. Default to 1.
+      responses:
+        '200':
+          description: Success
+  /metrics/meetingdetail:
+    post:
+      description: Get live and past meeting details
+      parameters:
+        - in: formData
+          type: string
+          name: meeting_id
+          required: true
+          description: >-
+            The meeting ID Example: ucc69C82Q5mTNyCRWE29Aw== Or
+            B9C73AF4-2F36-4399-9337-2091584DBD03
+        - in: formData
+          type: string
+          name: type
+          required: true
+          description: Meeting type. 1 means live meeting. 2 means past meeting.
+        - in: formData
+          type: string
+          name: page_size
+          default: '30'
+          description: >-
+            The amount of records returns within a single API call. Defaults to
+            30. Max of 100 records.
+        - in: formData
+          type: string
+          name: page_number
+          default: '1'
+          description: Current page number of returned records. Default to 1.
+      responses:
+        '200':
+          description: Success
+  /metrics/qos:
+    post:
+      description: Get the users quality of service in a Zoom Meeting
+      parameters:
+        - in: formData
+          type: string
+          name: meeting_id
+          required: true
+          description: The meeting ID.
+        - in: formData
+          type: string
+          name: type
+          required: true
+          description: Meeting type. 1 means live meeting. 2 means past meeting.
+        - in: formData
+          type: string
+          name: user_id
+          description: The user ID to get user qos.
+        - in: formData
+          type: string
+          name: page_size
+          default: '10'
+          description: >-
+            The amount of records returns within a single API call. Defaults to
+            10. Max of 10 records.
+        - in: formData
+          type: string
+          name: page_number
+          default: '1'
+          description: Current page number of returned records. Default to 1.
+      responses:
+        '200':
+          description: Success
+  /metrics/webinardetail:
+    post:
+      description: Get live and past webinar details
+      parameters:
+        - in: formData
+          type: string
+          name: meeting_id
+          required: true
+          description: >-
+            The meeting ID Example: ucc69C82Q5mTNyCRWE29Aw== Or
+            B9C73AF4-2F36-4399-9337-2091584DBD03
+        - in: formData
+          type: string
+          name: type
+          required: true
+          description: Meeting type. 1 means live webinar. 2 means past webinar.
+        - in: formData
+          type: string
+          name: page_size
+          default: '30'
+          description: >-
+            The amount of records returns within a single API call. Defaults to
+            30. Max of 100 records.
+        - in: formData
+          type: string
+          name: page_number
+          default: '1'
+          description: Current page number of returned records. Default to 1.
+      responses:
+        '200':
+          description: Success
+  /metrics/zoomroomdetail:
+    post:
+      description: 'Get a Zoom Room on Zoom via Zoom ID, return the Zoom Room info.'
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          required: true
+          description: >-
+            The zoom room ID. Example: ucc69C82Q5mTNyCRWE29Aw== Or
+            B9C73AF4-2F36-4399-9337-2091584DBD03
+        - in: formData
+          type: string
+          name: from
+          required: true
+          description: Start date.
+        - in: formData
+          type: string
+          name: to
+          required: true
+          description: End date.
+        - in: formData
+          type: string
+          name: page_size
+          default: '30'
+          description: >-
+            The amount of records returns within a single API call. Defaults to
+            30. Max of 30 records.
+        - in: formData
+          type: string
+          name: page_number
+          default: '1'
+          description: Current page number of returned records. Default to 1.
+      responses:
+        '200':
+          description: Success
+  /metrics/meetings:
+    post:
+      description: Get Live Meetings and past meetings for a specified period
+      parameters:
+        - in: formData
+          type: string
+          name: type
+          required: true
+          default: '1'
+          description: Meeting list type. 1 means live meetings. 2 means past meetings.
+        - in: formData
+          type: string
+          name: from
+          required: true
+          description: Start date. Only for past meetings.
+        - in: formData
+          type: string
+          name: to
+          required: true
+          description: End date. Only for past meetings.
+        - in: formData
+          type: string
+          name: page_size
+          default: '30'
+          description: >-
+            The amount of records returns within a single API call. Defaults to
+            30. Max of 100 meetings.
+        - in: formData
+          type: string
+          name: page_number
+          default: '1'
+          description: Current page number of returned records. Default to 1.
+      responses:
+        '200':
+          description: Success
+  /metrics/webinars:
+    post:
+      description: Get live webinars and past webinars for a specified period.
+      parameters:
+        - in: formData
+          type: string
+          name: type
+          required: true
+          default: '1'
+          description: Webinar list type. 1 means live webinars. 2 means past webinars.
+        - in: formData
+          type: string
+          name: from
+          required: true
+          description: Start date. Only for past webinars.
+        - in: formData
+          type: string
+          name: to
+          required: true
+          description: End date. Only for past webinars.
+        - in: formData
+          type: string
+          name: page_size
+          default: '30'
+          description: >-
+            The amount of records returns within a single API call. Defaults to
+            30. Max of 100 webinars.
+        - in: formData
+          type: string
+          name: page_number
+          default: '1'
+          description: Current page number of returned records. Default to 1.
+      responses:
+        '200':
+          description: Success
+  /metrics/zoomrooms:
+    post:
+      description: List all Zoom Rooms on Zoom.
+      parameters:
+        - in: formData
+          type: string
+          name: page_size
+          default: '30'
+          description: >-
+            The amount of records returns within a single API call. Defaults to
+            30. Max of 30 records.
+        - in: formData
+          type: string
+          name: page_number
+          default: '1'
+          description: Current page number of returned records. Default to 1.
+      responses:
+        '200':
+          description: Success
+  /h323/device/create:
+    post:
+      description: Create a H.323/SIP Device on your Zoom account.
+      parameters:
+        - in: formData
+          type: string
+          name: name
+          required: true
+          description: Display Name.
+        - in: formData
+          type: string
+          name: ip
+          required: true
+          description: IP Address or H.323 Extension.
+        - in: formData
+          type: string
+          name: protocol_type
+          default: '1'
+          description: 'Protocol type. 1 means H.323, 2 means SIP.'
+        - in: formData
+          type: string
+          name: encryption_type
+          default: '2'
+          description: 'Encryption type. 0 means No, 1 means Yes, 2 means Auto.'
+      responses:
+        '200':
+          description: Success
+  /h323/device/delete:
+    post:
+      description: Delete a H.323/SIP Device on your Zoom account.
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          required: true
+          description: Device ID.
+      responses:
+        '200':
+          description: Success
+  /h323/device/list:
+    post:
+      description: List H.323/SIP Devices on your Zoom account.
+      parameters:
+        - in: formData
+          type: string
+          name: page_size
+          default: '30'
+          description: >-
+            The amount of records returns within a single API call. Defaults to
+            30.
+        - in: formData
+          type: string
+          name: page_number
+          default: '1'
+          description: Current page number of returned records. Default to 1.
+      responses:
+        '200':
+          description: Success
+  /h323/device/update:
+    post:
+      description: Update a H.323/SIP Device on your Zoom account.
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          required: true
+          description: Device ID.
+        - in: formData
+          type: string
+          name: name
+          description: Display Name.
+        - in: formData
+          type: string
+          name: ip
+          description: IP Address or H.323 Extension.
+        - in: formData
+          type: string
+          name: protocol_type
+          default: '1'
+          description: 'Protocol type. 1 means H.323, 2 means SIP.'
+        - in: formData
+          type: string
+          name: encryption_type
+          default: '2'
+          description: 'Encryption type. 0 means No, 1 means Yes, 2 means Auto.'
+      responses:
+        '200':
+          description: Success
+  /group/member/add:
+    post:
+      description: Add members to a group on Zoom.
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          required: true
+          description: Group ID.
+        - in: formData
+          type: string
+          name: member_ids
+          required: true
+          description: 'The member IDs, separated by comma'
+      responses:
+        '200':
+          description: Success
+  /group/create:
+    post:
+      description: 'Create a group on Zoom, return the new group info.'
+      parameters:
+        - in: formData
+          type: string
+          name: name
+          required: true
+          description: 'Group name, must be unique in one account.'
+      responses:
+        '200':
+          description: Success
+  /group/delete:
+    post:
+      description: 'Delete a group on Zoom, return the deleted group ID.'
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          required: true
+          description: Group ID.
+      responses:
+        '200':
+          description: Success
+  /group/member/delete:
+    post:
+      description: Delete members of a group on Zoom.
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          required: true
+          description: Group ID.
+        - in: formData
+          type: string
+          name: member_ids
+          required: true
+          description: 'The member IDs, separated by comma'
+      responses:
+        '200':
+          description: Success
+  /group/get:
+    post:
+      description: 'Get a group on Zoom via ID, return the group info.'
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          required: true
+          description: Group ID.
+      responses:
+        '200':
+          description: Success
+  /group/list:
+    post:
+      description: List all groups on your Zoom account.
+      parameters: []
+      responses:
+        '200':
+          description: Success
+  /group/member/list:
+    post:
+      description: Lists the members of a group on Zoom.
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          required: true
+          description: Group ID.
+        - in: formData
+          type: string
+          name: page_size
+          default: '30'
+          description: >-
+            The amount of records returns within a single API call. Defaults to
+            30.
+        - in: formData
+          type: string
+          name: page_number
+          default: '1'
+          description: Current page number of returned records. Default to 1.
+      responses:
+        '200':
+          description: Success
+  /group/edit:
+    post:
+      description: 'Edit a group on Zoom, return the new group info.'
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          required: true
+          description: Group ID.
+        - in: formData
+          type: string
+          name: name
+          description: 'Group name, must be unique in one account.'
+      responses:
+        '200':
+          description: Success
+  /im/group/create:
+    post:
+      description: 'Create a IM group on Zoom, return the new group info.'
+      parameters:
+        - in: formData
+          type: string
+          name: name
+          required: true
+          description: 'Group name, must be unique in one account.'
+        - in: formData
+          type: string
+          name: type
+          default: Normal
+          description: >-
+            Group type, Normal: normal group, Restricted: Restricted group,
+            Shared: Shared group.
+        - in: formData
+          type: boolean
+          name: option_search_by_domain
+          default: false
+          description: Others in the same email domain can search members.
+        - in: formData
+          type: boolean
+          name: option_search_by_account
+          default: false
+          description: Others under same account can search members.
+        - in: formData
+          type: boolean
+          name: option_search_by_ma
+          default: false
+          description: >-
+            Others under same master account, including all sub accounts can
+            search members.
+      responses:
+        '200':
+          description: Success
+  /im/group/delete:
+    post:
+      description: 'Delete a IM group on Zoom, return the deleted group ID.'
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          required: true
+          description: Group ID.
+      responses:
+        '200':
+          description: Success
+  /im/group/member/delete:
+    post:
+      description: Delete members of a IM group on Zoom.
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          required: true
+          description: Group ID.
+        - in: formData
+          type: string
+          name: member_ids
+          required: true
+          description: 'The member IDs, separated by comma'
+      responses:
+        '200':
+          description: Success
+  /im/group/get:
+    post:
+      description: 'Get a IM group on Zoom via ID, return the group info.'
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          required: true
+          description: Group ID.
+      responses:
+        '200':
+          description: Success
+  /im/group/list:
+    post:
+      description: List all IM groups on your Zoom account.
+      parameters: []
+      responses:
+        '200':
+          description: Success
+  /im/group/member/list:
+    post:
+      description: Lists the members of a IM group on Zoom.
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          required: true
+          description: Group ID.
+        - in: formData
+          type: string
+          name: page_size
+          default: '30'
+          description: >-
+            The amount of records returns within a single API call. Defaults to
+            30.
+        - in: formData
+          type: string
+          name: page_number
+          default: '1'
+          description: Current page number of returned records. Default to 1.
+      responses:
+        '200':
+          description: Success
+  /im/group/edit:
+    post:
+      description: 'Edit a IM group on Zoom, return the new group info.'
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          required: true
+          description: Group ID.
+        - in: formData
+          type: string
+          name: name
+          description: 'Group name, must be unique in one account.'
+        - in: formData
+          type: string
+          name: type
+          default: Normal
+          description: >-
+            Group type, Normal: normal group, Restricted: Restricted group,
+            Shared: Shared group.
+        - in: formData
+          type: boolean
+          name: option_search_by_domain
+          default: false
+          description: Others in the same email domain can search members.
+        - in: formData
+          type: boolean
+          name: option_search_by_account
+          default: false
+          description: Others under same account can search members.
+        - in: formData
+          type: boolean
+          name: option_search_by_ma
+          default: false
+          description: >-
+            Others under same master account, including all sub accounts can
+            search members.
+      responses:
+        '200':
+          description: Success
+  /meeting/create:
+    post:
+      description: 'Create a meeting on Zoom, return the created meeting URL'
+      parameters:
+        - in: formData
+          type: string
+          name: host_id
+          required: true
+          description: >-
+            Meeting host user ID. Can be any user under this account. Cannot be
+            updated after creation.
+        - in: formData
+          type: string
+          name: type
+          required: true
+          default: '2'
+          description: >-
+            Meeting type: 1 means instant meeting (Only used for host to start
+            it as soon as created). 2 means normal scheduled meeting. 3 means a
+            recurring meeting with no fixed time. 8 means a recurring meeting
+            with fixed time.
+        - in: formData
+          type: string
+          name: topic
+          required: true
+          description: Meeting topic. Max of 300 characters.
+        - in: formData
+          type: string
+          name: start_time
+          description: >-
+            Meeting start time in ISO datetime format. For scheduled meeting and
+            recurring meeting with fixed time. Should be UTC time, such as
+            2012-11-25T12:00:00Z.
+        - in: formData
+          type: string
+          name: duration
+          description: Meeting duration (minutes). For scheduled meeting only.
+        - in: formData
+          type: string
+          name: timezone
+          description: >-
+            Timezone to format start_time, like "America/Los_Angeles". For
+            scheduled meeting only. For this parameter value please refer to the
+            id value in timezone list JSON file.
+        - in: formData
+          type: string
+          name: password
+          default: ' 10 characters'
+          description: >-
+            Meeting password. Password may only contain the following
+            characters: [a-z A-Z 0-9 @ - _
+        - in: formData
+          type: string
+          name: recurrence
+          description: >-
+            Recurrence Meeting Settings. For recurring meeting with fixed time
+            only. See [Recurrence Object](#recurrence-object) for more details.
+        - in: formData
+          type: boolean
+          name: option_registration
+          default: false
+          description: Registration required.
+        - in: formData
+          type: string
+          name: registration_type
+          default: '1'
+          description: >-
+            Registration type. 1 means Attendees register once and can attend
+            any of the occurrences, 2 means Attendees need to register for each
+            occurrence to attend, 3 means Attendees register once and can choose
+            one or more occurrences to attend. For recurring meeting with fixed
+            time only.
+        - in: formData
+          type: boolean
+          name: option_jbh
+          default: false
+          description: >-
+            Join meeting before host start the meeting. Only for scheduled or
+            recurring meetings.
+        - in: formData
+          type: string
+          name: option_start_type
+          default: video
+          description: Meeting start type. Can be "video" or "screen_share". (deprecated)
+        - in: formData
+          type: boolean
+          name: option_host_video
+          default: true
+          description: Start video when host join meeting.
+        - in: formData
+          type: boolean
+          name: option_participants_video
+          default: true
+          description: Start video when participants join meeting.
+        - in: formData
+          type: boolean
+          name: option_cn_meeting
+          default: false
+          description: Host meeting in China.
+        - in: formData
+          type: boolean
+          name: option_in_meeting
+          default: false
+          description: Host meeting in India.
+        - in: formData
+          type: string
+          name: option_audio
+          default: both
+          description: 'Meeting audio options. Can be "both", "telephony", "voip".'
+        - in: formData
+          type: boolean
+          name: option_enforce_login
+          default: false
+          description: Only signed-in users can join this meeting.
+        - in: formData
+          type: string
+          name: option_enforce_login_domains
+          description: Only signed-in users with specified domains can join meetings.
+        - in: formData
+          type: string
+          name: option_alternative_hosts
+          description: Alternative hosts.
+        - in: formData
+          type: string
+          name: option_alternative_host_ids
+          description: Alternative hosts IDs.
+        - in: formData
+          type: boolean
+          name: option_use_pmi
+          default: false
+          description: Use Personal Meeting ID. Only for scheduled meetings.
+        - in: formData
+          type: string
+          name: option_auto_record_type
+          default: local
+          description: 'Automatically record type. Can be "local", "cloud" or "none".'
+      responses:
+        '200':
+          description: Success
+  /meeting/delete:
+    post:
+      description: 'Delete a meeting on Zoom, return the deleted meeting ID.'
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          required: true
+          description: Meeting ID.
+        - in: formData
+          type: string
+          name: host_id
+          required: true
+          description: Meeting host user ID. Can be any user under this account.
+        - in: formData
+          type: string
+          name: occurrence_id
+          description: 'Occurrence ID, could get this value from Meeting Get API.'
+      responses:
+        '200':
+          description: Success
+  /meeting/end:
+    post:
+      description: 'End a meeting on Zoom, return the deleted meeting ID.'
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          required: true
+          description: Meeting ID.
+        - in: formData
+          type: string
+          name: host_id
+          required: true
+          description: Meeting host user ID. Can be any user under this account.
+      responses:
+        '200':
+          description: Success
+  /meeting/get:
+    post:
+      description: 'Get a meeting on Zoom via meeting ID, return the meeting info.'
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          required: true
+          description: Meeting ID.
+        - in: formData
+          type: string
+          name: host_id
+          required: true
+          description: Meeting host user ID. Can be any user under this account.
+      responses:
+        '200':
+          description: Success
+  /meeting/list:
+    post:
+      description: List all the scheduled meetings on Zoom.
+      parameters:
+        - in: formData
+          type: string
+          name: host_id
+          required: true
+          description: Meeting host user ID. Can be any user under this account.
+        - in: formData
+          type: string
+          name: page_size
+          default: '30'
+          description: >-
+            The amount of records returns within a single API call. Defaults to
+            30. Max of 300 meetings.
+        - in: formData
+          type: string
+          name: page_number
+          default: '1'
+          description: Current page number of returned records. Default to 1.
+      responses:
+        '200':
+          description: Success
+  /meeting/live:
+    post:
+      description: Lists the live meetings on Zoom.
+      parameters: []
+      responses:
+        '200':
+          description: Success
+  /meeting/register:
+    post:
+      description: Register for a meeting.
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          required: true
+          description: Meeting ID.
+        - in: formData
+          type: string
+          name: email
+          required: true
+          description: A valid email address.
+        - in: formData
+          type: string
+          name: first_name
+          required: true
+          description: User’s first name.
+        - in: formData
+          type: string
+          name: last_name
+          required: true
+          description: User’s last name.
+        - in: formData
+          type: string
+          name: address
+          description: Address.
+        - in: formData
+          type: string
+          name: city
+          description: City.
+        - in: formData
+          type: string
+          name: country
+          description: >-
+            Country. For this parameter value please refer to the id value in
+            country list JSON file
+        - in: formData
+          type: string
+          name: zip
+          description: Zip/Postal Code.
+        - in: formData
+          type: string
+          name: state
+          description: State/Province.
+        - in: formData
+          type: string
+          name: phone
+          description: Phone.
+        - in: formData
+          type: string
+          name: industry
+          description: Industry.
+        - in: formData
+          type: string
+          name: org
+          description: Organization.
+        - in: formData
+          type: string
+          name: job_title
+          description: Job Title.
+        - in: formData
+          type: string
+          name: purchasing_time_frame
+          description: >-
+            Purchasing Time Frame, should be "Within a month", "1-3 months",
+            "4-6 months", "More than 6 months", "No timeframe".
+        - in: formData
+          type: string
+          name: role_in_purchase_process
+          description: >-
+            Role in Purchase Process, should be "Decision Maker",
+            "Evaluator/Recommender", "Influencer", "Not involved".
+        - in: formData
+          type: string
+          name: no_of_employees
+          description: >-
+            Number of Employees, should be "1-20", "21-50", "51-100", "101-250",
+            "251-500", "501-1,000", "1,001-5,000", "5,001-10,000", "More than
+            10,000".
+        - in: formData
+          type: string
+          name: comments
+          description: Questions & Comments.
+        - in: formData
+          type: string
+          name: custom_questions
+          description: >-
+            Custom Questions, should be JSON format:
+            [{"title":"field_name1","value":"xxx"},{"title":"field_name2","value":"xxx"}].
+        - in: formData
+          type: string
+          name: language
+          description: >-
+            Language setting of email. This value should be "en-US", "en",
+            "zh-CN", "zh", "en-ES", "es", "fr-FR" or "fr".
+        - in: formData
+          type: string
+          name: occurrence_ids
+          description: 'Occurrence IDs, could get this value from Meeting Get API.'
+      responses:
+        '200':
+          description: Success
+  /meeting/update:
+    post:
+      description: Update meeting info on Zoom via meeting ID.
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          required: true
+          description: Meeting ID.
+        - in: formData
+          type: string
+          name: host_id
+          required: true
+          description: >-
+            Meeting host user ID. Can be any user under this account. Used to
+            retrieve a meeting, cannot be updated.
+        - in: formData
+          type: string
+          name: type
+          required: true
+          default: '2'
+          description: >-
+            Meeting type: 1 means instant meeting (Only used for host to start
+            it as soon as created). 2 means normal scheduled meeting. 3 means a
+            recurring meeting with no fixed time. 8 means a recurring meeting
+            with fixed time.
+        - in: formData
+          type: string
+          name: topic
+          description: Meeting topic. Max of 300 characters.
+        - in: formData
+          type: string
+          name: start_time
+          description: >-
+            Meeting start time in ISO datetime format. For scheduled meeting
+            only. Should be UTC time, such as 2012-11-25T12:00:00Z.
+        - in: formData
+          type: string
+          name: duration
+          description: Meeting duration (minutes). For scheduled meeting only.
+        - in: formData
+          type: string
+          name: timezone
+          description: >-
+            Timezone to format start_time, like "America/Los_Angeles". For
+            scheduled meeting only. For this parameter value please refer to the
+            id value in timezone list JSON file.
+        - in: formData
+          type: string
+          name: password
+          default: ' 10 characters'
+          description: >-
+            Meeting password. Password may only contain the following
+            characters: [a-z A-Z 0-9 @ - _
+        - in: formData
+          type: string
+          name: recurrence
+          description: >-
+            Recurrence Meeting Settings. For recurring meeting with fixed time
+            only. See [Recurrence Object](#recurrence-object) for more details.
+        - in: formData
+          type: boolean
+          name: option_registration
+          default: false
+          description: Registration required.
+        - in: formData
+          type: string
+          name: registration_type
+          default: '1'
+          description: >-
+            Registration type. 1 means Attendees register once and can attend
+            any of the occurrences, 2 means Attendees need to register for each
+            occurrence to attend, 3 means Attendees register once and can choose
+            one or more occurrences to attend. For recurring meeting with fixed
+            time only.
+        - in: formData
+          type: boolean
+          name: option_jbh
+          default: false
+          description: >-
+            Join meeting before host start the meeting. Only for scheduled or
+            recurring meetings.
+        - in: formData
+          type: string
+          name: option_start_type
+          default: video
+          description: Meeting start type. Can be "video" or "screen_share". (deprecated)
+        - in: formData
+          type: boolean
+          name: option_host_video
+          default: true
+          description: Start video when host join meeting.
+        - in: formData
+          type: boolean
+          name: option_participants_video
+          default: true
+          description: Start video when participants join meeting.
+        - in: formData
+          type: boolean
+          name: option_cn_meeting
+          default: false
+          description: Host meeting in China.
+        - in: formData
+          type: boolean
+          name: option_in_meeting
+          default: false
+          description: Host meeting in India.
+        - in: formData
+          type: string
+          name: option_audio
+          default: both
+          description: 'Meeting audio options. Can be "both", "telephony", "voip".'
+        - in: formData
+          type: boolean
+          name: option_enforce_login
+          default: false
+          description: Only signed-in users can join this meeting.
+        - in: formData
+          type: string
+          name: option_enforce_login_domains
+          description: Only signed-in users with specified domains can join meetings.
+        - in: formData
+          type: string
+          name: option_alternative_hosts
+          description: Alternative hosts.
+        - in: formData
+          type: string
+          name: option_alternative_host_ids
+          description: Alternative hosts IDs.
+        - in: formData
+          type: boolean
+          name: option_use_pmi
+          default: false
+          description: Use Personal Meeting ID. Only for scheduled meetings.
+        - in: formData
+          type: string
+          name: option_auto_record_type
+          default: local
+          description: 'Automatically record type. Can be "local", "cloud" or "none".'
+      responses:
+        '200':
+          description: Success
+  /report/getaccountreport:
+    post:
+      description: Get account report for a specified period.
+      parameters:
+        - in: formData
+          type: string
+          name: from
+          required: true
+          description: Start date.
+        - in: formData
+          type: string
+          name: to
+          required: true
+          description: End date.
+        - in: formData
+          type: string
+          name: page_size
+          default: '30'
+          description: >-
+            The amount of records returns within a single API call. Defaults to
+            30. Max of 300 meetings.
+        - in: formData
+          type: string
+          name: page_number
+          default: '1'
+          description: Current page number of returned records. Default to 1.
+      responses:
+        '200':
+          description: Success
+  /report/getaudioreport:
+    post:
+      description: Get user report for a specified period.
+      parameters:
+        - in: formData
+          type: string
+          name: from
+          required: true
+          description: Start date.
+        - in: formData
+          type: string
+          name: to
+          required: true
+          description: End date.
+        - in: formData
+          type: string
+          name: type
+          default: '1'
+          description: 'Audio type: 1 means Toll-free Call-in & Call-out. 2 means Toll.'
+        - in: formData
+          type: string
+          name: page_size
+          default: '30'
+          description: >-
+            The amount of records returns within a single API call. Defaults to
+            30. Max of 300 meetings.
+        - in: formData
+          type: string
+          name: page_number
+          default: '1'
+          description: Current page number of returned records. Default to 1.
+      responses:
+        '200':
+          description: Success
+  /report/getdailyreport:
+    post:
+      description: >-
+        Get daily report for one month, can only get daily report for recent 3
+        months.
+      parameters:
+        - in: formData
+          type: string
+          name: year
+          required: true
+          description: Year for this report.
+        - in: formData
+          type: string
+          name: month
+          required: true
+          description: Month for this report.
+      responses:
+        '200':
+          description: Success
+  /report/getuserreport:
+    post:
+      description: Get user report for a specified period.
+      parameters:
+        - in: formData
+          type: string
+          name: user_id
+          required: true
+          description: The user to generate the report.
+        - in: formData
+          type: string
+          name: from
+          required: true
+          description: Start date.
+        - in: formData
+          type: string
+          name: to
+          required: true
+          description: End date.
+        - in: formData
+          type: string
+          name: page_size
+          default: '30'
+          description: >-
+            The amount of records returns within a single API call. Defaults to
+            30. Max of 300 meetings.
+        - in: formData
+          type: string
+          name: page_number
+          default: '1'
+          description: Current page number of returned records. Default to 1.
+      responses:
+        '200':
+          description: Success
+  /user/autocreate:
+    post:
+      description: 'Create a user on Zoom, returns the created user ID.'
+      parameters:
+        - in: formData
+          type: string
+          name: email
+          required: true
+          description: >-
+            A valid email address. It must be unique in Zoom service. If an
+            email address is existed, a "user existing" error message will be
+            return
+        - in: formData
+          type: string
+          name: type
+          required: true
+          description: >-
+            User’s type. 1 for basic user, 2 for pro user, 3 for corp user.
+            Basic user can host up to 40 minutes meeting
+        - in: formData
+          type: string
+          name: password
+          required: true
+          description: User's password
+        - in: formData
+          type: string
+          name: first_name
+          description: User's first name
+        - in: formData
+          type: string
+          name: last_name
+          description: User's last name
+        - in: formData
+          type: boolean
+          name: disable_chat
+          default: false
+          description: Disable in-meeting chat
+        - in: formData
+          type: boolean
+          name: enable_e2e_encryption
+          default: false
+          description: Enable end-to-end encryption
+        - in: formData
+          type: boolean
+          name: enable_silent_mode
+          default: false
+          description: Enable attendee on-hold
+        - in: formData
+          type: boolean
+          name: disable_group_hd
+          default: false
+          description: Disable Group HD
+        - in: formData
+          type: boolean
+          name: disable_recording
+          default: false
+          description: Disable recording
+        - in: formData
+          type: boolean
+          name: enable_cmr
+          default: false
+          description: Enable cloud meeting record
+        - in: formData
+          type: boolean
+          name: enable_auto_recording
+          default: false
+          description: >-
+            Enable automatic recording. By default, if
+            "enable_cloud_auto_recording" is true, it will become true
+        - in: formData
+          type: boolean
+          name: enable_cloud_auto_recording
+          default: false
+          description: Enable cloud automatic recording
+        - in: formData
+          type: string
+          name: track_id
+          description: Referral partner track ID
+        - in: formData
+          type: string
+          name: meeting_capacity
+          default: '0'
+          description: >-
+            User’s meeting capacity, 0 means following account’s meeting
+            capacity
+        - in: formData
+          type: string
+          name: enable_webinar
+          description: Enable webinar feature
+        - in: formData
+          type: string
+          name: webinar_capacity
+          default: '0'
+          description: >-
+            Enable webinar capacity, can be 100, 500, 1000, 3000, 5000 or 10000,
+            depends on if having related webinar capacity plan subscription or
+            not
+        - in: formData
+          type: string
+          name: enable_large
+          description: Enable large meting feature
+        - in: formData
+          type: string
+          name: large_capacity
+          default: '0'
+          description: >-
+            Enable large meeting capacity, can be 100, 200, 300 or 500, depends
+            on if having related webinar capacity plan subscription or not
+        - in: formData
+          type: boolean
+          name: disable_feedback
+          default: false
+          description: Disable feedback
+        - in: formData
+          type: boolean
+          name: disable_jbh_reminder
+          default: false
+          description: Disable jbh email reminder
+        - in: formData
+          type: boolean
+          name: enable_breakout_room
+          default: false
+          description: Enable breakout room
+        - in: formData
+          type: boolean
+          name: enable_polling
+          default: false
+          description: Enable polling for meeting
+        - in: formData
+          type: boolean
+          name: enable_annotation
+          default: true
+          description: Enable Annotation
+        - in: formData
+          type: boolean
+          name: enable_share_dual_camera
+          default: false
+          description: Enable Share dual camera
+        - in: formData
+          type: boolean
+          name: enable_far_end_camera_control
+          default: false
+          description: Enable Far end camera control
+        - in: formData
+          type: boolean
+          name: disable_private_chat
+          default: false
+          description: Disable Private chat
+        - in: formData
+          type: boolean
+          name: enable_enter_exit_chime
+          default: false
+          description: Enable Enter/exit chime
+        - in: formData
+          type: string
+          name: option_enter_exit_chime_type
+          default: '0'
+          description: >-
+            Enter/exit chime type. 0 means Heard by all including host and
+            attendees, 1 means Heard by host only
+        - in: formData
+          type: boolean
+          name: disable_cancel_meeting_notification
+          default: false
+          description: Disable email notification when a meeting is cancelled
+        - in: formData
+          type: boolean
+          name: enable_remote_support
+          default: false
+          description: Enable Remote support
+        - in: formData
+          type: boolean
+          name: enable_file_transfer
+          default: false
+          description: Enable File transfer
+        - in: formData
+          type: boolean
+          name: enable_virtual_background
+          default: false
+          description: Enable Virtual background
+        - in: formData
+          type: boolean
+          name: enable_attention_tracking
+          default: false
+          description: Enable Attention tracking
+        - in: formData
+          type: boolean
+          name: enable_waiting_room
+          default: false
+          description: Enable Waiting room
+        - in: formData
+          type: boolean
+          name: enable_closed_caption
+          default: false
+          description: Enable Closed caption
+        - in: formData
+          type: boolean
+          name: enable_co_host
+          default: false
+          description: Enable Co-host
+        - in: formData
+          type: boolean
+          name: enable_auto_saving_chats
+          default: false
+          description: Enable Auto saving chats
+        - in: formData
+          type: boolean
+          name: enable_phone_participants_password
+          default: false
+          description: >-
+            Enable Generate and require password for participants joining by
+            phone
+        - in: formData
+          type: boolean
+          name: enable_auto_delete_cmr
+          default: false
+          description: Enable Auto delete cloud recordings
+        - in: formData
+          type: string
+          name: auto_delete_cmr_days
+          description: Auto delete cloud recordings after days
+        - in: formData
+          type: string
+          name: dept
+          description: 'Department for user profile, use for repor'
+        - in: formData
+          type: string
+          name: group_id
+          description: >-
+            User Group ID. If set default user group, the parameter’s default
+            value is the default user group
+        - in: formData
+          type: string
+          name: imgroup_id
+          description: >-
+            IM Group ID. If set default im group, the parameter’s default value
+            is the default im group
+      responses:
+        '200':
+          description: Success
+  /user/checkemail:
+    post:
+      description: Check if the user email exists.
+      parameters:
+        - in: formData
+          type: string
+          name: email
+          required: true
+          description: User email.
+      responses:
+        '200':
+          description: Success
+  /user/checkzpk:
+    post:
+      description: Check if the zpk is expired. The zpk is used to authenticate a user.
+      parameters:
+        - in: formData
+          type: string
+          name: zpk
+          required: true
+          description: User zpk.
+      responses:
+        '200':
+          description: Success
+  /user/create:
+    post:
+      description: 'Create a user on Zoom, returns the created user ID.'
+      parameters:
+        - in: formData
+          type: string
+          name: email
+          required: true
+          description: >-
+            A valid email address. It must be unique in Zoom service. If an
+            email address is existed, a "user existing" error message will be
+            return
+        - in: formData
+          type: string
+          name: type
+          required: true
+          description: >-
+            User’s type. 1 for basic user, 2 for pro user, 3 for corp user.
+            Basic user can host up to 40 minutes meeting
+        - in: formData
+          type: string
+          name: first_name
+          description: User's first name
+        - in: formData
+          type: string
+          name: last_name
+          description: User's last name
+        - in: formData
+          type: boolean
+          name: disable_chat
+          default: false
+          description: Disable in-meeting chat
+        - in: formData
+          type: boolean
+          name: enable_e2e_encryption
+          default: false
+          description: Enable end-to-end encryption
+        - in: formData
+          type: boolean
+          name: enable_silent_mode
+          default: false
+          description: Enable attendee on-hold
+        - in: formData
+          type: boolean
+          name: disable_group_hd
+          default: false
+          description: Disable Group HD
+        - in: formData
+          type: boolean
+          name: disable_recording
+          default: false
+          description: Disable recording
+        - in: formData
+          type: boolean
+          name: enable_cmr
+          default: false
+          description: Enable cloud meeting record
+        - in: formData
+          type: boolean
+          name: enable_auto_recording
+          default: false
+          description: >-
+            Enable automatic recording. By default, if
+            "enable_cloud_auto_recording" is true, it will become true
+        - in: formData
+          type: boolean
+          name: enable_cloud_auto_recording
+          default: false
+          description: Enable cloud automatic recording
+        - in: formData
+          type: string
+          name: track_id
+          description: Referral partner track ID
+        - in: formData
+          type: string
+          name: meeting_capacity
+          default: '0'
+          description: >-
+            User’s meeting capacity, passing 0 will inherit account’s meeting
+            capacity
+        - in: formData
+          type: string
+          name: enable_webinar
+          description: Enable webinar feature
+        - in: formData
+          type: string
+          name: webinar_capacity
+          default: '0'
+          description: >-
+            Enable webinar capacity, can be 100, 500, 1000, 3000, 5000 or 10000,
+            depends on if having related webinar capacity plan subscription or
+            not
+        - in: formData
+          type: string
+          name: enable_large
+          description: Enable large meting feature
+        - in: formData
+          type: string
+          name: large_capacity
+          default: '0'
+          description: >-
+            Enable large meeting capacity, can be 100, 200, 300 or 500, depends
+            on if having related webinar capacity plan subscription or not
+        - in: formData
+          type: boolean
+          name: disable_feedback
+          default: false
+          description: Disable feedback
+        - in: formData
+          type: boolean
+          name: disable_jbh_reminder
+          default: false
+          description: Disable jbh email reminder
+        - in: formData
+          type: boolean
+          name: enable_breakout_room
+          default: false
+          description: Enable breakout room
+        - in: formData
+          type: boolean
+          name: enable_polling
+          default: false
+          description: Enable polling for meeting
+        - in: formData
+          type: boolean
+          name: enable_annotation
+          default: true
+          description: Enable Annotation
+        - in: formData
+          type: boolean
+          name: enable_share_dual_camera
+          default: false
+          description: Enable Share dual camera
+        - in: formData
+          type: boolean
+          name: enable_far_end_camera_control
+          default: false
+          description: Enable Far end camera control
+        - in: formData
+          type: boolean
+          name: disable_private_chat
+          default: false
+          description: Disable Private chat
+        - in: formData
+          type: boolean
+          name: enable_enter_exit_chime
+          default: false
+          description: Enable Enter/exit chime
+        - in: formData
+          type: string
+          name: option_enter_exit_chime_type
+          default: '0'
+          description: >-
+            Enter/exit chime type. 0 means Heard by all including host and
+            attendees, 1 means Heard by host only
+        - in: formData
+          type: boolean
+          name: disable_cancel_meeting_notification
+          default: false
+          description: Disable email notification when a meeting is cancelled
+        - in: formData
+          type: boolean
+          name: enable_remote_support
+          default: false
+          description: Enable Remote support
+        - in: formData
+          type: boolean
+          name: enable_file_transfer
+          default: false
+          description: Enable File transfer
+        - in: formData
+          type: boolean
+          name: enable_virtual_background
+          default: false
+          description: Enable Virtual background
+        - in: formData
+          type: boolean
+          name: enable_attention_tracking
+          default: false
+          description: Enable Attention tracking
+        - in: formData
+          type: boolean
+          name: enable_waiting_room
+          default: false
+          description: Enable Waiting room
+        - in: formData
+          type: boolean
+          name: enable_closed_caption
+          default: false
+          description: Enable Closed caption
+        - in: formData
+          type: boolean
+          name: enable_co_host
+          default: false
+          description: Enable Co-host
+        - in: formData
+          type: boolean
+          name: enable_auto_saving_chats
+          default: false
+          description: Enable Auto saving chats
+        - in: formData
+          type: boolean
+          name: enable_phone_participants_password
+          default: false
+          description: >-
+            Enable Generate and require password for participants joining by
+            phone
+        - in: formData
+          type: boolean
+          name: enable_auto_delete_cmr
+          default: false
+          description: Enable Auto delete cloud recordings
+        - in: formData
+          type: string
+          name: auto_delete_cmr_days
+          description: Auto delete cloud recordings after days
+        - in: formData
+          type: string
+          name: dept
+          description: 'Department for user profile, use for repor'
+        - in: formData
+          type: string
+          name: group_id
+          description: >-
+            User Group ID. If set default user group, the parameter’s default
+            value is the default user group
+        - in: formData
+          type: string
+          name: imgroup_id
+          description: >-
+            IM Group ID. If set default im group, the parameter’s default value
+            is the default im group
+      responses:
+        '200':
+          description: Success
+  /user/custcreate:
+    post:
+      description: 'Create a user on Zoom, returns the created user ID.'
+      parameters:
+        - in: formData
+          type: string
+          name: email
+          required: true
+          description: >-
+            A valid email address. It must be unique in Zoom service. If an
+            email address is existed, a "user existing" error message will be
+            return
+        - in: formData
+          type: string
+          name: type
+          required: true
+          description: >-
+            User’s type. 1 for basic user, 2 for pro user, 3 for corp user.
+            Basic user can host up to 40 minutes meeting
+        - in: formData
+          type: string
+          name: first_name
+          description: User's first name
+        - in: formData
+          type: string
+          name: last_name
+          description: User's last name
+        - in: formData
+          type: boolean
+          name: disable_chat
+          default: false
+          description: Disable in-meeting chat
+        - in: formData
+          type: boolean
+          name: enable_e2e_encryption
+          default: false
+          description: Enable end-to-end encryption
+        - in: formData
+          type: boolean
+          name: enable_silent_mode
+          default: false
+          description: Enable attendee on-hold
+        - in: formData
+          type: boolean
+          name: disable_group_hd
+          default: false
+          description: Disable Group HD
+        - in: formData
+          type: boolean
+          name: disable_recording
+          default: false
+          description: Disable recording
+        - in: formData
+          type: boolean
+          name: enable_cmr
+          default: false
+          description: Enable cloud meeting record
+        - in: formData
+          type: boolean
+          name: enable_auto_recording
+          default: false
+          description: >-
+            Enable automatic recording. By default, if
+            "enable_cloud_auto_recording" is true, it will become true
+        - in: formData
+          type: boolean
+          name: enable_cloud_auto_recording
+          default: false
+          description: Enable cloud automatic recording
+        - in: formData
+          type: string
+          name: track_id
+          description: Referral partner track ID
+        - in: formData
+          type: string
+          name: meeting_capacity
+          default: '0'
+          description: >-
+            User’s meeting capacity, 0 means following account’s meeting
+            capacity
+        - in: formData
+          type: string
+          name: enable_webinar
+          description: Enable webinar feature
+        - in: formData
+          type: string
+          name: webinar_capacity
+          default: '0'
+          description: >-
+            Enable webinar capacity, can be 100, 500, 1000, 3000, 5000 or 10000,
+            depends on if having related webinar capacity plan subscription or
+            not
+        - in: formData
+          type: string
+          name: enable_large
+          description: Enable large meting feature
+        - in: formData
+          type: string
+          name: large_capacity
+          default: '0'
+          description: >-
+            Enable large meeting capacity, can be 100, 200, 300 or 500, depends
+            on if having related webinar capacity plan subscription or not
+        - in: formData
+          type: boolean
+          name: disable_feedback
+          default: false
+          description: Disable feedback
+        - in: formData
+          type: boolean
+          name: disable_jbh_reminder
+          default: false
+          description: Disable jbh email reminder
+        - in: formData
+          type: boolean
+          name: enable_breakout_room
+          default: false
+          description: Enable breakout room
+        - in: formData
+          type: boolean
+          name: enable_polling
+          default: false
+          description: Enable polling for meeting
+        - in: formData
+          type: boolean
+          name: enable_annotation
+          default: true
+          description: Enable Annotation
+        - in: formData
+          type: boolean
+          name: enable_share_dual_camera
+          default: false
+          description: Enable Share dual camera
+        - in: formData
+          type: boolean
+          name: enable_far_end_camera_control
+          default: false
+          description: Enable Far end camera control
+        - in: formData
+          type: boolean
+          name: disable_private_chat
+          default: false
+          description: Disable Private chat
+        - in: formData
+          type: boolean
+          name: enable_enter_exit_chime
+          default: false
+          description: Enable Enter/exit chime
+        - in: formData
+          type: string
+          name: option_enter_exit_chime_type
+          default: '0'
+          description: >-
+            Enter/exit chime type. 0 means Heard by all including host and
+            attendees, 1 means Heard by host only
+        - in: formData
+          type: boolean
+          name: disable_cancel_meeting_notification
+          default: false
+          description: Disable email notification when a meeting is cancelled
+        - in: formData
+          type: boolean
+          name: enable_remote_support
+          default: false
+          description: Enable Remote support
+        - in: formData
+          type: boolean
+          name: enable_file_transfer
+          default: false
+          description: Enable File transfer
+        - in: formData
+          type: boolean
+          name: enable_virtual_background
+          default: false
+          description: Enable Virtual background
+        - in: formData
+          type: boolean
+          name: enable_attention_tracking
+          default: false
+          description: Enable Attention tracking
+        - in: formData
+          type: boolean
+          name: enable_waiting_room
+          default: false
+          description: Enable Waiting room
+        - in: formData
+          type: boolean
+          name: enable_closed_caption
+          default: false
+          description: Enable Closed caption
+        - in: formData
+          type: boolean
+          name: enable_co_host
+          default: false
+          description: Enable Co-host
+        - in: formData
+          type: boolean
+          name: enable_auto_saving_chats
+          default: false
+          description: Enable Auto saving chats
+        - in: formData
+          type: boolean
+          name: enable_phone_participants_password
+          default: false
+          description: >-
+            Enable Generate and require password for participants joining by
+            phone
+        - in: formData
+          type: boolean
+          name: enable_auto_delete_cmr
+          default: false
+          description: Enable Auto delete cloud recordings
+        - in: formData
+          type: string
+          name: auto_delete_cmr_days
+          description: Auto delete cloud recordings after days
+        - in: formData
+          type: string
+          name: dept
+          description: 'Department for user profile, use for repor'
+        - in: formData
+          type: string
+          name: group_id
+          description: >-
+            User Group ID. If set default user group, the parameter’s default
+            value is the default user group
+        - in: formData
+          type: string
+          name: imgroup_id
+          description: >-
+            IM Group ID. If set default im group, the parameter’s default value
+            is the default im group
+      responses:
+        '200':
+          description: Success
+  /user/deactivate:
+    post:
+      description: 'Deactivate a user on Zoom, return the user ID.'
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          required: true
+          description: User id.
+      responses:
+        '200':
+          description: Success
+  /user/delete:
+    post:
+      description: 'Delete a user on Zoom, return the deleted user ID.'
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          required: true
+          description: User id.
+        - in: formData
+          type: string
+          name: type
+          default: '0'
+          description: '0 means existing user, 1 means pending user.'
+      responses:
+        '200':
+          description: Success
+  /user/assistant/delete:
+    post:
+      description: Delete a user's assistant.
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          description: The host’s user id.
+        - in: formData
+          type: string
+          name: host_email
+          description: The host’s email address.
+      responses:
+        '200':
+          description: Success
+  /user/permanentdelete:
+    post:
+      description: Delete a user from Zoom system permanently.
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          description: The user’s user id.
+        - in: formData
+          type: string
+          name: email
+          description: >-
+            The user’s email address. Must have id or email, if given id, the
+            email is ignored.
+      responses:
+        '200':
+          description: Success
+  /user/get:
+    post:
+      description: Get a user info on Zoom via user ID
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          required: true
+          description: User ID
+      responses:
+        '200':
+          description: Success
+  /user/getbyemail:
+    post:
+      description: >-
+        Get a user on Zoom via user email address and login type, return the
+        user info.
+      parameters:
+        - in: formData
+          type: string
+          name: email
+          required: true
+          description: 'Email, String'
+        - in: formData
+          type: string
+          name: login_type
+          required: true
+          description: >-
+            Login type of the email, int SNS_FACEBOOK = 0; SNS_GOOGLE = 1;
+            SNS_API = 99; SNS_ZOOM = 100; SNS_SSO = 101;
+      responses:
+        '200':
+          description: Success
+  /user/list:
+    post:
+      description: List all the users on Zoom
+      parameters:
+        - in: formData
+          type: string
+          name: page_size
+          default: '30'
+          description: >-
+            The amount of records returns within a single API call. Max of 300
+            users.
+        - in: formData
+          type: string
+          name: page_number
+          default: '1'
+          description: Current page number of returned records. Default to 1.
+      responses:
+        '200':
+          description: Success
+  /user/scheduleforhost/list:
+    post:
+      description: List assigned schedule privilege for host users.
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          description: The host’s user id.
+        - in: formData
+          type: string
+          name: host_email
+          description: The host’s email address.
+      responses:
+        '200':
+          description: Success
+  /user/pending:
+    post:
+      description: List all the pending users on Zoom
+      parameters:
+        - in: formData
+          type: string
+          name: page_size
+          default: '30'
+          description: >-
+            The amount of records returns within a single API call. Max of 300
+            users.
+        - in: formData
+          type: string
+          name: page_number
+          default: '1'
+          description: Current page number of returned records. Default to 1.
+      responses:
+        '200':
+          description: Success
+  /user/ssocreate:
+    post:
+      description: 'Create a SSO user on Zoom, return the created user ID.'
+      parameters:
+        - in: formData
+          type: string
+          name: email
+          required: true
+          description: A valid email address. It must be unique in Zoom service.
+        - in: formData
+          type: string
+          name: type
+          required: true
+          description: >-
+            User’s type. 1 means it is a basic user. 2 means a pro user, 3 means
+            a corp user. Basic user can host up to 40 minutes meeting.
+        - in: formData
+          type: string
+          name: first_name
+          description: User’s first name.
+        - in: formData
+          type: string
+          name: last_name
+          description: User’s last name.
+        - in: formData
+          type: string
+          name: meeting_capacity
+          default: '0'
+          description: >-
+            User’s meeting capacity, 0 means following account’s meeting
+            capacity.
+        - in: formData
+          type: string
+          name: enable_webinar
+          description: Enable webinar feature true or false.
+        - in: formData
+          type: string
+          name: webinar_capacity
+          default: '0'
+          description: >-
+            Enable webinar capacity, can be 100, 500, 1000, 3000, 5000 or 10000,
+            depends on if having related webinar capacity plan subscription or
+            not.
+        - in: formData
+          type: string
+          name: enable_large
+          description: Enable large meting feature true or false.
+        - in: formData
+          type: string
+          name: large_capacity
+          default: '0'
+          description: >-
+            Enable large meeting capacity, can be 100, 200, 300 or 500, depends
+            on if having related webinar capacity plan subscription or not.
+        - in: formData
+          type: string
+          name: pmi
+          description: 'Personal Meeting ID, long, length must be 10.'
+        - in: formData
+          type: string
+          name: group_id
+          description: >-
+            User Group ID. If set default user group, the parameter’s default
+            value is the default user group.
+        - in: formData
+          type: string
+          name: imgroup_id
+          description: >-
+            IM Group ID. If set default im group, the parameter’s default value
+            is the default im group.
+      responses:
+        '200':
+          description: Success
+  /user/revoketoken:
+    post:
+      description: Revoke a user's SSO token.
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          description: The SSO user’s user id.
+        - in: formData
+          type: string
+          name: email
+          description: The SSO user’s email address.
+      responses:
+        '200':
+          description: Success
+  /user/assistant/set:
+    post:
+      description: Set a user's assistant which can schedule meeting for him.
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          description: The host’s user id.
+        - in: formData
+          type: string
+          name: host_email
+          description: 'The host’s email address. '
+        - in: formData
+          type: string
+          name: assistant_email
+          required: true
+          description: The assistant’s email address.
+      responses:
+        '200':
+          description: Success
+  /user/update:
+    post:
+      description: Update user info on Zoom via user ID.
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          required: true
+          description: User id.
+        - in: formData
+          type: string
+          name: type
+          description: >-
+            User’s type. 1 means it is a basic user. 2 means a pro user, 3 means
+            a corp user. Basic user can host up to 40 minutes meeting.
+        - in: formData
+          type: string
+          name: first_name
+          description: User’s first name.
+        - in: formData
+          type: string
+          name: last_name
+          description: User’s last name.
+        - in: formData
+          type: boolean
+          name: disable_chat
+          default: false
+          description: Disable in-meeting chat.
+        - in: formData
+          type: boolean
+          name: enable_e2e_encryption
+          default: false
+          description: Enable end-to-end encryption.
+        - in: formData
+          type: boolean
+          name: enable_silent_mode
+          default: false
+          description: Enable attendee on-hold.
+        - in: formData
+          type: boolean
+          name: disable_group_hd
+          default: false
+          description: Disable Group HD.
+        - in: formData
+          type: boolean
+          name: disable_recording
+          default: false
+          description: Disable recording.
+        - in: formData
+          type: boolean
+          name: enable_cmr
+          default: false
+          description: Enable cloud meeting record.
+        - in: formData
+          type: string
+          name: enable_record_speaker_view
+          description: Enable record the active speaker view.
+        - in: formData
+          type: string
+          name: enable_record_gallery_view
+          description: Enable record the gallery view.
+        - in: formData
+          type: string
+          name: enable_record_audio_file
+          description: Enable record an audio only file.
+        - in: formData
+          type: boolean
+          name: enable_auto_recording
+          default: false
+          description: >-
+            Enable automatic recording. By default, if
+            "enable_cloud_auto_recording" is true, it will become true.
+        - in: formData
+          type: boolean
+          name: enable_cloud_auto_recording
+          default: false
+          description: Enable cloud automatic recording.
+        - in: formData
+          type: string
+          name: track_id
+          description: Referral partner track ID.
+        - in: formData
+          type: string
+          name: meeting_capacity
+          default: '0'
+          description: >-
+            User’s meeting capacity, passing 0 will inherit account’s meeting
+            capacity
+        - in: formData
+          type: string
+          name: enable_webinar
+          description: Enable webinar feature true or false.
+        - in: formData
+          type: string
+          name: webinar_capacity
+          default: '0'
+          description: >-
+            Enable webinar capacity, can be 100, 500, 1000, 3000, 5000 or 10000,
+            depends on if having related webinar capacity plan subscription or
+            not.
+        - in: formData
+          type: string
+          name: enable_large
+          description: Enable large meting feature true or false.
+        - in: formData
+          type: string
+          name: large_capacity
+          default: '0'
+          description: >-
+            Enable large meeting capacity, can be 100, 200, 300 or 500, depends
+            on if having related webinar capacity plan subscription or not.
+        - in: formData
+          type: boolean
+          name: disable_feedback
+          default: false
+          description: Disable feedback.
+        - in: formData
+          type: boolean
+          name: disable_jbh_reminder
+          default: false
+          description: Disable jbh email reminder.
+        - in: formData
+          type: boolean
+          name: enable_breakout_room
+          default: false
+          description: Enable breakout room.
+        - in: formData
+          type: boolean
+          name: enable_polling
+          default: false
+          description: Enable polling for meeting.
+        - in: formData
+          type: boolean
+          name: enable_annotation
+          default: true
+          description: Enable Annotation.
+        - in: formData
+          type: boolean
+          name: enable_share_dual_camera
+          default: false
+          description: Enable Share dual camera.
+        - in: formData
+          type: boolean
+          name: enable_far_end_camera_control
+          default: false
+          description: Enable Far end camera control.
+        - in: formData
+          type: boolean
+          name: disable_private_chat
+          default: false
+          description: Disable Private chat.
+        - in: formData
+          type: boolean
+          name: enable_enter_exit_chime
+          default: false
+          description: Enable Enter/exit chime.
+        - in: formData
+          type: string
+          name: option_enter_exit_chime_type
+          default: '0'
+          description: >-
+            Enter/exit chime type. 0 means Heard by all including host and
+            attendees, 1 means Heard by host only.
+        - in: formData
+          type: boolean
+          name: disable_cancel_meeting_notification
+          default: false
+          description: Disable email notification when a meeting is cancelled.
+        - in: formData
+          type: boolean
+          name: enable_remote_support
+          default: false
+          description: Enable Remote support.
+        - in: formData
+          type: boolean
+          name: enable_file_transfer
+          default: false
+          description: Enable File transfer.
+        - in: formData
+          type: boolean
+          name: enable_virtual_background
+          default: false
+          description: Enable Virtual background.
+        - in: formData
+          type: boolean
+          name: enable_attention_tracking
+          default: false
+          description: Enable Attention tracking.
+        - in: formData
+          type: boolean
+          name: enable_waiting_room
+          default: false
+          description: Enable Waiting room.
+        - in: formData
+          type: boolean
+          name: enable_use_pmi
+          default: false
+          description: Enable Use Personal Meeting ID for instant meetings.
+        - in: formData
+          type: boolean
+          name: enable_closed_caption
+          default: false
+          description: Enable Closed caption.
+        - in: formData
+          type: boolean
+          name: enable_co_host
+          default: false
+          description: Enable Co-host.
+        - in: formData
+          type: boolean
+          name: enable_auto_saving_chats
+          default: false
+          description: Enable Auto saving chats.
+        - in: formData
+          type: boolean
+          name: enable_phone_participants_password
+          default: false
+          description: >-
+            Enable Generate and require password for participants joining by
+            phone.
+        - in: formData
+          type: boolean
+          name: enable_auto_delete_cmr
+          default: false
+          description: Enable Auto delete cloud recordings.
+        - in: formData
+          type: string
+          name: auto_delete_cmr_days
+          description: Auto delete cloud recordings after days.
+        - in: formData
+          type: string
+          name: pmi
+          description: 'Personal Meeting ID, long, length must be 10.'
+        - in: formData
+          type: string
+          name: dept
+          description: 'Department for user profile, use for report.'
+        - in: formData
+          type: string
+          name: timezone
+          description: The time zone id for user profile.
+        - in: formData
+          type: string
+          name: vanity_name
+          description: Personal meeting room name.
+        - in: formData
+          type: string
+          name: host_key
+          description: Host Key should be 6-digit number.
+        - in: formData
+          type: string
+          name: group_id
+          description: >-
+            User Group ID. If set default user group, the parameter’s default
+            value is the default user group.
+        - in: formData
+          type: string
+          name: imgroup_id
+          description: >-
+            IM Group ID. If set default im group, the parameter’s default value
+            is the default im group.
+      responses:
+        '200':
+          description: Success
+  /user/updatepassword:
+    post:
+      description: Upload and update user's profile picture on Zoom via user ID.
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          required: true
+          description: User id.
+        - in: formData
+          type: string
+          name: pic_file
+          required: true
+          description: 'User picture file, must be a jpg/jpeg file.'
+      responses:
+        '200':
+          description: Success
+  /webinar/registrants/approve:
+    post:
+      description: Approve pending registrants on Zoom Webinar.
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          required: true
+          description: Webinar ID.
+        - in: formData
+          type: string
+          name: host_id
+          required: true
+          description: >-
+            Webinar host user ID. Can be any user who enabled webinar under this
+            account.
+        - in: formData
+          type: string
+          name: registrant_ids
+          required: true
+          description: Pending approval registrant ids.
+      responses:
+        '200':
+          description: Success
+  /webinar/create:
+    post:
+      description: 'Create a webinar on Zoom, return the created webinar start and join URL.'
+      parameters:
+        - in: formData
+          type: string
+          name: host_id
+          required: true
+          description: >-
+            Webinar host user ID. Can be any user under this account. Cannot be
+            updated after creation.
+        - in: formData
+          type: string
+          name: topic
+          required: true
+          description: Webinar topic. Max of 300 characters.
+        - in: formData
+          type: string
+          name: type
+          required: true
+          default: '5'
+          description: >-
+            5 webinar, 6 recurrence webinar, 9 recurring webinar(With Fixed
+            Time)
+        - in: formData
+          type: string
+          name: start_time
+          description: >-
+            Webinar start time in ISO datetime format. For scheduled webinar
+            only. Should be UTC time, such as 2012-11-25T12:00:00Z.
+        - in: formData
+          type: string
+          name: duration
+          description: Webinar duration (minutes). For scheduled webinar only.
+        - in: formData
+          type: string
+          name: timezone
+          description: >-
+            Timezone to format start_time, like "America/Los_Angeles". For
+            scheduled Webinar only. For this parameter value please refer to the
+            id value in timezone list JSON file.
+        - in: formData
+          type: string
+          name: password
+          default: ' 10 characters'
+          description: >-
+            Webinar password. Password may only contain the following
+            characters: [a-z A-Z 0-9 @ - _
+        - in: formData
+          type: string
+          name: recurrence
+          description: >-
+            Recurrence Webinar Settings. For recurring webinar with fixed time
+            only. <br><br>"type": Recurrence Webinar Type. 1 means Daily, 2
+            means Weekly, 3 means Monthly. <br>"repeat_interval": Recurrence
+            Webinar Repeat Interval. Defaults to 1. For a Daily Webinar, max of
+            90. For a Weekly Webinar, max of 12. For a Monthly Webinar, max of
+            3. <br>"weekly_days": Recurrence Webinar Occurs on week days,
+            multiple value separated by comma. 1 means Sunday, 2 means Monday, 3
+            means Tuesday, 4 means Wednesday, 5 means Thursday, 6 means Friday,
+            7 means Saturday. <br>"monthly_day": Recurrence Webinar Occurs on a
+            month day. The value range is from 1 to 31. <br>"monthly_week":
+            Recurrence Webinar Occurs on the week of a month. -1 means Last
+            week, 1 means First week, 2 means Second week, 3 means Third week, 4
+            means Fourth week. <br>"monthly_week_day": Recurrence Webinar Occurs
+            on the week day of a month. A single value: 1 means Sunday, 2 means
+            Monday, 3 means Tuesday, 4 means Wednesday, 5 means Thursday, 6
+            means Friday, 7 means Saturday. <br>"end_times": Recurrence Webinar
+            End occurrences times. Defaults to 1. Max of 50.
+            <br>"end_date_time": Recurrence Webinar End Date. Should be UTC
+            time, such as 2012-11-25T12:00:00Z.
+        - in: formData
+          type: string
+          name: approval_type
+          default: '2'
+          description: >-
+            Approval type. 0 means Automatically Approve. 1 means Manually
+            Approve. 2 means No Registration Required.
+        - in: formData
+          type: string
+          name: registration_type
+          default: '1'
+          description: >-
+            Registration type. 1 means Attendees register once and can attend
+            any of the occurrences, 2 means Attendees need to register for each
+            occurrence to attend, 3 means Attendees register once and can choose
+            one or more occurrences to attend. For recurring meeting with fixed
+            time only.
+        - in: formData
+          type: string
+          name: agenda
+          description: Webinar description.
+        - in: formData
+          type: string
+          name: option_audio
+          default: both
+          description: 'Webinar audio options. Can be "both", "telephony", "voip".'
+        - in: formData
+          type: boolean
+          name: option_host_video
+          default: true
+          description: Start video when host join Webinar.
+        - in: formData
+          type: boolean
+          name: option_panelist_video
+          default: true
+          description: Start video when panelist join Webinar.
+        - in: formData
+          type: boolean
+          name: option_practice_session
+          default: false
+          description: Enable Practice Session.
+        - in: formData
+          type: boolean
+          name: option_enforce_login
+          default: false
+          description: Only signed-in users can join this Webinar.
+        - in: formData
+          type: string
+          name: option_enforce_login_domains
+          description: Only signed-in users with specified domains can join Webinar.
+        - in: formData
+          type: string
+          name: option_alternative_hosts
+          description: Alternative hosts.
+        - in: formData
+          type: string
+          name: option_alternative_host_ids
+          description: Alternative hosts IDs.
+        - in: formData
+          type: string
+          name: option_auto_record_type
+          default: local
+          description: 'Automatically record type. Can be "local", "cloud" or "none".'
+        - in: formData
+          type: string
+          name: panelists
+          description: >-
+            Webinar Panelists, should be JSON format:
+            [{"name":"xxx","email":"test1@zoom.us"},
+            {"name":"xxx","email":"test2@zoom.us"}].
+        - in: formData
+          type: string
+          name: language
+          description: >-
+            Language setting of email to panelists. This value should be
+            "en-US", "en", "zh-CN", "zh", "en-ES", "es", "fr-FR" or "fr".
+      responses:
+        '200':
+          description: Success
+  /webinar/delete:
+    post:
+      description: 'Delete a webinar on Zoom, return the deleted webinar ID.'
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          required: true
+          description: Webinar ID.
+        - in: formData
+          type: string
+          name: host_id
+          required: true
+          description: >-
+            webinar host user ID. Can be any user who enabled webinar under this
+            account.
+        - in: formData
+          type: string
+          name: occurrence_id
+          description: 'Occurrence ID, could get this value from Webinar Get API.'
+      responses:
+        '200':
+          description: Success
+  /webinar/registration/cancel:
+    post:
+      description: Cancel Webinar Registration
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          required: true
+          description: Webinar ID.
+        - in: formData
+          type: string
+          name: host_id
+          required: true
+          description: >-
+            Webinar host user ID. Can be any user who enabled webinar under this
+            account.
+        - in: formData
+          type: string
+          name: occurrence_id
+          description: 'Occurrence ID, could get this value from Webinar Get API.'
+        - in: formData
+          type: string
+          name: registrant_ids
+          required: true
+          description: 'Webinar registrant IDs, separated by comma. Max of 15 registrants.'
+      responses:
+        '200':
+          description: Success
+  /webinar/end:
+    post:
+      description: 'End a Webinar on Zoom, return the deleted Webinar ID'
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          required: true
+          description: Webinar ID.
+        - in: formData
+          type: string
+          name: host_id
+          required: true
+          description: >-
+            Webinar host user ID. Can be any user who enabled webinar under this
+            account.
+      responses:
+        '200':
+          description: Success
+  /webinar/get:
+    post:
+      description: 'Get a Webinar on Zoom via Webinar ID, return the Webinar info'
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          required: true
+          description: Webinar ID.
+        - in: formData
+          type: string
+          name: host_id
+          required: true
+          description: >-
+            Webinar host user ID. Can be any user who enabled webinar under this
+            account.
+      responses:
+        '200':
+          description: Success
+  /webinar/attendees/list:
+    post:
+      description: Get ended webinar attendees
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          required: true
+          description: Webinar ID.
+        - in: formData
+          type: string
+          name: host_id
+          required: true
+          description: >-
+            Webinar host user ID. Can be any user who enabled webinar under this
+            account.
+        - in: formData
+          type: string
+          name: uuid
+          description: Webinar uuid. It can be fetched by /v1/webinar/uuid/list.
+      responses:
+        '200':
+          description: Success
+  /webinar/polls:
+    post:
+      description: Get Ended Webinar Polls
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          required: true
+          description: Webinar ID.
+        - in: formData
+          type: string
+          name: host_id
+          required: true
+          description: >-
+            Webinar host user ID. Can be any user who enabled webinar under this
+            account.
+        - in: formData
+          type: string
+          name: uuid
+          description: Webinar uuid. It can be fetched by /v1/webinar/uuid/list.
+      responses:
+        '200':
+          description: Success
+  /webinar/questions:
+    post:
+      description: Get Ended Webinar Q&A
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          required: true
+          description: Webinar ID.
+        - in: formData
+          type: string
+          name: host_id
+          required: true
+          description: >-
+            Webinar host user ID. Can be any user who enabled webinar under this
+            account.
+        - in: formData
+          type: string
+          name: uuid
+          description: Webinar uuid. It can be fetched by /v1/webinar/uuid/list.
+      responses:
+        '200':
+          description: Success
+  /webinar/uuid/list:
+    post:
+      description: Get ended webinar UUID.
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          required: true
+          description: Webinar ID.
+        - in: formData
+          type: string
+          name: host_id
+          required: true
+          description: >-
+            Webinar host user ID. Can be any user who enabled webinar under this
+            account.
+      responses:
+        '200':
+          description: Success
+  /webinar/panelists:
+    post:
+      description: Get all the Webinar Panelists on Zoom
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          required: true
+          description: Webinar ID.
+        - in: formData
+          type: string
+          name: host_id
+          required: true
+          description: >-
+            Webinar host user ID. Can be any user who enabled webinar under this
+            account.
+      responses:
+        '200':
+          description: Success
+  /webinar/registration:
+    post:
+      description: Gather Webinar registrants info
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          required: true
+          description: Webinar ID.
+        - in: formData
+          type: string
+          name: host_id
+          required: true
+          description: >-
+            Webinar host user ID. Can be any user who enabled webinar under this
+            account.
+        - in: formData
+          type: string
+          name: occurrence_id
+          description: 'Occurrence ID, could get this value from Webinar Get API.'
+        - in: formData
+          type: string
+          name: page_size
+          default: '30'
+          description: >-
+            The amount of records returns within a single API call. Defaults to
+            30.
+        - in: formData
+          type: string
+          name: page_number
+          default: '1'
+          description: Current page number of returned records. Default to 1.
+      responses:
+        '200':
+          description: Success
+  /webinar/list:
+    post:
+      description: List all registrationless Webinars on Zoom
+      parameters:
+        - in: formData
+          type: string
+          name: host_id
+          required: true
+          description: >-
+            Webinar host user ID. Can be any user who enabled webinar under this
+            account.
+        - in: formData
+          type: string
+          name: page_size
+          default: '30'
+          description: >-
+            The amount of records returns within a single API call. Defaults to
+            30. Max of 300 meetings.
+        - in: formData
+          type: string
+          name: page_number
+          default: '1'
+          description: Current page number of returned records. Default to 1.
+      responses:
+        '200':
+          description: Success
+  /webinar/registrants/list:
+    post:
+      description: >-
+        List webinar registrants on Zoom, include pending approval registrants
+        and approved registrants.
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          required: true
+          description: Webinar ID.
+        - in: formData
+          type: string
+          name: host_id
+          required: true
+          description: >-
+            Webinar host user ID. Can be any user who enabled webinar under this
+            account.
+        - in: formData
+          type: string
+          name: type
+          default: '0'
+          description: '0 means pending approval registrants, 1 means approved registrants.'
+        - in: formData
+          type: string
+          name: page_size
+          default: '30'
+          description: >-
+            The amount of records returns within a single API call. Defaults to
+            30.
+        - in: formData
+          type: string
+          name: page_number
+          default: '1'
+          description: Current page number of returned records. Default to 1.
+      responses:
+        '200':
+          description: Success
+  /webinar/list/registration:
+    post:
+      description: List all the upcoming registration-based Webinars on Zoom
+      parameters:
+        - in: formData
+          type: string
+          name: host_id
+          required: true
+          description: >-
+            Webinar host user ID. Can be any user who enabled webinar under this
+            account.
+        - in: formData
+          type: string
+          name: page_size
+          default: '30'
+          description: >-
+            The amount of records returns within a single API call. Defaults to
+            30. Max of 300 meetings.
+        - in: formData
+          type: string
+          name: page_number
+          default: '1'
+          description: Current page number of returned records. Default to 1.
+      responses:
+        '200':
+          description: Success
+  /webinar/register:
+    post:
+      description: Register for a webinar
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          required: true
+          description: Webinar ID.
+        - in: formData
+          type: string
+          name: email
+          required: true
+          description: A valid email address.
+        - in: formData
+          type: string
+          name: first_name
+          required: true
+          description: User’s first name.
+        - in: formData
+          type: string
+          name: last_name
+          required: true
+          description: User’s last name.
+        - in: formData
+          type: string
+          name: address
+          description: Address.
+        - in: formData
+          type: string
+          name: city
+          description: City.
+        - in: formData
+          type: string
+          name: country
+          description: >-
+            Country. For this parameter value please refer to the id value in
+            country list JSON file
+        - in: formData
+          type: string
+          name: zip
+          description: Zip/Postal Code.
+        - in: formData
+          type: string
+          name: state
+          description: State/Province.
+        - in: formData
+          type: string
+          name: phone
+          description: Phone.
+        - in: formData
+          type: string
+          name: industry
+          description: Industry.
+        - in: formData
+          type: string
+          name: org
+          description: Organization.
+        - in: formData
+          type: string
+          name: job_title
+          description: Job Title.
+        - in: formData
+          type: string
+          name: purchasing_time_frame
+          description: >-
+            Purchasing Time Frame, should be "Within a month", "1-3 months",
+            "4-6 months", "More than 6 months", "No timeframe".
+        - in: formData
+          type: string
+          name: role_in_purchase_process
+          description: >-
+            Role in Purchase Process, should be "Decision Maker",
+            "Evaluator/Recommender", "Influencer", "Not involved".
+        - in: formData
+          type: string
+          name: no_of_employees
+          description: >-
+            Number of Employees, should be "1-20", "21-50", "51-100", "101-250",
+            "251-500", "501-1,000", "1,001-5,000", "5,001-10,000", "More than
+            10,000".
+        - in: formData
+          type: string
+          name: comments
+          description: Questions & Comments.
+        - in: formData
+          type: string
+          name: custom_questions
+          description: >-
+            Custom Questions, should be JSON format:
+            [{"title":"field_name1","value":"xxx"},{"title":"field_name2","value":"xxx"}].
+        - in: formData
+          type: string
+          name: language
+          description: >-
+            Language setting of email. This value should be "en-US", "en",
+            "zh-CN", "zh", "en-ES", "es", "fr-FR" or "fr".
+        - in: formData
+          type: string
+          name: occurrence_ids
+          description: 'Occurrence IDs, could get this value from Webinar Get API.'
+      responses:
+        '200':
+          description: Success
+  /webinar/update:
+    post:
+      description: Update Webinar info on Zoom via Webinar ID
+      parameters:
+        - in: formData
+          type: string
+          name: id
+          required: true
+          description: Webinar ID.
+        - in: formData
+          type: string
+          name: host_id
+          required: true
+          description: >-
+            Webinar host user ID. Can be any user under this account. Cannot be
+            updated after creation.
+        - in: formData
+          type: string
+          name: topic
+          description: Webinar topic. Max of 300 characters.
+        - in: formData
+          type: string
+          name: type
+          default: '5'
+          description: >-
+            5 webinar, 6 recurrence webinar, 9 recurring webinar(With Fixed
+            Time)
+        - in: formData
+          type: string
+          name: start_time
+          description: >-
+            Webinar start time in ISO datetime format. For scheduled webinar
+            only. Should be UTC time, such as 2012-11-25T12:00:00Z.
+        - in: formData
+          type: string
+          name: duration
+          description: Webinar duration (minutes). For scheduled webinar only.
+        - in: formData
+          type: string
+          name: timezone
+          description: >-
+            Timezone to format start_time, like "America/Los_Angeles". For
+            scheduled Webinar only. For this parameter value please refer to the
+            id value in timezone list JSON file.
+        - in: formData
+          type: string
+          name: password
+          default: ' 10 characters'
+          description: >-
+            Webinar password. Password may only contain the following
+            characters: [a-z A-Z 0-9 @ - _
+        - in: formData
+          type: string
+          name: recurrence
+          description: >-
+            Recurrence Webinar Settings. For recurring webinar with fixed time
+            only. <br><br>"type": Recurrence Webinar Type. 1 means Daily, 2
+            means Weekly, 3 means Monthly. <br>"repeat_interval": Recurrence
+            Webinar Repeat Interval. Defaults to 1. For a Daily Webinar, max of
+            90. For a Weekly Webinar, max of 12. For a Monthly Webinar, max of
+            3. <br>"weekly_days": Recurrence Webinar Occurs on week days,
+            multiple value separated by comma. 1 means Sunday, 2 means Monday, 3
+            means Tuesday, 4 means Wednesday, 5 means Thursday, 6 means Friday,
+            7 means Saturday. <br>"monthly_day": Recurrence Webinar Occurs on a
+            month day. The value range is from 1 to 31. <br>"monthly_week":
+            Recurrence Webinar Occurs on the week of a month. -1 means Last
+            week, 1 means First week, 2 means Second week, 3 means Third week, 4
+            means Fourth week. <br>"monthly_week_day": Recurrence Webinar Occurs
+            on the week day of a month. A single value: 1 means Sunday, 2 means
+            Monday, 3 means Tuesday, 4 means Wednesday, 5 means Thursday, 6
+            means Friday, 7 means Saturday. <br>"end_times": Recurrence Webinar
+            End occurrences times. Defaults to 1. Max of 50.
+            <br>"end_date_time": Recurrence Webinar End Date. Should be UTC
+            time, such as 2012-11-25T12:00:00Z.
+        - in: formData
+          type: string
+          name: approval_type
+          default: '2'
+          description: >-
+            Approval type. 0 means Automatically Approve. 1 means Manually
+            Approve. 2 means No Registration Required.
+        - in: formData
+          type: string
+          name: registration_type
+          default: '1'
+          description: >-
+            Registration type. 1 means Attendees register once and can attend
+            any of the occurrences, 2 means Attendees need to register for each
+            occurrence to attend, 3 means Attendees register once and can choose
+            one or more occurrences to attend. For recurring meeting with fixed
+            time only.
+        - in: formData
+          type: string
+          name: agenda
+          description: Webinar description.
+        - in: formData
+          type: string
+          name: option_audio
+          default: both
+          description: 'Webinar audio options. Can be "both", "telephony", "voip".'
+        - in: formData
+          type: boolean
+          name: option_host_video
+          default: true
+          description: Start video when host join Webinar.
+        - in: formData
+          type: boolean
+          name: option_panelist_video
+          default: true
+          description: Start video when panelist join Webinar.
+        - in: formData
+          type: string
+          name: option_practice_session
+          description: Enable Practice Session.
+        - in: formData
+          type: boolean
+          name: option_enforce_login
+          default: false
+          description: Only signed-in users can join this Webinar.
+        - in: formData
+          type: string
+          name: option_enforce_login_domains
+          description: Only signed-in users with specified domains can join Webinar.
+        - in: formData
+          type: string
+          name: option_alternative_hosts
+          description: Alternative hosts.
+        - in: formData
+          type: string
+          name: option_alternative_host_ids
+          description: Alternative hosts IDs.
+        - in: formData
+          type: string
+          name: option_auto_record_type
+          default: local
+          description: 'Automatically record type. Can be "local", "cloud" or "none".'
+        - in: formData
+          type: string
+          name: panelists
+          description: >-
+            Webinar Panelists, should be JSON format:
+            [{"name":"xxx","email":"test1@zoom.us"},
+            {"name":"xxx","email":"test2@zoom.us"}].
+        - in: formData
+          type: string
+          name: language
+          description: >-
+            Language setting of email to panelists. This value should be
+            "en-US", "en", "zh-CN", "zh", "en-ES", "es", "fr-FR" or "fr".
+      responses:
+        '200':
+          description: Success
