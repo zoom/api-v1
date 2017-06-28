@@ -53,7 +53,7 @@ type **required** | Meeting type: 1 means instant meeting (Only used for host to
 topic *optional* | Meeting topic. Max of 300 characters.
 start_time *optional* | Meeting start time in ISO datetime format. For scheduled meeting only. Should be UTC time, such as 2012-11-25T12:00:00Z.
 duration *optional* | Meeting duration (minutes). For scheduled meeting only.
-timezone *optional* | Timezone to format start_time, like "America/Los_Angeles". For scheduled meeting only. For this parameter value please refer to the id value in timezone list JSON file.
+timezone *optional* | Timezone to format start_time, like "America/Los_Angeles". For scheduled meeting only. For this parameter value please refer to the id value in [timezone list JSON file](https://d24cgw3uvb9a9h.cloudfront.net/static/90205/doc/developer/timezone.txt).
 password *optional* | Meeting password. Password may only contain the following characters: [a-z A-Z 0-9 @ - _ *]. Max of 10 characters.
 recurrence *optional* | Recurrence Meeting Settings. For recurring meeting with fixed time only. See [Recurrence Object](#recurrence-object) for more details.
 option_registration *optional* | Registration required. *Default: false*
