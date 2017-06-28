@@ -374,7 +374,7 @@ API partner can also call the report API to get the meeting reports. To become a
 </tr>
 <tr>
 <td>status</td>
-<td>Meeting status. <table class="enum-table"><tr><td>STARTED</td><td>The meeting has started.</td></tr><tr><td>ENDED</td><td>The meeting has ended.</td></tr><tr><td>JBH</td><td>Attendee has joined a meeting before the host.</td></tr><tr><td>JOIN</td><td>Host hasn&rsquo;t launched the meeting, attendee is waiting.</td></tr></table></td>
+<td>Meeting status. <table class="enum-table"><tr><td>STARTED</td><td>The meeting has started.</td></tr><tr><td>ENDED</td><td>The meeting has ended.</td></tr><tr><td>JBH</td><td>Attendee has joined a meeting before the host.</td></tr><tr><td>JOIN</td><td>Host hasn&rsquo;t launched the meeting, attendee is waiting.</td></tr><tr><td>RECORDING_MEETING_COMPLETED</td><td>Cloud Recording has completed processing and is available.</td></tr></table></td>
 </tr>
 <tr>
 <td>host_id</td>
@@ -726,7 +726,7 @@ This feature is disabled by default because of the security risk involved in cre
 <p>Example Response</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="err">user@company.com</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user@company.com"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unique_id"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-11-25T12:00:00Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Zoomie"</span><span class="p">,</span><span class="w">
@@ -1499,6 +1499,8 @@ User created in this way has no password and is not able to log into the Zoom we
   </span><span class="s2">"zpk"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABzyF_DKLzVcPd-5Wu6zCwlZ3978jn7ZcTHONHrP7Vs.BwYAAAFTY-4XnwAAHCAkMTRlMzRjYzUtMjJmZC00MTQ1LTg2MzUtZmVmYjk3ZDI0NGMyFlYydzlQTzgxUl8yS1pmREtvTWVybVEWVjJ3OVBPODFSXzJLWmZES29NZXJtUQxzb3BoaWUgc3VuNjZkALM0VUVtMTFHTmh3cGFTWlJNMGkxYjhXSXNIZEIzbXZ0VlZwOGg0Q1Jhb1B3LkJnSWdUMjlLVG1KR1YySjNTVnBDZDFwUlpXb3Zhamh1TUUwd2VVVkVaU3QyTDNCQVpUSTNabVJtWkRNNFpqSmhZall5TXpRMk9XVTVOMkUwT1RNeVlUa3lPV1UyTlRnMk5qTm1OV0prT0RVek5URmhNR1l5WTJObVpUTTVNV0V6TTJabU1RQQAAFi1YZ0gzWVg2VDNTZmRqVEI5dEJLMXcAAgE"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
+<aside class="notice">The response &lsquo;token&rsquo; variable can be used to generate start meeting zoomus protocol URL</aside>
+
 <table><thead>
 <tr>
 <th>Arguments</th>
@@ -1510,8 +1512,6 @@ User created in this way has no password and is not able to log into the Zoom we
 <td>User ID</td>
 </tr>
 </tbody></table>
-
-<aside class="notice">The response &lsquo;token&rsquo; variable can be used to generate start meeting zoomus protocol URL</aside>
 
           <h2 id="get-user-by-email-address-and-login-type">Get User by Email Address and Login Type</h2>
 
@@ -2150,7 +2150,7 @@ User created in this way has no password and is not able to log into the Zoom we
 
 <p>Create a SSO user on Zoom, return the created user ID.</p>
 
-<aside class="notice">The API is provided for enabled &lsquo;Pre-provisioning SSO User&rsquo; option&rsquo;s API partner only. User created in this way has no password. If it is not a basic user, will generate a Personal Vanity URL using user name (no domain) of the provisioning email. If user name or pmi is invalid or occupied, will use random number/random personal vanity URL.</aside>
+<aside class="notice">The API is provided for enabling &lsquo;Pre-provisioning SSO User&rsquo; options. User created in this way has no password. If it is not a basic user, will generate a Personal Vanity URL using user name (no domain) of the provisioning email. If user name or pmi is invalid or occupied, will use random number/random personal vanity URL.</aside>
 
 <blockquote>
 <p>Definition</p>
@@ -2740,7 +2740,7 @@ User created in this way has no password and is not able to log into the Zoom we
 </tr>
 <tr>
 <td>timezone <em>optional</em></td>
-<td>Timezone to format start_time, like &ldquo;America/Los_Angeles&rdquo;. For scheduled meeting only. For this parameter value please refer to the id value in timezone list JSON file.</td>
+<td>Timezone to format start_time, like &ldquo;America/Los_Angeles&rdquo;. For scheduled meeting only. For this parameter value please refer to the id value in <a href="https://d24cgw3uvb9a9h.cloudfront.net/static/90205/doc/developer/timezone.txt">timezone list JSON file</a>.</td>
 </tr>
 <tr>
 <td>password <em>optional</em></td>
@@ -3011,7 +3011,7 @@ User created in this way has no password and is not able to log into the Zoom we
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"uuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unique_id"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123456789</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456789"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"host_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unique_id"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"topic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Zoom Meeting"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
@@ -3139,7 +3139,7 @@ User created in this way has no password and is not able to log into the Zoom we
 </tr>
 <tr>
 <td>timezone <em>optional</em></td>
-<td>Timezone to format start_time, like &ldquo;America/Los_Angeles&rdquo;. For scheduled meeting only. For this parameter value please refer to the id value in timezone list JSON file.</td>
+<td>Timezone to format start_time, like &ldquo;America/Los_Angeles&rdquo;. For scheduled meeting only. For this parameter value please refer to the id value in <a href="https://d24cgw3uvb9a9h.cloudfront.net/static/90205/doc/developer/timezone.txt">timezone list JSON file</a>.</td>
 </tr>
 <tr>
 <td>password <em>optional</em></td>
@@ -3421,7 +3421,7 @@ User created in this way has no password and is not able to log into the Zoom we
 </tr>
 <tr>
 <td>country <em>optional</em></td>
-<td>Country. For this parameter value please refer to the id value in country list JSON file</td>
+<td>Country. For this parameter value please refer to the id value in <a href="https://d24cgw3uvb9a9h.cloudfront.net/static/90205/doc/developer/country.txt">country list JSON file</a></td>
 </tr>
 <tr>
 <td>zip <em>optional</em></td>
@@ -4440,10 +4440,10 @@ User created in this way has no password and is not able to log into the Zoom we
         </span><span class="s2">"option_search_by_domain"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"option_search_by_account"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"option_search_by_ma_account"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"last_modified_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-04-16T07:45:41Z
-    }
-  ]
-}
+        </span><span class="s2">"last_modified_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-04-16T07:45:41Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
 <table><thead>
 <tr>
@@ -4944,7 +4944,7 @@ User created in this way has no password and is not able to log into the Zoom we
 </tr>
 <tr>
 <td>timezone <em>optional</em></td>
-<td>Timezone to format start_time, like &ldquo;America/Los_Angeles&rdquo;. For scheduled Webinar only. For this parameter value please refer to the id value in timezone list JSON file.</td>
+<td>Timezone to format start_time, like &ldquo;America/Los_Angeles&rdquo;. For scheduled Webinar only. For this parameter value please refer to the id value in <a href="https://d24cgw3uvb9a9h.cloudfront.net/static/90205/doc/developer/timezone.txt">timezone list JSON file</a>.</td>
 </tr>
 <tr>
 <td>password <em>optional</em></td>
@@ -5261,7 +5261,7 @@ User created in this way has no password and is not able to log into the Zoom we
 </tr>
 <tr>
 <td>timezone <em>optional</em></td>
-<td>Timezone to format start_time, like &ldquo;America/Los_Angeles&rdquo;. For scheduled Webinar only. For this parameter value please refer to the id value in timezone list JSON file.</td>
+<td>Timezone to format start_time, like &ldquo;America/Los_Angeles&rdquo;. For scheduled Webinar only. For this parameter value please refer to the id value in <a href="https://d24cgw3uvb9a9h.cloudfront.net/static/90205/doc/developer/timezone.txt">timezone list JSON file</a>.</td>
 </tr>
 <tr>
 <td>password <em>optional</em></td>
@@ -5539,7 +5539,7 @@ User created in this way has no password and is not able to log into the Zoom we
 </tr>
 <tr>
 <td>country <em>optional</em></td>
-<td>Country. For this parameter value please refer to the id value in country list JSON file</td>
+<td>Country. For this parameter value please refer to the id value in <a href="https://d24cgw3uvb9a9h.cloudfront.net/static/90205/doc/developer/country.txt">country list JSON file</a></td>
 </tr>
 <tr>
 <td>zip <em>optional</em></td>
@@ -8388,11 +8388,11 @@ User created in this way has no password and is not able to log into the Zoom we
 </tr>
 <tr>
 <td>country <strong>required</strong></td>
-<td>Sold To Contact’s country. For this parameter value please refer to the id value in country list JSON file</td>
+<td>Sold To Contact’s country. For this parameter value please refer to the id value in <a href="https://d24cgw3uvb9a9h.cloudfront.net/static/90205/doc/developer/country.txt">country list JSON file</a></td>
 </tr>
 <tr>
 <td>state <strong>required</strong></td>
-<td>Sold To Contact’s state. If country value is &ldquo;US&rdquo; or &ldquo;CA&rdquo;, for this parameter value please refer to the id value in state list JSON file</td>
+<td>Sold To Contact’s state. If country value is &ldquo;US&rdquo; or &ldquo;CA&rdquo;, for this parameter value please refer to the id value in <a href="https://d24cgw3uvb9a9h.cloudfront.net/static/90205/doc/developer/state.txt">state list JSON file</a></td>
 </tr>
 <tr>
 <td>zip <strong>required</strong></td>
@@ -8771,11 +8771,11 @@ User created in this way has no password and is not able to log into the Zoom we
 </tr>
 <tr>
 <td>country <em>optional</em></td>
-<td>Sold To Contact’s country. For this parameter value please refer to the id value in country list JSON file</td>
+<td>Sold To Contact’s country. For this parameter value please refer to the id value in <a href="https://d24cgw3uvb9a9h.cloudfront.net/static/90205/doc/developer/country.txt">country list JSON file</a></td>
 </tr>
 <tr>
 <td>state <em>optional</em></td>
-<td>Sold To Contact’s state. If country value is &ldquo;US&rdquo; or &ldquo;CA&rdquo;, for this parameter value please refer to the id value in state list JSON file</td>
+<td>Sold To Contact’s state. If country value is &ldquo;US&rdquo; or &ldquo;CA&rdquo;, for this parameter value please refer to the id value in <a href="https://d24cgw3uvb9a9h.cloudfront.net/static/90205/doc/developer/state.txt">state list JSON file</a></td>
 </tr>
 <tr>
 <td>zip <em>optional</em></td>
@@ -9054,6 +9054,14 @@ User created in this way has no password and is not able to log into the Zoom we
 
           <h2 id="plans">Plans</h2>
 
+<blockquote>
+<p>Additional Plan. Should be JSON format as below</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"large200_monthly"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"hosts"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <h3 id="base-plans">Base Plans</h3>
 
 <table><thead>
@@ -9254,6 +9262,17 @@ User created in this way has no password and is not able to log into the Zoom we
 </tr>
 </tbody></table>
 
+<blockquote>
+<p>For Additional Audio Conferencing Plan, should be JSON format as below</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tollfree_monthly_commitment_100"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"tollfree_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU,AT"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"premium_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TW,TH"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"callout"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ddi_numbers"</span><span class="p">:</span><span class="mi">10</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <h3 id="audio-conferencing-plans">Audio Conferencing Plans</h3>
 
 <table><thead>
@@ -9275,6 +9294,13 @@ User created in this way has no password and is not able to log into the Zoom we
 <td>Additional Audio Conferencing Monthly $500 Plan</td>
 </tr>
 </tbody></table>
+
+<ul>
+<li>&ldquo;tollfree_country&rdquo;: Toll-free countries, multiple value separated by comma. For this parameter value please refer to the id value in <a href="https://d24cgw3uvb9a9h.cloudfront.net/static/90205/doc/developer/tollfree_countries.txt">tollfree countries list JSON file</a></li>
+<li>&ldquo;premium_country&rdquo;: Premium countries, multiple value separated by comma. For this parameter value please refer to the id value in <a href="https://d24cgw3uvb9a9h.cloudfront.net/static/90205/doc/developer/premium_countries.txt">premium countries list JSON file</a></li>
+<li>&ldquo;callout&rdquo;: Call-out type: 1 means US-only Call-out, 2 means US and International Call-out</li>
+<li>&ldquo;ddi_numbers&rdquo;: Dedicated Dial-In Numbers.</li>
+</ul>
 
           <h2 id="recurrence-object">Recurrence Object</h2>
 
