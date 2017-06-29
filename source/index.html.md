@@ -10,8 +10,6 @@ toc_footers:
   - <a href='https://github.com/zoom/api/issues'>Report An Issue</a>
 
 includes:
-
-    - getting-started
     
     - basics
     
