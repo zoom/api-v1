@@ -231,62 +231,6 @@
       <div class="dark-box"></div>
       <div class="content">
         
-          <h1 id="getting-started">Getting Started</h1>
-
-<p>Zoom exposes REST interfaces which allows the developers and solution providers to manage meetings, users, recordings, settings and get usage reports. These APIs will be useful when you as a solution provider, build your own web portal to front end Zoom services and present as a login point to your end users.</p>
-
-<p>These management APIs are auto-enabled if you have a paid Zoom account. If you don&rsquo;t have a zoom account, go ahead, create a <a href="https://zoom.us/signup">free account</a> and sign up for a 60 days free trial of our developer platform.</p>
-
-<h3 id="zoom-rest-apis-allows-you-to-manage">Zoom REST APIs allows you to manage:</h3>
-
-<ul>
-<li>Users</li>
-<li>Meetings</li>
-<li>Reports</li>
-<li>Groups</li>
-<li>IM Groups</li>
-<li>Cloud Recordings (Business and Education)</li>
-<li>Webinars</li>
-<li>Sub-Accounts</li>
-</ul>
-
-<h3 id="quick-start">Quick Start</h3>
-
-<ul>
-<li>Sign up for a <a href="https://zoom.us/signup">Free Trial</a>, <a href="https://zoom.us/buy?plan=pro">Pro</a>, <a href="https://zoom.us/buy?plan=biz">Business</a> or <a href="https://zoom.us/plan/api">API Partner</a> subscription. If you already have a zoom license, you have full access to the developer platform.</li>
-<li>Login to your account, then select &ldquo;Credential tab&rdquo; and generate a pair of API key and secret. You can re-generate a new API secret at any time.</li>
-<li>Using REST API to create a user if your account has the privilege to provisioning user.</li>
-<li>Using REST API to create a meeting for that user. If success, you will get a start meeting URL like <code class="prettyprint">https://zoom.us/s/123456789?zpk=xxxxx</code> and a join meeting URL without token, like <code class="prettyprint">https://zoom.us/j/123456789</code></li>
-<li>Now you can open a new browser window to launch <code class="prettyprint">https://zoom.us/s/123456789?zpk=xxxx</code> to start meeting. Zoom will handle the client download, installation and launching.</li>
-<li>Anybody who gets the join meeting URL can open it in a browser and join the meeting.</li>
-</ul>
-
-<aside>
-<strong>Note: For Business plan</strong><br><br>
-<code>/user/autocreate</code><br><br>
-An enterprise customer who has an approved managed domain can create users without email verification. All new user email addresses must satisfy &ldquo;managed domain&rdquo; criteria.
-</aside>
-
-<aside>
-<strong>Note: For API per minute plan</strong><br><br>
-<code>/user/custcreate</code><br><br>
-An API partner can create a user type with no password authentication with Zoom. This user type will login to the partner site only and will not have access to Zoom&rsquo;s site.<br><br>
-<code>/report/</code><br><br>
-API partner can also call the report API to get the meeting reports. To become an API partner, please sign up via <a href="https://zoom.us/plan/api" target="_blank">https://zoom.us/plan/api</a><br><br>
-</aside>
-
-<h2 id="api-libraries">API Libraries</h2>
-
-<p>Zoom has created a library for Node.js with more coming soon</p>
-
-<h3 id="node-js">Node.js</h3>
-
-<p>Install via <a href="https://www.npmjs.com/package/zoomus">npm</a></p>
-
-<p><code class="prettyprint">npm install zoomus</code></p>
-
-<p>View the <a href="https://zoom.github.io/api/?javascript">Node.js API Docs</a> and view the source on <a href="https://github.com/zoom/zoom-lib-node">Github</a></p>
-
           <h1 id="basics">Basics</h1>
 
 <p>All the REST API calls should be POST HTTP requests server-side. This request cannot be initiated on the web client using AJAX approaches.</p>
@@ -334,6 +278,18 @@ API partner can also call the report API to get the meeting reports. To become a
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>When getting a response from the server, you should first check the response body for the &ldquo;error&rdquo; section. The &ldquo;error&rdquo; section indicates this is a failed request, and then you can get the failed code and message from this section.</p>
+
+<h2 id="api-libraries">API Libraries</h2>
+
+<p>Zoom has created a <a href="https://www.npmjs.com/package/zoomus">library for Node.js</a> with more coming soon</p>
+
+<h3 id="node-js-quick-start">Node.js Quick Start</h3>
+
+<p>Install via <a href="https://www.npmjs.com/package/zoomus">npm</a></p>
+
+<p><code class="prettyprint">npm install zoomus</code></p>
+
+<p>View the source on <a href="https://github.com/zoom/zoom-lib-node">Github</a></p>
 
           <h1 id="webhooks">Webhooks</h1>
 
@@ -1599,7 +1555,7 @@ User created in this way has no password and is not able to log into the Zoom we
 <td>Email, String</td>
 </tr>
 <tr>
-<td>login_type <strong>required</strong></td>
+<td>login_type <em>optional</em></td>
 <td>Login type of the email, int SNS_FACEBOOK = 0; SNS_GOOGLE = 1; SNS_API = 99; SNS_ZOOM = 100; SNS_SSO = 101;</td>
 </tr>
 </tbody></table>
@@ -2690,6 +2646,7 @@ User created in this way has no password and is not able to log into the Zoom we
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"uuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unique_id"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456789"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"real_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456789"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"start_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://zoom.us/s/123456789?zpk=hs65q23kd9sqliy612h23k"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"join_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://zoom.us/j/123456789"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-11-25T12:00:00Z"</span><span class="p">,</span><span class="w">
@@ -2712,6 +2669,8 @@ User created in this way has no password and is not able to log into the Zoom we
   </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
+<aside class="notice">&ldquo;real_id&rdquo; will be returned if Personal Meeting ID was used to create meeting</aside>
+
 <table><thead>
 <tr>
 <th>Arguments</th>
