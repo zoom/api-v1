@@ -3667,7 +3667,7 @@
         },
         "/report/getaudioreport": {
             "post": {
-                "description": "Get user report for a specified period.\n\n<aside class=\"notice\">Toll Report API is provided for enabled 'Toll Report' option's API partner only.</aside>\n\n<aside class=\"notice\">We will report a maximum of one month. For example, if \"from\" is set to \"2015-08-05\" and \"to\" is \"2015-10-10\" we will adjust \"from\" to \"2015-09-10\"</aside>\n\n",
+                "description": "Get user report for a specified period.\n\n<aside class=\"notice\">Toll Report API is provided for enabled 'Toll Report' option.</aside>\n\n<aside class=\"notice\">We will report a maximum of one month. For example, if \"from\" is set to \"2015-08-05\" and \"to\" is \"2015-10-10\" we will adjust \"from\" to \"2015-09-10\"</aside>\n\n",
                 "tags": [
                     "Report"
                 ],
@@ -4724,7 +4724,7 @@
         },
         "/user/custcreate": {
             "post": {
-                "description": "Create a user on Zoom, returns the created user ID.\n\n<aside class=\"notice\">\nThe API is provided for API partner only\n</aside>\n\n<aside class=\"notice\">\nUser created in this way has no password and is not able to log into the Zoom web site or client\n</aside>\n\n",
+                "description": "Create a user on Zoom, returns the created user ID.\n\n<aside class=\"notice\">\nThe API is provided for API plan only\n</aside>\n\n<aside class=\"notice\">\nUser created in this way has no password and is not able to log into the Zoom web site or client\n</aside>\n\n",
                 "tags": [
                     "User"
                 ],
@@ -5546,7 +5546,7 @@
         },
         "/user/ssocreate": {
             "post": {
-                "description": "Create a SSO user on Zoom, return the created user ID.\n\n<aside class=\"notice\">The API is provided for enabled 'Pre-provisioning SSO User' option's API partner only. User created in this way has no password. If it is not a basic user, will generate a Personal Vanity URL using user name (no domain) of the provisioning email. If user name or pmi is invalid or occupied, will use random number/random personal vanity URL.</aside>\n\n",
+                "description": "Create a SSO user on Zoom, return the created user ID.\n\n<aside class=\"notice\">The API is provided for enabled 'Pre-provisioning SSO User' option. User created in this way has no password. If it is not a basic user, will generate a Personal Vanity URL using user name (no domain) of the provisioning email. If user name or pmi is invalid or occupied, will use random number/random personal vanity URL.</aside>\n\n",
                 "tags": [
                     "User"
                 ],
