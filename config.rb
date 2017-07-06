@@ -11,7 +11,7 @@ config[:ex_uuid]            = 'unique_id'
 config[:ex_first_name]      = 'Zoomie'
 config[:ex_last_name]       = 'Userton'
 config[:ex_node_init]       = 'var Zoom = require("zoomus")({
-    key : "your_api_ley",
+    key : "your_api_key",
     secret : "your_api_secret"
 });'
 config[:ex_node_res]        = 'function(res){

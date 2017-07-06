@@ -134,6 +134,11 @@ includes:
     - appendix/index
     - appendix/plans
     - appendix/recurrence
+    - appendix/state
+    - appendix/country
+    - appendix/timezone
+    - appendix/tollfree_countries
+    - appendix/premium_countries
 
 search: true
 ---
