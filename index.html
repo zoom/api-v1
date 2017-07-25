@@ -2928,6 +2928,24 @@ User created in this way has no password and is not able to log into the Zoom we
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
+<aside class="notice">Instant meeting will not be returned when you call the &ldquo;List meetings&rdquo; REST API. So if you want the meeting info to persist, you have to do it yourself.</aside>
+
+<table><thead>
+<tr>
+<th>Arguments</th>
+<th>&nbsp;</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page_size <em>optional</em></td>
+<td>The amount of records returns within a single API call. Max of 300 meetings. <em>Default: 30</em></td>
+</tr>
+<tr>
+<td>page_number <em>optional</em></td>
+<td>Current page number of returned records. <em>Default: 1</em></td>
+</tr>
+</tbody></table>
+
           <h2 id="get-meeting-info">Get Meeting Info</h2>
 
 <p>Get a meeting on Zoom via meeting ID, return the meeting info.</p>
