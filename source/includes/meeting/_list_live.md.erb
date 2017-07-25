@@ -63,3 +63,11 @@ Zoom.meeting.listLive(<%= config[:ex_node_res] %>);
   ]
 }
 ```
+
+
+<aside class="notice">Instant meeting will not be returned when you call the "List meetings" REST API. So if you want the meeting info to persist, you have to do it yourself.</aside>
+
+Arguments | &nbsp;
+--- | ---
+page_size *optional* | The amount of records returns within a single API call. Max of 300 meetings. *Default: 30*
+page_number *optional* | Current page number of returned records. *Default: 1*
