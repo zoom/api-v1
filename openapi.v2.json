@@ -96,7 +96,7 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "session_id": "<%= config[:ex_uuid] %>",
+                                "session_id": "unique_id",
                                 "group_name": "zoom",
                                 "from": "2016-01-16",
                                 "to": "2016-01-22",
@@ -191,7 +191,7 @@
                                 "next_page_token": "",
                                 "chat_list": [
                                     {
-                                        "session_id": "<%= config[:ex_uuid] %>",
+                                        "session_id": "unique_id",
                                         "type": "Group",
                                         "participants": "",
                                         "group_name": "zoom test1",
@@ -239,8 +239,8 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "group_id": "<%= config[:ex_uuid] %>",
-                                "account_id": "<%= config[:ex_uuid] %>",
+                                "group_id": "unique_id",
+                                "account_id": "unique_id",
                                 "name": "New Group Test",
                                 "total_members": 0
                             }
@@ -284,7 +284,7 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "id": "<%= config[:ex_uuid] %>",
+                                "id": "unique_id",
                                 "deleted_at": "2015-08-20T08:41:58Z",
                                 "deleted_count": 1
                             }
@@ -334,8 +334,8 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "group_id": "<%= config[:ex_uuid] %>",
-                                "account_id": "<%= config[:ex_uuid] %>",
+                                "group_id": "unique_id",
+                                "account_id": "unique_id",
                                 "name": "New Group Test",
                                 "total_members": 0
                             }
@@ -379,8 +379,8 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "group_id": "<%= config[:ex_uuid] %>",
-                                "account_id": "<%= config[:ex_uuid] %>",
+                                "group_id": "unique_id",
+                                "account_id": "unique_id",
                                 "name": "Group Test",
                                 "total_members": 2
                             }
@@ -419,8 +419,8 @@
                                 "total_records": 1,
                                 "groups": [
                                     {
-                                        "group_id": "<%= config[:ex_uuid] %>",
-                                        "account_id": "<%= config[:ex_uuid] %>",
+                                        "group_id": "unique_id",
+                                        "account_id": "unique_id",
                                         "name": "Group Test1",
                                         "total_members": 40
                                     }
@@ -473,7 +473,7 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "id": "<%= config[:ex_uuid] %>",
+                                "id": "unique_id",
                                 "add_at": "2015-08-20T08:57:38Z",
                                 "add_count": 2
                             }
@@ -524,7 +524,7 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "id": "<%= config[:ex_uuid] %>",
+                                "id": "unique_id",
                                 "deleted_at": "2015-08-20T08:57:38Z",
                                 "deleted_count": 2
                             }
@@ -588,10 +588,10 @@
                                 "total_records": 1,
                                 "members": [
                                     {
-                                        "id": "<%= config[:ex_uuid] %>",
-                                        "email": "<%= config[:ex_email] %>",
-                                        "first_name": "<%= config[:ex_first_name] %>",
-                                        "last_name": "<%= config[:ex_last_name] %>",
+                                        "id": "unique_id",
+                                        "email": "email_address",
+                                        "first_name": "Zoomie",
+                                        "last_name": "Userton",
                                         "pic_url": "https://ssotest.zoom.us/p/6EoubcvJR7eF2grNXJkrHA/f2003a9c-3095-4865-8536-03cc6f211e86-9569"
                                     }
                                 ]
@@ -657,7 +657,7 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "id": "<%= config[:ex_uuid] %>",
+                                "id": "unique_id",
                                 "name": "New Device",
                                 "ip": "192.168.1.10",
                                 "protocol_type": 1,
@@ -703,7 +703,7 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "id": "<%= config[:ex_uuid] %>",
+                                "id": "unique_id",
                                 "deleted_at": "2017-03-14T09:27:15Z"
                             }
                         }
@@ -759,7 +759,7 @@
                                 "total_records": 1,
                                 "devices": [
                                     {
-                                        "id": "<%= config[:ex_uuid] %>",
+                                        "id": "unique_id",
                                         "name": "New Device",
                                         "ip": "192.168.1.10",
                                         "protocol_type": 1,
@@ -833,7 +833,7 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "id": "<%= config[:ex_uuid] %>",
+                                "id": "unique_id",
                                 "updated_at": "2017-03-14T09:27:03Z"
                             }
                         }
@@ -904,8 +904,8 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "group_id": "<%= config[:ex_uuid] %>",
-                                "account_id": "<%= config[:ex_uuid] %>",
+                                "group_id": "unique_id",
+                                "account_id": "unique_id",
                                 "name": "New Group Test",
                                 "total_members": 0,
                                 "option_search_by_domain": false,
@@ -952,7 +952,7 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "id": "<%= config[:ex_uuid] %>",
+                                "id": "unique_id",
                                 "deleted_at": "2015-08-20T08:41:58Z",
                                 "deleted_count": 1
                             }
@@ -1030,8 +1030,8 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "group_id": "<%= config[:ex_uuid] %>",
-                                "account_id": "<%= config[:ex_uuid] %>",
+                                "group_id": "unique_id",
+                                "account_id": "unique_id",
                                 "name": "New Group Test",
                                 "total_members": 0,
                                 "option_search_by_domain": false,
@@ -1078,8 +1078,8 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "group_id": "<%= config[:ex_uuid] %>",
-                                "account_id": "<%= config[:ex_uuid] %>",
+                                "group_id": "unique_id",
+                                "account_id": "unique_id",
                                 "name": "Group Test",
                                 "total_members": 2,
                                 "option_search_by_domain": false,
@@ -1121,8 +1121,8 @@
                                 "total_records": 1,
                                 "groups": [
                                     {
-                                        "group_id": "<%= config[:ex_uuid] %>",
-                                        "account_id": "<%= config[:ex_uuid] %>",
+                                        "group_id": "unique_id",
+                                        "account_id": "unique_id",
                                         "name": "Group Test1",
                                         "total_members": 40,
                                         "option_search_by_domain": false,
@@ -1179,7 +1179,7 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "id": "<%= config[:ex_uuid] %>",
+                                "id": "unique_id",
                                 "deleted_at": "2015-08-20T08:57:38Z",
                                 "deleted_count": 2
                             }
@@ -1243,10 +1243,10 @@
                                 "total_records": 1,
                                 "members": [
                                     {
-                                        "id": "<%= config[:ex_uuid] %>",
-                                        "email": "<%= config[:ex_email] %>",
-                                        "first_name": "<%= config[:ex_first_name] %>",
-                                        "last_name": "<%= config[:ex_last_name] %>",
+                                        "id": "unique_id",
+                                        "email": "email_address",
+                                        "first_name": "Zoomie",
+                                        "last_name": "Userton",
                                         "pic_url": "https://ssotest.zoom.us/p/6EoubcvJR7eF2grNXJkrHA/f2003a9c-3095-4865-8536-03cc6f211e86-9569"
                                     }
                                 ]
@@ -1345,7 +1345,7 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "id": "<%= config[:ex_uuid] %> ",
+                                "id": "unique_id ",
                                 "updated_at": "2012-11-25T12:00:00Z"
                             }
                         }
@@ -1503,9 +1503,9 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "id": "<%= config[:ex_uuid] %>",
-                                "owner_id": "<%= config[:ex_uuid] %>",
-                                "owner_email": "<%= config[:ex_email] %>",
+                                "id": "unique_id",
+                                "owner_id": "unique_id",
+                                "owner_email": "email_address",
                                 "created_at": "2012-11-25T12:00:00Z"
                             }
                         }
@@ -1548,7 +1548,7 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "id": "<%= config[:ex_uuid] %>",
+                                "id": "unique_id",
                                 "deleted_at": "2012-11-25T12:00:00Z"
                             }
                         }
@@ -1591,9 +1591,9 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "id": "<%= config[:ex_uuid] %>",
-                                "owner_id": "<%= config[:ex_uuid] %>",
-                                "owner_email": "<%= config[:ex_email] %>",
+                                "id": "unique_id",
+                                "owner_id": "unique_id",
+                                "owner_email": "email_address",
                                 "created_at": "2012-11-25T12:00:00Z"
                             }
                         }
@@ -1634,8 +1634,8 @@
                                 "total_records": 3,
                                 "subAccounts": [
                                     {
-                                        "id": "<%= config[:ex_uuid] %>",
-                                        "owner_email": "<%= config[:ex_email] %>",
+                                        "id": "unique_id",
+                                        "owner_email": "email_address",
                                         "created_at": "2015-01-27T140508Z"
                                     }
                                 ]
@@ -1687,7 +1687,7 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "id": "<%= config[:ex_uuid] %>",
+                                "id": "unique_id",
                                 "updated_at": "2012-11-25T12:00:00Z"
                             }
                         }
@@ -1730,9 +1730,9 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "email": "<%= config[:ex_email] %>",
-                                "first_name": "<%= config[:ex_first_name] %>",
-                                "last_name": "<%= config[:ex_last_name] %>",
+                                "email": "email_address",
+                                "first_name": "Zoomie",
+                                "last_name": "Userton",
                                 "phone_number": "123456789",
                                 "address": "address",
                                 "apt": "apt",
@@ -1950,9 +1950,9 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "email": "<%= config[:ex_email] %>",
-                                "first_name": "<%= config[:ex_first_name] %>",
-                                "last_name": "<%= config[:ex_last_name] %>",
+                                "email": "email_address",
+                                "first_name": "Zoomie",
+                                "last_name": "Userton",
                                 "phone_number": "123456789",
                                 "address": "address",
                                 "apt": "apt",
@@ -2216,7 +2216,7 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "id": "<%= config[:ex_uuid] %>",
+                                "id": "unique_id",
                                 "updated_at": "2012-11-25T12:00:00Z"
                             }
                         }
@@ -2297,11 +2297,11 @@
                                 "total_records": 1,
                                 "meetings": [
                                     {
-                                        "uuid": "<%= config[:ex_uuid] %>",
-                                        "meeting_number": "<%= config[:ex_meeting_number] %>",
-                                        "host_id": "<%= config[:ex_uuid] %>",
-                                        "account_id": "<%= config[:ex_uuid] %>",
-                                        "topic": "<%= config[:ex_meeting_topic] %>",
+                                        "uuid": "unique_id",
+                                        "meeting_number": "123456789",
+                                        "host_id": "unique_id",
+                                        "account_id": "unique_id",
+                                        "topic": "Meeting Topic",
                                         "start_time": "2014-11-06T04:10:10Z",
                                         "timezone": "America/Los_Angeles",
                                         "duration": 999,
@@ -2309,8 +2309,8 @@
                                         "recording_count": 1,
                                         "recording_files": [
                                             {
-                                                "id": "<%= config[:ex_uuid] %>",
-                                                "meeting_id": "<%= config[:ex_uuid] %>",
+                                                "id": "unique_id",
+                                                "meeting_id": "unique_id",
                                                 "recording_start": "2014-11-06T04:14:10Z",
                                                 "recording_end": "2014-11-06T04:24:10Z",
                                                 "file_type": "M4A",
@@ -2510,12 +2510,12 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "uuid": "<%= config[:ex_uuid] %>",
-                                "id": "<%= config[:ex_meeting_number] %>",
-                                "start_url": "https://zoom.us/s/<%= config[:ex_meeting_number] %>?zpk=hs65q23kd9sqliy612h23k",
-                                "join_url": "https://zoom.us/j/<%= config[:ex_meeting_number] %>",
+                                "uuid": "unique_id",
+                                "id": "123456789",
+                                "start_url": "https://zoom.us/s/123456789?zpk=hs65q23kd9sqliy612h23k",
+                                "join_url": "https://zoom.us/j/123456789",
                                 "created_at": "2012-11-25T12:00:00Z",
-                                "host_id": "<%= config[:ex_uuid] %>",
+                                "host_id": "unique_id",
                                 "topic": "Topic for this meeting",
                                 "type": 2,
                                 "option_jbh": false,
@@ -2586,7 +2586,7 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "id": "<%= config[:ex_meeting_number] %>",
+                                "id": "123456789",
                                 "deleted_at": "2012-11-25T12:00:00Z"
                             }
                         }
@@ -2636,7 +2636,7 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "id": "<%= config[:ex_meeting_number] %>",
+                                "id": "123456789",
                                 "ended_at": "2012-11-25T12:00:00Z"
                             }
                         }
@@ -2686,9 +2686,9 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "uuid": "<%= config[:ex_uuid] %>",
-                                "id": "<%= config[:ex_meeting_number] %>",
-                                "host_id": "<%= config[:ex_uuid] %>",
+                                "uuid": "unique_id",
+                                "id": "123456789",
+                                "host_id": "unique_id",
                                 "topic": "Zoom Meeting",
                                 "password": "",
                                 "h323_password": "",
@@ -2708,8 +2708,8 @@
                                 "start_time": "",
                                 "duration": 0,
                                 "timezone": "Asia/Hong_Kong",
-                                "start_url": "https://www.zoom.us/s/<%= config[:ex_meeting_number] %>?zpk=xxxx",
-                                "join_url": "https://www.zoom.us/j/<%= config[:ex_meeting_number] %>",
+                                "start_url": "https://www.zoom.us/s/123456789?zpk=xxxx",
+                                "join_url": "https://www.zoom.us/j/123456789",
                                 "created_at": "2016-12-20T02:51:42Z",
                                 "occurrences": [
                                     {
@@ -2779,12 +2779,12 @@
                                 "page_size": 50,
                                 "meetings": [
                                     {
-                                        "uuid": "<%= config[:ex_uuid] %>",
-                                        "id": "<%= config[:ex_meeting_number] %>",
-                                        "start_url": "https://zoom.us/s/<%= config[:ex_meeting_number] %>?zpk=hs65q23kd9sqliy612h23k",
-                                        "join_url": "https://zoom.us/j/<%= config[:ex_meeting_number] %>",
+                                        "uuid": "unique_id",
+                                        "id": "123456789",
+                                        "start_url": "https://zoom.us/s/123456789?zpk=hs65q23kd9sqliy612h23k",
+                                        "join_url": "https://zoom.us/j/123456789",
                                         "created_at": "2012-11-25T12:00:00Z",
-                                        "host_id": "<%= config[:ex_uuid] %>",
+                                        "host_id": "unique_id",
                                         "topic": "Topic for this meeting",
                                         "type": 2,
                                         "start_time": "2012-11-25T12:00:00Z",
@@ -2842,12 +2842,12 @@
                                 "page_size": 50,
                                 "meetings": [
                                     {
-                                        "uuid": "<%= config[:ex_uuid] %>",
-                                        "id": "<%= config[:ex_meeting_number] %>",
-                                        "start_url": "https://zoom.us/s/<%= config[:ex_meeting_number] %>?zpk=hs65q23kd9sqliy612h23k",
-                                        "join_url": "https://zoom.us/j/<%= config[:ex_meeting_number] %>",
+                                        "uuid": "unique_id",
+                                        "id": "123456789",
+                                        "start_url": "https://zoom.us/s/123456789?zpk=hs65q23kd9sqliy612h23k",
+                                        "join_url": "https://zoom.us/j/123456789",
                                         "created_at": "2012-11-25T12:00:00Z",
-                                        "host_id": "<%= config[:ex_uuid] %>",
+                                        "host_id": "unique_id",
                                         "topic": "Topic for this meeting",
                                         "type": 2,
                                         "status": 0,
@@ -3024,8 +3024,8 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "registrant_id": "<%= config[:ex_uuid] %>",
-                                "id": "<%= config[:ex_meeting_number] %>",
+                                "registrant_id": "unique_id",
+                                "id": "123456789",
                                 "topic": "meeting registration",
                                 "start_time": "2016-02-21T04:00:00Z",
                                 "join_url": "https://www.zoom.us/w/869275230?tk=2DsQiu6nZVsZVATrPLvXgqPvw8mmKyxgAGaDMizLv34.DQEAAAAAM9AWXhZ2Nm5vRjIyMlRoUzE3ZktWM3l4cHVRAA"
@@ -3224,7 +3224,7 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "id": "<%= config[:ex_uuid] %>",
+                                "id": "unique_id",
                                 "updated_at": "2012-11-25T12:00:00Z"
                             }
                         }
@@ -3358,9 +3358,9 @@
                                 "total_records": 10,
                                 "users": [
                                     {
-                                        "user_id": "<%= config[:ex_uuid] %>",
-                                        "user_name": "<%= config[:ex_first_name] %> <%= config[:ex_last_name] %>",
-                                        "email": "<%= config[:ex_email] %>",
+                                        "user_id": "unique_id",
+                                        "user_name": "Zoomie Userton",
+                                        "email": "email_address",
                                         "total_send": 0,
                                         "total_receive": 0,
                                         "group_send": 0,
@@ -3441,11 +3441,11 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "uuid": "<%= config[:ex_uuid] %>",
-                                "id": "<%= config[:ex_meeting_number] %>",
+                                "uuid": "unique_id",
+                                "id": "123456789",
                                 "type": "Past Meeting",
-                                "host": "<%= config[:ex_first_name] %> <%= config[:ex_last_name] %>",
-                                "email": "<%= config[:ex_email] %>",
+                                "host": "Zoomie Userton",
+                                "email": "email_address",
                                 "user_type": "Pro",
                                 "start_time": "2015-08-30T05:36:56Z",
                                 "end_time": "2015-08-30T06:36:56Z",
@@ -3462,9 +3462,9 @@
                                 "page_size": 30,
                                 "participants": [
                                     {
-                                        "id": "<%= config[:ex_uuid] %>",
-                                        "user_id": "<%= config[:ex_uuid] %>",
-                                        "user_name": "<%= config[:ex_first_name] %> <%= config[:ex_last_name] %>",
+                                        "id": "unique_id",
+                                        "user_id": "unique_id",
+                                        "user_name": "Zoomie Userton",
                                         "device": "Mac",
                                         "ip_address": "117.83.222.228",
                                         "cn": "CN",
@@ -3557,10 +3557,10 @@
                                 "type": "Past Meetings",
                                 "meetings": [
                                     {
-                                        "uuid": "<%= config[:ex_uuid] %>",
-                                        "id": "<%= config[:ex_meeting_number] %>",
-                                        "host": "<%= config[:ex_first_name] %> <%= config[:ex_last_name] %>",
-                                        "email": "<%= config[:ex_email] %>",
+                                        "uuid": "unique_id",
+                                        "id": "123456789",
+                                        "host": "Zoomie Userton",
+                                        "email": "email_address",
                                         "user_type": "Pro",
                                         "start_time": "2015-08-29T05:36:56Z",
                                         "end_time": "2015-08-29T06:36:56Z",
@@ -3642,8 +3642,8 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "meeting_id": "<%= config[:ex_uuid] %>",
-                                "user_id": "<%= config[:ex_uuid] %>",
+                                "meeting_id": "unique_id",
+                                "user_id": "unique_id",
                                 "type": "Past Meeting",
                                 "device": "Mac",
                                 "ip_address": "112.80.63.6",
@@ -3773,11 +3773,11 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "uuid": "<%= config[:ex_uuid] %>",
-                                "id": "<%= config[:ex_meeting_number] %>",
+                                "uuid": "unique_id",
+                                "id": "123456789",
                                 "type": "Past Webinar",
-                                "host": "<%= config[:ex_first_name] %> <%= config[:ex_last_name] %>",
-                                "email": "<%= config[:ex_email] %>",
+                                "host": "Zoomie Userton",
+                                "email": "email_address",
                                 "user_type": "Pro",
                                 "start_time": "2015-08-30T05:36:56Z",
                                 "end_time": "2015-08-30T06:36:56Z",
@@ -3794,9 +3794,9 @@
                                 "page_size": 30,
                                 "participants": [
                                     {
-                                        "id": "<%= config[:ex_uuid] %>",
-                                        "user_id": "<%= config[:ex_uuid] %>",
-                                        "user_name": "<%= config[:ex_first_name] %> <%= config[:ex_last_name] %>",
+                                        "id": "unique_id",
+                                        "user_id": "unique_id",
+                                        "user_name": "Zoomie Userton",
                                         "device": "Mac",
                                         "ip_address": "117.83.222.228",
                                         "cn": "CN",
@@ -3889,10 +3889,10 @@
                                 "type": "Past Webinars",
                                 "meetings": [
                                     {
-                                        "uuid": "<%= config[:ex_uuid] %>",
-                                        "id": "<%= config[:ex_meeting_number] %>",
-                                        "host": "<%= config[:ex_first_name] %> <%= config[:ex_last_name] %>",
-                                        "email": "<%= config[:ex_email] %>",
+                                        "uuid": "unique_id",
+                                        "id": "123456789",
+                                        "host": "Zoomie Userton",
+                                        "email": "email_address",
                                         "user_type": "Pro",
                                         "start_time": "2015-08-29T05:36:56Z",
                                         "end_time": "2015-08-29T06:36:56Z",
@@ -3982,7 +3982,7 @@
                                 "page_size": 30,
                                 "total_records": 1,
                                 "zoom_room": {
-                                    "id": "<%= config[:ex_uuid] %>",
+                                    "id": "unique_id",
                                     "room_name": "zoom room",
                                     "email": "zoomroom@zoom.us",
                                     "account_type": "Work Email",
@@ -4016,10 +4016,10 @@
                                 },
                                 "past_meetings": [
                                     {
-                                        "uuid": "<%= config[:ex_uuid] %>",
-                                        "id": "<%= config[:ex_meeting_number] %>",
-                                        "host": "<%= config[:ex_first_name] %> <%= config[:ex_last_name] %>",
-                                        "email": "<%= config[:ex_email] %>",
+                                        "uuid": "unique_id",
+                                        "id": "123456789",
+                                        "host": "Zoomie Userton",
+                                        "email": "email_address",
                                         "user_type": "",
                                         "start_time": "",
                                         "end_time": "",
@@ -4087,7 +4087,7 @@
                                 "total_records": 2,
                                 "zoom_rooms": [
                                     {
-                                        "id": "<%= config[:ex_uuid] %>",
+                                        "id": "unique_id",
                                         "room_name": "zoom room1",
                                         "email": "zoomroom1@zoom.us",
                                         "account_type": "Work Email",
@@ -4150,7 +4150,7 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "id": "<%= config[:ex_uuid] %>",
+                                "id": "unique_id",
                                 "deleted_at": "2012-11-25T12:00:00Z"
                             }
                         }
@@ -4193,11 +4193,11 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "uuid": "<%= config[:ex_uuid] %>",
-                                "meeting_number": "<%= config[:ex_meeting_number] %>",
-                                "host_id": "<%= config[:ex_uuid] %>",
-                                "account_id": "<%= config[:ex_uuid] %>",
-                                "topic": "<%= config[:ex_meeting_topic] %>",
+                                "uuid": "unique_id",
+                                "meeting_number": "123456789",
+                                "host_id": "unique_id",
+                                "account_id": "unique_id",
+                                "topic": "Meeting Topic",
                                 "start_time": "2015-04-13T01:06:04Z",
                                 "timezone": "UTC",
                                 "duration": 1,
@@ -4205,8 +4205,8 @@
                                 "recording_count": 3,
                                 "recording_files": [
                                     {
-                                        "id": "<%= config[:ex_uuid] %>",
-                                        "meeting_id": "<%= config[:ex_uuid] %>",
+                                        "id": "unique_id",
+                                        "meeting_id": "unique_id",
                                         "recording_start": "2015-04-13T01:06:36Z",
                                         "recording_end": "2015-04-13T01:06:47Z",
                                         "file_type": "MP4",
@@ -4294,11 +4294,11 @@
                                 "total_records": 1,
                                 "meetings": [
                                     {
-                                        "uuid": "<%= config[:ex_uuid] %>",
-                                        "meeting_number": "<%= config[:ex_meeting_number] %>",
-                                        "host_id": "<%= config[:ex_uuid] %>",
-                                        "account_id": "<%= config[:ex_uuid] %>",
-                                        "topic": "<%= config[:ex_meeting_topic] %>",
+                                        "uuid": "unique_id",
+                                        "meeting_number": "123456789",
+                                        "host_id": "unique_id",
+                                        "account_id": "unique_id",
+                                        "topic": "Meeting Topic",
                                         "start_time": "2014-11-06T04:10:10Z",
                                         "timezone": "America/Los_Angeles",
                                         "duration": 999,
@@ -4306,8 +4306,8 @@
                                         "recording_count": 1,
                                         "recording_files": [
                                             {
-                                                "id": "<%= config[:ex_uuid] %>",
-                                                "meeting_id": "<%= config[:ex_uuid] %>",
+                                                "id": "unique_id",
+                                                "meeting_id": "unique_id",
                                                 "recording_start": "2014-11-06T04:14:10Z",
                                                 "recording_end": "2014-11-06T04:24:10Z",
                                                 "file_type": "M4A",
@@ -4627,7 +4627,7 @@
                                 "meetings": [
                                     {
                                         "number": 111111111,
-                                        "topic": "<%= config[:ex_meeting_topic] %>",
+                                        "topic": "Meeting Topic",
                                         "start_time": "2013-02-11T08:18:09Z",
                                         "end_time": "2013-02-11T09:18:09Z",
                                         "duration": 60,
@@ -4686,8 +4686,8 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "id": "<%= config[:ex_uuid] %>",
-                                "host_email": "<%= config[:ex_email] %>",
+                                "id": "unique_id",
+                                "host_email": "email_address",
                                 "updated_at": "2013-09-02T12:00:00Z"
                             }
                         }
@@ -4742,8 +4742,8 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "id": "<%= config[:ex_uuid] %>",
-                                "host_email": "<%= config[:ex_email] %>",
+                                "id": "unique_id",
+                                "host_email": "email_address",
                                 "updated_at": "2013-09-02T12:00:00Z"
                             }
                         }
@@ -5078,11 +5078,11 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "email": "<%= config[:ex_email] %>",
-                                "id": "<%= config[:ex_uuid] %>",
+                                "email": "email_address",
+                                "id": "unique_id",
                                 "created_at": "2012-11-25T12:00:00Z",
-                                "first_name": "<%= config[:ex_first_name] %>",
-                                "last_name": "<%= config[:ex_last_name] %>",
+                                "first_name": "Zoomie",
+                                "last_name": "Userton",
                                 "pic_url": "",
                                 "type": 1,
                                 "disable_chat": false,
@@ -5536,8 +5536,8 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "email": "<%= config[:ex_email] %>",
-                                "id": "<%= config[:ex_uuid] %>",
+                                "email": "email_address",
+                                "id": "unique_id",
                                 "created_at": "2012-11-25T12:00:00Z",
                                 "first_name": "Zoom",
                                 "last_name": "User",
@@ -5910,11 +5910,11 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "email": "<%= config[:ex_email] %>",
-                                "id": "<%= config[:ex_uuid] %>",
+                                "email": "email_address",
+                                "id": "unique_id",
                                 "created_at": "2012-11-25T12:00:00Z",
-                                "first_name": "<%= config[:ex_first_name] %>",
-                                "last_name": "<%= config[:ex_last_name] %>",
+                                "first_name": "Zoomie",
+                                "last_name": "Userton",
                                 "pic_url": "",
                                 "type": 1,
                                 "disable_chat": false,
@@ -5999,7 +5999,7 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "id": "<%= config[:ex_uuid] %>",
+                                "id": "unique_id",
                                 "deactivated_at": "2012-11-25T12:00:00Z"
                             }
                         }
@@ -6049,8 +6049,8 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "id": "<%= config[:ex_uuid] %>",
-                                "account_id": " <%= config[:ex_uuid] %>",
+                                "id": "unique_id",
+                                "account_id": " unique_id",
                                 "deleted_at": "2012-11-25T12:00:00Z"
                             }
                         }
@@ -6093,12 +6093,12 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "email": "<%= config[:ex_email] %>",
-                                "id": "<%= config[:ex_uuid] %>",
+                                "email": "email_address",
+                                "id": "unique_id",
                                 "account_id": "8af3444232345",
                                 "created_at": "2012-11-25T12:00:00Z",
-                                "first_name": "<%= config[:ex_first_name] %>",
-                                "last_name": "<%= config[:ex_last_name] %>",
+                                "first_name": "Zoomie",
+                                "last_name": "Userton",
                                 "type": 1,
                                 "token": "adlfjadslfkjasdkljfkjalkadfskjdsafkjdfsajkllajsdfaljsdf",
                                 "pic_url": "https://www.zoom.us/p/bNsPi",
@@ -6180,11 +6180,11 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "email": "<%= config[:ex_email] %>",
-                                "id": "<%= config[:ex_uuid] %>",
+                                "email": "email_address",
+                                "id": "unique_id",
                                 "created_at": "2012-11-25T12:00:00Z",
-                                "first_name": "<%= config[:ex_first_name] %>",
-                                "last_name": "<%= config[:ex_last_name] %>",
+                                "first_name": "Zoomie",
+                                "last_name": "Userton",
                                 "type": 1,
                                 "token": "adlfjadslfkjasdkljfkjalkadfskjdsafkjdfsajkllajsdfaljsdf",
                                 "pic_url": "https://www.zoom.us/p/bNsPi",
@@ -6271,11 +6271,11 @@
                                 "page_size": 50,
                                 "users": [
                                     {
-                                        "email": "<%= config[:ex_email] %>",
-                                        "id": "<%= config[:ex_uuid] %>",
+                                        "email": "email_address",
+                                        "id": "unique_id",
                                         "created_at": "2012-11-25T12:00:00Z",
-                                        "first_name": "<%= config[:ex_first_name] %>",
-                                        "last_name": "<%= config[:ex_last_name] %>",
+                                        "first_name": "Zoomie",
+                                        "last_name": "Userton",
                                         "type": 1,
                                         "pic_url": "https://www.zoom.us/p/bNsPi",
                                         "disable_chat": false,
@@ -6359,11 +6359,11 @@
                                 "page_size": 50,
                                 "users": [
                                     {
-                                        "email": "<%= config[:ex_email] %>",
-                                        "id": "<%= config[:ex_uuid] %>",
+                                        "email": "email_address",
+                                        "id": "unique_id",
                                         "created_at": "2012-11-25T12:00:00Z",
-                                        "first_name": "<%= config[:ex_first_name] %>",
-                                        "last_name": "<%= config[:ex_last_name] %>",
+                                        "first_name": "Zoomie",
+                                        "last_name": "Userton",
                                         "type": 1,
                                         "pic_url": "https://www.zoom.us/p/bNsPi",
                                         "disable_chat": false,
@@ -6439,8 +6439,8 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "id": "<%= config[:ex_uuid] %>",
-                                "email": "<%= config[:ex_email] %>",
+                                "id": "unique_id",
+                                "email": "email_address",
                                 "deleted_at": "2013-09-02T12:00:00Z"
                             }
                         }
@@ -6488,8 +6488,8 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "id": "<%= config[:ex_uuid] %>",
-                                "email": "<%= config[:ex_email] %>",
+                                "id": "unique_id",
+                                "email": "email_address",
                                 "updated_at": "2013-09-02T12:00:00Z"
                             }
                         }
@@ -6540,10 +6540,10 @@
                                 "total_records": 1,
                                 "users": [
                                     {
-                                        "id": "<%= config[:ex_uuid] %>",
-                                        "email": "<%= config[:ex_email] %>",
-                                        "first_name": "<%= config[:ex_first_name] %>",
-                                        "last_name": "<%= config[:ex_last_name] %>"
+                                        "id": "unique_id",
+                                        "email": "email_address",
+                                        "first_name": "Zoomie",
+                                        "last_name": "Userton"
                                     }
                                 ]
                             }
@@ -6657,10 +6657,10 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "id": "<%= config[:ex_uuid] %>",
-                                "email": "<%= config[:ex_email] %>",
-                                "first_name": "<%= config[:ex_first_name] %>",
-                                "last_name": "<%= config[:ex_last_name] %>",
+                                "id": "unique_id",
+                                "email": "email_address",
+                                "first_name": "Zoomie",
+                                "last_name": "Userton",
                                 "pic_url": "",
                                 "type": 2,
                                 "disable_chat": true,
@@ -7069,7 +7069,7 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "id": "<%= config[:ex_uuid] %>",
+                                "id": "unique_id",
                                 "updated_at": "2012-11-25T12:00:00Z"
                             }
                         }
@@ -7119,7 +7119,7 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "id": "<%= config[:ex_uuid] %>",
+                                "id": "unique_id",
                                 "updated_at": "2013-09-02T12:00:00Z"
                             }
                         }
@@ -7177,9 +7177,9 @@
                             "application/json": {
                                 "attendees": [
                                     {
-                                        "first_name": "<%= config[:ex_first_name] %>",
-                                        "last_name": "<%= config[:ex_last_name] %>",
-                                        "email": "<%= config[:ex_email] %>",
+                                        "first_name": "Zoomie",
+                                        "last_name": "Userton",
+                                        "email": "email_address",
                                         "join_time": "2015-09-18T09:41:39Z",
                                         "leave_time": "2015-09-18T09:42:12Z",
                                         "time_in_session": "8",
@@ -7374,9 +7374,9 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "uuid": "<%= config[:ex_uuid] %>",
-                                "id": "<%= config[:ex_meeting_number] %>",
-                                "host_id": "<%= config[:ex_uuid] %>",
+                                "uuid": "unique_id",
+                                "id": "123456789",
+                                "host_id": "unique_id",
                                 "topic": "create webinar via rest api",
                                 "agenda": "",
                                 "status": 0,
@@ -7389,8 +7389,8 @@
                                 "start_time": " 2015-02-08T12:50:30Z",
                                 "duration": 0,
                                 "timezone": "America/Los_Angeles",
-                                "start_url": "https://zoom.us/s/<%= config[:ex_meeting_number] %>?zpk=0Oti_Z0tCy ",
-                                "join_url": "https://zoom.us/j/<%= config[:ex_meeting_number] %>",
+                                "start_url": "https://zoom.us/s/123456789?zpk=0Oti_Z0tCy ",
+                                "join_url": "https://zoom.us/j/123456789",
                                 "registration_url": "",
                                 "created_at": "2015-01-22T07:09:49Z"
                             }
@@ -7447,7 +7447,7 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "id": "<%= config[:ex_meeting_number] %>",
+                                "id": "123456789",
                                 "deleted_at": "2012-11-25T12:00:00Z"
                             }
                         }
@@ -7497,7 +7497,7 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "id": "<%= config[:ex_meting_number] %>",
+                                "id": "123456789",
                                 "ended_at": "2012-11-25T12:00:00Z"
                             }
                         }
@@ -7547,13 +7547,13 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "uuid": "<%= config[:ex_uuid] %>",
-                                "id": "<%= config[:ex_meeting_number] %>",
-                                "start_url": "https://zoom.us/s/<%= config[:ex_meeting_number] %>?zpk=hs65q23kd9sqliy612h23k",
-                                "join_url": "https://zoom.us/j/<%= config[:ex_meeting_number] %>",
+                                "uuid": "unique_id",
+                                "id": "123456789",
+                                "start_url": "https://zoom.us/s/123456789?zpk=hs65q23kd9sqliy612h23k",
+                                "join_url": "https://zoom.us/j/123456789",
                                 "registration_url": "",
                                 "created_at": "2012-11-25T12:00:00Z",
-                                "host_id": "<%= config[:ex_uuid] %>",
+                                "host_id": "unique_id",
                                 "topic": "Topic for this meeting",
                                 "type": 5,
                                 "start_time": "2012-11-25T12:00:00Z",
@@ -7634,12 +7634,12 @@
                                 "page_size": 50,
                                 "webinars": [
                                     {
-                                        "uuid": "<%= config[:ex_uuid] %>",
-                                        "id": "<%= config[:ex_meeting_number] %>",
-                                        "start_url": "https://zoom.us/s/<%= config[:ex_meeting_number] %>?zpk=hs65q23kd9sqliy612h23k",
-                                        "join_url": "https://zoom.us/j/<%= config[:ex_meeting_number] %>",
+                                        "uuid": "unique_id",
+                                        "id": "123456789",
+                                        "start_url": "https://zoom.us/s/123456789?zpk=hs65q23kd9sqliy612h23k",
+                                        "join_url": "https://zoom.us/j/123456789",
                                         "created_at": "2012-11-25T12:00:00Z",
-                                        "host_id": "<%= config[:ex_uuid] %>",
+                                        "host_id": "unique_id",
                                         "topic": "Topic for this meeting",
                                         "type": 5,
                                         "start_time": "2012-11-25T12:00:00Z",
@@ -7715,12 +7715,12 @@
                                 "page_size": 50,
                                 "webinars": [
                                     {
-                                        "uuid": "<%= config[:ex_uuid] %>",
-                                        "id": "<%= config[:ex_meeting_number] %>",
-                                        "start_url": "https://zoom.us/s/<%= config[:ex_meeting_number] %>?zpk=hs65q23kd9sqliy612h23k",
-                                        "join_url": "https://zoom.us/j/<%= config[:ex_meeting_number] %>",
+                                        "uuid": "unique_id",
+                                        "id": "123456789",
+                                        "start_url": "https://zoom.us/s/123456789?zpk=hs65q23kd9sqliy612h23k",
+                                        "join_url": "https://zoom.us/j/123456789",
                                         "created_at": "2012-11-25T12:00:00Z",
-                                        "host_id": "<%= config[:ex_uuid] %>",
+                                        "host_id": "unique_id",
                                         "topic": "Topic for this Webinar",
                                         "type": 5,
                                         "start_time": "2012-11-25T12:00:00Z",
@@ -7783,8 +7783,8 @@
                                 "total_records": 1,
                                 "panelists": [
                                     {
-                                        "name": "<%= config[:ex_first_name] %> <%= config[:ex_last_name] %>",
-                                        "email": "<%= config[:ex_email] %>",
+                                        "name": "Zoomie Userton",
+                                        "email": "email_address",
                                         "join_url": "https://www.zoom.us/w/552681828?tk=TMnju_IjiU7Fx3eSkrajn2irvyMBNQ4XCW6cutSPntg.DQEAAAAAIPFBZBYwbzhKUUlXVVN3bW9Ed05QUmdvU2hBAA"
                                     }
                                 ]
@@ -7842,13 +7842,13 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "id": "<%= config[:ex_meeting_number] %>",
-                                "uuid": "<%= config[:ex_uuid] %>",
+                                "id": "123456789",
+                                "uuid": "unique_id",
                                 "start_time": "2017-02-09T07:15:48Z",
                                 "questions": [
                                     {
-                                        "name": "<%= config[:ex_first_name] %> <%= config[:ex_last_name] %>",
-                                        "email": "<%= config[:ex_email] %>",
+                                        "name": "Zoomie Userton",
+                                        "email": "email_address",
                                         "question_details": [
                                             {
                                                 "question": "question?",
@@ -7911,13 +7911,13 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "id": "<%= config[:ex_meeting_number] %>",
-                                "uuid": "<%= config[:ex_uuid] %>",
+                                "id": "123456789",
+                                "uuid": "unique_id",
                                 "start_time": "2017-02-09T07:15:48Z",
                                 "questions": [
                                     {
-                                        "name": "<%= config[:ex_first_name] %> <%= config[:ex_last_name] %>",
-                                        "email": "<%= config[:ex_email] %>",
+                                        "name": "Zoomie Userton",
+                                        "email": "email_address",
                                         "question_details": [
                                             {
                                                 "question": "question?",
@@ -8084,11 +8084,11 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "registrant_id": "<%= config[:ex_uuid] %>",
-                                "id": "<%= config[:ex_meeting_number] %>",
+                                "registrant_id": "unique_id",
+                                "id": "123456789",
                                 "topic": "webinar registration",
                                 "start_time": "2016-02-21T04:00:00Z",
-                                "join_url": "https://www.zoom.us/w/<%= config[:ex_meeting_number] %>?tk=2DsQiu6nZVsZVATrPLvXgqPvw8mmKyxgAGaDMizLv34.DQEAAAAAM9AWXhZ2Nm5vRjIyMlRoUzE3ZktWM3l4cHVRAA"
+                                "join_url": "https://www.zoom.us/w/123456789?tk=2DsQiu6nZVsZVATrPLvXgqPvw8mmKyxgAGaDMizLv34.DQEAAAAAM9AWXhZ2Nm5vRjIyMlRoUzE3ZktWM3l4cHVRAA"
                             }
                         }
                     }
@@ -8222,10 +8222,10 @@
                                 "type": 0,
                                 "users": [
                                     {
-                                        "id": "<%= config[:ex_uuid] %>",
-                                        "first_name": "<%= config[:ex_first_name] %>",
-                                        "last_name": "<%= config[:ex_last_name] %>",
-                                        "email": "<%= config[:ex_email] %>",
+                                        "id": "unique_id",
+                                        "first_name": "Zoomie",
+                                        "last_name": "Userton",
+                                        "email": "email_address",
                                         "registration_time": "2016-08-18T01:45:26Z"
                                     }
                                 ]
@@ -8303,12 +8303,12 @@
                                 "total_records": 1,
                                 "attendees": [
                                     {
-                                        "id": "<%= config[:ex_uuid] %>",
-                                        "first_name": "<%= config[:ex_first_name] %>",
-                                        "last_name": "<%= config[:ex_last_name] %>",
+                                        "id": "unique_id",
+                                        "first_name": "Zoomie",
+                                        "last_name": "Userton",
                                         "create_time": "2015-08-23T03:03:48Z",
                                         "approval": "approved",
-                                        "email": "<%= config[:ex_email] %>",
+                                        "email": "email_address",
                                         "registration_url": "https://api.zoom.us/w/206388466?tk=n8-qbK4ocC73mPjIRlheMksYPxeWAhnktoUZq_xAqg8.DQEAAAAADE088hZKTXcxTllpelFjZXNfNDg0NlNKQ3lRAA"
                                     }
                                 ]
@@ -8558,7 +8558,7 @@
                         "description": "Success",
                         "examples": {
                             "application/json": {
-                                "id": "<%= config[:ex_meeting_number] %>",
+                                "id": "123456789",
                                 "updated_at": "2012-11-25T12:00:00Z"
                             }
                         }
@@ -8610,7 +8610,7 @@
                             "application/json": {
                                 "webinars": [
                                     {
-                                        "uuid": "<%= config[:ex_uuid] %>",
+                                        "uuid": "unique_id",
                                         "start_time": "2015-08-23T03:03:48Z"
                                     }
                                 ]
