@@ -2,36 +2,22 @@
 
 Upload and update user's profile picture on Zoom via user ID.
 
+<aside class="notice">This should be multipart form data and "pic_file" is the actual contents of the image file</aside>
+
 > Definition
 
 ```shell
 POST <%= config[:api_host] %>user/uploadpicture
 ```
 
-```javascript
-Zoom.user.updatePicture();
-```
-
 > Example Request
 
 ```shell
 $ curl <%= config[:api_host] %>user/uploadpicture \
-    -X POST \
-    -d api_key=<%= config[:ex_api_key] %> \
-    -d api_secret=<%= config[:ex_api_secret] %> \
-    -d id=<%= config[:ex_uuid] %> \
-    -d pic_file="https://domain.com/path/to/pic.jpg"
-```
-
-```javascript
-<%= config[:ex_node_init] %>
-
-var user = {
-    id : "<%= config[:ex_uuid] %>",
-    pic_file: "https://domain.com/path/to/pic.jpg"
-}
-
-Zoom.user.updatePicture(user, <%= config[:ex_node_res] %>);
+    -F api_key=<%= config[:ex_api_key] %> \
+    -F api_secret=<%= config[:ex_api_secret] %> \
+    -F id=<%= config[:ex_uuid] %> \
+    -F pic_file="@/path/to/pic.jpg"
 ```
 
 > Example Response
