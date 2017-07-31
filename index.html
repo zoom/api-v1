@@ -1882,38 +1882,21 @@ User created in this way has no password and is not able to log into the Zoom we
 
 <p>Upload and update user&rsquo;s profile picture on Zoom via user ID.</p>
 
+<aside class="notice">This should be multipart form data and &ldquo;pic_file&rdquo; is the actual contents of the image file</aside>
+
 <blockquote>
 <p>Definition</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v1/user/uploadpicture
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">updatePicture</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v1/user/uploadpicture <span class="se">\</span>
-    -X POST <span class="se">\</span>
-    -d <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
-    -d <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
-    -d <span class="nv">id</span><span class="o">=</span>unique_id <span class="se">\</span>
-    -d <span class="nv">pic_file</span><span class="o">=</span><span class="s2">"https://domain.com/path/to/pic.jpg"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">Zoom</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"zoomus"</span><span class="p">)({</span>
-    <span class="na">key</span> <span class="p">:</span> <span class="s2">"your_api_key"</span><span class="p">,</span>
-    <span class="na">secret</span> <span class="p">:</span> <span class="s2">"your_api_secret"</span>
-<span class="p">});</span>
-
-<span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="na">id</span> <span class="p">:</span> <span class="s2">"unique_id"</span><span class="p">,</span>
-    <span class="na">pic_file</span><span class="p">:</span> <span class="s2">"https://domain.com/path/to/pic.jpg"</span>
-<span class="p">}</span>
-
-<span class="nx">Zoom</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">updatePicture</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">error</span><span class="p">){</span>
-      <span class="c1">//handle error</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">});</span>
+    -F <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
+    -F <span class="nv">api_secret</span><span class="o">=</span>your_api_secret <span class="se">\</span>
+    -F <span class="nv">id</span><span class="o">=</span>unique_id <span class="se">\</span>
+    -F <span class="nv">pic_file</span><span class="o">=</span><span class="s2">"@/path/to/pic.jpg"</span>
 </code></pre>
 <blockquote>
 <p>Example Response</p>
