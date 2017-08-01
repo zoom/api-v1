@@ -67,6 +67,7 @@ Zoom.meeting.create(meeting, <%= config[:ex_node_res] %>);
 ```
 
 <aside class="notice">"real_id" will be returned if Personal Meeting ID was used to create meeting</aside>
+<aside class="notice">If a meeting is created with a password, the join url will include an encoded password parameter, ex. "https://success.zoom.us/j/123456789?pwd=5fWX5R62yXlmhYpRK-USOg" which will bypass the password prompt</aside>
 
 Arguments | &nbsp;
 --- | ---
