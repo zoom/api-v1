@@ -291,6 +291,65 @@
 
 <p>View the source on <a href="https://github.com/zoom/zoom-lib-node">Github</a></p>
 
+          <h1 id="rate-limits">Rate Limits</h1>
+
+<p>Our REST APIs have the following rate limits.</p>
+
+<h2 id="all-api-endpoints">All API Endpoints</h2>
+
+<p>You can run a max of ten requests per second (10 requests/second)</p>
+
+<h2 id="report-billing-apis">Report/Billing APIs</h2>
+
+<p>You can run a max of one request per second (1 request/second)</p>
+
+<p>Includes:</p>
+
+<ul>
+<li>/v1/*/list</li>
+<li>/v1/*/billing/*</li>
+<li>/v1/*/plan/*</li>
+<li>/v1/chat/*</li>
+<li>/v1/metrics/*</li>
+<li>/v1/questions/</li>
+<li>/v1/report/*</li>
+<li>/v1/webinar/poll</li>
+</ul>
+
+<h2 id="report-apis">Report APIs</h2>
+
+<p>You can run a max of two thousand request per day (2000 requests/day)</p>
+
+<p>Includes:</p>
+
+<ul>
+<li>/v1/chat/list</li>
+<li>/v1/metrics/meetings</li>
+<li>/v1/metrics/webinars</li>
+<li>/v1/report/*</li>
+</ul>
+
+<h2 id="metrics-apis">Metrics APIs</h2>
+
+<p>You can run a max of one request per minute (1 request/minute)</p>
+
+<p>Includes:</p>
+
+<ul>
+<li>/v1/metrics/meetings</li>
+<li>/v1/metrics/webinars</li>
+</ul>
+
+<h2 id="user-report-api">User Report API</h2>
+
+<p>You can run a max of one request per day (1 request/day)</p>
+
+<p>Includes:</p>
+
+<ul>
+<li>/v1/report/getuserreport</li>
+</ul>
+
           <h1 id="webhooks">Webhooks</h1>
 
 <p>Webhooks can be used as notifications to keep your systems in sync with actions inside Zoom. Notifications themselves should not be used as actionable items</p>
