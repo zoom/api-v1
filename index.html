@@ -2713,6 +2713,8 @@ User created in this way has no password and is not able to log into the Zoom we
 </span></code></pre>
 <aside class="notice">&ldquo;real_id&rdquo; will be returned if Personal Meeting ID was used to create meeting</aside>
 
+<aside class="notice">If a meeting is created with a password, the join url will include an encoded password parameter, ex. &ldquo;https://success.zoom.us/j/123456789?pwd=5fWX5R62yXlmhYpRK-USOg&rdquo; which will bypass the password prompt</aside>
+
 <table><thead>
 <tr>
 <th>Arguments</th>
