@@ -5,7 +5,7 @@
     "description": "API Description",
     "contact": {
       "name": "Zoom Developers",
-      "url": "https://zoom.us/developer",
+      "url": "https://developer.zoom.us/",
       "email": "developer@zoom.us"
     },
     "license": {
@@ -20,136 +20,263 @@
     "https"
   ],
   "consumes": [
-    "application/json"
+    "application/json",
+    "multipart/form-data"
   ],
   "produces": [
     "application/json",
     "application/xml"
   ],
   "paths": {
-    "/meetings/{number}" :{
-      "get" :{
-        "description": "Get a meeting",
+    "/accounts" : {
+      "get" : {
+        "description" : "List all subaccounts",
         "tags": [
-          "Meeting"
+          "Accounts"
         ],
-        "operationId": "meetingGet",
-        "parameters" : [
-          {
-            "in": "path",
-            "name": "number",
-            "type": "integer",
-            "required": true
-          }
-        ],
-        "responses":{
+        "operationId":"accounts",
+        "responses" : {
           "200": {
-            "description":"Success"
+            "description" : "Account list returned"
           }
         }
       },
-      "put" :{
-        "description": "Update a meeting",
-        "tags": [
-          "Meeting"
+      "put" : {
+        "description" : "Create an account",
+        "tags" : [
+          "Accounts"
         ],
-        "operationId": "meetingUpdate",
-        "parameters" : [
-          {
-            "in": "path",
-            "name": "number",
-            "type": "integer",
-            "required": true
-          }
-        ],
-        "responses":{
-          "200": {
-            "description":"Success"
-          }
-        }
-      },
-      "delete" :{
-        "description": "Delete a meeting",
-        "tags": [
-          "Meeting"
-        ],
-        "operationId": "meetingDelete",
-        "parameters" : [
-          {
-            "in": "path",
-            "name": "number",
-            "type": "integer",
-            "required": true
-          },
-          {
-            "in": "query",
-            "name": "occurence_id",
-            "type": "string",
-            "required": true
-          }
-        ],
-        "responses":{
-          "200": {
-            "description":"Success"
+        "operationId":"accountsCreate",
+        "responses" : {
+          "201" : {
+            "description" : "Account created"
           }
         }
       }
     },
-    "/meetings/{number}/registrants" :{
-      "get" :{
-        "description": "",
+    "/accounts/{id}" : {
+      "get" : {
+        "description" : "List an account",
         "tags": [
-          "Meeting"
+          "Accounts"
         ],
-        "operationId": "meetingRegGet",
-        "parameters" : [
+        "operationId":"account",
+        "parameters": [
           {
             "in": "path",
-            "name": "number",
-            "type": "integer",
-            "required": true
-          }
-        ],
-        "responses":{
-          "200": {
-            "description":"Success"
-          }
-        }
-      },
-      "post" :{
-        "description": "",
-        "tags": [
-          "Meeting"
-        ],
-        "operationId": "meetingRegCreate",
-        "parameters" : [
-          {
-            "in": "path",
-            "name": "number",
-            "type": "integer",
-            "required": true
-          },
-          {
-            "in": "query",
-            "name": "occurence_id",
+            "name": "id",
             "type": "string",
             "required": true
           }
         ],
-        "responses":{
+        "responses" : {
           "200": {
-            "description":"Success"
+            "description" : "Account returned"
+          }
+        }
+      },
+      "patch" : {
+        "description" : "Update an account",
+        "tags" : [
+          "Accounts"
+        ],
+        "operationId":"accountUpdate",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses" : {
+          "204" : {
+            "description" : "Account updated"
+          }
+        }
+      },
+      "delete" : {
+        "description" : "Delete an account",
+        "tags" : [
+          "Accounts"
+        ],
+        "operationId":"accountDelete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses" : {
+          "204" : {
+            "description" : "Account deleted"
           }
         }
       }
     },
-    "/users": {
+    "/accounts/{id}/settings" : {
+      "get" : {
+        "description" : "Get an account's settings",
+        "tags": [
+          "Accounts"
+        ],
+        "operationId":"accountSettings",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses" : {
+          "200": {
+            "description" : "Account settings returned"
+          }
+        }
+      },
+      "patch" : {
+        "description" : "Update an account's settings",
+        "tags" : [
+          "Accounts"
+        ],
+        "operationId":"accountSettingsUpdate",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses" : {
+          "204" : {
+            "description" : "Account settings updated"
+          }
+        }
+      }
+    },
+    "/accounts/{id}/billing" : {
+      "get" : {
+        "description" : "Get an account's billing information",
+        "tags": [
+          "Accounts"
+        ],
+        "operationId":"accountBilling",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses" : {
+          "200": {
+            "description" : "Account billing information returned"
+          }
+        }
+      },
+      "patch" : {
+        "description" : "Update an account's billing information",
+        "tags" : [
+          "Accounts"
+        ],
+        "operationId":"accountBillingUpdate",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses" : {
+          "204" : {
+            "description" : "Account billing information updated"
+          }
+        }
+      }
+    },
+    "/accounts/{id}/plans" : {
+      "get" : {
+        "description" : "Get an account's plans",
+        "tags": [
+          "Accounts"
+        ],
+        "operationId":"accountPlans",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses" : {
+          "200": {
+            "description" : "Account plans returned"
+          }
+        }
+      },
+      "put" : {
+        "description" : "Add to an account's plans",
+        "tags" : [
+          "Accounts"
+        ],
+        "operationId":"accountPlanAdd",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses" : {
+          "204" : {
+            "description" : "Account plans updated"
+          }
+        }
+      }
+    },
+    "/accounts/{id}/plans/{plan}" : {
+      "delete" : {
+        "description" : "Remove an account's plans",
+        "tags" : [
+          "Accounts"
+        ],
+        "operationId":"accountPlanDelete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "plan",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses" : {
+          "204" : {
+            "description" : "Account plans removed"
+          }
+        }
+      }
+    },
+    "/users" : {
       "get" : {
         "description": "List all Users",
         "tags": [
           "User"
         ],
-        "operationId": "userList",
+        "operationId": "users",
         "parameters": [
           {
             "in": "query",
@@ -161,22 +288,24 @@
           {
             "in": "query",
             "name": "page_size",
-            "type": "integer"
+            "type": "integer",
+            "default": 30
           },
           {
             "in": "query",
             "name": "page_number",
-            "type": "integer"
+            "type": "integer",
+            "default": 1
           }
         ],
         "responses":{
           "200": {
-            "description":"Success"
+            "description" : "User list returned"
           }
         }
       },
-      "post": {
-        "description": "Create a user on Zoom, returns the created user",
+      "put": {
+        "description": "Create a user on Zoom",
         "tags": [
           "User"
         ],
@@ -191,14 +320,14 @@
               "type": "object",
               "properties": {
                 "action": {
+                  "type":"string",
                   "title": "action",
                   "description": "Create User Type",
-                  "type":"string",
                   "enum":[
                     "create",
                     "autoCreate",
-                    "ssocreate",
-                    "custcreate"
+                    "custcreate",
+                    "ssocreate"
                   ]
                 },
                 "user_info": {
@@ -230,8 +359,11 @@
           }
         ],
         "responses":{
-          "200": {
-            "description":"Success"
+          "201": {
+            "description" : "User Created"
+          },
+          "409": {
+            "description" : "User with that email already exists"
           }
         }
       }
@@ -242,27 +374,25 @@
         "tags": [
           "User"
         ],
-        "operationId": "userGet",
+        "operationId": "user",
         "parameters": [
           {
             "in": "path",
             "name": "id",
             "type": "string",
             "required": true
-          },
-          {
-            "in": "query",
-            "name": "login_type",
-            "type": "integer"
           }
         ],
         "responses":{
           "200": {
-            "description":"Success"
+            "description":"User object returned"
+          },
+          "404" : {
+            "description" : "User not found"
           }
         }
       },
-      "put" :{
+      "patch" :{
         "description": "Update a user",
         "tags": [
           "User"
@@ -315,8 +445,11 @@
           }
         ],
         "responses":{
-          "200": {
-            "description":"Success"
+          "204": {
+            "description":"User updated"
+          },
+          "404" : {
+            "description" : "User not found"
           }
         }
       },
@@ -342,12 +475,16 @@
             "enum" : [
               "disassociate",
               "delete"
-            ]
+            ],
+            "default": "disassociate"
           }
         ],
         "responses":{
-          "200": {
-            "description":"Success"
+          "204": {
+            "description":"User updated"
+          },
+          "404" : {
+            "description" : "User not found"
           }
         }
       }
@@ -407,17 +544,26 @@
             "description":"Success"
           }
         }
-      },
+      }
+    },
+    "/users/{id}/assistants/{assistant}" : {
       "delete" : {
         "description": "Delete user's assistants",
         "tags": [
           "User"
         ],
-        "operationId": "userDeleteAssistants",
+        "operationId": "userDeleteAssistant",
         "parameters": [
           {
             "name": "id",
             "description" : "User ID",
+            "in": "path",
+            "type": "string",
+            "required" : true
+          },
+          {
+            "name": "assistant",
+            "description" : "Assistant",
             "in": "path",
             "type": "string",
             "required" : true
@@ -430,7 +576,177 @@
         }
       }
     },
-    "/users/{id}/password" :{
+    "/users/{id}/meetings" : {
+      "get" :{
+        "description": "Get user's meetings",
+        "tags": [
+          "Meeting"
+        ],
+        "operationId": "userGetMeetings",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      },
+      "post" :{
+        "description": "Create meeting",
+        "tags": [
+          "Meeting"
+        ],
+        "operationId": "userCreateMeetings",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses":{
+          "201": {
+            "description":"Meeting Created"
+          }
+        }
+      }
+    },
+    "/users/{id}/meetings/{number}" : {
+      "get" :{
+        "description": "Get a meeting",
+        "tags": [
+          "Meeting"
+        ],
+        "operationId": "meetingGet",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "number",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      },
+      "patch" :{
+        "description": "Update a meeting",
+        "tags": [
+          "Meeting"
+        ],
+        "operationId": "meetingUpdate",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "number",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      },
+      "delete" :{
+        "description": "Delete a meeting",
+        "tags": [
+          "Meeting"
+        ],
+        "operationId": "meetingDelete",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "number",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "occurence_id",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      }
+    },
+    "/users/{id}/meetings/{number}/register" : {
+      "get" :{
+        "description": "",
+        "tags": [
+          "Meeting"
+        ],
+        "operationId": "meetingRegGet",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "number",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      },
+      "put" :{
+        "description": "",
+        "tags": [
+          "Meeting"
+        ],
+        "operationId": "meetingRegCreate",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "number",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "occurence_id",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      }
+    },
+    "/users/{id}/password" : {
       "put":{
         "description" : "Update a user's password",
         "tags": [
@@ -467,9 +783,9 @@
         }
       }
     },
-    "/users/{id}/picture" :{
+    "/users/{id}/picture" : {
       "put":{
-        "description" : "update a user's picture",
+        "description" : "Update a user's picture",
         "tags": [
           "User"
         ],
@@ -485,16 +801,9 @@
           {
             "name": "body",
             "description" : "User picture file, must be a jpg/jpeg file",
-            "in": "body",
-            "schema" : {
-              "type" : "object",
-              "properties" : {
-                "pic_file" :{
-                  "type" :"string",
-                  "format": "url"
-                }
-              }
-            }
+            "in": "formData",
+            "type" : "file",
+            "required" : true
           }
         ],
         "responses":{
@@ -537,6 +846,12 @@
         ],
         "operationId": "userUpdateSettings",
         "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "string",
+            "required": true
+          },
           {
             "in": "body",
             "name": "settings",
@@ -671,17 +986,6 @@
                     }
                   }
                 },
-                "security": {
-                  "type": "object",
-                  "properties" : {
-                    "e2e_encryption" :{
-                      "type": "boolean"
-                    },
-                    "pstn_password_protected" :{
-                      "type": "boolean"
-                    }
-                  }
-                },
                 "feature":{
                   "type": "object",
                   "properties" : {
@@ -713,7 +1017,7 @@
         }
       }
     },
-    "/users/{id}/status" :{
+    "/users/{id}/status" : {
       "put":{
         "description" : "Update a user's status",
         "tags": [
@@ -750,7 +1054,7 @@
         }
       }
     },
-    "/users/{id}/token" :{
+    "/users/{id}/token" : {
       "get":{
         "description" : "Get a user's token on Zoom via user ID",
         "tags": [
@@ -764,13 +1068,6 @@
             "in": "path",
             "type": "string",
             "required" : true
-          },
-          {
-            "name": "login_type",
-            "description" : "User picture file, must be a jpg/jpeg file",
-            "in": "query",
-            "type": "integer",
-            "enum":[0,1,99,100,101]
           },
           {
             "name": "type",
@@ -810,9 +1107,459 @@
           }
         }
       }
+    },
+    "/users/{id}/webinars" : {
+      "get" :{
+        "description": "Get user's meetings",
+        "tags": [
+          "Webinar"
+        ],
+        "operationId": "userGetWebinars",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      },
+      "post" :{
+        "description": "Create webinar",
+        "tags": [
+          "Webinar"
+        ],
+        "operationId": "userCreateWebinar",
+        "responses":{
+          "201": {
+            "description":"Meeting Created"
+          }
+        }
+      }
+    },
+    "/users/{id}/webinars/{number}" : {
+      "get" :{
+        "description": "Get a meeting",
+        "tags": [
+          "Webinar"
+        ],
+        "operationId": "webinarGet",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "number",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      },
+      "patch" :{
+        "description": "Update a meeting",
+        "tags": [
+          "Webinar"
+        ],
+        "operationId": "webinarUpdate",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "number",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      },
+      "delete" :{
+        "description": "Delete a meeting",
+        "tags": [
+          "Webinar"
+        ],
+        "operationId": "webinarDelete",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "number",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "occurence_id",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      }
+    },
+    "/users/{id}/webinars/{number}/panelists" : {
+      "get" :{
+        "description": "Get webinar panelists",
+        "tags": [
+          "Webinar"
+        ],
+        "operationId": "webinarPanelists",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "number",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      },
+      "put" :{
+        "description": "Register panelist for webinar",
+        "tags": [
+          "Webinar"
+        ],
+        "operationId": "webinarPanelistCreate",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "number",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "occurence_id",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      }
+    },
+    "/users/{id}/webinars/{number}/panelists/{panelist}" : {
+      "get" :{
+        "description": "Get webinar panelist",
+        "tags": [
+          "Webinar"
+        ],
+        "operationId": "webinarPanelistGet",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "number",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "panelist",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      },
+      "delete" :{
+        "description": "Cancel panelist for webinar",
+        "tags": [
+          "Webinar"
+        ],
+        "operationId": "webinarPanelistCancel",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "number",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "occurence_id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "panelist",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      },
+      "patch" :{
+        "description": "Update panelist for webinar",
+        "tags": [
+          "Webinar"
+        ],
+        "operationId": "webinarPanelistUpdate",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "number",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "occurence_id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "panelist",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      }
+    },
+    "/users/{id}/webinars/{number}/register" : {
+      "get" :{
+        "description": "Get webinar registrations",
+        "tags": [
+          "Webinar"
+        ],
+        "operationId": "webinarRegList",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "number",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      },
+      "put" :{
+        "description": "Register participant for webinar",
+        "tags": [
+          "Webinar"
+        ],
+        "operationId": "webinarRegCreate",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "number",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "occurence_id",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      }
+    },
+    "/users/{id}/webinars/{number}/register/{registrant}" : {
+      "get" :{
+        "description": "Get webinar registrant",
+        "tags": [
+          "Webinar"
+        ],
+        "operationId": "webinarRegGet",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "number",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "registrant",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      },
+      "delete" :{
+        "description": "Cancel participant for webinar",
+        "tags": [
+          "Webinar"
+        ],
+        "operationId": "webinarRegCancel",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "number",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "occurence_id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "registrant",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      },
+      "patch" :{
+        "description": "Update participant for webinar",
+        "tags": [
+          "Webinar"
+        ],
+        "operationId": "webinarRegUpdate",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "number",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "occurence_id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "registrant",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      }
+    },
+    "/users/{id}/zpk" : {
+      "get":{
+        "description" : "Get a user's token on Zoom via user ID",
+        "tags": [
+          "User"
+        ],
+        "operationId": "userZPK",
+        "parameters" :[
+          {
+            "name": "id",
+            "description" : "User ID",
+            "in": "path",
+            "type": "string",
+            "required" : true
+          },
+          {
+            "name": "type",
+            "description" : "User token",
+            "in": "query",
+            "type": "string",
+            "default" : "token",
+            "enum":[
+              "token",
+              "zpk"
+            ]
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      }
     }
   },
   "tags": [
+    {
+      "name": "Accounts",
+      "description": "Account operations"
+    },
     {
       "name": "User",
       "description": "User operations"
@@ -829,5 +1576,13 @@
   "externalDocs": {
     "description": "Zoom REST API Documentation",
     "url": "https://zoom.github.io/api"
-  }
+  },
+  "securityDefinitions" : {
+    "global": {
+      "type" : "apiKey",
+      "name" : "Authorization",
+      "in" : "header"
+    }
+  },
+  "security" : [{"global":[]}]
 }
