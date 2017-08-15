@@ -41,7 +41,7 @@
           }
         }
       },
-      "put" : {
+      "post" : {
         "description" : "Create an account",
         "tags" : [
           "Accounts"
@@ -54,7 +54,7 @@
         }
       }
     },
-    "/accounts/{id}" : {
+    "/accounts/{accountId}" : {
       "get" : {
         "description" : "List an account",
         "tags": [
@@ -64,7 +64,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "id",
+            "name": "accountId",
             "type": "string",
             "required": true
           }
@@ -84,7 +84,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "id",
+            "name": "accountId",
             "type": "string",
             "required": true
           }
@@ -104,7 +104,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "id",
+            "name": "accountId",
             "type": "string",
             "required": true
           }
@@ -116,7 +116,7 @@
         }
       }
     },
-    "/accounts/{id}/settings" : {
+    "/accounts/{accountId}/settings" : {
       "get" : {
         "description" : "Get an account's settings",
         "tags": [
@@ -126,7 +126,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "id",
+            "name": "accountId",
             "type": "string",
             "required": true
           }
@@ -146,7 +146,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "id",
+            "name": "accountId",
             "type": "string",
             "required": true
           }
@@ -158,7 +158,7 @@
         }
       }
     },
-    "/accounts/{id}/billing" : {
+    "/accounts/{accountId}/billing" : {
       "get" : {
         "description" : "Get an account's billing information",
         "tags": [
@@ -168,7 +168,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "id",
+            "name": "accountId",
             "type": "string",
             "required": true
           }
@@ -188,7 +188,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "id",
+            "name": "accountId",
             "type": "string",
             "required": true
           }
@@ -200,7 +200,7 @@
         }
       }
     },
-    "/accounts/{id}/plans" : {
+    "/accounts/{accountId}/plans" : {
       "get" : {
         "description" : "Get an account's plans",
         "tags": [
@@ -210,7 +210,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "id",
+            "name": "accountId",
             "type": "string",
             "required": true
           }
@@ -221,7 +221,7 @@
           }
         }
       },
-      "put" : {
+      "post" : {
         "description" : "Add to an account's plans",
         "tags" : [
           "Accounts"
@@ -230,7 +230,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "id",
+            "name": "accountId",
             "type": "string",
             "required": true
           }
@@ -242,7 +242,7 @@
         }
       }
     },
-    "/accounts/{id}/plans/{plan}" : {
+    "/accounts/{accountId}/plans/{plan}" : {
       "delete" : {
         "description" : "Remove an account's plans",
         "tags" : [
@@ -252,7 +252,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "id",
+            "name": "accountId",
             "type": "string",
             "required": true
           },
@@ -270,9 +270,163 @@
         }
       }
     },
+    "/meetings/{meetingNumber}" : {
+      "get" :{
+        "description": "Get a meeting",
+        "tags": [
+          "Meeting"
+        ],
+        "operationId": "meetingGet",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "meetingNumber",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      },
+      "patch" :{
+        "description": "Update a meeting",
+        "tags": [
+          "Meeting"
+        ],
+        "operationId": "meetingUpdate",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "meetingNumber",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      },
+      "delete" :{
+        "description": "Delete a meeting",
+        "tags": [
+          "Meeting"
+        ],
+        "operationId": "meetingDelete",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "meetingNumber",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      }
+    },
+    "/meetings/{meetingNumber}/registrants" : {
+      "get" :{
+        "description": "",
+        "tags": [
+          "Meeting"
+        ],
+        "operationId": "meetingRegGet",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "meetingNumber",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      },
+      "post" :{
+        "description": "",
+        "tags": [
+          "Meeting"
+        ],
+        "operationId": "meetingRegCreate",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "meetingNumber",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      }
+    },
+    "/meetings/{meetingNumber}/registrants/{registrantId}/status" : {
+      "put" :{
+        "description": "",
+        "tags": [
+          "Meeting"
+        ],
+        "operationId": "meetingRegistrantStatus",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "meetingNumber",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "registrantId",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      }
+    },
+    "/meetings/{meetingNumber}/status" : {
+      "put" :{
+        "description": "",
+        "tags": [
+          "Meeting"
+        ],
+        "operationId": "meetingStatus",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "meetingNumber",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      }
+    },
     "/users" : {
       "get" : {
-        "description": "List all Users",
+        "description": "List all Users on Zoom.",
         "tags": [
           "User"
         ],
@@ -281,6 +435,7 @@
           {
             "in": "query",
             "name": "status",
+            "description" : "User status, value should be active/inactive/pending",
             "type": "string",
             "default": "active",
             "enum":["active","inactive","pending"]
@@ -288,23 +443,28 @@
           {
             "in": "query",
             "name": "page_size",
+            "description" : "The amount of records returns within a single API call. Defaults to 30. Max of 300 users.",
             "type": "integer",
             "default": 30
           },
           {
             "in": "query",
             "name": "page_number",
+            "description" : "Current page number of returned records. Default to 1.",
             "type": "integer",
             "default": 1
           }
         ],
         "responses":{
           "200": {
-            "description" : "User list returned"
+            "description" : "User list returned",
+            "schema": {
+              "$ref": "#/definitions/UserList"
+            }
           }
         }
       },
-      "put": {
+      "post": {
         "description": "Create a user on Zoom",
         "tags": [
           "User"
@@ -313,54 +473,30 @@
         "parameters": [
           {
             "in": "body",
-            "name": "user",
+            "name": "body",
             "required": true,
             "description": "User",
             "schema": {
-              "type": "object",
-              "properties": {
-                "action": {
-                  "type":"string",
-                  "title": "action",
-                  "description": "Create User Type",
-                  "enum":[
-                    "create",
-                    "autoCreate",
-                    "custcreate",
-                    "ssocreate"
-                  ]
-                },
-                "user_info": {
-                  "type":"object",
-                  "properties":{
-                    "email":{
-                      "type": "string",
-                      "format": "email"
-                    },
-                    "type":{
-                      "type": "integer",
-                      "enum":[0,1,2]
-                    },
-                    "first_name":{
-                      "type": "string"
-                    },
-                    "last_name":{
-                      "type": "string"
-                    },
-                    "password":{
-                      "type": "string",
-                      "format": "password"
-                    }
+              "allOf": [
+                "properties" : {
+                  "action" : {
+                    "type" : "string",
+                    "enum" : ["create", "custCreate", "autoCreate", "ssoCreate"]
+                  },
+                  "user_info" : {
+                    "$ref" : "#/definitions/UserReference"
                   }
                 }
-              },
-              "required": ["action", "user_info"]
+              ]
             }
           }
         ],
         "responses":{
           "201": {
-            "description" : "User Created"
+            "description" : "User Created",
+            "schema" : {
+              "$ref" : "#/definitions/UserIDReference"
+            }
           },
           "409": {
             "description" : "User with that email already exists"
@@ -368,7 +504,7 @@
         }
       }
     },
-    "/users/{id}" : {
+    "/users/{userId}" : {
       "get" : {
         "description": "Get a user",
         "tags": [
@@ -378,14 +514,24 @@
         "parameters": [
           {
             "in": "path",
-            "name": "id",
+            "name": "userId",
             "type": "string",
             "required": true
           }
         ],
         "responses":{
           "200": {
-            "description":"User object returned"
+            "description":"User object returned",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref" : "#/definitions/UserIDReference"
+                },
+                {
+                  "$ref" : "#/definitions/UserDetailsReference"
+                }
+              ]
+            }
           },
           "404" : {
             "description" : "User not found"
@@ -400,7 +546,7 @@
         "operationId": "userUpdate",
         "parameters": [
           {
-            "name": "id",
+            "name": "userId",
             "description" : "User ID",
             "in": "path",
             "type": "string",
@@ -412,35 +558,14 @@
             "required": true,
             "description": "User",
             "schema": {
-              "type":"object",
-              "properties":{
-                "first_name":{
-                  "type": "string"
+              "allOf": [
+                {
+                  "$ref" : "#/definitions/UserReference"
                 },
-                "last_name":{
-                  "type": "string"
-                },
-                "type":{
-                  "type": "integer",
-                  "enum":[0,1,2]
-                },
-                "pmi":{
-                  "type": "string"
-                },
-                "timezone":{
-                  "type": "string",
-                  "format": "date-time"
-                },
-                "dept":{
-                  "type": "string"
-                },
-                "vanity_name":{
-                  "type": "string"
-                },
-                "host_key":{
-                  "type": "integer"
+                {
+                  "$ref" : "#/definitions/UserDetailsReference"
                 }
-              }
+              ]
             }
           }
         ],
@@ -461,7 +586,7 @@
         "operationId": "userDelete",
         "parameters": [
           {
-            "name": "id",
+            "name": "userId",
             "description" : "User ID",
             "in": "path",
             "type": "string",
@@ -481,7 +606,7 @@
         ],
         "responses":{
           "204": {
-            "description":"User updated"
+            "description":"User deleted"
           },
           "404" : {
             "description" : "User not found"
@@ -489,7 +614,7 @@
         }
       }
     },
-    "/users/{id}/assistants" : {
+    "/users/{userId}/assistants" : {
       "get" : {
         "description": "List user's assistants",
         "tags": [
@@ -498,7 +623,7 @@
         "operationId": "userListAssistants",
         "parameters": [
           {
-            "name": "id",
+            "name": "userId",
             "description" : "User ID",
             "in": "path",
             "type": "string",
@@ -511,7 +636,7 @@
           }
         }
       },
-      "put" : {
+      "post" : {
         "description": "Update user's assistants",
         "tags": [
           "User"
@@ -519,7 +644,7 @@
         "operationId": "userUpdateAssistants",
         "parameters": [
           {
-            "name": "id",
+            "name": "userId",
             "description" : "User ID",
             "in": "path",
             "type": "string",
@@ -544,9 +669,30 @@
             "description":"Success"
           }
         }
+      },
+      "delete" : {
+        "description": "Delete user's assistants",
+        "tags": [
+          "User"
+        ],
+        "operationId": "userDeleteAssistants",
+        "parameters": [
+          {
+            "name": "userId",
+            "description" : "User ID",
+            "in": "path",
+            "type": "string",
+            "required" : true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
       }
     },
-    "/users/{id}/assistants/{assistant}" : {
+    "/users/{userId}/assistants/{assistantId}" : {
       "delete" : {
         "description": "Delete user's assistants",
         "tags": [
@@ -555,14 +701,14 @@
         "operationId": "userDeleteAssistant",
         "parameters": [
           {
-            "name": "id",
+            "name": "userId",
             "description" : "User ID",
             "in": "path",
             "type": "string",
             "required" : true
           },
           {
-            "name": "assistant",
+            "name": "assistantId",
             "description" : "Assistant",
             "in": "path",
             "type": "string",
@@ -576,7 +722,7 @@
         }
       }
     },
-    "/users/{id}/meetings" : {
+    "/users/{userId}/meetings" : {
       "get" :{
         "description": "Get user's meetings",
         "tags": [
@@ -586,7 +732,7 @@
         "parameters" : [
           {
             "in": "path",
-            "name": "id",
+            "name": "userId",
             "type": "integer",
             "required": true
           }
@@ -606,7 +752,7 @@
         "parameters" : [
           {
             "in": "path",
-            "name": "id",
+            "name": "userId",
             "type": "integer",
             "required": true
           }
@@ -618,135 +764,7 @@
         }
       }
     },
-    "/users/{id}/meetings/{number}" : {
-      "get" :{
-        "description": "Get a meeting",
-        "tags": [
-          "Meeting"
-        ],
-        "operationId": "meetingGet",
-        "parameters" : [
-          {
-            "in": "path",
-            "name": "id",
-            "type": "string",
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "number",
-            "type": "integer",
-            "required": true
-          }
-        ],
-        "responses":{
-          "200": {
-            "description":"Success"
-          }
-        }
-      },
-      "patch" :{
-        "description": "Update a meeting",
-        "tags": [
-          "Meeting"
-        ],
-        "operationId": "meetingUpdate",
-        "parameters" : [
-          {
-            "in": "path",
-            "name": "number",
-            "type": "integer",
-            "required": true
-          }
-        ],
-        "responses":{
-          "200": {
-            "description":"Success"
-          }
-        }
-      },
-      "delete" :{
-        "description": "Delete a meeting",
-        "tags": [
-          "Meeting"
-        ],
-        "operationId": "meetingDelete",
-        "parameters" : [
-          {
-            "in": "path",
-            "name": "number",
-            "type": "integer",
-            "required": true
-          },
-          {
-            "in": "query",
-            "name": "occurence_id",
-            "type": "string",
-            "required": true
-          }
-        ],
-        "responses":{
-          "200": {
-            "description":"Success"
-          }
-        }
-      }
-    },
-    "/users/{id}/meetings/{number}/register" : {
-      "get" :{
-        "description": "",
-        "tags": [
-          "Meeting"
-        ],
-        "operationId": "meetingRegGet",
-        "parameters" : [
-          {
-            "in": "path",
-            "name": "id",
-            "type": "string",
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "number",
-            "type": "integer",
-            "required": true
-          }
-        ],
-        "responses":{
-          "200": {
-            "description":"Success"
-          }
-        }
-      },
-      "put" :{
-        "description": "",
-        "tags": [
-          "Meeting"
-        ],
-        "operationId": "meetingRegCreate",
-        "parameters" : [
-          {
-            "in": "path",
-            "name": "number",
-            "type": "integer",
-            "required": true
-          },
-          {
-            "in": "query",
-            "name": "occurence_id",
-            "type": "string",
-            "required": true
-          }
-        ],
-        "responses":{
-          "200": {
-            "description":"Success"
-          }
-        }
-      }
-    },
-    "/users/{id}/password" : {
+    "/users/{userId}/password" : {
       "put":{
         "description" : "Update a user's password",
         "tags": [
@@ -755,7 +773,7 @@
         "operationId": "userPassword",
         "parameters" :[
           {
-            "name": "id",
+            "name": "userId",
             "description" : "User ID",
             "in": "path",
             "type": "string",
@@ -783,7 +801,7 @@
         }
       }
     },
-    "/users/{id}/picture" : {
+    "/users/{userId}/picture" : {
       "put":{
         "description" : "Update a user's picture",
         "tags": [
@@ -792,7 +810,7 @@
         "operationId": "userPicture",
         "parameters" :[
           {
-            "name": "id",
+            "name": "userId",
             "description" : "User ID",
             "in": "path",
             "type": "string",
@@ -813,7 +831,7 @@
         }
       }
     },
-    "/users/{id}/settings" : {
+    "/users/{userId}/settings" : {
       "get" : {
         "description": "Get a user's settings on Zoom",
         "tags": [
@@ -823,7 +841,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "id",
+            "name": "userId",
             "type": "string",
             "required": true
           },
@@ -839,7 +857,7 @@
           }
         }
       },
-      "put" :{
+      "patch" :{
         "description": "Update a user on Zoom",
         "tags": [
           "User"
@@ -848,7 +866,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "id",
+            "name": "userId",
             "type": "string",
             "required": true
           },
@@ -1017,7 +1035,7 @@
         }
       }
     },
-    "/users/{id}/status" : {
+    "/users/{userId}/status" : {
       "put":{
         "description" : "Update a user's status",
         "tags": [
@@ -1026,7 +1044,7 @@
         "operationId": "userStatus",
         "parameters" :[
           {
-            "name": "id",
+            "name": "userId",
             "description" : "User ID",
             "in": "path",
             "type": "string",
@@ -1054,16 +1072,39 @@
         }
       }
     },
-    "/users/{id}/token" : {
-      "get":{
-        "description" : "Get a user's token on Zoom via user ID",
+    "/users/{userId}/ssoToken" : {
+      "delete":{
+        "description" : "Revoke a user's token on Zoom via user ID",
         "tags": [
           "User"
         ],
-        "operationId": "userToken",
+        "operationId": "userTokenDelete",
         "parameters" :[
           {
-            "name": "id",
+            "name": "userId",
+            "description" : "User ID",
+            "in": "path",
+            "type": "string",
+            "required" : true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      }
+    },
+    "/users/{userId}/tsp" : {
+      "get":{
+        "description" : "Get a user's tsp config",
+        "tags": [
+          "TSP"
+        ],
+        "operationId": "userTsp",
+        "parameters" :[
+          {
+            "name": "userId",
             "description" : "User ID",
             "in": "path",
             "type": "string",
@@ -1086,19 +1127,29 @@
           }
         }
       },
-      "delete":{
-        "description" : "Revoke a user's token on Zoom via user ID",
+      "post":{
+        "description" : "Add a user's tsp config",
         "tags": [
-          "User"
+          "TSP"
         ],
-        "operationId": "userTokenDelete",
+        "operationId": "userTspCreate",
         "parameters" :[
           {
-            "name": "id",
+            "name": "userId",
             "description" : "User ID",
             "in": "path",
             "type": "string",
             "required" : true
+          },
+          {
+            "name": "type",
+            "description" : "User token",
+            "in": "query",
+            "type": "string",
+            "enum":[
+              "token",
+              "zpk"
+            ]
           }
         ],
         "responses":{
@@ -1108,7 +1159,156 @@
         }
       }
     },
-    "/users/{id}/webinars" : {
+    "/users/{userId}/tsp/{tspId}" : {
+      "get":{
+        "description" : "Get a user's tsp config",
+        "tags": [
+          "TSP"
+        ],
+        "operationId": "userTspInfo",
+        "parameters" :[
+          {
+            "name": "userId",
+            "description" : "User ID",
+            "in": "path",
+            "type": "string",
+            "required" : true
+          },
+          {
+            "name": "tspId",
+            "description" : "TSP ID",
+            "in": "path",
+            "type": "string",
+            "required" : true
+          },
+          {
+            "name": "type",
+            "description" : "User token",
+            "in": "query",
+            "type": "string",
+            "enum":[
+              "token",
+              "zpk"
+            ]
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      },
+      "patch":{
+        "description" : "Update tsp config",
+        "tags": [
+          "TSP"
+        ],
+        "operationId": "userTspUpdate",
+        "parameters" :[
+          {
+            "name": "userId",
+            "description" : "User ID",
+            "in": "path",
+            "type": "string",
+            "required" : true
+          },
+          {
+            "name": "tspId",
+            "description" : "TSP ID",
+            "in": "path",
+            "type": "string",
+            "required" : true
+          },
+          {
+            "name": "type",
+            "description" : "User token",
+            "in": "query",
+            "type": "string",
+            "enum":[
+              "token",
+              "zpk"
+            ]
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      },
+      "delete":{
+        "description" : "Delete tsp config",
+        "tags": [
+          "TSP"
+        ],
+        "operationId": "userTspDelete",
+        "parameters" :[
+          {
+            "name": "userId",
+            "description" : "User ID",
+            "in": "path",
+            "type": "string",
+            "required" : true
+          },
+          {
+            "name": "tspId",
+            "description" : "TSP ID",
+            "in": "path",
+            "type": "string",
+            "required" : true
+          },
+          {
+            "name": "type",
+            "description" : "User token",
+            "in": "query",
+            "type": "string",
+            "enum":[
+              "token",
+              "zpk"
+            ]
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      }
+    },
+    "/users/{userId}/token" : {
+      "get":{
+        "description" : "Get a user's token on Zoom via user ID",
+        "tags": [
+          "User"
+        ],
+        "operationId": "userToken",
+        "parameters" :[
+          {
+            "name": "userId",
+            "description" : "User ID",
+            "in": "path",
+            "type": "string",
+            "required" : true
+          },
+          {
+            "name": "type",
+            "description" : "User token",
+            "in": "query",
+            "type": "string",
+            "enum":[
+              "token",
+              "zpk"
+            ]
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      }
+    },
+    "/users/{userId}/webinars" : {
       "get" :{
         "description": "Get user's meetings",
         "tags": [
@@ -1118,7 +1318,7 @@
         "parameters" : [
           {
             "in": "path",
-            "name": "id",
+            "name": "userId",
             "type": "integer",
             "required": true
           }
@@ -1142,385 +1342,7 @@
         }
       }
     },
-    "/users/{id}/webinars/{number}" : {
-      "get" :{
-        "description": "Get a meeting",
-        "tags": [
-          "Webinar"
-        ],
-        "operationId": "webinarGet",
-        "parameters" : [
-          {
-            "in": "path",
-            "name": "id",
-            "type": "string",
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "number",
-            "type": "integer",
-            "required": true
-          }
-        ],
-        "responses":{
-          "200": {
-            "description":"Success"
-          }
-        }
-      },
-      "patch" :{
-        "description": "Update a meeting",
-        "tags": [
-          "Webinar"
-        ],
-        "operationId": "webinarUpdate",
-        "parameters" : [
-          {
-            "in": "path",
-            "name": "number",
-            "type": "integer",
-            "required": true
-          }
-        ],
-        "responses":{
-          "200": {
-            "description":"Success"
-          }
-        }
-      },
-      "delete" :{
-        "description": "Delete a meeting",
-        "tags": [
-          "Webinar"
-        ],
-        "operationId": "webinarDelete",
-        "parameters" : [
-          {
-            "in": "path",
-            "name": "number",
-            "type": "integer",
-            "required": true
-          },
-          {
-            "in": "query",
-            "name": "occurence_id",
-            "type": "string",
-            "required": true
-          }
-        ],
-        "responses":{
-          "200": {
-            "description":"Success"
-          }
-        }
-      }
-    },
-    "/users/{id}/webinars/{number}/panelists" : {
-      "get" :{
-        "description": "Get webinar panelists",
-        "tags": [
-          "Webinar"
-        ],
-        "operationId": "webinarPanelists",
-        "parameters" : [
-          {
-            "in": "path",
-            "name": "id",
-            "type": "string",
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "number",
-            "type": "integer",
-            "required": true
-          }
-        ],
-        "responses":{
-          "200": {
-            "description":"Success"
-          }
-        }
-      },
-      "put" :{
-        "description": "Register panelist for webinar",
-        "tags": [
-          "Webinar"
-        ],
-        "operationId": "webinarPanelistCreate",
-        "parameters" : [
-          {
-            "in": "path",
-            "name": "number",
-            "type": "integer",
-            "required": true
-          },
-          {
-            "in": "query",
-            "name": "occurence_id",
-            "type": "string",
-            "required": true
-          }
-        ],
-        "responses":{
-          "200": {
-            "description":"Success"
-          }
-        }
-      }
-    },
-    "/users/{id}/webinars/{number}/panelists/{panelist}" : {
-      "get" :{
-        "description": "Get webinar panelist",
-        "tags": [
-          "Webinar"
-        ],
-        "operationId": "webinarPanelistGet",
-        "parameters" : [
-          {
-            "in": "path",
-            "name": "id",
-            "type": "string",
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "number",
-            "type": "integer",
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "panelist",
-            "type": "integer",
-            "required": true
-          }
-        ],
-        "responses":{
-          "200": {
-            "description":"Success"
-          }
-        }
-      },
-      "delete" :{
-        "description": "Cancel panelist for webinar",
-        "tags": [
-          "Webinar"
-        ],
-        "operationId": "webinarPanelistCancel",
-        "parameters" : [
-          {
-            "in": "path",
-            "name": "number",
-            "type": "integer",
-            "required": true
-          },
-          {
-            "in": "query",
-            "name": "occurence_id",
-            "type": "string",
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "panelist",
-            "type": "integer",
-            "required": true
-          }
-        ],
-        "responses":{
-          "200": {
-            "description":"Success"
-          }
-        }
-      },
-      "patch" :{
-        "description": "Update panelist for webinar",
-        "tags": [
-          "Webinar"
-        ],
-        "operationId": "webinarPanelistUpdate",
-        "parameters" : [
-          {
-            "in": "path",
-            "name": "number",
-            "type": "integer",
-            "required": true
-          },
-          {
-            "in": "query",
-            "name": "occurence_id",
-            "type": "string",
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "panelist",
-            "type": "integer",
-            "required": true
-          }
-        ],
-        "responses":{
-          "200": {
-            "description":"Success"
-          }
-        }
-      }
-    },
-    "/users/{id}/webinars/{number}/register" : {
-      "get" :{
-        "description": "Get webinar registrations",
-        "tags": [
-          "Webinar"
-        ],
-        "operationId": "webinarRegList",
-        "parameters" : [
-          {
-            "in": "path",
-            "name": "id",
-            "type": "string",
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "number",
-            "type": "integer",
-            "required": true
-          }
-        ],
-        "responses":{
-          "200": {
-            "description":"Success"
-          }
-        }
-      },
-      "put" :{
-        "description": "Register participant for webinar",
-        "tags": [
-          "Webinar"
-        ],
-        "operationId": "webinarRegCreate",
-        "parameters" : [
-          {
-            "in": "path",
-            "name": "number",
-            "type": "integer",
-            "required": true
-          },
-          {
-            "in": "query",
-            "name": "occurence_id",
-            "type": "string",
-            "required": true
-          }
-        ],
-        "responses":{
-          "200": {
-            "description":"Success"
-          }
-        }
-      }
-    },
-    "/users/{id}/webinars/{number}/register/{registrant}" : {
-      "get" :{
-        "description": "Get webinar registrant",
-        "tags": [
-          "Webinar"
-        ],
-        "operationId": "webinarRegGet",
-        "parameters" : [
-          {
-            "in": "path",
-            "name": "id",
-            "type": "string",
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "number",
-            "type": "integer",
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "registrant",
-            "type": "integer",
-            "required": true
-          }
-        ],
-        "responses":{
-          "200": {
-            "description":"Success"
-          }
-        }
-      },
-      "delete" :{
-        "description": "Cancel participant for webinar",
-        "tags": [
-          "Webinar"
-        ],
-        "operationId": "webinarRegCancel",
-        "parameters" : [
-          {
-            "in": "path",
-            "name": "number",
-            "type": "integer",
-            "required": true
-          },
-          {
-            "in": "query",
-            "name": "occurence_id",
-            "type": "string",
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "registrant",
-            "type": "integer",
-            "required": true
-          }
-        ],
-        "responses":{
-          "200": {
-            "description":"Success"
-          }
-        }
-      },
-      "patch" :{
-        "description": "Update participant for webinar",
-        "tags": [
-          "Webinar"
-        ],
-        "operationId": "webinarRegUpdate",
-        "parameters" : [
-          {
-            "in": "path",
-            "name": "number",
-            "type": "integer",
-            "required": true
-          },
-          {
-            "in": "query",
-            "name": "occurence_id",
-            "type": "string",
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "registrant",
-            "type": "integer",
-            "required": true
-          }
-        ],
-        "responses":{
-          "200": {
-            "description":"Success"
-          }
-        }
-      }
-    },
-    "/users/{id}/zpk" : {
+    "/users/{userId}/zpk" : {
       "get":{
         "description" : "Get a user's token on Zoom via user ID",
         "tags": [
@@ -1529,7 +1351,7 @@
         "operationId": "userZPK",
         "parameters" :[
           {
-            "name": "id",
+            "name": "userId",
             "description" : "User ID",
             "in": "path",
             "type": "string",
@@ -1553,13 +1375,437 @@
           }
         }
       }
+    },
+    "/webinars/{webinarNumber}" : {
+      "get" :{
+        "description": "Get a meeting",
+        "tags": [
+          "Webinar"
+        ],
+        "operationId": "webinarGet",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "webinarNumber",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      },
+      "patch" :{
+        "description": "Update a meeting",
+        "tags": [
+          "Webinar"
+        ],
+        "operationId": "webinarUpdate",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "webinarNumber",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      },
+      "delete" :{
+        "description": "Delete a meeting",
+        "tags": [
+          "Webinar"
+        ],
+        "operationId": "webinarDelete",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "webinarNumber",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      }
+    },
+    "/webinars/{webinarNumber}/panelists" : {
+      "get" :{
+        "description": "Get webinar panelists",
+        "tags": [
+          "Webinar"
+        ],
+        "operationId": "webinarPanelists",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "webinarNumber",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      },
+      "post" :{
+        "description": "Register panelist for webinar",
+        "tags": [
+          "Webinar"
+        ],
+        "operationId": "webinarPanelistCreate",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "webinarNumber",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      },
+      "delete" :{
+        "description": "Cancel panelist for webinar",
+        "tags": [
+          "Webinar"
+        ],
+        "operationId": "webinarPanelistsCancel",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "webinarNumber",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      }
+    },
+    "/webinars/{webinarNumber}/panelists/{panelistId}" : {
+      "delete" :{
+        "description": "Cancel panelist for webinar",
+        "tags": [
+          "Webinar"
+        ],
+        "operationId": "webinarPanelistCancel",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "webinarNumber",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "panelistId",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      }
+    },
+    "/webinars/{webinarNumber}/registrants" : {
+      "get" :{
+        "description": "Get webinar registrations",
+        "tags": [
+          "Webinar"
+        ],
+        "operationId": "webinarRegList",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "webinarNumber",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      },
+      "post" :{
+        "description": "Register participant for webinar",
+        "tags": [
+          "Webinar"
+        ],
+        "operationId": "webinarRegCreate",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "webinarNumber",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      }
+    },
+    "/webinars/{webinarNumber}/registrants/{registrantId}" : {
+      "get" :{
+        "description": "Get webinar registrant",
+        "tags": [
+          "Webinar"
+        ],
+        "operationId": "webinarRegGet",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "webinarNumber",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "registrantId",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      },
+      "delete" :{
+        "description": "Cancel participant for webinar",
+        "tags": [
+          "Webinar"
+        ],
+        "operationId": "webinarRegCancel",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "webinarNumber",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "registrantId",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      },
+      "patch" :{
+        "description": "Update participant for webinar",
+        "tags": [
+          "Webinar"
+        ],
+        "operationId": "webinarRegUpdate",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "webinarNumber",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "registrantId",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      }
+    },
+    "/webinars/{webinarNumber}/status" : {
+      "put" :{
+        "description": "",
+        "tags": [
+          "Meeting"
+        ],
+        "operationId": "webinarStatus",
+        "parameters" : [
+          {
+            "in": "path",
+            "name": "webinarNumber",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses":{
+          "200": {
+            "description":"Success"
+          }
+        }
+      }
+    },
+  },
+  "definitions" : {
+    "Pagination" : {
+      "type" : "object",
+      "description" : "Pagination Object",
+      "properties" : {
+        "page_count" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "The number of items returned on this page."
+        },
+        "page_number" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "The page number of current results."
+        },
+        "page_size" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "The number of items per page."
+        },
+        "total_records" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "The number of all records available across pages."
+        }
+      }
+    },
+    "UserList" : {
+      "type" : "object",
+      "description" : "List of Users",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/Pagination"
+        },
+        {
+          "properties" : {
+            "users": {
+              "type" : "array",
+              "description" : "List of User objects.",
+              "items" : {
+                "allOf" : [
+                  {
+                    "$ref" : "#/definitions/UserIDReference"
+                  },
+                  {
+                    "$ref" : "#/definitions/UserDetailsReference"
+                  }
+                ]
+              },
+            }
+          }
+        }
+      ]
+    },
+    "UserReference": {
+      "type": "object",
+      "description": "It references a user",
+      "properties": {
+        "email": {
+          "type": "string",
+          "description": "User's email address."
+        },
+        "first_name": {
+          "type": "string",
+          "description": "User's first name."
+        },
+        "last_name": {
+          "type": "string",
+          "description": "User's last name."
+        },
+        "type": {
+          "type": "integer",
+          "enum": [1,2,3],
+          "description": "User's type. 1: Basic; 2: Pro; 3: Corp;"
+        }
+      }
+    },
+    "UserIDReference" : {
+      "title" : "User object",
+      "description" : "Reference to a User object.",
+      "type" : "object",
+      "allOf" : [
+        {
+          "properties" : {
+            "id" : {
+              "type" : "string",
+              "description" : "User ID"
+            }
+          }
+        },
+        {
+          "$ref" : "#/definitions/UserReference"
+        }
+      ]
+    },
+    "UserDetailsReference" : {
+      "title" : "User object with details",
+      "description" : "Reference to a User object with details.",
+      "type" : "object",
+      "properties": {
+        "created_at": {
+          "type": "string",
+          "format" : "dateTime"
+        },
+        "dept": {
+          "type": "string"
+        },
+        "last_client_version": {
+          "type": "string"
+        },
+        "last_login_time": {
+          "type": "string",
+          "format" : "dateTime"
+        },
+        "pic_url": {
+          "type": "string"
+        },
+        "pmi": {
+          "type": "string"
+        },
+        "timezone": {
+          "type": "string"
+        },
+        "vanity_url": {
+          "type": "string"
+        },
+        "verified": {
+          "type": "boolean"
+        }
+      }
     }
   },
   "tags": [
-    {
-      "name": "Accounts",
-      "description": "Account operations"
-    },
     {
       "name": "User",
       "description": "User operations"
@@ -1571,6 +1817,14 @@
     {
       "name": "Webinar",
       "description": "Webinar operations"
+    },
+    {
+      "name": "Accounts",
+      "description": "Account operations"
+    },
+    {
+      "name": "TSP",
+      "description": "TSP operations"
     }
   ],
   "externalDocs": {
@@ -1580,8 +1834,8 @@
   "securityDefinitions" : {
     "global": {
       "type" : "apiKey",
-      "name" : "Authorization",
-      "in" : "header"
+      "name" : "jwt",
+      "in" : "query"
     }
   },
   "security" : [{"global":[]}]
