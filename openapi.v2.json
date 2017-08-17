@@ -494,8 +494,19 @@
         "responses":{
           "201": {
             "description" : "User Created",
+            "headers" : {
+              "Content-Location" : {
+                "description": "Location of created User",
+                "type" : "string"
+              }
+            },
             "schema" : {
-              "$ref" : "#/definitions/UserIDReference"
+              "properties" : {
+                "id" : {
+                  "type" : "string",
+                  "description" : "User ID"
+                }
+              }
             }
           },
           "409": {
@@ -525,7 +536,15 @@
             "schema": {
               "allOf": [
                 {
-                  "$ref" : "#/definitions/UserIDReference"
+                  "properties" : {
+                    "id" : {
+                      "type" : "string",
+                      "description" : "User ID"
+                    }
+                  }
+                },
+                {
+                  "$ref" : "#/definitions/UserReference"
                 },
                 {
                   "$ref" : "#/definitions/UserDetailsReference"
@@ -591,17 +610,6 @@
             "in": "path",
             "type": "string",
             "required": true
-          },
-          {
-            "name": "action",
-            "description" : "Delete Action Type<br/>**disassociate**: Dissassociate a User from account<br/>**delete**: Permanently Delete a user",
-            "in": "query",
-            "type": "string",
-            "enum" : [
-              "disassociate",
-              "delete"
-            ],
-            "default": "disassociate"
           }
         ],
         "responses":{
@@ -632,7 +640,30 @@
         ],
         "responses":{
           "200": {
-            "description":"Success"
+            "description":"Success",
+            "schema" : {
+              "properties" : {
+                "assistants": {
+                  "type" : "array",
+                  "description" : "List of User assistants.",
+                  "items" : {
+                    "allOf" : [
+                      {
+                        "properties" : {
+                          "email_or_id" : {
+                            "type" : "string",
+                            "description" : "Assistant Email or ID"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "User not found"
           }
         }
       },
@@ -665,13 +696,30 @@
           }
         ],
         "responses":{
-          "200": {
-            "description":"Success"
+          "201":  {
+            "description" : "Assitant Added",
+            "headers" : {
+              "Content-Location" : {
+                "description": "Location of created assistant",
+                "type" : "string"
+              }
+            },
+            "schema" : {
+              "properties" : {
+                "email_or_id" : {
+                  "type" : "string",
+                  "description" : "User ID"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "User not found"
           }
         }
       },
       "delete" : {
-        "description": "Delete user's assistants",
+        "description": "Delete all of user's assistants",
         "tags": [
           "User"
         ],
@@ -686,15 +734,18 @@
           }
         ],
         "responses":{
-          "200": {
-            "description":"Success"
+          "204": {
+            "description":"Assitants deleted."
+          },
+          "404" : {
+            "description" : "User not found"
           }
         }
       }
     },
     "/users/{userId}/assistants/{assistantId}" : {
       "delete" : {
-        "description": "Delete user's assistants",
+        "description": "Delete one of a user's assistant",
         "tags": [
           "User"
         ],
@@ -716,8 +767,11 @@
           }
         ],
         "responses":{
-          "200": {
-            "description":"Success"
+          "204": {
+            "description":"Assitant deleted."
+          },
+          "404" : {
+            "description" : "User or Assistant not found"
           }
         }
       }
@@ -764,43 +818,6 @@
         }
       }
     },
-    "/users/{userId}/password" : {
-      "put":{
-        "description" : "Update a user's password",
-        "tags": [
-          "User"
-        ],
-        "operationId": "userPassword",
-        "parameters" :[
-          {
-            "name": "userId",
-            "description" : "User ID",
-            "in": "path",
-            "type": "string",
-            "required" : true
-          },
-          {
-            "name": "body",
-            "description" : "User password",
-            "in": "body",
-            "schema" : {
-              "type" : "object",
-              "properties" : {
-                "password" :{
-                  "type" :"string",
-                  "format": "password"
-                }
-              }
-            }
-          }
-        ],
-        "responses":{
-          "200": {
-            "description":"Success"
-          }
-        }
-      }
-    },
     "/users/{userId}/picture" : {
       "put":{
         "description" : "Update a user's picture",
@@ -825,8 +842,26 @@
           }
         ],
         "responses":{
-          "200": {
-            "description":"Success"
+          "201": {
+            "description":"Picture Added",
+            "headers" : {
+              "Content-Location" : {
+                "description": "Location of user's picture",
+                "type" : "string"
+              }
+            }
+          },
+          "204": {
+            "description":"Picture Updated",
+            "headers" : {
+              "Content-Location" : {
+                "description": "Location of user's picture",
+                "type" : "string"
+              }
+            }
+          },
+          "404": {
+            "description":"User not found"
           }
         }
       }
@@ -853,7 +888,13 @@
         ],
         "responses":{
           "200": {
-            "description":"Success"
+            "description" : "User settings returned",
+            "schema": {
+              "$ref": "#/definitions/UserSettings"
+            }
+          },
+          "404": {
+            "description" : "User not found"
           }
         }
       },
@@ -876,161 +917,16 @@
             "required": true,
             "description": "User Settings",
             "schema": {
-              "type":"object",
-              "properties":{
-                "meeting":{
-                  "type": "object",
-                  "properties" : {
-                    "chat" :{
-                      "type": "boolean"
-                    },
-                    "private_chat" :{
-                      "type": "boolean"
-                    },
-                    "auto_saving_chat" :{
-                      "type": "boolean"
-                    },
-                    "attendee_on_hold" :{
-                      "type": "boolean"
-                    },
-                    "entry_exit_chime" :{
-                      "type": "string",
-                      "enum": [
-                        "host",
-                        "all",
-                        "none"
-                      ]
-                    },
-                    "record_play_voice" :{
-                      "type": "boolean"
-                    },
-                    "group_hd" :{
-                      "type": "boolean"
-                    },
-                    "feedback" :{
-                      "type": "boolean"
-                    },
-                    "co_host" :{
-                      "type": "boolean"
-                    },
-                    "annotation" :{
-                      "type": "boolean"
-                    },
-                    "polling" :{
-                      "type": "boolean"
-                    },
-                    "non_verbal_feedback" :{
-                      "type": "boolean"
-                    },
-                    "breakout_room" :{
-                      "type": "boolean"
-                    },
-                    "remote_support" :{
-                      "type": "boolean"
-                    },
-                    "file_transfer" :{
-                      "type": "boolean"
-                    },
-                    "vitual_background" :{
-                      "type": "boolean"
-                    },
-                    "closed_caption" :{
-                      "type": "boolean"
-                    },
-                    "far_end_camera_control" :{
-                      "type": "boolean"
-                    },
-                    "share_dual_camera" :{
-                      "type": "boolean"
-                    },
-                    "attention_tracking" :{
-                      "type": "boolean"
-                    },
-                    "waiting_room" :{
-                      "type": "boolean"
-                    }
-                  }
-                },
-                "recording":{
-                  "type": "object",
-                  "properties" : {
-                    "local_recording" :{
-                      "type": "boolean"
-                    },
-                    "cloud_recording" :{
-                      "type": "boolean"
-                    },
-                    "record_speaker_view" :{
-                      "type": "boolean"
-                    },
-                    "recird_gallery_view" :{
-                      "type": "boolean"
-                    },
-                    "auto_recording" :{
-                      "type": "string",
-                      "enum": [
-                        "local",
-                        "cloud"
-                      ]
-                    },
-                    "record_audio_file" :{
-                      "type": "boolean"
-                    },
-                    "save_chat_text" :{
-                      "type": "boolean"
-                    },
-                    "show_timestamp" :{
-                      "type": "boolean"
-                    },
-                    "auto_delete_cmr" :{
-                      "type": "boolean"
-                    },
-                    "auto_delete_cmr_days" :{
-                      "type": "integer"
-                    }
-                  }
-                },
-                "notification":{
-                  "type": "object",
-                  "properties" : {
-                    "jbh_reminder" :{
-                      "type": "boolean"
-                    },
-                    "cancel_meeting_reminder" :{
-                      "type": "boolean"
-                    },
-                    "alternative_host_reminder" :{
-                      "type": "boolean"
-                    }
-                  }
-                },
-                "feature":{
-                  "type": "object",
-                  "properties" : {
-                    "meeting_capacity" :{
-                      "type": "integer"
-                    },
-                    "large_meeting" :{
-                      "type": "boolean"
-                    },
-                    "large_meeting_capacity" :{
-                      "type": "integer"
-                    },
-                    "webinar" :{
-                      "type": "boolean"
-                    },
-                    "webinar_capacity" :{
-                      "type": "integer"
-                    }
-                  }
-                }
-              }
+              "$ref" : "#/definitions/UserSettings"
             }
           }
         ],
         "responses":{
-          "200": {
-            "description":"Success"
+          "204": {
+            "description" : "User setting's updated"
+          },
+          "404": {
+            "description" : "User not found"
           }
         }
       }
@@ -1066,8 +962,11 @@
           }
         ],
         "responses":{
-          "200": {
-            "description":"Success"
+          "204": {
+            "description":"Status updated"
+          },
+          "404": {
+            "description" : "User not found"
           }
         }
       }
@@ -1089,8 +988,11 @@
           }
         ],
         "responses":{
-          "200": {
-            "description":"Success"
+          "204": {
+            "description":"Token deleted"
+          },
+          "404" : {
+            "description" : "User not found"
           }
         }
       }
@@ -1303,7 +1205,18 @@
         ],
         "responses":{
           "200": {
-            "description":"Success"
+            "description":"Token returned",
+            "schema": {
+              "properties" : {
+                "token" : {
+                  "type" : "string",
+                  "description" : "User Token"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "User not found"
           }
         }
       }
@@ -1344,7 +1257,7 @@
     },
     "/users/{userId}/zpk" : {
       "get":{
-        "description" : "Get a user's token on Zoom via user ID",
+        "description" : "Check if the zpk is expired. The zpk is used to authenticate a user.",
         "tags": [
           "User"
         ],
@@ -1702,6 +1615,7 @@
     },
     "UserList" : {
       "type" : "object",
+      "title" : "User List",
       "description" : "List of Users",
       "allOf" : [
         {
@@ -1715,7 +1629,15 @@
               "items" : {
                 "allOf" : [
                   {
-                    "$ref" : "#/definitions/UserIDReference"
+                    "properties" : {
+                      "id" : {
+                        "type" : "string",
+                        "description" : "User ID"
+                      }
+                    }
+                  },
+                  {
+                    "$ref" : "#/definitions/UserReference"
                   },
                   {
                     "$ref" : "#/definitions/UserDetailsReference"
@@ -1750,24 +1672,6 @@
         }
       }
     },
-    "UserIDReference" : {
-      "title" : "User object",
-      "description" : "Reference to a User object.",
-      "type" : "object",
-      "allOf" : [
-        {
-          "properties" : {
-            "id" : {
-              "type" : "string",
-              "description" : "User ID"
-            }
-          }
-        },
-        {
-          "$ref" : "#/definitions/UserReference"
-        }
-      ]
-    },
     "UserDetailsReference" : {
       "title" : "User object with details",
       "description" : "Reference to a User object with details.",
@@ -1801,6 +1705,191 @@
         },
         "verified": {
           "type": "boolean"
+        }
+      }
+    },
+    "UserSettings" : {
+      "title" : "User settings",
+      "type" : "object",
+      "properties" : {
+        "feature": {
+          "$ref" : "#/definitions/UserSettingsFeature"
+        },
+        "meeting": {
+          "$ref" : "#/definitions/UserSettingsMeeting"
+        },
+        "notification": {
+          "$ref" : "#/definitions/UserSettingsNotification"
+        },
+        "recording": {
+          "$ref" : "#/definitions/UserSettingsRecording"
+        },
+        "_security": {
+          "$ref" : "#/definitions/UserSettingsSecurity"
+        }
+      }
+    },
+    "UserSettingsMeeting" : {
+      "title" : "User settings: Meeting settings",
+      "description" : "",
+      "type" : "object",
+      "properties" : {
+        "chat" : {
+          "type" : "boolean"
+        },
+        "private_chat" : {
+          "type" : "boolean"
+        },
+        "auto_saving_chat" : {
+          "type" : "boolean"
+        },
+        "attendee_on_hold" : {
+          "type" : "boolean"
+        },
+        "entry_exit_chime_host" : {
+          "type" : "boolean"
+        },
+        "entry_exit_chime_all" : {
+          "type" : "boolean"
+        },
+        "record_play_voice" : {
+          "type" : "boolean"
+        },
+        "group_hd" : {
+          "type" : "boolean"
+        },
+        "feedback" : {
+          "type" : "boolean"
+        },
+        "co_host" : {
+          "type" : "boolean"
+        },
+        "annotation" : {
+          "type" : "boolean"
+        },
+        "polling" : {
+          "type" : "boolean"
+        },
+        "non_verbal_feedback" : {
+          "type" : "boolean"
+        },
+        "breakout_room" : {
+          "type" : "boolean"
+        },
+        "remote_support" : {
+          "type" : "boolean"
+        },
+        "file_transfer" : {
+          "type" : "boolean"
+        },
+        "virtual_background" : {
+          "type" : "boolean"
+        },
+        "closed_caption" : {
+          "type" : "boolean"
+        },
+        "far_end_camera_control" : {
+          "type" : "boolean"
+        },
+        "share_dual_camera" : {
+          "type" : "boolean"
+        },
+        "attention_tracking" : {
+          "type" : "boolean"
+        },
+        "waiting_room" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "UserSettingsRecording" : {
+      "title" : "User settings: Recording settings",
+      "description" : "",
+      "type" : "object",
+      "properties" : {
+        "local_recording" : {
+          "type" : "boolean"
+        },
+        "cloud_recording" : {
+          "type" : "boolean"
+        },
+        "record_speaker_view" : {
+          "type" : "boolean"
+        },
+        "record_gallery_view" : {
+          "type" : "boolean"
+        },
+        "record_audio_file" : {
+          "type" : "boolean"
+        },
+        "save_chat_text" : {
+          "type" : "boolean"
+        },
+        "show_timestamp" : {
+          "type" : "boolean"
+        },
+        "local_auto_recording" : {
+          "type" : "boolean"
+        },
+        "cloud_auto_recording" : {
+          "type" : "boolean"
+        },
+        "auto_delete_cmr" : {
+          "type" : "boolean"
+        },
+        "auto_delete_cmr_days" : {
+          "type" : "integer"
+        }
+      }
+    },
+    "UserSettingsNotification" : {
+      "title" : "User settings: Notification settings",
+      "description" : "",
+      "type" : "object",
+      "properties" : {
+        "jbh_reminder" : {
+          "type" : "boolean"
+        },
+        "cancel_meeting_reminder" : {
+          "type" : "boolean"
+        },
+        "alternative_host_reminder" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "UserSettingsSecurity" : {
+      "title" : "User settings: Security settings",
+      "description" : "",
+      "type" : "object",
+      "properties" : {
+        "e2e_encryption" : {
+          "type" : "boolean"
+        },
+        "pstn_password_protected" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "UserSettingsFeature" : {
+      "title" : "User settings: Feature settings",
+      "description" : "",
+      "type" : "object",
+      "properties" : {
+        "meeting_capacity" : {
+          "type" : "integer"
+        },
+        "large_meeting" : {
+          "type" : "boolean"
+        },
+        "large_meeting_capacity" : {
+          "type" : "integer"
+        },
+        "webinar" : {
+          "type" : "boolean"
+        },
+        "webinar_capacity" : {
+          "type" : "integer"
         }
       }
     }
