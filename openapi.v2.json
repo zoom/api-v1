@@ -426,7 +426,7 @@
         }
       }
     },
-    "/meetings/{meetingNumber}": {
+    "/meetings/{meetingId}": {
       "get": {
         "description": "Get a meeting",
         "tags": [
@@ -521,7 +521,7 @@
         }
       }
     },
-    "/meetings/{meetingNumber}/registrants": {
+    "/meetings/{meetingId}/registrants": {
       "get": {
         "description": "",
         "tags": [
@@ -599,7 +599,7 @@
         }
       }
     },
-    "/meetings/{meetingNumber}/registrants/{registrantId}/status": {
+    "/meetings/{meetingId}/registrants/{registrantId}/status": {
       "put": {
         "description": "",
         "tags": [
@@ -641,7 +641,7 @@
         }
       }
     },
-    "/meetings/{meetingNumber}/status": {
+    "/meetings/{meetingId}/status": {
       "put": {
         "description": "",
         "tags": [
@@ -1470,7 +1470,7 @@
         }
       }
     },
-    "/webinars/{webinarNumber}": {
+    "/webinars/{webinarId}": {
       "get": {
         "description": "Get a webinar",
         "tags": [
@@ -1565,7 +1565,7 @@
         }
       }
     },
-    "/webinars/{webinarNumber}/panelists": {
+    "/webinars/{webinarId}/panelists": {
       "get": {
         "description": "",
         "tags": [
@@ -1660,7 +1660,7 @@
         }
       }
     },
-    "/webinars/{webinarNumber}/panelists/{panelistId}": {
+    "/webinars/{webinarId}/panelists/{panelistId}": {
       "delete": {
         "description": "Cancel panelist for webinar",
         "tags": [
@@ -1688,7 +1688,7 @@
         }
       }
     },
-    "/webinars/{webinarNumber}/registrants": {
+    "/webinars/{webinarId}/registrants": {
       "get": {
         "description": "",
         "tags": [
@@ -1766,7 +1766,7 @@
         }
       }
     },
-    "/webinars/{webinarNumber}/registrants/{registrantId}/status": {
+    "/webinars/{webinarId}/registrants/{registrantId}/status": {
       "put": {
         "description": "",
         "tags": [
@@ -1808,7 +1808,7 @@
         }
       }
     },
-    "/webinars/{webinarNumber}/status": {
+    "/webinars/{webinarId}/status": {
       "put": {
         "description": "",
         "tags": [
@@ -1855,7 +1855,7 @@
     },
     "MeetingNumber": {
       "in": "path",
-      "name": "meetingNumber",
+      "name": "meetingId",
       "type": "integer",
       "required": true
     },
@@ -1910,7 +1910,7 @@
     },
     "WebinarNumber": {
       "in": "path",
-      "name": "webinarNumber",
+      "name": "webinarId",
       "type": "integer",
       "required": true
     }
