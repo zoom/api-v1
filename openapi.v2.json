@@ -30,14 +30,25 @@
   "paths": {
     "/accounts": {
       "get": {
-        "description": "List all subaccounts",
+        "description": "List all Accounts.",
         "tags": [
           "Accounts"
         ],
         "operationId": "accounts",
+        "parameters": [
+          {
+            "$ref" : "#/parameters/PageSize"
+          },
+          {
+            "$ref" : "#/parameters/PageNumber"
+          }
+        ],
         "responses": {
           "200": {
-            "description": "Account list returned"
+            "description": "Account list returned",
+            "schema": {
+              "$ref": "#/definitions/AccountList"
+            }
           }
         }
       },
@@ -47,9 +58,37 @@
           "Accounts"
         ],
         "operationId": "accountsCreate",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "description": "Account",
+            "schema": {
+              "$ref" : "#/definitions/Account"
+            }
+          }
+        ],
         "responses": {
           "201": {
-            "description": "Account created"
+            "description": "Account Created",
+            "headers": {
+              "Content-Location": {
+                "description": "Location of created Account",
+                "type": "string"
+              }
+            },
+            "schema": {
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "Account ID"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Account with that email already exists"
           }
         }
       }
@@ -63,35 +102,43 @@
         "operationId": "account",
         "parameters": [
           {
-            "in": "path",
-            "name": "accountId",
-            "type": "string",
-            "required": true
+            "$ref": "#/parameters/AccountId"
           }
         ],
         "responses": {
           "200": {
-            "description": "Account returned"
-          }
-        }
-      },
-      "patch": {
-        "description": "Update an account",
-        "tags": [
-          "Accounts"
-        ],
-        "operationId": "accountUpdate",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "accountId",
-            "type": "string",
-            "required": true
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Account updated"
+            "description": "Account object returned",
+            "schema": {
+              "allOf": [
+                {
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "Account ID"
+                    },
+                    "owner_id": {
+                      "type": "string",
+                      "description": "Account Owner ID"
+                    },
+                    "owner_email": {
+                      "type": "string",
+                      "description": "Account Owner email"
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "format" : "dateTime",
+                      "description": "Account creation date/time"
+                    },
+                    "options" : {
+                      "$ref": "#/definitions/AccountOptions"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "404": {
+            "description": "User not found"
           }
         }
       },
@@ -103,15 +150,45 @@
         "operationId": "accountDelete",
         "parameters": [
           {
-            "in": "path",
-            "name": "accountId",
-            "type": "string",
-            "required": true
+            "$ref": "#/parameters/AccountId"
           }
         ],
         "responses": {
           "204": {
             "description": "Account deleted"
+          },
+          "404" : {
+            "description": "Account not found"
+          }
+        }
+      }
+    },
+    "/accounts/{accountId}/options": {
+      "patch": {
+        "description": "Update an account",
+        "tags": [
+          "Accounts"
+        ],
+        "operationId": "accountUpdate",
+        "parameters": [
+          {
+            "$ref": "#/parameters/AccountId"
+          },
+          {
+            "in" : "body",
+            "name" : "body",
+            "required" : true,
+            "schema" : {
+              "$ref" : "#/definitions/AccountOptions"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Account options updated"
+          },
+          "404" : {
+            "description": "Account not found"
           }
         }
       }
@@ -125,15 +202,18 @@
         "operationId": "accountSettings",
         "parameters": [
           {
-            "in": "path",
-            "name": "accountId",
-            "type": "string",
-            "required": true
+            "$ref": "#/parameters/AccountId"
           }
         ],
         "responses": {
           "200": {
-            "description": "Account settings returned"
+            "description": "Account settings returned",
+            "schema" : {
+              "$ref": "#/definitions/AccountSettings"
+            }
+          },
+          "404":{
+            "description": "Account not found"
           }
         }
       },
@@ -145,15 +225,23 @@
         "operationId": "accountSettingsUpdate",
         "parameters": [
           {
-            "in": "path",
-            "name": "accountId",
-            "type": "string",
-            "required": true
+            "$ref": "#/parameters/AccountId"
+          },
+          {
+            "in" : "body",
+            "name" : "body",
+            "required" : true,
+            "schema" : {
+              "$ref" : "#/definitions/AccountSettings"
+            }
           }
         ],
         "responses": {
           "204": {
             "description": "Account settings updated"
+          },
+          "404":{
+            "description": "Account not found"
           }
         }
       }
@@ -162,40 +250,51 @@
       "get": {
         "description": "Get an account's billing information",
         "tags": [
-          "Accounts"
+          "Billing"
         ],
         "operationId": "accountBilling",
         "parameters": [
           {
-            "in": "path",
-            "name": "accountId",
-            "type": "string",
-            "required": true
+            "$ref": "#/parameters/AccountId"
           }
         ],
         "responses": {
           "200": {
-            "description": "Account billing information returned"
+            "description": "Account billing contact information returned",
+            "schema" : {
+              "$ref" : "#/definitions/BillingContact"
+            }
+          },
+          "404" : {
+            "description": "Account not found"
           }
         }
       },
       "patch": {
         "description": "Update an account's billing information",
         "tags": [
-          "Accounts"
+          "Billing"
         ],
         "operationId": "accountBillingUpdate",
         "parameters": [
           {
-            "in": "path",
-            "name": "accountId",
-            "type": "string",
-            "required": true
+            "$ref": "#/parameters/AccountId"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema" : {
+              "$ref": "#/definitions/BillingContact"
+            }
           }
         ],
         "responses": {
           "204": {
-            "description": "Account billing information updated"
+            "description": "Account billing contact information updated"
+          },
+          "404" : {
+            "description": "Account not found"
           }
         }
       }
@@ -204,68 +303,48 @@
       "get": {
         "description": "Get an account's plans",
         "tags": [
-          "Accounts"
+          "Billing"
         ],
         "operationId": "accountPlans",
         "parameters": [
           {
-            "in": "path",
-            "name": "accountId",
-            "type": "string",
-            "required": true
+            "$ref": "#/parameters/AccountId"
           }
         ],
         "responses": {
           "200": {
-            "description": "Account plans returned"
+            "description": "Account plans returned",
+            "schema" : {
+              "$ref": "#/definitions/AccountPlans"
+            }
+          },
+          "404" : {
+            "description": "Account not fond"
           }
         }
       },
-      "post": {
+      "put": {
         "description": "Add to an account's plans",
         "tags": [
-          "Accounts"
+          "Billing"
         ],
         "operationId": "accountPlanAdd",
         "parameters": [
           {
-            "in": "path",
-            "name": "accountId",
-            "type": "string",
-            "required": true
+            "$ref": "#/parameters/AccountId"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AccountPlans"
+            }
           }
         ],
         "responses": {
           "204": {
             "description": "Account plans updated"
-          }
-        }
-      }
-    },
-    "/accounts/{accountId}/plans/{plan}": {
-      "delete": {
-        "description": "Remove an account's plans",
-        "tags": [
-          "Accounts"
-        ],
-        "operationId": "accountPlanDelete",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "accountId",
-            "type": "string",
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "plan",
-            "type": "string",
-            "required": true
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Account plans removed"
           }
         }
       }
@@ -620,18 +699,10 @@
             ]
           },
           {
-            "in": "query",
-            "name": "page_size",
-            "description": "The amount of records returns within a single API call. Defaults to 30. Max of 300 users.",
-            "type": "integer",
-            "default": 30
+            "$ref" : "#/parameters/PageSize"
           },
           {
-            "in": "query",
-            "name": "page_number",
-            "description": "Current page number of returned records. Default to 1.",
-            "type": "integer",
-            "default": 1
+            "$ref" : "#/parameters/PageNumber"
           }
         ],
         "responses": {
@@ -1016,7 +1087,7 @@
           },
           {
             "in": "body",
-            "name": "settings",
+            "name": "body",
             "required": true,
             "description": "User Settings",
             "schema": {
@@ -1776,6 +1847,12 @@
     }
   },
   "parameters": {
+    "AccountId": {
+      "in": "path",
+      "name": "accountId",
+      "type": "string",
+      "required": true
+    },
     "MeetingNumber": {
       "in": "path",
       "name": "meetingNumber",
@@ -1839,6 +1916,698 @@
     }
   },
   "definitions": {
+    "Account" : {
+      "type" : "object",
+      "description" : "Account object",
+      "properties" : {
+        "email": {
+          "type": "string",
+          "description": "User's email address."
+        },
+        "first_name": {
+          "type": "string",
+          "description": "User's first name."
+        },
+        "last_name": {
+          "type": "string",
+          "description": "User's last name."
+        },
+        "password": {
+          "type": "string",
+          "description": "User's password."
+        },
+        "options": {
+          "$ref" : "#/definitions/AccountOptions"
+        }
+      }
+    },
+    "AccountList" : {
+      "type": "object",
+      "title": "Account List",
+      "description": "List of Accounts",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Pagination"
+        },
+        {
+          "properties": {
+            "accounts": {
+              "type": "array",
+              "description": "List of Account objects.",
+              "items": {
+                "allOf": [
+                  {
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "description": "Account ID"
+                      }
+                    }
+                  },
+                  {
+                    "properties": {
+                      "owner_email": {
+                        "type": "string",
+                        "description": "Account Owner email"
+                      }
+                    }
+                  },
+                  {
+                    "properties": {
+                      "created_at": {
+                        "type": "string",
+                        "format" : "dateTime",
+                        "description": "Account creation date/time"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "AccountOptions" : {
+      "type" : "object",
+      "description" : "Account options object",
+      "properties" : {
+        "share_rc": {
+          "type": "boolean",
+          "description": "Enable Share Virtual Room Connector.",
+          "default" : false
+        },
+        "room_connectors": {
+          "type": "string",
+          "description": "Virtual Room Connector, multiple value separated by comma."
+        },
+        "share_mc": {
+          "type": "boolean",
+          "description": "Enable Share Meeting Connector.",
+          "default" : false
+        },
+        "meeting_conntectors": {
+          "type": "string",
+          "description": "Meeting Connector, multiple value separated by comma."
+        },
+        "pay_mode": {
+          "type": "string",
+          "description": "User's password.",
+          "enum" : ["master", "sub"],
+          "default" : "master"
+        }
+      }
+    },
+    "AccountPlan" : {
+      "type" : "object",
+      "description": "Account plan object",
+      "properties": {
+        "type" : {
+          "type" : "string",
+          "description" : "Account plan type"
+        },
+        "hosts" : {
+          "type" : "integer",
+          "description" : "Account plan number of hosts"
+        }
+      }
+    },
+    "AccountPlans" : {
+      "type" : "object",
+      "description": "Account Plans object",
+      "properties": {
+        "plan_base" : {
+          "$ref": "#/definitions/AccountPlan"
+        },
+        "plan_zoom_rooms" : {
+          "$ref": "#/definitions/AccountPlan"
+        },
+        "plan_room_connector" : {
+          "$ref": "#/definitions/AccountPlan"
+        },
+        "plan_large_meeting" : {
+          "type" : "array",
+          "items" : {
+            "$ref": "#/definitions/AccountPlan"
+          }
+        },
+        "plan_webinar" : {
+          "type" : "array",
+          "items" : {
+            "$ref": "#/definitions/AccountPlan"
+          }
+        },
+        "plan_recording" : {
+          "type" : "string"
+        },
+        "plan_audio" : {
+          "type" : "object",
+          "properties": {
+            "type" : {
+              "type" : "string"
+            },
+            "tollfree_country" : {
+              "type" : "string"
+            },
+            "premium_country" : {
+              "type" : "string"
+            },
+            "callout" : {
+              "type" : "boolean"
+            },
+            "ddi_numbers" : {
+              "type" : "integer"
+            }
+          }
+        }
+      }
+    },
+    "AccountSettings" : {
+      "title": "User settings",
+      "type": "object",
+      "properties": {
+        "in_meeting": {
+          "$ref": "#/definitions/AccountSettingsInMeeting"
+        },
+        "schedule_meting": {
+          "$ref": "#/definitions/AccountSettingsScheduleMeeting"
+        },
+        "join_meeting": {
+          "$ref": "#/definitions/AccountSettingsJoinMeeting"
+        },
+        "recording": {
+          "$ref": "#/definitions/AccountSettingsRecording"
+        },
+        "notification": {
+          "$ref": "#/definitions/AccountSettingsNotification"
+        },
+        "audio": {
+          "$ref": "#/definitions/AccountSettingsAudio"
+        },
+        "zoom_rooms": {
+          "$ref": "#/definitions/AccountSettingsZoomRooms"
+        },
+        "admin": {
+          "$ref": "#/definitions/AccountSettingsAdmin"
+        },
+        "integration": {
+          "$ref": "#/definitions/AccountSettingsIntegration"
+        },
+        "html_email_template": {
+          "$ref": "#/definitions/AccountSettingsHTMLEmailTemplate"
+        },
+        "user_profile": {
+          "$ref": "#/definitions/AccountSettingsUserProfile"
+        },
+        "feature": {
+          "$ref": "#/definitions/AccountSettingsFeature"
+        }
+      }
+    },
+    "AccountSettingsInMeeting" : {
+      "type" : "object",
+      "description": "Account Settings: In Meeting",
+      "properties": {
+        "e2e_encryption": {
+          "type" : "boolean",
+          "description": "End-to-End Encryption",
+          "default" : true
+        },
+        "chat": {
+          "type" : "boolean",
+          "description" : "Chat",
+          "default" : false
+        },
+        "private_chat": {
+          "type" : "boolean",
+          "description" : "Private Chat",
+          "default" : false
+        },
+        "auto_saving_chat": {
+          "type" : "boolean",
+          "description" : "Auto Saving Chats",
+          "default" : false
+        },
+        "feedback": {
+          "type" : "boolean",
+          "description" : "Feedback to Zoom",
+          "default" : false
+        },
+        "post_meeting_feedback": {
+          "type" : "boolean",
+          "description" : "Display end-of-meeting experience feedback survey",
+          "default" : false
+        },
+        "co_host": {
+          "type" : "boolean",
+          "description" : "Co-Host",
+          "default" : true
+        },
+        "polling": {
+          "type" : "boolean",
+          "description" : "Polling",
+          "default" : false
+        },
+        "attendee_on_hold": {
+          "type" : "boolean",
+          "description" : "Allow host to put attendee on hold",
+          "default" : true
+        },
+        "show_meeting_control_toolbar": {
+          "type" : "boolean",
+          "description" : "Always show meeting control toolbar",
+          "default" : true
+        },
+        "allow_show_zoom_windows": {
+          "type" : "boolean",
+          "description" : "Allow to share Zoom windows in desktop sharing",
+          "default" : true
+        },
+        "alert_guest_join": {
+          "type" : "boolean",
+          "description" : "Alert internal participants when a guest joins a meeting",
+          "default" : true
+        },
+        "webinar_question_answer": {
+          "type" : "boolean",
+          "description" : "Q&A in webinar",
+          "default" : true
+        },
+        "anonymous_question_answer": {
+          "type" : "boolean",
+          "description" : "Allow Anonymous Q&A in Webinar",
+          "default" : true
+        },
+        "breakout_room": {
+          "type" : "boolean",
+          "description" : "Breakout room",
+          "default" : false
+        },
+        "file_transfer": {
+          "type" : "boolean",
+          "description" : "File transfer",
+          "default" : false
+        },
+        "closed_caption": {
+          "type" : "boolean",
+          "description" : "Closed caption",
+          "default" : true
+        },
+        "far_end_camera_control": {
+          "type" : "boolean",
+          "description" : "Far end camera control",
+          "default" : true
+        },
+        "group_hd": {
+          "type" : "boolean",
+          "description" : "Group HD video",
+          "default" : true
+        },
+        "dscp_marking": {
+          "type" : "boolean",
+          "description" : "DSCP marking",
+          "default" : true
+        },
+        "dscp_audio": {
+          "type" : "integer",
+          "description" : "DSCP Audio"
+        },
+        "dscp_video": {
+          "type" : "integer",
+          "description" : "DSCP Video"
+        },
+        "virtual_background": {
+          "type" : "boolean",
+          "description" : "Virtual background",
+          "default" : false
+        },
+        "sending_default_email_invites": {
+          "type" : "boolean",
+          "description" : "Only show default email when sending email invites",
+          "default" : false
+        },
+        "p2p_connetion": {
+          "type" : "boolean",
+          "description" : "Peer to Peer connection while only 2 people in a meeting Learn More",
+          "default" : true
+        },
+        "p2p_ports": {
+          "type" : "string",
+          "description" : "Listening ports range, separated by comma, such as 55,56"
+        }
+      }
+    },
+    "AccountSettingsScheduleMeeting" : {
+      "type" : "object",
+      "description": "Account Settings: Schedule Meeting",
+      "properties": {
+        "join_before_host": {
+          "type" : "boolean",
+          "description": "Join Before Host",
+          "default" : false
+        },
+        "host_video": {
+          "type" : "boolean",
+          "description": "Host Video",
+          "default" : false
+        },
+        "participant_video": {
+          "type" : "boolean",
+          "description": "Participants Video",
+          "default" : false
+        },
+        "both_audio": {
+          "type" : "boolean",
+          "description": "Audio: Telephony and VoIP",
+          "default" : true
+        },
+        "not_store_meeting_topic": {
+          "type" : "boolean",
+          "description": "Always display 'Zoom Meeting' as the meeting topic",
+          "default" : false
+        },
+        "force_pmi_jbh_password": {
+          "type" : "boolean",
+          "description": "Require a password for Personal Meetings if attendees can join before host",
+          "default" : false
+        }
+      }
+    },
+    "AccountSettingsJoinMeeting" : {
+      "type" : "object",
+      "description": "Account Settings: Join Meeting",
+      "properties": {
+        "auto_answer": {
+          "type" : "boolean",
+          "description": "Enable Auto Answer Group",
+          "default" : true
+        },
+        "enforce_login": {
+          "type" : "boolean",
+          "description": "Only signed-in users can join meetings",
+          "default" : true
+        },
+        "enforce_login_domains": {
+          "type" : "string",
+          "description" : "Only signed-in users with specified domains can join meetings"
+        },
+        "watermark": {
+          "type" : "boolean",
+          "description": "Add watermark when viewing the shared screen",
+          "default" : false
+        }
+      }
+    },
+    "AccountSettingsRecording" : {
+      "type" : "object",
+      "description": "Account Settings: Recording",
+      "properties": {
+        "local_recording": {
+          "type" : "boolean",
+          "description": "Local recording",
+          "default" : false
+        },
+        "cloud_recording": {
+          "type" : "boolean",
+          "description": "Cloud recording",
+          "default" : false
+        },
+        "auto_recording": {
+          "type" : "boolean",
+          "description": "Automatic recording",
+          "default" : false
+        },
+        "cloud_recording_download": {
+          "type" : "boolean",
+          "description": "Cloud Recording Downloads",
+          "default" : false
+        },
+        "cloud_recording_download_host": {
+          "type" : "boolean",
+          "description": "Only the host can download cloud recordings",
+          "default" : false
+        },
+        "account_user_access_recording": {
+          "type" : "boolean",
+          "description": "Only users on my account can access cloud recordings",
+          "default" : false
+        },
+        "cloud_recording_notification": {
+          "type" : "boolean",
+          "description": "Push notification to subscription URL when a cloud recording is available",
+          "default" : false
+        },
+        "auto_delete_cmr": {
+          "type" : "boolean",
+          "description": "Auto delete cloud recordings after days",
+          "default" : false
+        },
+        "auto_delete_cmr_days": {
+          "type" : "integer",
+          "description": "Number of auto delete cloud recordings after days",
+          "default" : 0
+        }
+      }
+    },
+    "AccountSettingsNotification" : {
+      "type" : "object",
+      "description": "Account Settings: Notification",
+      "properties": {
+        "cloud_recording_avaliable_reminder": {
+          "type" : "boolean",
+          "description": "Allow keep recording from being automatically deleted",
+          "default" : true
+        },
+        "jbh_reminder": {
+          "type" : "boolean",
+          "description": "When attendees join meeting before host",
+          "default" : false
+        },
+        "cancel_meeting_reminder": {
+          "type" : "boolean",
+          "description": "When a meeting is cancelled",
+          "default" : false
+        },
+        "low_host_count_reminder": {
+          "type" : "boolean",
+          "description": "When host count is low",
+          "default" : false
+        },
+        "alternative_host_reminder": {
+          "type" : "boolean",
+          "description": "When an alternative host is set or removed from a meeting",
+          "default" : false
+        }
+      }
+    },
+    "AccountSettingsAudio" : {
+      "type" : "object",
+      "description": "Account Settings: Audio",
+      "properties": {
+        "stereo_audio": {
+          "type" : "boolean",
+          "description": "",
+          "default" : false
+        },
+        "original_audio": {
+          "type" : "boolean",
+          "description": "Allow users to select original sound in their client settings",
+          "default" : false
+        },
+        "third_party_audio": {
+          "type" : "boolean",
+          "description": "3rd party audio conference",
+          "default" : false
+        }
+      }
+    },
+    "AccountSettingsZoomRooms" : {
+      "type" : "object",
+      "description": "Account Settings: Zoom Rooms",
+      "properties": {
+        "upcoming_meeting_alert": {
+          "type" : "boolean",
+          "description": "Upcoming meeting alert",
+          "default" : true
+        },
+        "start_airplay_manually": {
+          "type" : "boolean",
+          "description": "Start AirPlay service manually",
+          "default" : true
+        },
+        "weekly_system_restart": {
+          "type" : "boolean",
+          "description": "Weekly system restart",
+          "default" : true
+        },
+        "list_meetings_with_calendar": {
+          "type" : "boolean",
+          "description": "Display meeting list with calendar integration",
+          "default" : true
+        },
+        "ultrasonic": {
+          "type" : "boolean",
+          "description": "Automatic direct sharing using ultrasonic proximity signal",
+          "default" : false
+        },
+        "force_private_meeting": {
+          "type" : "boolean",
+          "description": "Transform all meetings to private",
+          "default" : true
+        },
+        "hide_host_information": {
+          "type" : "boolean",
+          "description": "Hide host and meeting ID from private meetings",
+          "default" : true
+        },
+        "cmr_for_instant_meeting": {
+          "type" : "boolean",
+          "description": "Cloud recording for instant meetings",
+          "default" : true
+        },
+        "auto_start_stop_scheduled_meetings": {
+          "type" : "boolean",
+          "description": "Automatic start/stop scheduled meetings",
+          "default" : true
+        }
+      }
+    },
+    "AccountSettingsAdmin" : {
+      "type" : "object",
+      "description": "Account Settings: Admin",
+      "properties": {
+        "hide_billing_info": {
+          "type" : "boolean",
+          "description": "Hide billing information from administrators",
+          "default" : true
+        },
+        "auto_active_import_users": {
+          "type" : "boolean",
+          "description": "Auto activation when import users",
+          "default" : true
+        }
+      }
+    },
+    "AccountSettingsIntegration" : {
+      "type" : "object",
+      "description": "Account Settings: Integration",
+      "properties": {
+        "google_calendar": {
+          "type" : "boolean",
+          "description": "Google Calendar",
+          "default" : true
+        },
+        "google_drive": {
+          "type" : "boolean",
+          "description": "Google Drive",
+          "default" : true
+        },
+        "dropbox": {
+          "type" : "boolean",
+          "description": "Dropbox",
+          "default" : true
+        },
+        "box": {
+          "type" : "boolean",
+          "description": "Box",
+          "default" : true
+        },
+        "microsoft_one_drive": {
+          "type" : "boolean",
+          "description": "Microsoft OneDrive",
+          "default" : true
+        },
+        "kubi": {
+          "type" : "boolean",
+          "description": "Kubi",
+          "default" : true
+        }
+      }
+    },
+    "AccountSettingsHTMLEmailTemplate" : {
+      "type" : "object",
+      "description": "Account Settings: HTML Email Template",
+      "properties": {
+        "use_html_format_email": {
+          "type" : "boolean",
+          "description": "Use HTML format email for Outlook plugin",
+          "default" : true
+        }
+      }
+    },
+    "AccountSettingsUserProfile" : {
+      "type" : "object",
+      "description": "Account Settings: User Profile",
+      "properties": {
+        "admin_change_name_pic": {
+          "type" : "boolean",
+          "description": "Only account administrators can change users' usernames and profile pictures",
+          "default" : true
+        },
+        "import_photos_from_devices": {
+          "type" : "boolean",
+          "description": "Allow importing of photos from the photo library on the user's device",
+          "default" : true
+        }
+      }
+    },
+    "AccountSettingsFeature" : {
+      "type" : "object",
+      "description": "Account Settings: Feature",
+      "properties": {
+        "meeting_capacity": {
+          "type" : "integer",
+          "description": "Meeting capacity",
+          "default" : 100
+        }
+      }
+    },
+    "BillingContact" : {
+      "type" : "object",
+      "description": "Billing Contact object",
+      "properties": {
+        "first_name": {
+          "type": "string",
+          "description": "Billing Contact's first name."
+        },
+        "last_name": {
+          "type": "string",
+          "description": "Billing Contact's last name."
+        },
+        "email": {
+          "type": "string",
+          "description": "Billing Contact's email address."
+        },
+        "phone_number": {
+          "type": "string",
+          "description": "Billing Contact's phone number."
+        },
+        "address": {
+          "type": "string",
+          "description": "Billing Contact address."
+        },
+        "apt": {
+          "type": "string",
+          "description": "Billing Contact apartment/suite."
+        },
+        "city": {
+          "type": "string",
+          "description": "Billing Contact city."
+        },
+        "state": {
+          "type": "string",
+          "description": "Billing Contact state."
+        },
+        "zip": {
+          "type": "string",
+          "description": "Billing Contact zip/postal code."
+        },
+        "country": {
+          "type": "string",
+          "description": "Billing Contact country."
+        }
+      }
+    },
     "CustomQuestion": {
       "type": "object",
       "description": "Custom Question",
@@ -2745,6 +3514,10 @@
     {
       "name": "Accounts",
       "description": "Account operations"
+    },
+    {
+      "name": "Billing",
+      "description": "Account Billing operations"
     },
     {
       "name": "TSP",
