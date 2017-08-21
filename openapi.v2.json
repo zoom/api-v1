@@ -28,39 +28,39 @@
     "application/xml"
   ],
   "paths": {
-    "/accounts" : {
-      "get" : {
-        "description" : "List all subaccounts",
+    "/accounts": {
+      "get": {
+        "description": "List all subaccounts",
         "tags": [
           "Accounts"
         ],
-        "operationId":"accounts",
-        "responses" : {
+        "operationId": "accounts",
+        "responses": {
           "200": {
-            "description" : "Account list returned"
+            "description": "Account list returned"
           }
         }
       },
-      "post" : {
-        "description" : "Create an account",
-        "tags" : [
+      "post": {
+        "description": "Create an account",
+        "tags": [
           "Accounts"
         ],
-        "operationId":"accountsCreate",
-        "responses" : {
-          "201" : {
-            "description" : "Account created"
+        "operationId": "accountsCreate",
+        "responses": {
+          "201": {
+            "description": "Account created"
           }
         }
       }
     },
-    "/accounts/{accountId}" : {
-      "get" : {
-        "description" : "List an account",
+    "/accounts/{accountId}": {
+      "get": {
+        "description": "List an account",
         "tags": [
           "Accounts"
         ],
-        "operationId":"account",
+        "operationId": "account",
         "parameters": [
           {
             "in": "path",
@@ -69,18 +69,18 @@
             "required": true
           }
         ],
-        "responses" : {
+        "responses": {
           "200": {
-            "description" : "Account returned"
+            "description": "Account returned"
           }
         }
       },
-      "patch" : {
-        "description" : "Update an account",
-        "tags" : [
+      "patch": {
+        "description": "Update an account",
+        "tags": [
           "Accounts"
         ],
-        "operationId":"accountUpdate",
+        "operationId": "accountUpdate",
         "parameters": [
           {
             "in": "path",
@@ -89,18 +89,18 @@
             "required": true
           }
         ],
-        "responses" : {
-          "204" : {
-            "description" : "Account updated"
+        "responses": {
+          "204": {
+            "description": "Account updated"
           }
         }
       },
-      "delete" : {
-        "description" : "Delete an account",
-        "tags" : [
+      "delete": {
+        "description": "Delete an account",
+        "tags": [
           "Accounts"
         ],
-        "operationId":"accountDelete",
+        "operationId": "accountDelete",
         "parameters": [
           {
             "in": "path",
@@ -109,20 +109,20 @@
             "required": true
           }
         ],
-        "responses" : {
-          "204" : {
-            "description" : "Account deleted"
+        "responses": {
+          "204": {
+            "description": "Account deleted"
           }
         }
       }
     },
-    "/accounts/{accountId}/settings" : {
-      "get" : {
-        "description" : "Get an account's settings",
+    "/accounts/{accountId}/settings": {
+      "get": {
+        "description": "Get an account's settings",
         "tags": [
           "Accounts"
         ],
-        "operationId":"accountSettings",
+        "operationId": "accountSettings",
         "parameters": [
           {
             "in": "path",
@@ -131,18 +131,18 @@
             "required": true
           }
         ],
-        "responses" : {
+        "responses": {
           "200": {
-            "description" : "Account settings returned"
+            "description": "Account settings returned"
           }
         }
       },
-      "patch" : {
-        "description" : "Update an account's settings",
-        "tags" : [
+      "patch": {
+        "description": "Update an account's settings",
+        "tags": [
           "Accounts"
         ],
-        "operationId":"accountSettingsUpdate",
+        "operationId": "accountSettingsUpdate",
         "parameters": [
           {
             "in": "path",
@@ -151,20 +151,20 @@
             "required": true
           }
         ],
-        "responses" : {
-          "204" : {
-            "description" : "Account settings updated"
+        "responses": {
+          "204": {
+            "description": "Account settings updated"
           }
         }
       }
     },
-    "/accounts/{accountId}/billing" : {
-      "get" : {
-        "description" : "Get an account's billing information",
+    "/accounts/{accountId}/billing": {
+      "get": {
+        "description": "Get an account's billing information",
         "tags": [
           "Accounts"
         ],
-        "operationId":"accountBilling",
+        "operationId": "accountBilling",
         "parameters": [
           {
             "in": "path",
@@ -173,18 +173,18 @@
             "required": true
           }
         ],
-        "responses" : {
+        "responses": {
           "200": {
-            "description" : "Account billing information returned"
+            "description": "Account billing information returned"
           }
         }
       },
-      "patch" : {
-        "description" : "Update an account's billing information",
-        "tags" : [
+      "patch": {
+        "description": "Update an account's billing information",
+        "tags": [
           "Accounts"
         ],
-        "operationId":"accountBillingUpdate",
+        "operationId": "accountBillingUpdate",
         "parameters": [
           {
             "in": "path",
@@ -193,20 +193,20 @@
             "required": true
           }
         ],
-        "responses" : {
-          "204" : {
-            "description" : "Account billing information updated"
+        "responses": {
+          "204": {
+            "description": "Account billing information updated"
           }
         }
       }
     },
-    "/accounts/{accountId}/plans" : {
-      "get" : {
-        "description" : "Get an account's plans",
+    "/accounts/{accountId}/plans": {
+      "get": {
+        "description": "Get an account's plans",
         "tags": [
           "Accounts"
         ],
-        "operationId":"accountPlans",
+        "operationId": "accountPlans",
         "parameters": [
           {
             "in": "path",
@@ -215,18 +215,18 @@
             "required": true
           }
         ],
-        "responses" : {
+        "responses": {
           "200": {
-            "description" : "Account plans returned"
+            "description": "Account plans returned"
           }
         }
       },
-      "post" : {
-        "description" : "Add to an account's plans",
-        "tags" : [
+      "post": {
+        "description": "Add to an account's plans",
+        "tags": [
           "Accounts"
         ],
-        "operationId":"accountPlanAdd",
+        "operationId": "accountPlanAdd",
         "parameters": [
           {
             "in": "path",
@@ -235,20 +235,20 @@
             "required": true
           }
         ],
-        "responses" : {
-          "204" : {
-            "description" : "Account plans updated"
+        "responses": {
+          "204": {
+            "description": "Account plans updated"
           }
         }
       }
     },
-    "/accounts/{accountId}/plans/{plan}" : {
-      "delete" : {
-        "description" : "Remove an account's plans",
-        "tags" : [
+    "/accounts/{accountId}/plans/{plan}": {
+      "delete": {
+        "description": "Remove an account's plans",
+        "tags": [
           "Accounts"
         ],
-        "operationId":"accountPlanDelete",
+        "operationId": "accountPlanDelete",
         "parameters": [
           {
             "in": "path",
@@ -263,169 +263,344 @@
             "required": true
           }
         ],
-        "responses" : {
-          "204" : {
-            "description" : "Account plans removed"
+        "responses": {
+          "204": {
+            "description": "Account plans removed"
           }
         }
       }
     },
-    "/meetings/{meetingNumber}" : {
-      "get" :{
+    "/users/{userId}/meetings": {
+      "get": {
+        "description": "Get a user's meeting",
+        "tags": [
+          "Meeting"
+        ],
+        "operationId": "userGetMeetings",
+        "parameters": [
+          {
+            "$ref": "#/parameters/UserId"
+          },
+          {
+            "$ref" : "#/parameters/MeetingType"
+          },
+          {
+            "$ref" : "#/parameters/PageSize"
+          },
+          {
+            "$ref" : "#/parameters/PageNumber"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of Meeting objects returned",
+            "schema": {
+              "$ref": "#/definitions/MeetingList"
+            }
+          },
+          "404": {
+            "description": "User not found"
+          }
+        }
+      },
+      "post": {
+        "description": "Create meeting",
+        "tags": [
+          "Meeting"
+        ],
+        "operationId": "userCreateMeetings",
+        "parameters": [
+          {
+            "$ref": "#/parameters/UserId"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "description": "User",
+            "schema": {
+              "$ref": "#/definitions/Meeting"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Meeting Created",
+            "headers": {
+              "Content-Location": {
+                "description": "Location of created Meeting",
+                "type": "string"
+              }
+            },
+            "schema": {
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "Meeting ID"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User not found"
+          }
+        }
+      }
+    },
+    "/meetings/{meetingNumber}": {
+      "get": {
         "description": "Get a meeting",
         "tags": [
           "Meeting"
         ],
         "operationId": "meetingGet",
-        "parameters" : [
+        "parameters": [
           {
-            "in": "path",
-            "name": "meetingNumber",
-            "type": "integer",
-            "required": true
+            "$ref": "#/parameters/MeetingNumber"
           }
         ],
-        "responses":{
+        "responses": {
           "200": {
-            "description":"Success"
+            "description": "Meeting object returned",
+            "schema": {
+              "allOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "uuid": {
+                      "type": "string",
+                      "description": "Meeting unique ID"
+                    },
+                    "id": {
+                      "type": "string",
+                      "description": "Meeting ID, also know as meeting number"
+                    },
+                    "host_id": {
+                      "type": "string",
+                      "description": "ID of the user set as host of meeting"
+                    }
+                  }
+                },
+                {
+                  "$ref": "#/definitions/Meeting"
+                }
+              ]
+            }
+          },
+          "404": {
+            "description": "Meeting not found"
           }
         }
       },
-      "patch" :{
+      "patch": {
         "description": "Update a meeting",
         "tags": [
           "Meeting"
         ],
         "operationId": "meetingUpdate",
-        "parameters" : [
+        "parameters": [
           {
-            "in": "path",
-            "name": "meetingNumber",
-            "type": "integer",
-            "required": true
+            "$ref": "#/parameters/MeetingNumber"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "description": "Meeting",
+            "schema": {
+              "$ref": "#/definitions/Meeting"
+            }
           }
         ],
-        "responses":{
-          "200": {
-            "description":"Success"
+        "responses": {
+          "204": {
+            "description": "Meeting Updated"
+          },
+          "404": {
+            "description": "Meeting not found"
           }
         }
       },
-      "delete" :{
+      "delete": {
         "description": "Delete a meeting",
         "tags": [
           "Meeting"
         ],
         "operationId": "meetingDelete",
-        "parameters" : [
+        "parameters": [
           {
-            "in": "path",
-            "name": "meetingNumber",
-            "type": "integer",
-            "required": true
+            "$ref": "#/parameters/MeetingNumber"
           }
         ],
-        "responses":{
-          "200": {
-            "description":"Success"
+        "responses": {
+          "204": {
+            "description": "Meeting deleted"
+          },
+          "404": {
+            "description": "Meeting not found"
           }
         }
       }
     },
-    "/meetings/{meetingNumber}/registrants" : {
-      "get" :{
+    "/meetings/{meetingNumber}/registrants": {
+      "get": {
         "description": "",
         "tags": [
           "Meeting"
         ],
         "operationId": "meetingRegGet",
-        "parameters" : [
+        "parameters": [
           {
-            "in": "path",
-            "name": "meetingNumber",
-            "type": "integer",
-            "required": true
+            "$ref": "#/parameters/MeetingNumber"
+          },
+          {
+            "$ref": "#/parameters/OccurenceId"
+          },
+          {
+            "$ref": "#/parameters/RegistrantStatus"
+          },
+          {
+            "$ref": "#/parameters/PageSize"
+          },
+          {
+            "$ref": "#/parameters/PageNumber"
           }
         ],
-        "responses":{
+        "responses": {
           "200": {
-            "description":"Success"
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/MeetingRegistrantList"
+            }
+          },
+          "404": {
+            "description": "Meeting not found"
           }
         }
       },
-      "post" :{
+      "post": {
         "description": "",
         "tags": [
           "Meeting"
         ],
         "operationId": "meetingRegCreate",
-        "parameters" : [
+        "parameters": [
           {
-            "in": "path",
-            "name": "meetingNumber",
-            "type": "integer",
-            "required": true
+            "$ref": "#/parameters/MeetingNumber"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/MeetingRegistrant"
+            }
           }
         ],
-        "responses":{
-          "200": {
-            "description":"Success"
+        "responses": {
+          "201": {
+            "description": "Registration created",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "Registrant ID"
+                },
+                "join_url": {
+                  "type": "string",
+                  "description": "Join URL for this registrant"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Meeting not found"
           }
         }
       }
     },
-    "/meetings/{meetingNumber}/registrants/{registrantId}/status" : {
-      "put" :{
+    "/meetings/{meetingNumber}/registrants/{registrantId}/status": {
+      "put": {
         "description": "",
         "tags": [
           "Meeting"
         ],
         "operationId": "meetingRegistrantStatus",
-        "parameters" : [
+        "parameters": [
           {
-            "in": "path",
-            "name": "meetingNumber",
-            "type": "integer",
-            "required": true
+            "$ref": "#/parameters/MeetingNumber"
           },
           {
-            "in": "path",
-            "name": "registrantId",
-            "type": "string",
-            "required": true
+            "$ref": "#/parameters/RegistrantId"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "pending",
+                    "approved",
+                    "denied"
+                  ]
+                }
+              }
+            }
           }
         ],
-        "responses":{
-          "200": {
-            "description":"Success"
+        "responses": {
+          "204": {
+            "description": "Registrant status updated"
+          },
+          "404": {
+            "description": "Meeting or Registrant not found"
           }
         }
       }
     },
-    "/meetings/{meetingNumber}/status" : {
-      "put" :{
+    "/meetings/{meetingNumber}/status": {
+      "put": {
         "description": "",
         "tags": [
           "Meeting"
         ],
         "operationId": "meetingStatus",
-        "parameters" : [
+        "parameters": [
           {
-            "in": "path",
-            "name": "meetingNumber",
-            "type": "integer",
-            "required": true
+            "$ref": "#/parameters/MeetingNumber"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "end"
+                  ]
+                }
+              }
+            }
           }
         ],
-        "responses":{
-          "200": {
-            "description":"Success"
+        "responses": {
+          "204": {
+            "description": "Meeting updated"
+          },
+          "404": {
+            "description": "Meeting not found"
           }
         }
       }
     },
-    "/users" : {
-      "get" : {
+    "/users": {
+      "get": {
         "description": "List all Users on Zoom.",
         "tags": [
           "User"
@@ -435,29 +610,33 @@
           {
             "in": "query",
             "name": "status",
-            "description" : "User status, value should be active/inactive/pending",
+            "description": "User status, value should be active/inactive/pending",
             "type": "string",
             "default": "active",
-            "enum":["active","inactive","pending"]
+            "enum": [
+              "active",
+              "inactive",
+              "pending"
+            ]
           },
           {
             "in": "query",
             "name": "page_size",
-            "description" : "The amount of records returns within a single API call. Defaults to 30. Max of 300 users.",
+            "description": "The amount of records returns within a single API call. Defaults to 30. Max of 300 users.",
             "type": "integer",
             "default": 30
           },
           {
             "in": "query",
             "name": "page_number",
-            "description" : "Current page number of returned records. Default to 1.",
+            "description": "Current page number of returned records. Default to 1.",
             "type": "integer",
             "default": 1
           }
         ],
-        "responses":{
+        "responses": {
           "200": {
-            "description" : "User list returned",
+            "description": "User list returned",
             "schema": {
               "$ref": "#/definitions/UserList"
             }
@@ -477,46 +656,49 @@
             "required": true,
             "description": "User",
             "schema": {
-              "allOf": [
-                "properties" : {
-                  "action" : {
-                    "type" : "string",
-                    "enum" : ["create", "custCreate", "autoCreate", "ssoCreate"]
-                  },
-                  "user_info" : {
-                    "$ref" : "#/definitions/UserReference"
-                  }
+              "properties": {
+                "action": {
+                  "type": "string",
+                  "enum": [
+                    "create",
+                    "custCreate",
+                    "autoCreate",
+                    "ssoCreate"
+                  ]
+                },
+                "user_info": {
+                  "$ref": "#/definitions/User"
                 }
-              ]
+              }
             }
           }
         ],
-        "responses":{
+        "responses": {
           "201": {
-            "description" : "User Created",
-            "headers" : {
-              "Content-Location" : {
+            "description": "User Created",
+            "headers": {
+              "Content-Location": {
                 "description": "Location of created User",
-                "type" : "string"
+                "type": "string"
               }
             },
-            "schema" : {
-              "properties" : {
-                "id" : {
-                  "type" : "string",
-                  "description" : "User ID"
+            "schema": {
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "User ID"
                 }
               }
             }
           },
           "409": {
-            "description" : "User with that email already exists"
+            "description": "User with that email already exists"
           }
         }
       }
     },
-    "/users/{userId}" : {
-      "get" : {
+    "/users/{userId}": {
+      "get": {
         "description": "Get a user",
         "tags": [
           "User"
@@ -524,40 +706,37 @@
         "operationId": "user",
         "parameters": [
           {
-            "in": "path",
-            "name": "userId",
-            "type": "string",
-            "required": true
+            "$ref": "#/parameters/UserId"
           }
         ],
-        "responses":{
+        "responses": {
           "200": {
-            "description":"User object returned",
+            "description": "User object returned",
             "schema": {
               "allOf": [
                 {
-                  "properties" : {
-                    "id" : {
-                      "type" : "string",
-                      "description" : "User ID"
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "User ID"
                     }
                   }
                 },
                 {
-                  "$ref" : "#/definitions/UserReference"
+                  "$ref": "#/definitions/User"
                 },
                 {
-                  "$ref" : "#/definitions/UserDetailsReference"
+                  "$ref": "#/definitions/UserDetails"
                 }
               ]
             }
           },
-          "404" : {
-            "description" : "User not found"
+          "404": {
+            "description": "User not found"
           }
         }
       },
-      "patch" :{
+      "patch": {
         "description": "Update a user",
         "tags": [
           "User"
@@ -565,11 +744,7 @@
         "operationId": "userUpdate",
         "parameters": [
           {
-            "name": "userId",
-            "description" : "User ID",
-            "in": "path",
-            "type": "string",
-            "required": true
+            "$ref": "#/parameters/UserId"
           },
           {
             "in": "body",
@@ -579,25 +754,25 @@
             "schema": {
               "allOf": [
                 {
-                  "$ref" : "#/definitions/UserReference"
+                  "$ref": "#/definitions/User"
                 },
                 {
-                  "$ref" : "#/definitions/UserDetailsReference"
+                  "$ref": "#/definitions/UserDetails"
                 }
               ]
             }
           }
         ],
-        "responses":{
+        "responses": {
           "204": {
-            "description":"User updated"
+            "description": "User updated"
           },
-          "404" : {
-            "description" : "User not found"
+          "404": {
+            "description": "User not found"
           }
         }
       },
-      "delete" : {
+      "delete": {
         "description": "Delete a user on Zoom",
         "tags": [
           "User"
@@ -605,25 +780,21 @@
         "operationId": "userDelete",
         "parameters": [
           {
-            "name": "userId",
-            "description" : "User ID",
-            "in": "path",
-            "type": "string",
-            "required": true
+            "$ref": "#/parameters/UserId"
           }
         ],
-        "responses":{
+        "responses": {
           "204": {
-            "description":"User deleted"
+            "description": "User deleted"
           },
-          "404" : {
-            "description" : "User not found"
+          "404": {
+            "description": "User not found"
           }
         }
       }
     },
-    "/users/{userId}/assistants" : {
-      "get" : {
+    "/users/{userId}/assistants": {
+      "get": {
         "description": "List user's assistants",
         "tags": [
           "User"
@@ -631,43 +802,39 @@
         "operationId": "userListAssistants",
         "parameters": [
           {
-            "name": "userId",
-            "description" : "User ID",
-            "in": "path",
-            "type": "string",
-            "required" : true
+            "$ref": "#/parameters/UserId"
           }
         ],
-        "responses":{
+        "responses": {
           "200": {
-            "description":"Success",
-            "schema" : {
-              "properties" : {
+            "description": "Success",
+            "schema": {
+              "properties": {
                 "assistants": {
-                  "type" : "array",
-                  "description" : "List of User assistants.",
-                  "items" : {
-                    "allOf" : [
+                  "type": "array",
+                  "description": "List of User assistants.",
+                  "items": {
+                    "allOf": [
                       {
-                        "properties" : {
-                          "email_or_id" : {
-                            "type" : "string",
-                            "description" : "Assistant Email or ID"
+                        "properties": {
+                          "email_or_id": {
+                            "type": "string",
+                            "description": "Assistant Email or ID"
                           }
                         }
                       }
                     ]
-                  },
+                  }
                 }
               }
             }
           },
-          "404" : {
-            "description" : "User not found"
+          "404": {
+            "description": "User not found"
           }
         }
       },
-      "post" : {
+      "post": {
         "description": "Update user's assistants",
         "tags": [
           "User"
@@ -675,50 +842,46 @@
         "operationId": "userUpdateAssistants",
         "parameters": [
           {
-            "name": "userId",
-            "description" : "User ID",
-            "in": "path",
-            "type": "string",
-            "required" : true
+            "$ref": "#/parameters/UserId"
           },
           {
             "name": "body",
-            "description" : "User assistant",
+            "description": "User assistant",
             "in": "body",
-            "schema" : {
-              "type" : "object",
-              "properties" : {
-                "email_or_id" : {
-                  "type" : "string"
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email_or_id": {
+                  "type": "string"
                 }
               }
             }
           }
         ],
-        "responses":{
-          "201":  {
-            "description" : "Assitant Added",
-            "headers" : {
-              "Content-Location" : {
+        "responses": {
+          "201": {
+            "description": "Assitant Added",
+            "headers": {
+              "Content-Location": {
                 "description": "Location of created assistant",
-                "type" : "string"
+                "type": "string"
               }
             },
-            "schema" : {
-              "properties" : {
-                "email_or_id" : {
-                  "type" : "string",
-                  "description" : "User ID"
+            "schema": {
+              "properties": {
+                "email_or_id": {
+                  "type": "string",
+                  "description": "User ID"
                 }
               }
             }
           },
-          "404" : {
-            "description" : "User not found"
+          "404": {
+            "description": "User not found"
           }
         }
       },
-      "delete" : {
+      "delete": {
         "description": "Delete all of user's assistants",
         "tags": [
           "User"
@@ -726,25 +889,21 @@
         "operationId": "userDeleteAssistants",
         "parameters": [
           {
-            "name": "userId",
-            "description" : "User ID",
-            "in": "path",
-            "type": "string",
-            "required" : true
+            "$ref": "#/parameters/UserId"
           }
         ],
-        "responses":{
+        "responses": {
           "204": {
-            "description":"Assitants deleted."
+            "description": "Assitants deleted."
           },
-          "404" : {
-            "description" : "User not found"
+          "404": {
+            "description": "User not found"
           }
         }
       }
     },
-    "/users/{userId}/assistants/{assistantId}" : {
-      "delete" : {
+    "/users/{userId}/assistants/{assistantId}": {
+      "delete": {
         "description": "Delete one of a user's assistant",
         "tags": [
           "User"
@@ -752,122 +911,72 @@
         "operationId": "userDeleteAssistant",
         "parameters": [
           {
-            "name": "userId",
-            "description" : "User ID",
-            "in": "path",
-            "type": "string",
-            "required" : true
+            "$ref": "#/parameters/UserId"
           },
           {
             "name": "assistantId",
-            "description" : "Assistant",
+            "description": "Assistant",
             "in": "path",
             "type": "string",
-            "required" : true
+            "required": true
           }
         ],
-        "responses":{
+        "responses": {
           "204": {
-            "description":"Assitant deleted."
+            "description": "Assitant deleted."
           },
-          "404" : {
-            "description" : "User or Assistant not found"
+          "404": {
+            "description": "User or Assistant not found"
           }
         }
       }
     },
-    "/users/{userId}/meetings" : {
-      "get" :{
-        "description": "Get user's meetings",
-        "tags": [
-          "Meeting"
-        ],
-        "operationId": "userGetMeetings",
-        "parameters" : [
-          {
-            "in": "path",
-            "name": "userId",
-            "type": "integer",
-            "required": true
-          }
-        ],
-        "responses":{
-          "200": {
-            "description":"Success"
-          }
-        }
-      },
-      "post" :{
-        "description": "Create meeting",
-        "tags": [
-          "Meeting"
-        ],
-        "operationId": "userCreateMeetings",
-        "parameters" : [
-          {
-            "in": "path",
-            "name": "userId",
-            "type": "integer",
-            "required": true
-          }
-        ],
-        "responses":{
-          "201": {
-            "description":"Meeting Created"
-          }
-        }
-      }
-    },
-    "/users/{userId}/picture" : {
-      "put":{
-        "description" : "Update a user's picture",
+    "/users/{userId}/picture": {
+      "put": {
+        "description": "Update a user's picture",
         "tags": [
           "User"
         ],
         "operationId": "userPicture",
-        "parameters" :[
+        "parameters": [
           {
-            "name": "userId",
-            "description" : "User ID",
-            "in": "path",
-            "type": "string",
-            "required" : true
+            "$ref": "#/parameters/UserId"
           },
           {
             "name": "body",
-            "description" : "User picture file, must be a jpg/jpeg file",
+            "description": "User picture file, must be a jpg/jpeg file",
             "in": "formData",
-            "type" : "file",
-            "required" : true
+            "type": "file",
+            "required": true
           }
         ],
-        "responses":{
+        "responses": {
           "201": {
-            "description":"Picture Added",
-            "headers" : {
-              "Content-Location" : {
+            "description": "Picture Added",
+            "headers": {
+              "Content-Location": {
                 "description": "Location of user's picture",
-                "type" : "string"
+                "type": "string"
               }
             }
           },
           "204": {
-            "description":"Picture Updated",
-            "headers" : {
-              "Content-Location" : {
+            "description": "Picture Updated",
+            "headers": {
+              "Content-Location": {
                 "description": "Location of user's picture",
-                "type" : "string"
+                "type": "string"
               }
             }
           },
           "404": {
-            "description":"User not found"
+            "description": "User not found"
           }
         }
       }
     },
-    "/users/{userId}/settings" : {
-      "get" : {
+    "/users/{userId}/settings": {
+      "get": {
         "description": "Get a user's settings on Zoom",
         "tags": [
           "User"
@@ -875,10 +984,7 @@
         "operationId": "userGetSettings",
         "parameters": [
           {
-            "in": "path",
-            "name": "userId",
-            "type": "string",
-            "required": true
+            "$ref": "#/parameters/UserId"
           },
           {
             "in": "query",
@@ -886,19 +992,19 @@
             "type": "integer"
           }
         ],
-        "responses":{
+        "responses": {
           "200": {
-            "description" : "User settings returned",
+            "description": "User settings returned",
             "schema": {
               "$ref": "#/definitions/UserSettings"
             }
           },
           "404": {
-            "description" : "User not found"
+            "description": "User not found"
           }
         }
       },
-      "patch" :{
+      "patch": {
         "description": "Update a user on Zoom",
         "tags": [
           "User"
@@ -906,10 +1012,7 @@
         "operationId": "userUpdateSettings",
         "parameters": [
           {
-            "in": "path",
-            "name": "userId",
-            "type": "string",
-            "required": true
+            "$ref": "#/parameters/UserId"
           },
           {
             "in": "body",
@@ -917,515 +1020,585 @@
             "required": true,
             "description": "User Settings",
             "schema": {
-              "$ref" : "#/definitions/UserSettings"
+              "$ref": "#/definitions/UserSettings"
             }
           }
         ],
-        "responses":{
+        "responses": {
           "204": {
-            "description" : "User setting's updated"
+            "description": "User setting's updated"
           },
           "404": {
-            "description" : "User not found"
+            "description": "User not found"
           }
         }
       }
     },
-    "/users/{userId}/status" : {
-      "put":{
-        "description" : "Update a user's status",
+    "/users/{userId}/status": {
+      "put": {
+        "description": "Update a user's status",
         "tags": [
           "User"
         ],
         "operationId": "userStatus",
-        "parameters" :[
+        "parameters": [
           {
-            "name": "userId",
-            "description" : "User ID",
-            "in": "path",
-            "type": "string",
-            "required" : true
+            "$ref": "#/parameters/UserId"
           },
           {
             "name": "body",
-            "description" : "User status",
+            "description": "User status",
             "in": "body",
-            "schema" : {
-              "type" : "object",
-              "properties" : {
-                "status" :{
-                  "type" :"string",
-                  "enum" : ["active", "deactive"]
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "active",
+                    "deactive"
+                  ]
                 }
               }
             }
           }
         ],
-        "responses":{
+        "responses": {
           "204": {
-            "description":"Status updated"
+            "description": "Status updated"
           },
           "404": {
-            "description" : "User not found"
+            "description": "User not found"
           }
         }
       }
     },
-    "/users/{userId}/ssoToken" : {
-      "delete":{
-        "description" : "Revoke a user's token on Zoom via user ID",
+    "/users/{userId}/ssoToken": {
+      "delete": {
+        "description": "Revoke a user's token on Zoom via user ID",
         "tags": [
           "User"
         ],
         "operationId": "userTokenDelete",
-        "parameters" :[
+        "parameters": [
           {
-            "name": "userId",
-            "description" : "User ID",
-            "in": "path",
-            "type": "string",
-            "required" : true
+            "$ref": "#/parameters/UserId"
           }
         ],
-        "responses":{
+        "responses": {
           "204": {
-            "description":"Token deleted"
+            "description": "Token deleted"
           },
-          "404" : {
-            "description" : "User not found"
+          "404": {
+            "description": "User not found"
           }
         }
       }
     },
-    "/users/{userId}/tsp" : {
-      "get":{
-        "description" : "Get a user's tsp config",
+    "/users/{userId}/tsp": {
+      "get": {
+        "description": "Get a user's tsp config",
         "tags": [
           "TSP"
         ],
         "operationId": "userTsp",
-        "parameters" :[
+        "parameters": [
           {
-            "name": "userId",
-            "description" : "User ID",
-            "in": "path",
-            "type": "string",
-            "required" : true
+            "$ref": "#/parameters/UserId"
           },
           {
             "name": "type",
-            "description" : "User token",
+            "description": "User token",
             "in": "query",
             "type": "string",
-            "enum":[
+            "enum": [
               "token",
               "zpk"
             ]
           }
         ],
-        "responses":{
+        "responses": {
           "200": {
-            "description":"Success"
+            "description": "Success"
           }
         }
       },
-      "post":{
-        "description" : "Add a user's tsp config",
+      "post": {
+        "description": "Add a user's tsp config",
         "tags": [
           "TSP"
         ],
         "operationId": "userTspCreate",
-        "parameters" :[
+        "parameters": [
           {
-            "name": "userId",
-            "description" : "User ID",
-            "in": "path",
-            "type": "string",
-            "required" : true
+            "$ref": "#/parameters/UserId"
           },
           {
             "name": "type",
-            "description" : "User token",
+            "description": "User token",
             "in": "query",
             "type": "string",
-            "enum":[
+            "enum": [
               "token",
               "zpk"
             ]
           }
         ],
-        "responses":{
+        "responses": {
           "200": {
-            "description":"Success"
+            "description": "Success"
           }
         }
       }
     },
-    "/users/{userId}/tsp/{tspId}" : {
-      "get":{
-        "description" : "Get a user's tsp config",
+    "/users/{userId}/tsp/{tspId}": {
+      "get": {
+        "description": "Get a user's tsp config",
         "tags": [
           "TSP"
         ],
         "operationId": "userTspInfo",
-        "parameters" :[
+        "parameters": [
           {
-            "name": "userId",
-            "description" : "User ID",
-            "in": "path",
-            "type": "string",
-            "required" : true
+            "$ref": "#/parameters/UserId"
           },
           {
             "name": "tspId",
-            "description" : "TSP ID",
+            "description": "TSP ID",
             "in": "path",
             "type": "string",
-            "required" : true
+            "required": true
           },
           {
             "name": "type",
-            "description" : "User token",
+            "description": "User token",
             "in": "query",
             "type": "string",
-            "enum":[
+            "enum": [
               "token",
               "zpk"
             ]
           }
         ],
-        "responses":{
+        "responses": {
           "200": {
-            "description":"Success"
+            "description": "Success"
           }
         }
       },
-      "patch":{
-        "description" : "Update tsp config",
+      "patch": {
+        "description": "Update tsp config",
         "tags": [
           "TSP"
         ],
         "operationId": "userTspUpdate",
-        "parameters" :[
+        "parameters": [
           {
-            "name": "userId",
-            "description" : "User ID",
-            "in": "path",
-            "type": "string",
-            "required" : true
+            "$ref": "#/parameters/UserId"
           },
           {
             "name": "tspId",
-            "description" : "TSP ID",
+            "description": "TSP ID",
             "in": "path",
             "type": "string",
-            "required" : true
+            "required": true
           },
           {
             "name": "type",
-            "description" : "User token",
+            "description": "User token",
             "in": "query",
             "type": "string",
-            "enum":[
+            "enum": [
               "token",
               "zpk"
             ]
           }
         ],
-        "responses":{
+        "responses": {
           "200": {
-            "description":"Success"
+            "description": "Success"
           }
         }
       },
-      "delete":{
-        "description" : "Delete tsp config",
+      "delete": {
+        "description": "Delete tsp config",
         "tags": [
           "TSP"
         ],
         "operationId": "userTspDelete",
-        "parameters" :[
+        "parameters": [
           {
-            "name": "userId",
-            "description" : "User ID",
-            "in": "path",
-            "type": "string",
-            "required" : true
+            "$ref": "#/parameters/UserId"
           },
           {
             "name": "tspId",
-            "description" : "TSP ID",
+            "description": "TSP ID",
             "in": "path",
             "type": "string",
-            "required" : true
+            "required": true
           },
           {
             "name": "type",
-            "description" : "User token",
+            "description": "User token",
             "in": "query",
             "type": "string",
-            "enum":[
+            "enum": [
               "token",
               "zpk"
             ]
           }
         ],
-        "responses":{
+        "responses": {
           "200": {
-            "description":"Success"
+            "description": "Success"
           }
         }
       }
     },
-    "/users/{userId}/token" : {
-      "get":{
-        "description" : "Get a user's token on Zoom via user ID",
+    "/users/{userId}/token": {
+      "get": {
+        "description": "Get a user's token on Zoom via user ID",
         "tags": [
           "User"
         ],
         "operationId": "userToken",
-        "parameters" :[
+        "parameters": [
           {
-            "name": "userId",
-            "description" : "User ID",
-            "in": "path",
-            "type": "string",
-            "required" : true
+            "$ref": "#/parameters/UserId"
           },
           {
             "name": "type",
-            "description" : "User token",
+            "description": "User token",
             "in": "query",
             "type": "string",
-            "enum":[
+            "enum": [
               "token",
               "zpk"
             ]
           }
         ],
-        "responses":{
+        "responses": {
           "200": {
-            "description":"Token returned",
+            "description": "Token returned",
             "schema": {
-              "properties" : {
-                "token" : {
-                  "type" : "string",
-                  "description" : "User Token"
+              "properties": {
+                "token": {
+                  "type": "string",
+                  "description": "User Token"
                 }
               }
             }
           },
-          "404" : {
-            "description" : "User not found"
+          "404": {
+            "description": "User not found"
           }
         }
       }
     },
-    "/users/{userId}/webinars" : {
-      "get" :{
-        "description": "Get user's meetings",
-        "tags": [
-          "Webinar"
-        ],
-        "operationId": "userGetWebinars",
-        "parameters" : [
-          {
-            "in": "path",
-            "name": "userId",
-            "type": "integer",
-            "required": true
-          }
-        ],
-        "responses":{
-          "200": {
-            "description":"Success"
-          }
-        }
-      },
-      "post" :{
-        "description": "Create webinar",
-        "tags": [
-          "Webinar"
-        ],
-        "operationId": "userCreateWebinar",
-        "responses":{
-          "201": {
-            "description":"Meeting Created"
-          }
-        }
-      }
-    },
-    "/users/{userId}/zpk" : {
-      "get":{
-        "description" : "Check if the zpk is expired. The zpk is used to authenticate a user.",
+    "/users/{userId}/zpk": {
+      "get": {
+        "description": "Check if the zpk is expired. The zpk is used to authenticate a user.",
         "tags": [
           "User"
         ],
         "operationId": "userZPK",
-        "parameters" :[
+        "parameters": [
           {
-            "name": "userId",
-            "description" : "User ID",
-            "in": "path",
-            "type": "string",
-            "required" : true
+            "$ref": "#/parameters/UserId"
           },
           {
             "name": "type",
-            "description" : "User token",
+            "description": "User token",
             "in": "query",
             "type": "string",
-            "default" : "token",
-            "enum":[
+            "default": "token",
+            "enum": [
               "token",
               "zpk"
             ]
           }
         ],
-        "responses":{
+        "responses": {
           "200": {
-            "description":"Success"
+            "description": "Success"
           }
         }
       }
     },
-    "/webinars/{webinarNumber}" : {
-      "get" :{
-        "description": "Get a meeting",
+    "/users/{userId}/webinars": {
+      "get": {
+        "description": "Get user's webinars",
+        "tags": [
+          "Webinar"
+        ],
+        "operationId": "userGetWebinars",
+        "parameters": [
+          {
+            "$ref": "#/parameters/UserId"
+          },
+          {
+            "$ref" : "#/parameters/PageSize"
+          },
+          {
+            "$ref" : "#/parameters/PageNumber"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of Webinar objects returned",
+            "schema": {
+              "$ref": "#/definitions/WebinarList"
+            }
+          },
+          "404": {
+            "description": "User not found"
+          }
+        }
+      },
+      "post": {
+        "description": "Create webinar",
+        "tags": [
+          "Webinar"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/UserId"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "description": "User",
+            "schema": {
+              "$ref": "#/definitions/Webinar"
+            }
+          }
+        ],
+        "operationId": "userCreateWebinar",
+        "responses": {
+          "201": {
+            "description": "Webinar Created",
+            "headers": {
+              "Content-Location": {
+                "description": "Location of created Webinar",
+                "type": "string"
+              }
+            },
+            "schema": {
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "Webinar ID"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User not found"
+          }
+        }
+      }
+    },
+    "/webinars/{webinarNumber}": {
+      "get": {
+        "description": "Get a webinar",
         "tags": [
           "Webinar"
         ],
         "operationId": "webinarGet",
-        "parameters" : [
+        "parameters": [
           {
-            "in": "path",
-            "name": "webinarNumber",
-            "type": "integer",
-            "required": true
+            "$ref": "#/parameters/WebinarNumber"
           }
         ],
-        "responses":{
+        "responses": {
           "200": {
-            "description":"Success"
+            "description": "Webinar object returned",
+            "schema": {
+              "allOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "uuid": {
+                      "type": "string",
+                      "description": "Webinar unique ID"
+                    },
+                    "id": {
+                      "type": "string",
+                      "description": "Webinar ID, also know as webinar number"
+                    },
+                    "host_id": {
+                      "type": "string",
+                      "description": "ID of the user set as host of webinar"
+                    }
+                  }
+                },
+                {
+                  "$ref": "#/definitions/Webinar"
+                }
+              ]
+            }
+          },
+          "404": {
+            "description": "Webinar not found"
           }
         }
       },
-      "patch" :{
-        "description": "Update a meeting",
+      "patch": {
+        "description": "Update a webinar",
         "tags": [
           "Webinar"
         ],
         "operationId": "webinarUpdate",
-        "parameters" : [
+        "parameters": [
           {
-            "in": "path",
-            "name": "webinarNumber",
-            "type": "integer",
-            "required": true
+            "$ref": "#/parameters/WebinarNumber"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "description": "Webinar",
+            "schema": {
+              "$ref": "#/definitions/Webinar"
+            }
           }
         ],
-        "responses":{
-          "200": {
-            "description":"Success"
+        "responses": {
+          "204": {
+            "description": "Webinar Updated"
+          },
+          "404": {
+            "description": "Webinar not found"
           }
         }
       },
-      "delete" :{
-        "description": "Delete a meeting",
+      "delete": {
+        "description": "Delete a webinar",
         "tags": [
           "Webinar"
         ],
         "operationId": "webinarDelete",
-        "parameters" : [
+        "parameters": [
           {
-            "in": "path",
-            "name": "webinarNumber",
-            "type": "integer",
-            "required": true
+            "$ref": "#/parameters/WebinarNumber"
           }
         ],
-        "responses":{
-          "200": {
-            "description":"Success"
+        "responses": {
+          "204": {
+            "description": "Webinar deleted"
+          },
+          "404": {
+            "description": "Webinar not found"
           }
         }
       }
     },
-    "/webinars/{webinarNumber}/panelists" : {
-      "get" :{
-        "description": "Get webinar panelists",
+    "/webinars/{webinarNumber}/panelists": {
+      "get": {
+        "description": "",
         "tags": [
           "Webinar"
         ],
-        "operationId": "webinarPanelists",
-        "parameters" : [
+        "operationId": "webinarPanelistGet",
+        "parameters": [
           {
-            "in": "path",
-            "name": "webinarNumber",
-            "type": "integer",
-            "required": true
+            "$ref": "#/parameters/WebinarNumber"
+          },
+          {
+            "$ref": "#/parameters/OccurenceId"
+          },
+          {
+            "$ref": "#/parameters/PageSize"
+          },
+          {
+            "$ref": "#/parameters/PageNumber"
           }
         ],
-        "responses":{
+        "responses": {
           "200": {
-            "description":"Success"
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/WebinarPanelistList"
+            }
+          },
+          "404": {
+            "description": "Webinar not found"
           }
         }
       },
-      "post" :{
+      "post": {
         "description": "Register panelist for webinar",
         "tags": [
           "Webinar"
         ],
         "operationId": "webinarPanelistCreate",
-        "parameters" : [
+        "parameters": [
           {
-            "in": "path",
-            "name": "webinarNumber",
-            "type": "integer",
-            "required": true
+            "$ref": "#/parameters/WebinarNumber"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/WebinarPanelist"
+            }
           }
         ],
-        "responses":{
-          "200": {
-            "description":"Success"
+        "responses": {
+          "201": {
+            "description": "Panelist created",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "Panelist ID"
+                },
+                "join_url": {
+                  "type": "string",
+                  "description": "Join URL for this panelist"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Webinar not found"
           }
         }
       },
-      "delete" :{
-        "description": "Cancel panelist for webinar",
+      "delete": {
+        "description": "Remove all panelist for webinar",
         "tags": [
           "Webinar"
         ],
-        "operationId": "webinarPanelistsCancel",
-        "parameters" : [
+        "operationId": "webinarPanelistsCancelAll",
+        "parameters": [
           {
-            "in": "path",
-            "name": "webinarNumber",
-            "type": "integer",
-            "required": true
+            "$ref": "#/parameters/WebinarNumber"
           }
         ],
-        "responses":{
-          "200": {
-            "description":"Success"
+        "responses": {
+          "204": {
+            "description": "Panelists removed"
+          },
+          "404" : {
+            "description": "Webinar not found"
           }
         }
       }
     },
-    "/webinars/{webinarNumber}/panelists/{panelistId}" : {
-      "delete" :{
+    "/webinars/{webinarNumber}/panelists/{panelistId}": {
+      "delete": {
         "description": "Cancel panelist for webinar",
         "tags": [
           "Webinar"
         ],
         "operationId": "webinarPanelistCancel",
-        "parameters" : [
+        "parameters": [
           {
-            "in": "path",
-            "name": "webinarNumber",
-            "type": "integer",
-            "required": true
+            "$ref": "#/parameters/WebinarNumber"
           },
           {
             "in": "path",
@@ -1434,224 +1607,758 @@
             "required": true
           }
         ],
-        "responses":{
-          "200": {
-            "description":"Success"
+        "responses": {
+          "204": {
+            "description": "Panelists removed"
+          },
+          "404" : {
+            "description": "Webinar or Panelist not found"
           }
         }
       }
     },
-    "/webinars/{webinarNumber}/registrants" : {
-      "get" :{
-        "description": "Get webinar registrations",
-        "tags": [
-          "Webinar"
-        ],
-        "operationId": "webinarRegList",
-        "parameters" : [
-          {
-            "in": "path",
-            "name": "webinarNumber",
-            "type": "integer",
-            "required": true
-          }
-        ],
-        "responses":{
-          "200": {
-            "description":"Success"
-          }
-        }
-      },
-      "post" :{
-        "description": "Register participant for webinar",
-        "tags": [
-          "Webinar"
-        ],
-        "operationId": "webinarRegCreate",
-        "parameters" : [
-          {
-            "in": "path",
-            "name": "webinarNumber",
-            "type": "integer",
-            "required": true
-          }
-        ],
-        "responses":{
-          "200": {
-            "description":"Success"
-          }
-        }
-      }
-    },
-    "/webinars/{webinarNumber}/registrants/{registrantId}" : {
-      "get" :{
-        "description": "Get webinar registrant",
+    "/webinars/{webinarNumber}/registrants": {
+      "get": {
+        "description": "",
         "tags": [
           "Webinar"
         ],
         "operationId": "webinarRegGet",
-        "parameters" : [
+        "parameters": [
           {
-            "in": "path",
-            "name": "webinarNumber",
-            "type": "integer",
-            "required": true
+            "$ref": "#/parameters/WebinarNumber"
           },
           {
-            "in": "path",
-            "name": "registrantId",
-            "type": "integer",
-            "required": true
+            "$ref": "#/parameters/OccurenceId"
+          },
+          {
+            "$ref": "#/parameters/RegistrantStatus"
+          },
+          {
+            "$ref": "#/parameters/PageSize"
+          },
+          {
+            "$ref": "#/parameters/PageNumber"
           }
         ],
-        "responses":{
+        "responses": {
           "200": {
-            "description":"Success"
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/WebinarRegistrantList"
+            }
+          },
+          "404": {
+            "description": "Webinar not found"
           }
         }
       },
-      "delete" :{
-        "description": "Cancel participant for webinar",
-        "tags": [
-          "Webinar"
-        ],
-        "operationId": "webinarRegCancel",
-        "parameters" : [
-          {
-            "in": "path",
-            "name": "webinarNumber",
-            "type": "integer",
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "registrantId",
-            "type": "integer",
-            "required": true
-          }
-        ],
-        "responses":{
-          "200": {
-            "description":"Success"
-          }
-        }
-      },
-      "patch" :{
-        "description": "Update participant for webinar",
-        "tags": [
-          "Webinar"
-        ],
-        "operationId": "webinarRegUpdate",
-        "parameters" : [
-          {
-            "in": "path",
-            "name": "webinarNumber",
-            "type": "integer",
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "registrantId",
-            "type": "integer",
-            "required": true
-          }
-        ],
-        "responses":{
-          "200": {
-            "description":"Success"
-          }
-        }
-      }
-    },
-    "/webinars/{webinarNumber}/status" : {
-      "put" :{
+      "post": {
         "description": "",
         "tags": [
-          "Meeting"
+          "Webinar"
+        ],
+        "operationId": "webinarRegCreate",
+        "parameters": [
+          {
+            "$ref": "#/parameters/WebinarNumber"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/WebinarRegistrant"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Registration created",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "Registrant ID"
+                },
+                "join_url": {
+                  "type": "string",
+                  "description": "Join URL for this registrant"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Webinar not found"
+          }
+        }
+      }
+    },
+    "/webinars/{webinarNumber}/registrants/{registrantId}/status": {
+      "put": {
+        "description": "",
+        "tags": [
+          "Webinar"
+        ],
+        "operationId": "webinarRegistrantStatus",
+        "parameters": [
+          {
+            "$ref": "#/parameters/WebinarNumber"
+          },
+          {
+            "$ref": "#/parameters/RegistrantId"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "pending",
+                    "approved",
+                    "denied"
+                  ]
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Registrant status updated"
+          },
+          "404": {
+            "description": "Webinar or Registrant not found"
+          }
+        }
+      }
+    },
+    "/webinars/{webinarNumber}/status": {
+      "put": {
+        "description": "",
+        "tags": [
+          "Webinar"
         ],
         "operationId": "webinarStatus",
-        "parameters" : [
+        "parameters": [
           {
-            "in": "path",
-            "name": "webinarNumber",
-            "type": "integer",
-            "required": true
+            "$ref": "#/parameters/WebinarNumber"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "end"
+                  ]
+                }
+              }
+            }
           }
         ],
-        "responses":{
-          "200": {
-            "description":"Success"
+        "responses": {
+          "204": {
+            "description": "Webinar updated"
+          },
+          "404": {
+            "description": "Webinar not found"
           }
         }
       }
-    },
+    }
   },
-  "definitions" : {
-    "Pagination" : {
-      "type" : "object",
-      "description" : "Pagination Object",
-      "properties" : {
-        "page_count" : {
-          "type" : "integer",
-          "format" : "int64",
-          "description" : "The number of items returned on this page."
+  "parameters": {
+    "MeetingNumber": {
+      "in": "path",
+      "name": "meetingNumber",
+      "type": "integer",
+      "required": true
+    },
+    "MeetingType": {
+      "in": "query",
+      "name": "type",
+      "type": "string",
+      "enum": [
+        "scheduled",
+        "live"
+      ]
+    },
+    "OccurenceId": {
+      "in": "query",
+      "name": "occurrence_id",
+      "type": "string"
+    },
+    "PageNumber": {
+      "in": "query",
+      "name": "page_number",
+      "type": "integer",
+      "default": 1
+    },
+    "PageSize": {
+      "in": "query",
+      "name": "page_size",
+      "type": "integer",
+      "default": 30
+    },
+    "RegistrantId": {
+      "in": "path",
+      "name": "registrantId",
+      "type": "string",
+      "required": true
+    },
+    "RegistrantStatus": {
+      "in": "query",
+      "name": "status",
+      "type": "string",
+      "default": "approved",
+      "enum": [
+        "approved",
+        "pending",
+        "denied"
+      ]
+    },
+    "UserId": {
+      "in": "path",
+      "name": "userId",
+      "type": "string",
+      "required": true
+    },
+    "WebinarNumber": {
+      "in": "path",
+      "name": "webinarNumber",
+      "type": "integer",
+      "required": true
+    }
+  },
+  "definitions": {
+    "CustomQuestion": {
+      "type": "object",
+      "description": "Custom Question",
+      "properties": {
+        "title": {
+          "type": "string"
         },
-        "page_number" : {
-          "type" : "integer",
-          "format" : "int64",
-          "description" : "The page number of current results."
-        },
-        "page_size" : {
-          "type" : "integer",
-          "format" : "int64",
-          "description" : "The number of items per page."
-        },
-        "total_records" : {
-          "type" : "integer",
-          "format" : "int64",
-          "description" : "The number of all records available across pages."
+        "value": {
+          "type": "string"
         }
       }
     },
-    "UserList" : {
-      "type" : "object",
-      "title" : "User List",
-      "description" : "List of Users",
-      "allOf" : [
+    "Meeting": {
+      "type": "object",
+      "description": "Meeting object",
+      "allOf": [
         {
-          "$ref" : "#/definitions/Pagination"
+          "$ref": "#/definitions/Session"
+        }
+      ]
+    },
+    "MeetingList": {
+      "type": "object",
+      "title": "User List",
+      "description": "List of Meetings",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Pagination"
         },
         {
-          "properties" : {
-            "users": {
-              "type" : "array",
-              "description" : "List of User objects.",
-              "items" : {
-                "allOf" : [
+          "properties": {
+            "meetings": {
+              "type": "array",
+              "description": "List of Meeting objects.",
+              "items": {
+                "allOf": [
                   {
-                    "properties" : {
-                      "id" : {
-                        "type" : "string",
-                        "description" : "User ID"
+                    "type": "object",
+                    "properties": {
+                      "uuid": {
+                        "type": "string",
+                        "description": "Meeting unique ID"
+                      },
+                      "id": {
+                        "type": "string",
+                        "description": "Meeting ID, also know as meeting number"
+                      },
+                      "host_id": {
+                        "type": "string",
+                        "description": "ID of the user set as host of meeting"
                       }
                     }
                   },
                   {
-                    "$ref" : "#/definitions/UserReference"
-                  },
-                  {
-                    "$ref" : "#/definitions/UserDetailsReference"
+                    "$ref": "#/definitions/Meeting"
                   }
                 ]
-              },
+              }
             }
           }
         }
       ]
     },
-    "UserReference": {
+    "MeetingSettings": {
       "type": "object",
-      "description": "It references a user",
+      "description": "Meeting Settings",
+      "properties": {
+        "host_video": {
+          "type": "boolean",
+          "default": true
+        },
+        "participant_video": {
+          "type": "boolean",
+          "default": true
+        },
+        "cn_meeting": {
+          "type": "boolean",
+          "default": false
+        },
+        "in_meeting": {
+          "type": "boolean",
+          "default": false
+        },
+        "join_before_host": {
+          "type": "boolean",
+          "default": false
+        },
+        "mute_upon_entry": {
+          "type": "boolean",
+          "default": false
+        },
+        "watermark": {
+          "type": "boolean",
+          "default": false
+        },
+        "use_pmi": {
+          "type": "boolean",
+          "default": false
+        },
+        "approval_type": {
+          "type": "integer",
+          "default": 2,
+          "enum": [
+            0,
+            1,
+            2
+          ]
+        },
+        "registration_type": {
+          "type": "integer",
+          "default": 1,
+          "enum": [
+            1,
+            2,
+            3
+          ]
+        },
+        "audio": {
+          "type": "string",
+          "default": "both",
+          "enum": [
+            "boht",
+            "telephony",
+            "voip"
+          ]
+        },
+        "auto_recording": {
+          "type": "string",
+          "default": "none",
+          "enum": [
+            "local",
+            "cloud",
+            "none"
+          ]
+        },
+        "enforce_login_domains": {
+          "type": "boolean"
+        },
+        "alternatice_hosts": {
+          "type": "boolean"
+        }
+      }
+    },
+    "MeetingRegistrant": {
+      "type": "object",
+      "description": "Meeting registrant",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Registrant"
+        }
+      ]
+    },
+    "MeetingRegistrantList": {
+      "type": "object",
+      "title": "Registration List",
+      "description": "List of Users",
+      "allOf": [
+        {
+          "$ref": "#/definitions/RegistrantList"
+        }
+      ]
+    },
+    "Pagination": {
+      "type": "object",
+      "description": "Pagination Object",
+      "properties": {
+        "page_count": {
+          "type": "integer",
+          "format": "int64",
+          "description": "The number of items returned on this page."
+        },
+        "page_number": {
+          "type": "integer",
+          "format": "int64",
+          "description": "The page number of current results."
+        },
+        "page_size": {
+          "type": "integer",
+          "format": "int64",
+          "description": "The number of items per page."
+        },
+        "total_records": {
+          "type": "integer",
+          "format": "int64",
+          "description": "The number of all records available across pages."
+        }
+      }
+    },
+    "Panelist": {
+      "type": "object",
+      "description": "Panelist base object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "PanelistList": {
+      "type": "object",
+      "title": "Panelist List",
+      "description": "List of Panelist",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Pagination"
+        },
+        {
+          "properties": {
+            "registrants": {
+              "type": "array",
+              "description": "List of Panelist objects.",
+              "items": {
+                "$ref": "#/definitions/Panelist"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Recurrence": {
+      "type": "object",
+      "description": "Recurrence object",
+      "properties": {
+        "type": {
+          "type": "integer"
+        },
+        "repeat_interval": {
+          "type": "integer"
+        },
+        "weekly_days": {
+          "type": "integer"
+        },
+        "monthly_day": {
+          "type": "integer"
+        },
+        "monthly_week": {
+          "type": "integer"
+        },
+        "monthly_week_day": {
+          "type": "integer"
+        },
+        "end_times": {
+          "type": "integer"
+        },
+        "end_date_time": {
+          "type": "string",
+          "format": "dateTime"
+        }
+      }
+    },
+    "Registrant": {
+      "type": "object",
+      "description": "Registrant base object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "zip": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "industry": {
+          "type": "string"
+        },
+        "org": {
+          "type": "string"
+        },
+        "job_title": {
+          "type": "string"
+        },
+        "purchasing_time_frame": {
+          "type": "string"
+        },
+        "role_in_purchase_process": {
+          "type": "string"
+        },
+        "no_of_employees": {
+          "type": "string"
+        },
+        "comments": {
+          "type": "string"
+        },
+        "custom_questions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CustomQuestion"
+          }
+        }
+      }
+    },
+    "RegistrantList": {
+      "type": "object",
+      "title": "Registration List",
+      "description": "List of Users",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Pagination"
+        },
+        {
+          "properties": {
+            "registrants": {
+              "type": "array",
+              "description": "List of Registrant objects.",
+              "items": {
+                "$ref": "#/definitions/MeetingRegistrant"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Session" : {
+      "type" : "object",
+      "description" : "Base object for sessions",
+      "properties": {
+        "topic": {
+          "type": "string",
+          "description": "Meeting topic"
+        },
+        "type": {
+          "type": "integer",
+          "description": "Meeting Type",
+          "enum": [
+            1,
+            2,
+            3,
+            8
+          ]
+        },
+        "start_time": {
+          "type": "string",
+          "format": "dateTime",
+          "description": "Meeting start time"
+        },
+        "duration": {
+          "type": "integer",
+          "description": "Meeting duration"
+        },
+        "timezone": {
+          "type": "string",
+          "description": "Timezone to format start_time",
+          "enum": [
+            "Pacific/Midway",
+            "Pacific/Pago_Pago",
+            "Pacific/Honolulu",
+            "America/Anchorage",
+            "America/Vancouver",
+            "America/Los_Angeles",
+            "America/Tijuana",
+            "America/Edmonton",
+            "America/Denver",
+            "America/Phoenix",
+            "America/Mazatlan",
+            "America/Winnipeg",
+            "America/Regina",
+            "America/Chicago",
+            "America/Mexico_City",
+            "America/Guatemala",
+            "America/El_Salvador",
+            "America/Managua",
+            "America/Costa_Rica",
+            "America/Montreal",
+            "America/New_York",
+            "America/Indianapolis",
+            "America/Panama",
+            "America/Bogota",
+            "America/Lima",
+            "America/Halifax",
+            "America/Puerto_Rico",
+            "America/Caracas",
+            "America/Santiago",
+            "America/St_Johns",
+            "America/Montevideo",
+            "America/Araguaina",
+            "America/Argentina/Buenos_Aires",
+            "America/Godthab",
+            "America/Sao_Paulo",
+            "Atlantic/Azores",
+            "Canada/Atlantic",
+            "Atlantic/Cape_Verde",
+            "UTC",
+            "Etc/Greenwich",
+            "Europe/Belgrade",
+            "CET",
+            "Atlantic/Reykjavik",
+            "Europe/Dublin",
+            "Europe/London",
+            "Europe/Lisbon",
+            "Africa/Casablanca",
+            "Africa/Nouakchott",
+            "Europe/Oslo",
+            "Europe/Copenhagen",
+            "Europe/Brussels",
+            "Europe/Berlin",
+            "Europe/Helsinki",
+            "Europe/Amsterdam",
+            "Europe/Rome",
+            "Europe/Stockholm",
+            "Europe/Vienna",
+            "Europe/Luxembourg",
+            "Europe/Paris",
+            "Europe/Zurich",
+            "Europe/Madrid",
+            "Africa/Bangui",
+            "Africa/Algiers",
+            "Africa/Tunis",
+            "Africa/Harare",
+            "Africa/Nairobi",
+            "Europe/Warsaw",
+            "Europe/Prague",
+            "Europe/Budapest",
+            "Europe/Sofia",
+            "Europe/Istanbul",
+            "Europe/Athens",
+            "Europe/Bucharest",
+            "Asia/Nicosia",
+            "Asia/Beirut",
+            "Asia/Damascus",
+            "Asia/Jerusalem",
+            "Asia/Amman",
+            "Africa/Tripoli",
+            "Africa/Cairo",
+            "Africa/Johannesburg",
+            "Europe/Moscow",
+            "Asia/Baghdad",
+            "Asia/Kuwait",
+            "Asia/Riyadh",
+            "Asia/Bahrain",
+            "Asia/Qatar",
+            "Asia/Aden",
+            "Asia/Tehran",
+            "Africa/Khartoum",
+            "Africa/Djibouti",
+            "Africa/Mogadishu",
+            "Asia/Dubai",
+            "Asia/Muscat",
+            "Asia/Baku",
+            "Asia/Kabul",
+            "Asia/Yekaterinburg",
+            "Asia/Tashkent",
+            "Asia/Calcutta",
+            "Asia/Kathmandu",
+            "Asia/Novosibirsk",
+            "Asia/Almaty",
+            "Asia/Dacca",
+            "Asia/Krasnoyarsk",
+            "Asia/Dhaka",
+            "Asia/Bangkok",
+            "Asia/Saigon",
+            "Asia/Jakarta",
+            "Asia/Irkutsk",
+            "Asia/Shanghai",
+            "Asia/Hong_Kong",
+            "Asia/Taipei",
+            "Asia/Kuala_Lumpur",
+            "Asia/Singapore",
+            "Australia/Perth",
+            "Asia/Yakutsk",
+            "Asia/Seoul",
+            "Asia/Tokyo",
+            "Australia/Darwin",
+            "Australia/Adelaide",
+            "Asia/Vladivostok",
+            "Pacific/Port_Moresby",
+            "Australia/Brisbane",
+            "Australia/Sydney",
+            "Australia/Hobart",
+            "Asia/Magadan",
+            "SST",
+            "Pacific/Noumea",
+            "Asia/Kamchatka",
+            "Pacific/Fiji",
+            "Pacific/Auckland",
+            "Asia/Kolkata",
+            "Europe/Kiev",
+            "America/Tegucigalpa",
+            "Pacific/Apia"
+          ]
+        },
+        "password": {
+          "type": "string",
+          "description": "Password to join the meeting"
+        },
+        "description": {
+          "type": "string",
+          "description": "Meeting description"
+        },
+        "recurrence": {
+          "$ref": "#/definitions/Recurrence"
+        },
+        "settings": {
+          "$ref": "#/definitions/MeetingSettings"
+        }
+      }
+    },
+    "User": {
+      "type": "object",
+      "description": "User object",
       "properties": {
         "email": {
           "type": "string",
@@ -1667,19 +2374,59 @@
         },
         "type": {
           "type": "integer",
-          "enum": [1,2,3],
+          "enum": [
+            1,
+            2,
+            3
+          ],
           "description": "User's type. 1: Basic; 2: Pro; 3: Corp;"
         }
       }
     },
-    "UserDetailsReference" : {
-      "title" : "User object with details",
-      "description" : "Reference to a User object with details.",
-      "type" : "object",
+    "UserList": {
+      "type": "object",
+      "title": "User List",
+      "description": "List of Users",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Pagination"
+        },
+        {
+          "properties": {
+            "users": {
+              "type": "array",
+              "description": "List of User objects.",
+              "items": {
+                "allOf": [
+                  {
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "description": "User ID"
+                      }
+                    }
+                  },
+                  {
+                    "$ref": "#/definitions/User"
+                  },
+                  {
+                    "$ref": "#/definitions/UserDetails"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "UserDetails": {
+      "title": "User object with details",
+      "description": "Reference to a User object with details.",
+      "type": "object",
       "properties": {
         "created_at": {
           "type": "string",
-          "format" : "dateTime"
+          "format": "dateTime"
         },
         "dept": {
           "type": "string"
@@ -1689,7 +2436,7 @@
         },
         "last_login_time": {
           "type": "string",
-          "format" : "dateTime"
+          "format": "dateTime"
         },
         "pic_url": {
           "type": "string"
@@ -1708,190 +2455,278 @@
         }
       }
     },
-    "UserSettings" : {
-      "title" : "User settings",
-      "type" : "object",
-      "properties" : {
+    "UserSettings": {
+      "title": "User settings",
+      "type": "object",
+      "properties": {
         "feature": {
-          "$ref" : "#/definitions/UserSettingsFeature"
+          "$ref": "#/definitions/UserSettingsFeature"
         },
         "meeting": {
-          "$ref" : "#/definitions/UserSettingsMeeting"
+          "$ref": "#/definitions/UserSettingsMeeting"
         },
         "notification": {
-          "$ref" : "#/definitions/UserSettingsNotification"
+          "$ref": "#/definitions/UserSettingsNotification"
         },
         "recording": {
-          "$ref" : "#/definitions/UserSettingsRecording"
+          "$ref": "#/definitions/UserSettingsRecording"
         },
         "_security": {
-          "$ref" : "#/definitions/UserSettingsSecurity"
+          "$ref": "#/definitions/UserSettingsSecurity"
         }
       }
     },
-    "UserSettingsMeeting" : {
-      "title" : "User settings: Meeting settings",
-      "description" : "",
-      "type" : "object",
-      "properties" : {
-        "chat" : {
-          "type" : "boolean"
+    "UserSettingsMeeting": {
+      "title": "User settings: Meeting settings",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "chat": {
+          "type": "boolean"
         },
-        "private_chat" : {
-          "type" : "boolean"
+        "private_chat": {
+          "type": "boolean"
         },
-        "auto_saving_chat" : {
-          "type" : "boolean"
+        "auto_saving_chat": {
+          "type": "boolean"
         },
-        "attendee_on_hold" : {
-          "type" : "boolean"
+        "attendee_on_hold": {
+          "type": "boolean"
         },
-        "entry_exit_chime_host" : {
-          "type" : "boolean"
+        "entry_exit_chime_host": {
+          "type": "boolean"
         },
-        "entry_exit_chime_all" : {
-          "type" : "boolean"
+        "entry_exit_chime_all": {
+          "type": "boolean"
         },
-        "record_play_voice" : {
-          "type" : "boolean"
+        "record_play_voice": {
+          "type": "boolean"
         },
-        "group_hd" : {
-          "type" : "boolean"
+        "group_hd": {
+          "type": "boolean"
         },
-        "feedback" : {
-          "type" : "boolean"
+        "feedback": {
+          "type": "boolean"
         },
-        "co_host" : {
-          "type" : "boolean"
+        "co_host": {
+          "type": "boolean"
         },
-        "annotation" : {
-          "type" : "boolean"
+        "annotation": {
+          "type": "boolean"
         },
-        "polling" : {
-          "type" : "boolean"
+        "polling": {
+          "type": "boolean"
         },
-        "non_verbal_feedback" : {
-          "type" : "boolean"
+        "non_verbal_feedback": {
+          "type": "boolean"
         },
-        "breakout_room" : {
-          "type" : "boolean"
+        "breakout_room": {
+          "type": "boolean"
         },
-        "remote_support" : {
-          "type" : "boolean"
+        "remote_support": {
+          "type": "boolean"
         },
-        "file_transfer" : {
-          "type" : "boolean"
+        "file_transfer": {
+          "type": "boolean"
         },
-        "virtual_background" : {
-          "type" : "boolean"
+        "virtual_background": {
+          "type": "boolean"
         },
-        "closed_caption" : {
-          "type" : "boolean"
+        "closed_caption": {
+          "type": "boolean"
         },
-        "far_end_camera_control" : {
-          "type" : "boolean"
+        "far_end_camera_control": {
+          "type": "boolean"
         },
-        "share_dual_camera" : {
-          "type" : "boolean"
+        "share_dual_camera": {
+          "type": "boolean"
         },
-        "attention_tracking" : {
-          "type" : "boolean"
+        "attention_tracking": {
+          "type": "boolean"
         },
-        "waiting_room" : {
-          "type" : "boolean"
+        "waiting_room": {
+          "type": "boolean"
         }
       }
     },
-    "UserSettingsRecording" : {
-      "title" : "User settings: Recording settings",
-      "description" : "",
-      "type" : "object",
-      "properties" : {
-        "local_recording" : {
-          "type" : "boolean"
+    "UserSettingsRecording": {
+      "title": "User settings: Recording settings",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "local_recording": {
+          "type": "boolean"
         },
-        "cloud_recording" : {
-          "type" : "boolean"
+        "cloud_recording": {
+          "type": "boolean"
         },
-        "record_speaker_view" : {
-          "type" : "boolean"
+        "record_speaker_view": {
+          "type": "boolean"
         },
-        "record_gallery_view" : {
-          "type" : "boolean"
+        "record_gallery_view": {
+          "type": "boolean"
         },
-        "record_audio_file" : {
-          "type" : "boolean"
+        "record_audio_file": {
+          "type": "boolean"
         },
-        "save_chat_text" : {
-          "type" : "boolean"
+        "save_chat_text": {
+          "type": "boolean"
         },
-        "show_timestamp" : {
-          "type" : "boolean"
+        "show_timestamp": {
+          "type": "boolean"
         },
-        "local_auto_recording" : {
-          "type" : "boolean"
+        "local_auto_recording": {
+          "type": "boolean"
         },
-        "cloud_auto_recording" : {
-          "type" : "boolean"
+        "cloud_auto_recording": {
+          "type": "boolean"
         },
-        "auto_delete_cmr" : {
-          "type" : "boolean"
+        "auto_delete_cmr": {
+          "type": "boolean"
         },
-        "auto_delete_cmr_days" : {
-          "type" : "integer"
+        "auto_delete_cmr_days": {
+          "type": "integer"
         }
       }
     },
-    "UserSettingsNotification" : {
-      "title" : "User settings: Notification settings",
-      "description" : "",
-      "type" : "object",
-      "properties" : {
-        "jbh_reminder" : {
-          "type" : "boolean"
+    "UserSettingsNotification": {
+      "title": "User settings: Notification settings",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "jbh_reminder": {
+          "type": "boolean"
         },
-        "cancel_meeting_reminder" : {
-          "type" : "boolean"
+        "cancel_meeting_reminder": {
+          "type": "boolean"
         },
-        "alternative_host_reminder" : {
-          "type" : "boolean"
+        "alternative_host_reminder": {
+          "type": "boolean"
         }
       }
     },
-    "UserSettingsSecurity" : {
-      "title" : "User settings: Security settings",
-      "description" : "",
-      "type" : "object",
-      "properties" : {
-        "e2e_encryption" : {
-          "type" : "boolean"
+    "UserSettingsSecurity": {
+      "title": "User settings: Security settings",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "e2e_encryption": {
+          "type": "boolean"
         },
-        "pstn_password_protected" : {
-          "type" : "boolean"
+        "pstn_password_protected": {
+          "type": "boolean"
         }
       }
     },
-    "UserSettingsFeature" : {
-      "title" : "User settings: Feature settings",
-      "description" : "",
-      "type" : "object",
-      "properties" : {
-        "meeting_capacity" : {
-          "type" : "integer"
+    "UserSettingsFeature": {
+      "title": "User settings: Feature settings",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "meeting_capacity": {
+          "type": "integer"
         },
-        "large_meeting" : {
-          "type" : "boolean"
+        "large_meeting": {
+          "type": "boolean"
         },
-        "large_meeting_capacity" : {
-          "type" : "integer"
+        "large_meeting_capacity": {
+          "type": "integer"
         },
-        "webinar" : {
-          "type" : "boolean"
+        "webinar": {
+          "type": "boolean"
         },
-        "webinar_capacity" : {
-          "type" : "integer"
+        "webinar_capacity": {
+          "type": "integer"
         }
       }
+    },
+    "Webinar": {
+      "type": "object",
+      "description": "Webinar object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Session"
+        }
+      ]
+    },
+    "WebinarList": {
+      "type": "object",
+      "title": "User List",
+      "description": "List of Webinars",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Pagination"
+        },
+        {
+          "properties": {
+            "meetings": {
+              "type": "array",
+              "description": "List of Webinar objects.",
+              "items": {
+                "allOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "uuid": {
+                        "type": "string",
+                        "description": "Webinar unique ID"
+                      },
+                      "id": {
+                        "type": "string",
+                        "description": "Webinar ID, also know as webinar number"
+                      },
+                      "host_id": {
+                        "type": "string",
+                        "description": "ID of the user set as host of webinar"
+                      }
+                    }
+                  },
+                  {
+                    "$ref": "#/definitions/Webinar"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "WebinarPanelist": {
+      "type": "object",
+      "description": "Webinar panelist",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Panelist"
+        }
+      ]
+    },
+    "WebinarPanelistList": {
+      "type": "object",
+      "description": "Webinar panelist",
+      "allOf": [
+        {
+          "$ref": "#/definitions/PanelistList"
+        }
+      ]
+    },
+    "WebinarRegistrant": {
+      "type": "object",
+      "description": "Meeting registrant",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Registrant"
+        }
+      ]
+    },
+    "WebinarRegistrantList": {
+      "type": "object",
+      "title": "Registration List",
+      "description": "List of Users",
+      "allOf": [
+        {
+          "$ref": "#/definitions/RegistrantList"
+        }
+      ]
     }
   },
   "tags": [
@@ -1920,12 +2755,16 @@
     "description": "Zoom REST API Documentation",
     "url": "https://zoom.github.io/api"
   },
-  "securityDefinitions" : {
+  "securityDefinitions": {
     "global": {
-      "type" : "apiKey",
-      "name" : "jwt",
-      "in" : "query"
+      "type": "apiKey",
+      "name": "jwt",
+      "in": "query"
     }
   },
-  "security" : [{"global":[]}]
+  "security": [
+    {
+      "global": []
+    }
+  ]
 }
