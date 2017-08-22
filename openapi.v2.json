@@ -349,6 +349,512 @@
         }
       }
     },
+    "/groups" : {
+      "get" : {
+        "description": "List groups on your account.",
+        "tags": [
+          "Group"
+        ],
+        "parameters": [
+          {
+            "$ref" : "#/parameters/PageSize"
+          },
+          {
+            "$ref" : "#/parameters/PageNumber"
+          }
+        ],
+        "responses": {
+          "200" : {
+            "description": "List of groups returned.",
+            "schema": {
+              "$ref": "#/definitions/GroupList"
+            }
+          }
+        }
+      },
+      "post" : {
+        "description" : "Create a group",
+        "tags" : [
+          "Group"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required" : true,
+            "schema" : {
+              "properties": {
+                "name" : {
+                  "type": "string",
+                  "description": "Group name."
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201" : {
+            "description": "Group created.",
+            "headers": {
+              "Content-Location": {
+                "description": "Location of created group",
+                "type": "string"
+              }
+            },
+            "schema": {
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "User ID"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/groups/{groupId}" : {
+      "get" : {
+        "description" : "Get a group by ID",
+        "tags" : [
+          "Group"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/GroupId"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description": "Group object returned",
+            "schema" : {
+              "allOf" : [
+                {
+                  "properties" : {
+                    "id" : {
+                      "type" : "string",
+                      "description": "Group ID"
+                    }
+                  }
+                },
+                {
+                  "$ref": "#/definitions/Group"
+                }
+              ]
+            }
+          },
+          "404" : {
+            "description": "Group not found"
+          }
+        }
+      },
+      "patch" : {
+        "description" : "Update a group",
+        "tags" : [
+          "Group"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/GroupId"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required" : true,
+            "schema" : {
+              "properties": {
+                "name" : {
+                  "type": "string",
+                  "description": "Group name."
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204" : {
+            "description": "Group updated."
+          },
+          "404" : {
+            "description": "Group not found"
+          }
+        }
+      },
+      "delete" : {
+        "description" : "Delete a group",
+        "tags" : [
+          "Group"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/GroupId"
+          }
+        ],
+        "responses": {
+          "204" : {
+            "description": "Group deleted."
+          },
+          "404" : {
+            "description": "Group not found"
+          }
+        }
+      }
+    },
+    "/groups/{groupId}/members" : {
+      "get" : {
+        "description" : "Get a group's members",
+        "tags" : [
+          "Group"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/GroupId"
+          },
+          {
+            "$ref" : "#/parameters/PageSize"
+          },
+          {
+            "$ref" : "#/parameters/PageNumber"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description": "Group member list returned",
+            "schema" : {
+              "$ref": "#/definitions/GroupMemberList"
+            }
+          },
+          "404" : {
+            "description": "Group not found"
+          }
+        }
+      },
+      "post" : {
+        "description" : "Update a group",
+        "tags" : [
+          "Group"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/GroupId"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required" : true,
+            "schema" : {
+              "properties": {
+                "id" : {
+                  "type": "string",
+                  "description": "User ID."
+                },
+                "email" : {
+                  "type": "string",
+                  "description": "User email. If ID given, email is ignored."
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204" : {
+            "description": "Member added."
+          },
+          "404" : {
+            "description": "Group not found"
+          }
+        }
+      }
+    },
+    "/groups/{groupId}/members/{userId}" : {
+      "delete" : {
+        "description" : "Delete a group member",
+        "tags" : [
+          "Group"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/GroupId"
+          },
+          {
+            "$ref": "#/parameters/UserId"
+          }
+        ],
+        "responses": {
+          "204" : {
+            "description": "Group member deleted."
+          },
+          "404" : {
+            "description": "Group or Group member not found"
+          }
+        }
+      }
+    },
+    "/im_groups" : {
+      "get" : {
+        "description": "List IM Groups on your account.",
+        "tags": [
+          "IM Group"
+        ],
+        "parameters": [
+          {
+            "$ref" : "#/parameters/PageSize"
+          },
+          {
+            "$ref" : "#/parameters/PageNumber"
+          }
+        ],
+        "responses": {
+          "200" : {
+            "description": "List of IM Groups returned.",
+            "schema": {
+              "$ref": "#/definitions/IMGroupList"
+            }
+          }
+        }
+      },
+      "post" : {
+        "description" : "Create an IM Group",
+        "tags" : [
+          "IM Group"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required" : true,
+            "schema" : {
+              "properties": {
+                "name" : {
+                  "type": "string",
+                  "description": "IM Group name."
+                },
+                "type" : {
+                  "type" : "string"
+                },
+                "search_by_domain" : {
+                  "type" : "boolean"
+                },
+                "search_by_account" : {
+                  "type" : "boolean"
+                },
+                "search_by_ma_account" : {
+                  "type" : "boolean"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201" : {
+            "description": "IM Group created.",
+            "headers": {
+              "Content-Location": {
+                "description": "Location of created IM Group",
+                "type": "string"
+              }
+            },
+            "schema": {
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "User ID"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/im_groups/{groupId}" : {
+      "get" : {
+        "description" : "Get a IM Group by ID",
+        "tags" : [
+          "IM Group"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/GroupId"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description": "IM Group object returned",
+            "schema" : {
+              "allOf" : [
+                {
+                  "properties" : {
+                    "id" : {
+                      "type" : "string",
+                      "description": "Group ID"
+                    }
+                  }
+                },
+                {
+                  "$ref": "#/definitions/IMGroup"
+                }
+              ]
+            }
+          },
+          "404" : {
+            "description": "IM Group not found"
+          }
+        }
+      },
+      "patch" : {
+        "description" : "Update an IM Group",
+        "tags" : [
+          "IM Group"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/GroupId"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required" : true,
+            "schema" : {
+              "properties": {
+                "name" : {
+                  "type": "string",
+                  "description": "IM Group name."
+                },
+                "type" : {
+                  "type" : "string"
+                },
+                "search_by_domain" : {
+                  "type" : "boolean"
+                },
+                "search_by_account" : {
+                  "type" : "boolean"
+                },
+                "search_by_ma_account" : {
+                  "type" : "boolean"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204" : {
+            "description": "IM Group updated."
+          },
+          "404" : {
+            "description": "IM Group not found"
+          }
+        }
+      },
+      "delete" : {
+        "description" : "Delete an IM Group",
+        "tags" : [
+          "IM Group"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/GroupId"
+          }
+        ],
+        "responses": {
+          "204" : {
+            "description": "IM Group deleted."
+          },
+          "404" : {
+            "description": "IM Group not found"
+          }
+        }
+      }
+    },
+    "/im_groups/{groupId}/members" : {
+      "get" : {
+        "description" : "Get a IM Group's members",
+        "tags" : [
+          "IM Group"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/GroupId"
+          },
+          {
+            "$ref" : "#/parameters/PageSize"
+          },
+          {
+            "$ref" : "#/parameters/PageNumber"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description": "IM Group member list returned",
+            "schema" : {
+              "$ref": "#/definitions/GroupMemberList"
+            }
+          },
+          "404" : {
+            "description": "IM Group not found"
+          }
+        }
+      },
+      "post" : {
+        "description" : "Update an IM Group",
+        "tags" : [
+          "IM Group"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/GroupId"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required" : true,
+            "schema" : {
+              "properties": {
+                "id" : {
+                  "type": "string",
+                  "description": "User ID."
+                },
+                "email" : {
+                  "type": "string",
+                  "description": "User email. If ID given, email is ignored."
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204" : {
+            "description": "Member added."
+          },
+          "404" : {
+            "description": "IM Group not found"
+          }
+        }
+      }
+    },
+    "/im_groups/{groupId}/members/{userId}" : {
+      "delete" : {
+        "description" : "Delete a IM Group member",
+        "tags" : [
+          "IM Group"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/GroupId"
+          },
+          {
+            "$ref": "#/parameters/UserId"
+          }
+        ],
+        "responses": {
+          "204" : {
+            "description": "IM Group member deleted."
+          },
+          "404" : {
+            "description": "IM Group or IM Group member not found"
+          }
+        }
+      }
+    },
     "/users/{userId}/meetings": {
       "get": {
         "description": "Get a user's meeting",
@@ -689,7 +1195,7 @@
           {
             "in": "query",
             "name": "status",
-            "description": "User status, value should be active/inactive/pending",
+            "description": "User status",
             "type": "string",
             "default": "active",
             "enum": [
@@ -1853,6 +2359,12 @@
       "type": "string",
       "required": true
     },
+    "GroupId": {
+      "in": "path",
+      "name": "groupId",
+      "type": "string",
+      "required": true
+    },
     "MeetingNumber": {
       "in": "path",
       "name": "meetingId",
@@ -1876,12 +2388,14 @@
     "PageNumber": {
       "in": "query",
       "name": "page_number",
+      "description" : "Page number of results returned",
       "type": "integer",
       "default": 1
     },
     "PageSize": {
       "in": "query",
       "name": "page_size",
+      "description" : "Number of items returned per page",
       "type": "integer",
       "default": 30
     },
@@ -2083,7 +2597,7 @@
       }
     },
     "AccountSettings" : {
-      "title": "User settings",
+      "title": "Account settings",
       "type": "object",
       "properties": {
         "in_meeting": {
@@ -2620,6 +3134,158 @@
         }
       }
     },
+    "Group" : {
+      "type": "object",
+      "description": "Group object",
+      "properties": {
+        "name" : {
+          "type": "string",
+          "description": "Group name"
+        },
+        "total_members" : {
+          "type" : "integer",
+          "description": "Total number of members in this group."
+        }
+      }
+    },
+    "GroupList": {
+      "type": "object",
+      "title": "Group List",
+      "description": "List of Groups",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Pagination"
+        },
+        {
+          "properties": {
+            "groups": {
+              "type": "array",
+              "description": "List of Group objects.",
+              "items": {
+                "allOf" : [
+                  {
+                    "properties" : {
+                      "id" : {
+                        "type" : "string",
+                        "description": "Group ID"
+                      }
+                    }
+                  },
+                  {
+                    "$ref": "#/definitions/Group"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "GroupMember" : {
+      "type" : "object",
+      "description": "Group member object",
+      "properties": {
+        "id" : {
+          "type" : "string",
+          "description": "User ID"
+        },
+        "email" : {
+          "type" : "string",
+          "description": "User email"
+        },
+        "first_name" : {
+          "type" : "string",
+          "description": "User first name"
+        },
+        "last_name" : {
+          "type" : "string",
+          "description": "User last name"
+        },
+        "type" : {
+          "type" : "integer",
+          "description": "User type"
+        }
+      }
+    },
+    "GroupMemberList": {
+      "type": "object",
+      "title": "Group Member List",
+      "description": "List of Group Members",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Pagination"
+        },
+        {
+          "properties": {
+            "members": {
+              "type": "array",
+              "description": "List of Group member objects.",
+              "items": {
+                "$ref": "#/definitions/GroupMember"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "IMGroup" : {
+      "type" : "object",
+      "description" : "IM Group object",
+      "allOf" : [
+        {
+          "$ref": "#/definitions/Group"
+        },
+        {
+          "properties" : {
+            "type" : {
+              "type" : "string"
+            },
+            "search_by_domain" : {
+              "type" : "boolean"
+            },
+            "search_by_account" : {
+              "type" : "boolean"
+            },
+            "search_by_ma_account" : {
+              "type" : "boolean"
+            }
+          }
+        }
+      ]
+    },
+    "IMGroupList": {
+      "type": "object",
+      "title": "IM Group List",
+      "description": "List of IM Groups",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Pagination"
+        },
+        {
+          "properties": {
+            "groups": {
+              "type": "array",
+              "description": "List of Group objects.",
+              "items": {
+                "allOf" : [
+                  {
+                    "properties" : {
+                      "id" : {
+                        "type" : "string",
+                        "description": "IM Group ID"
+                      }
+                    }
+                  },
+                  {
+                    "$ref": "#/definitions/IMGroup"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
     "Meeting": {
       "type": "object",
       "description": "Meeting object",
@@ -2631,7 +3297,7 @@
     },
     "MeetingList": {
       "type": "object",
-      "title": "User List",
+      "title": "Group List",
       "description": "List of Meetings",
       "allOf": [
         {
@@ -3500,6 +4166,14 @@
   },
   "tags": [
     {
+      "name": "Accounts",
+      "description": "Account operations"
+    },
+    {
+      "name": "Billing",
+      "description": "Account Billing operations"
+    },
+    {
       "name": "User",
       "description": "User operations"
     },
@@ -3512,12 +4186,12 @@
       "description": "Webinar operations"
     },
     {
-      "name": "Accounts",
-      "description": "Account operations"
+      "name": "Group",
+      "description": "Group operations"
     },
     {
-      "name": "Billing",
-      "description": "Account Billing operations"
+      "name": "IM Group",
+      "description": "IM Group operations"
     },
     {
       "name": "TSP",
