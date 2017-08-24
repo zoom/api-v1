@@ -1,0 +1,32 @@
+## Activate a User
+
+Activate a user on Zoom, return the user ID.
+
+> Definition
+
+```shell
+POST <%= config[:api_host] %>user/activate
+```
+
+> Example Request
+
+```shell
+$ curl <%= config[:api_host] %>user/activate \
+    -X POST \
+    -d api_key=<%= config[:ex_api_key] %> \
+    -d api_secret=<%= config[:ex_api_secret] %> \
+    -d id=<%= config[:ex_uuid] %>
+```
+
+> Example Response
+
+```json
+{
+  "id": "<%= config[:ex_uuid] %>",
+  "activated_at": "2012-11-25T12:00:00Z"
+}
+```
+
+Arguments | &nbsp;
+--- | ---
+id **required** | User id.

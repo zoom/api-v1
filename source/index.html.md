@@ -28,6 +28,7 @@ includes:
     - user/update
     - user/update_password
     - user/upload_picture
+    - user/activate
     - user/deactivate
     - user/delete
     - user/delete_permanently

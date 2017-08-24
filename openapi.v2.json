@@ -4312,6 +4312,7 @@
                                                 "recording_end": "2014-11-06T04:24:10Z",
                                                 "file_type": "M4A",
                                                 "file_size": 432432,
+                                                "status" : "completed",
                                                 "play_url": "https://brand.zoom.us/recording/play/HzMyuI23bqxlJLVJLrww3L9ZuFeZEvYtG0vQ6pHhp6Twr6GPjX4Qks_CJak7jrU2",
                                                 "download_url": "https://brand.zoom.us/recording/download/HzMyuI23bqxlJLVJLrww3L9ZuFeZEvYtG0vQ6pHhp6Twr6GPjX4Qks_CJak7jrU2"
                                             }
@@ -5964,6 +5965,49 @@
                 }
             }
         },
+        "/user/activate": {
+            "post": {
+                "description": "Activate a user on Zoom, return the user ID.\n\n",
+                "tags": [
+                    "User"
+                ],
+                "operationId": "userActivate",
+                "parameters": [
+                    {
+                        "in": "formData",
+                        "type": "string",
+                        "name": "api_key",
+                        "required": true,
+                        "description": "Your API Key"
+                    },
+                    {
+                        "in": "formData",
+                        "type": "string",
+                        "name": "api_secret",
+                        "required": true,
+                        "description": "Your API Secret"
+                    },
+                    {
+                        "in": "formData",
+                        "type": "string",
+                        "name": "id",
+                        "required": true,
+                        "description": "User id."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "examples": {
+                            "application/json": {
+                                "id": "unique_id",
+                                "activated_at": "2012-11-25T12:00:00Z"
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/user/deactivate": {
             "post": {
                 "description": "Deactivate a user on Zoom, return the user ID.\n\n",
@@ -7062,6 +7106,12 @@
                         "type": "string",
                         "name": "imgroup_id",
                         "description": "IM Group ID. If set default im group, the parameter’s default value is the default im group."
+                    },
+                    {
+                        "in": "formData",
+                        "type": "string",
+                        "name": "cms_user_id",
+                        "description": "User ID on external CMS"
                     }
                 ],
                 "responses": {
