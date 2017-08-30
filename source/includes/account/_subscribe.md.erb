@@ -28,7 +28,7 @@ $ curl <%= config[:api_host] %>ma/account/plan/subscribe \
     -d country="US" \
     -d state="CA" \
     -d zip="95037" \
-    -d plan_base="monthly"
+    -d plan_base='{"type":"monthly","hosts":20}'
 ```
 
 ```javascript
@@ -44,7 +44,10 @@ var account = {
     country: "US",
     state: "CA",
     zip: "95037",
-    plan_base: "monthly",
+    plan_base: {
+        "type":"monthly",
+        "hosts":20
+    }
 }
 
 Zoom.account.planSubscribe(account, <%= config[:ex_node_res] %>);
