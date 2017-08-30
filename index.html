@@ -7500,6 +7500,7 @@ User created in this way has no password and is not able to log into the Zoom we
           </span><span class="s2">"recording_end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-11-06T04:24:10Z"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"file_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"M4A"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"file_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">432432</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"completed"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"play_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://brand.zoom.us/recording/play/HzMyuI23bqxlJLVJLrww3L9ZuFeZEvYtG0vQ6pHhp6Twr6GPjX4Qks_CJak7jrU2"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"download_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://brand.zoom.us/recording/download/HzMyuI23bqxlJLVJLrww3L9ZuFeZEvYtG0vQ6pHhp6Twr6GPjX4Qks_CJak7jrU2"</span><span class="w">
         </span><span class="p">}</span><span class="w">
@@ -7597,6 +7598,7 @@ User created in this way has no password and is not able to log into the Zoom we
       </span><span class="s2">"recording_end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-04-13T01:06:47Z"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"file_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MP4"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"file_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">438482</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"completed"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"play_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://brand.zoom.us/recording/play/HzMyuI23bqxlJLVJLrww3L9ZuFeZEvYtG0vQ6pHhp6Twr6GPjX4Qks_CJak7jrU2"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"download_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://brand.zoom.us/recording/download/HzMyuI23bqxlJLVJLrww3L9ZuFeZEvYtG0vQ6pHhp6Twr6GPjX4Qks_CJak7jrU2"</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -8313,7 +8315,7 @@ User created in this way has no password and is not able to log into the Zoom we
     -d <span class="nv">country</span><span class="o">=</span><span class="s2">"US"</span> <span class="se">\</span>
     -d <span class="nv">state</span><span class="o">=</span><span class="s2">"CA"</span> <span class="se">\</span>
     -d <span class="nv">zip</span><span class="o">=</span><span class="s2">"95037"</span> <span class="se">\</span>
-    -d <span class="nv">plan_base</span><span class="o">=</span><span class="s2">"monthly"</span>
+    -d <span class="nv">plan_base</span><span class="o">=</span><span class="s1">'{"type":"monthly","hosts":20}'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">Zoom</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"zoomus"</span><span class="p">)({</span>
     <span class="na">key</span> <span class="p">:</span> <span class="s2">"your_api_key"</span><span class="p">,</span>
     <span class="na">secret</span> <span class="p">:</span> <span class="s2">"your_api_secret"</span>
@@ -8329,7 +8331,10 @@ User created in this way has no password and is not able to log into the Zoom we
     <span class="na">country</span><span class="p">:</span> <span class="s2">"US"</span><span class="p">,</span>
     <span class="na">state</span><span class="p">:</span> <span class="s2">"CA"</span><span class="p">,</span>
     <span class="na">zip</span><span class="p">:</span> <span class="s2">"95037"</span><span class="p">,</span>
-    <span class="na">plan_base</span><span class="p">:</span> <span class="s2">"monthly"</span><span class="p">,</span>
+    <span class="na">plan_base</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"type"</span><span class="p">:</span><span class="s2">"monthly"</span><span class="p">,</span>
+        <span class="s2">"hosts"</span><span class="p">:</span><span class="mi">20</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="nx">Zoom</span><span class="p">.</span><span class="nx">account</span><span class="p">.</span><span class="nx">planSubscribe</span><span class="p">(</span><span class="nx">account</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
