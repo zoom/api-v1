@@ -22,6 +22,7 @@
       highlightOffset: 60,
       scrollTo: -1,
       scrollHistory: true,
+      labelSelector: 'header',
       hashGenerator: function (text, element) {
         return element.prop('id');
       }
@@ -49,7 +50,7 @@
     makeToc();
     animate();
     setupLanguages($('body').data('languages'));
-    $('.content').imagesLoaded( function() {
+    $('.content').show().imagesLoaded( function() {
       global.toc.calculateHeights();
     });
   });

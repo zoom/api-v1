@@ -23,8 +23,7 @@ under the License.
     <title><%= current_page.data.title || "API Documentation" %></title>
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro:400,400i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
     <style>
       <%= Rouge::Themes::MonokaiSublime.render(:scope => '.highlight') %>
     </style>
@@ -45,18 +44,10 @@ under the License.
       </span>
     </a>
     <div class="tocify-wrapper">
-      <%= image_tag "logo.png" %>
-      <% if language_tabs.any? %>
-        <div class="lang-selector">
-          <% language_tabs.each do |lang| %>
-            <% if lang.is_a? Hash %>
-              <a href="#" data-language-name="<%= lang.keys.first %>"><%= lang.values.first %></a>
-            <% else %>
-              <a href="#" data-language-name="<%= lang %>"><%= lang %></a>
-            <% end %>
-          <% end %>
+        <div class="logo">
+            <span class="site" href="/"></span>
+            <span class="api" href="/">api</span>
         </div>
-      <% end %>
       <% if current_page.data.search %>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">

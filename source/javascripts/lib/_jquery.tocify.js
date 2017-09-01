@@ -135,7 +135,10 @@
 
             // **highlightDefault**: Accepts a boolean: true or false
             // Set's the first TOC item as active if no other TOC item is active.
-            highlightDefault: true
+            highlightDefault: true,
+
+            //custom label selector
+            labelSelector: null
 
         },
 
@@ -268,6 +271,13 @@
 
                 // Add the created unordered list element to the HTML element calling the plugin
                 self.element.append(ul);
+
+
+                var prev = $(this).prev().prev()[0];
+                if( prev && prev.nodeName.toLowerCase() == 'header'){
+                    ul.before($("<span class='toc-label'>" + prev.innerText + "</span>"));
+                    $(prev).remove();
+                }
 
                 // Finds all of the HTML tags between the header and subheader elements
                 $(this).nextUntil(this.nodeName.toLowerCase()).each(function() {

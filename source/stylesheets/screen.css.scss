@@ -78,6 +78,33 @@ html, body {
     }
   }
 
+  &>.logo {
+
+    height: 22px;
+    margin: 15px;
+
+    span {
+      float: left;
+      display: block;
+      height: 20px;
+    }
+
+    .site {
+      width: 70px;
+      background-repeat: no-repeat;
+      background-image: url(/images/logo-blue.png);
+      background-size: contain;
+      margin-top: 4px;
+    }
+
+    .api {
+      font-size: 18px;
+      margin-left: 5px;
+      color: #909090;
+    }
+  }
+
+
   // This is the logo at the top of the ToC
   &>img {
     display: block;
@@ -152,6 +179,7 @@ html, body {
     overflow-x: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    font-weight: 600;
   }
 
   // The Table of Contents is composed of multiple nested
@@ -175,23 +203,22 @@ html, body {
   // This is the currently selected ToC entry
   .tocify-focus {
     box-shadow: 0px 1px 0px $nav-active-shadow;
-    background-color: $nav-active-bg;
-    color: $nav-active-text;
+    color: $nav-active-bg;
   }
 
   // Subheaders are the submenus that slide open
   // in the table of contents.
   .tocify-subheader {
     display: none; // tocify will override this when needed
-    background-color: $nav-subitem-bg;
     font-weight: 400;
     .tocify-item>a {
       padding-left: $nav-padding + $nav-indent;
       font-size: 13px;
+      font-weight: 400;
     }
 
     // for embossed look:
-    @include embossed-bg;
+    //@include embossed-bg;
     &>li:last-child {
       box-shadow: none; // otherwise it'll overflow out of the subheader
     }
@@ -200,7 +227,6 @@ html, body {
   .toc-footer {
     padding: 1em 0;
     margin-top: 1em;
-    border-top: 1px dashed $nav-footer-border-color;
 
     li,a {
       color: $nav-text;
@@ -209,6 +235,7 @@ html, body {
 
     a:hover {
       text-decoration: underline;
+      cursor: pointer;
     }
 
     li {
@@ -216,6 +243,16 @@ html, body {
       line-height: 1.7;
       text-decoration: none;
     }
+  }
+
+  .toc-label {
+    padding: 0 15px;
+    font-weight: 100;
+    margin-top: 30px;
+    display: block;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-bottom: 5px;
   }
 
 }
@@ -341,6 +378,7 @@ html, body {
   // to place content above the dark box
   position: relative;
   z-index: 30;
+  display: none;
 
   &:after {
     content: '';

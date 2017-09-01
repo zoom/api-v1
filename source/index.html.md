@@ -10,138 +10,140 @@ toc_footers:
   - <a href='https://github.com/zoom/api/issues'>Report An Issue</a>
 
 includes:
+
+    - reference/index
+    - reference/rate_limits
+    - reference/webhooks
     
-    - basics
+    - core/index
     
-    - rate_limits
+    - core/account/index
+    - core/account/create
+    - core/account/list
+    - core/account/get
+    - core/account/update
+    - core/account/delete
+    - core/account/subscribe
+    - core/account/add_plan
+    - core/account/get_plan
+    - core/account/update_plan
+    - core/account/update_billing
     
-    - webhook/index
+    - core/user/index
+    - core/user/create
+    - core/user/auto_create
+    - core/user/cust_create
+    - core/user/list
+    - core/user/list_pending
+    - core/user/get
+    - core/user/get_by_email
+    - core/user/update
+    - core/user/update_password
+    - core/user/upload_picture
+    - core/user/activate
+    - core/user/deactivate
+    - core/user/delete
+    - core/user/delete_permanently
+    - core/user/provision_sso
+    - core/user/revoke_sso
+    - core/user/set_assistant
+    - core/user/delete_assistant
+    - core/user/list_assistant
+    - core/user/check_email
+    - core/user/check_zpk
     
-    - user/index
-    - user/create
-    - user/auto_create
-    - user/cust_create
-    - user/list
-    - user/list_pending
-    - user/get
-    - user/get_by_email
-    - user/update
-    - user/update_password
-    - user/upload_picture
-    - user/activate
-    - user/deactivate
-    - user/delete
-    - user/delete_permanently
-    - user/provision_sso
-    - user/revoke_sso
-    - user/set_assistant
-    - user/delete_assistant
-    - user/list_assistant
-    - user/check_email
-    - user/check_zpk
+    - core/meeting/index
+    - core/meeting/create
+    - core/meeting/list
+    - core/meeting/list_live
+    - core/meeting/get
+    - core/meeting/update
+    - core/meeting/delete
+    - core/meeting/end
+    - core/meeting/registration
     
-    - meeting/index
-    - meeting/create
-    - meeting/list
-    - meeting/list_live
-    - meeting/get
-    - meeting/update
-    - meeting/delete
-    - meeting/end
-    - meeting/registration
+    - core/webinar/index
+    - core/webinar/create
+    - core/webinar/list
+    - core/webinar/get
+    - core/webinar/update
+    - core/webinar/delete
+    - core/webinar/end
+    - core/webinar/register
+    - core/webinar/list_registration
+    - core/webinar/get_registration
+    - core/webinar/delete_registration
+    - core/webinar/list_manual_registration
+    - core/webinar/approve_pending
+    - core/webinar/get_panelists
+    - core/webinar/get_ended_uuid
+    - core/webinar/get_ended_attendees
+    - core/webinar/get_ended_polls
+    - core/webinar/get_ended_qa
     
-    - report/index
-    - report/get_account
-    - report/get_audio
-    - report/get_daily
-    - report/get_user
+    - core/group/index
+    - core/group/create
+    - core/group/list
+    - core/group/get
+    - core/group/update
+    - core/group/delete
+    - core/group/list_members
+    - core/group/add_members
+    - core/group/delete_members
     
-    - group/index
-    - group/create
-    - group/list
-    - group/get
-    - group/update
-    - group/delete
-    - group/list_members
-    - group/add_members
-    - group/delete_members
+    - core/im_group/index
+    - core/im_group/create
+    - core/im_group/list
+    - core/im_group/get
+    - core/im_group/update
+    - core/im_group/delete
+    - core/im_group/list_members
+    - core/im_group/add_members
+    - core/im_group/delete_members
     
-    - im_group/index
-    - im_group/create
-    - im_group/list
-    - im_group/get
-    - im_group/update
-    - im_group/delete
-    - im_group/list_members
-    - im_group/add_members
-    - im_group/delete_members
+    - core/cloud_recording/index
+    - core/cloud_recording/list
+    - core/cloud_recording/list_for_mc
+    - core/cloud_recording/get
+    - core/cloud_recording/delete
     
-    - webinar/index
-    - webinar/create
-    - webinar/list
-    - webinar/get
-    - webinar/update
-    - webinar/delete
-    - webinar/end
-    - webinar/register
-    - webinar/list_registration
-    - webinar/get_registration
-    - webinar/delete_registration
-    - webinar/list_manual_registration
-    - webinar/approve_pending
-    - webinar/get_panelists
-    - webinar/get_ended_uuid
-    - webinar/get_ended_attendees
-    - webinar/get_ended_polls
-    - webinar/get_ended_qa
+    - core/device/index
+    - core/device/create
+    - core/device/list
+    - core/device/update
+    - core/device/delete
     
-    - dashboard/index
-    - dashboard/list-meeting
-    - dashboard/get-meeting
-    - dashboard/list-webinar
-    - dashboard/get-webinar
-    - dashboard/list-zoom-room
-    - dashboard/get-zoom-room
-    - dashboard/get-user-qos
-    - dashboard/get-crc-port-usage
-    - dashboard/get-im
+    - core/archived_chat_messages/index
+    - core/archived_chat_messages/list
+    - core/archived_chat_messages/get
     
-    - cloud_recording/index
-    - cloud_recording/list
-    - cloud_recording/list_for_mc
-    - cloud_recording/get
-    - cloud_recording/delete
+    - analytics/report/index
+    - analytics/report/get_account
+    - analytics/report/get_audio
+    - analytics/report/get_daily
+    - analytics/report/get_user
     
-    - archived_chat_messages/index
-    - archived_chat_messages/list
-    - archived_chat_messages/get
-    
-    - account/index
-    - account/create
-    - account/list
-    - account/get
-    - account/update
-    - account/delete
-    - account/subscribe
-    - account/add_plan
-    - account/get_plan
-    - account/update_plan
-    - account/update_billing
-    
-    - device/index
-    - device/create
-    - device/list
-    - device/update
-    - device/delete
+    - analytics/dashboard/index
+    - analytics/dashboard/list-meeting
+    - analytics/dashboard/get-meeting
+    - analytics/dashboard/list-webinar
+    - analytics/dashboard/get-webinar
+    - analytics/dashboard/list-zoom-room
+    - analytics/dashboard/get-zoom-room
+    - analytics/dashboard/get-user-qos
+    - analytics/dashboard/get-crc-port-usage
+    - analytics/dashboard/get-im
     
     - appendix/index
-    - appendix/plans
     - appendix/recurrence
-    - appendix/state
-    - appendix/country
-    - appendix/timezone
-    - appendix/tollfree_countries
-    - appendix/premium_countries
+    - appendix/plans
+    
+    - appendix/lists/index
+    - appendix/lists/state
+    - appendix/lists/country
+    - appendix/lists/timezone
+    - appendix/lists/tollfree_countries
+    - appendix/lists/premium_countries
 
 search: true
 ---
