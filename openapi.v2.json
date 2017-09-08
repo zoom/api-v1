@@ -648,19 +648,34 @@
                             "properties": {
                                 "name": {
                                     "type": "string",
-                                    "description": "IM Group name."
+                                    "description": "Group name, must be unique in one account",
+                                    "maxLength": 128
                                 },
                                 "type": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "description": "IM Group type",
+                                    "enum" : [
+                                        "normal",
+                                        "shared",
+                                        "restricted"
+                                    ],
+                                    "x-enum-descriptions" : [
+                                        "Only members can see the group automatically. Other people can search members in the group",
+                                        "All people in the account can see the group and members automatically",
+                                        "Nobody can see the group or search members except the members in the group"
+                                    ]
                                 },
                                 "search_by_domain": {
-                                    "type": "boolean"
+                                    "type": "boolean",
+                                    "description": "Members can search others in the same email domain"
                                 },
                                 "search_by_account": {
-                                    "type": "boolean"
+                                    "type": "boolean",
+                                    "description": "Members can search others under same account"
                                 },
                                 "search_by_ma_account": {
-                                    "type": "boolean"
+                                    "type": "boolean",
+                                    "description": "Members can search others under same master account, including all sub accounts"
                                 }
                             }
                         }
@@ -741,19 +756,34 @@
                             "properties": {
                                 "name": {
                                     "type": "string",
-                                    "description": "IM Group name."
+                                    "description": "Group name, must be unique in one account",
+                                    "maxLength": 128
                                 },
                                 "type": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "description": "IM Group type",
+                                    "enum" : [
+                                        "normal",
+                                        "shared",
+                                        "restricted"
+                                    ],
+                                    "x-enum-descriptions" : [
+                                        "Only members can see the group automatically. Other people can search members in the group",
+                                        "All people in the account can see the group and members automatically",
+                                        "Nobody can see the group or search members except the members in the group"
+                                    ]
                                 },
                                 "search_by_domain": {
-                                    "type": "boolean"
+                                    "type": "boolean",
+                                    "description": "Members can search others in the same email domain"
                                 },
                                 "search_by_account": {
-                                    "type": "boolean"
+                                    "type": "boolean",
+                                    "description": "Members can search others under same account"
                                 },
                                 "search_by_ma_account": {
-                                    "type": "boolean"
+                                    "type": "boolean",
+                                    "description": "Members can search others under same master account, including all sub accounts"
                                 }
                             }
                         }
@@ -1395,7 +1425,7 @@
                                     "$ref": "#/definitions/User"
                                 },
                                 {
-                                    "$ref": "#/definitions/UserDetails"
+                                    "$ref": "#/definitions/UserUpdate"
                                 }
                             ]
                         }
@@ -2266,6 +2296,7 @@
                     {
                         "in": "path",
                         "name": "panelistId",
+                        "description": "The panelist ID",
                         "type": "integer",
                         "required": true
                     }
@@ -3652,10 +3683,12 @@
             "description": "Panelist base object",
             "properties": {
                 "email": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Panelist's email"
                 },
                 "name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Panelist's full name"
                 }
             }
         },
@@ -3784,59 +3817,105 @@
         "Registrant": {
             "type": "object",
             "description": "Registrant base object",
+            "required": [
+                "email",
+                "first_name",
+                "last_name"
+            ],
             "properties": {
                 "email": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A valid email address"
                 },
                 "first_name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "User’s first name"
                 },
                 "last_name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "User’s last name"
                 },
                 "address": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Address"
                 },
                 "city": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "City"
                 },
                 "country": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Country"
                 },
                 "zip": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Zip/Postal Code"
                 },
                 "state": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "State/Province"
                 },
                 "phone": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Phone"
                 },
                 "industry": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Industry"
                 },
                 "org": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Organization"
                 },
                 "job_title": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Job Title"
                 },
                 "purchasing_time_frame": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Purchasing Time Frame",
+                    "enum" : [
+                        "Within a month",
+                        "1-3 months",
+                        "4-6 months",
+                        "More than 6 months",
+                        "No timeframe"
+                    ]
                 },
                 "role_in_purchase_process": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Role in Purchase Process",
+                    "enum" : [
+                        "Decision Maker",
+                        "Evaluator/Recommender",
+                        "Influencer",
+                        "Not involved"
+                    ]
                 },
                 "no_of_employees": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Number of Employees",
+                    "enum" : [
+                        "1-20",
+                        "21-50",
+                        "51-100",
+                        "101-500",
+                        "500-1,000",
+                        "1,001-5,000",
+                        "5,001-10,000",
+                        "More than 10,000"
+
+                    ]
                 },
                 "comments": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Questions & Comments"
                 },
                 "custom_questions": {
                     "type": "array",
+                    "description": "Custom Questions",
                     "items": {
-                        "$ref": "#/definitions/CustomQuestion"
+                        "$ref" : "#/definitions/CustomQuestion"
                     }
                 }
             }
@@ -4059,93 +4138,238 @@
             "title": "User settings",
             "type": "object",
             "properties": {
-                "feature": {
-                    "$ref": "#/definitions/UserSettingsFeature"
+                "scheduled_meeting": {
+                    "$ref": "#/definitions/UserSettingsScheduledMeeting"
                 },
-                "meeting": {
-                    "$ref": "#/definitions/UserSettingsMeeting"
+                "in_meeting": {
+                    "$ref": "#/definitions/UserSettingsInMeeting"
                 },
-                "notification": {
-                    "$ref": "#/definitions/UserSettingsNotification"
+                "email_notification": {
+                    "$ref": "#/definitions/UserSettingsEmailNotification"
                 },
                 "recording": {
                     "$ref": "#/definitions/UserSettingsRecording"
                 },
-                "_security": {
-                    "$ref": "#/definitions/UserSettingsSecurity"
+                "telephony": {
+                    "$ref": "#/definitions/UserSettingsTelephony"
+                },
+                "feature": {
+                    "$ref": "#/definitions/UserSettingsFeature"
                 }
             }
         },
-        "UserSettingsMeeting": {
+        "UserSettingsScheduledMeeting": {
             "title": "User settings: Meeting settings",
             "description": "",
             "type": "object",
             "properties": {
+                "host_video": {
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Host video"
+                },
+                "participants_video": {
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Participants video"
+                },
+                "audio_type": {
+                    "type": "string",
+                    "default": "",
+                    "description": "Meeting audio",
+                    "enum" : [
+                        "both",
+                        "telephony",
+                        "voip",
+                        "thirdParty",
+                        "none"
+                    ],
+                    "x-enum-descriptions" : [
+                        "Telephony and VoIP",
+                        "Audio PSTN telephony only",
+                        "VoIP only",
+                        "3rd party audio conference",
+                        "Disabled"
+                    ]
+                },
+                "join_before_host": {
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Join before host"
+                },
+                "enforce_login": {
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Only signed-in users can join meetings"
+                },
+                "not_store_meeting_topic": {
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Always display \"Zoom Meeting\" as the meeting topic"
+                },
+                "force_pmi_jbh_password": {
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Require a password for Personal Meetings if attendees can join before host"
+                },
+                "pstn_password_protected": {
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Generate and require password for participants joining by phone"
+                }
+            }
+        },
+        "UserSettingsInMeeting": {
+            "title": "User settings: Meeting settings",
+            "description": "",
+            "type": "object",
+            "properties": {
+                "e2e_encryption": {
+                    "type": "boolean",
+                    "default": "",
+                    "description": "End-to-end encryption"
+                },
                 "chat": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Chat"
                 },
                 "private_chat": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Private chat"
                 },
                 "auto_saving_chat": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Auto saving chats"
                 },
-                "attendee_on_hold": {
-                    "type": "boolean"
-                },
-                "entry_exit_chime_host": {
-                    "type": "boolean"
-                },
-                "entry_exit_chime_all": {
-                    "type": "boolean"
+                "entry_exit_chime": {
+                    "type": "string",
+                    "default": "",
+                    "description": "Play sound on join/leave",
+                    "enum" : [
+                        "host",
+                        "all",
+                        "none"
+                    ],
+                    "x-enum-descriptions" : [
+                        "when host joins/leaves",
+                        "when any participant joins/leaves",
+                        "no join/leave sound"
+                    ]
                 },
                 "record_play_voice": {
-                    "type": "boolean"
-                },
-                "group_hd": {
-                    "type": "boolean"
-                },
-                "feedback": {
-                    "type": "boolean"
-                },
-                "co_host": {
-                    "type": "boolean"
-                },
-                "annotation": {
-                    "type": "boolean"
-                },
-                "polling": {
-                    "type": "boolean"
-                },
-                "non_verbal_feedback": {
-                    "type": "boolean"
-                },
-                "breakout_room": {
-                    "type": "boolean"
-                },
-                "remote_support": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Record and play their own voice"
                 },
                 "file_transfer": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "default": "",
+                    "description": "File transfer"
                 },
-                "virtual_background": {
-                    "type": "boolean"
+                "feedback": {
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Feedback to Zoom"
+                },
+                "co_host": {
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Co-host"
+                },
+                "polling": {
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Polling"
+                },
+                "attendee_on_hold": {
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Allow host to put attendee on hold"
+                },
+                "annotation": {
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Annotation"
+                },
+                "non_verbal_feedback": {
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Non-verbal feedback"
+                },
+                "breakout_room": {
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Breakout room"
+                },
+                "remote_support": {
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Remote support"
                 },
                 "closed_caption": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Closed caption"
+                },
+                "group_hd": {
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Group HD video"
+                },
+                "virtual_background": {
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Virtual background"
                 },
                 "far_end_camera_control": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Far end camera control"
                 },
                 "share_dual_camera": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Share dual camera"
                 },
                 "attention_tracking": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Attention tracking"
                 },
                 "waiting_room": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Waiting room"
+                },
+                "manage_zr": {
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Manage Zoom Rooms"
+                }
+            }
+        },
+        "UserSettingsEmailNotification": {
+            "title": "User settings: Notification settings",
+            "description": "",
+            "type": "object",
+            "properties": {
+                "jbh_reminder": {
+                    "type": "boolean",
+                    "default": "",
+                    "description": "When attendees join meeting before host"
+                },
+                "cancel_meeting_reminder": {
+                    "type": "boolean",
+                    "default": "",
+                    "description": "When a meeting is cancelled"
+                },
+                "alternative_host_reminder": {
+                    "type": "boolean",
+                    "default": "",
+                    "description": "When an alternative host is set or removed from a meeting"
                 }
             }
         },
@@ -4155,66 +4379,96 @@
             "type": "object",
             "properties": {
                 "local_recording": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Local recording"
                 },
                 "cloud_recording": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Cloud recording"
                 },
                 "record_speaker_view": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Record the active speaker view"
                 },
                 "record_gallery_view": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Record the gallery view"
                 },
                 "record_audio_file": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Record an audio only file"
                 },
                 "save_chat_text": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Save chat text from the meeting"
                 },
                 "show_timestamp": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Show timestamp on video"
                 },
-                "local_auto_recording": {
-                    "type": "boolean"
+                "recording_audio_transcript": {
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Audio transcript"
+                },
+                "auto_recording": {
+                    "type": "string",
+                    "default": "",
+                    "description": "Automatic recording",
+                    "enum" : [
+                        "Record on local",
+                        "Record on cloud",
+                        "Disabled"
+                    ],
+                    "x-enum-descriptions" : [
+                        "local",
+                        "cloud",
+                        "none"
+                    ]
                 },
                 "cloud_auto_recording": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Automatic recording on cloud"
                 },
                 "auto_delete_cmr": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Auto delete cloud recordings"
                 },
                 "auto_delete_cmr_days": {
-                    "type": "integer"
+                    "type": "int",
+                    "default": "",
+                    "description": "Auto delete cloud recordings after days"
                 }
             }
         },
-        "UserSettingsNotification": {
-            "title": "User settings: Notification settings",
+        "UserSettingsTelephony": {
+            "title": "User settings: Meeting settings",
             "description": "",
             "type": "object",
             "properties": {
-                "jbh_reminder": {
-                    "type": "boolean"
+                "third_party_audio": {
+                    "type": "boolean",
+                    "default": "",
+                    "description": "3rd party audio conference"
                 },
-                "cancel_meeting_reminder": {
-                    "type": "boolean"
+                "audio_conference_info": {
+                    "type": "string",
+                    "default": "",
+                    "description": "3rd party audio conference info"
                 },
-                "alternative_host_reminder": {
-                    "type": "boolean"
-                }
-            }
-        },
-        "UserSettingsSecurity": {
-            "title": "User settings: Security settings",
-            "description": "",
-            "type": "object",
-            "properties": {
-                "e2e_encryption": {
-                    "type": "boolean"
-                },
-                "pstn_password_protected": {
-                    "type": "boolean"
+                "show_international_numbers_link": {
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Show international numbers link on the invitation email"
                 }
             }
         },
@@ -4224,19 +4478,56 @@
             "type": "object",
             "properties": {
                 "meeting_capacity": {
-                    "type": "integer"
+                    "type": "int",
+                    "default": "",
+                    "description": "User’s meeting capacity."
                 },
                 "large_meeting": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Large meting feature"
                 },
                 "large_meeting_capacity": {
-                    "type": "integer"
+                    "type": "int",
+                    "default": "",
+                    "description": "Large meeting capacity, can be 100, 200, 300 or 500, depends on if having related large meeting capacity plan subscription or not."
                 },
                 "webinar": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Webinar feature"
                 },
                 "webinar_capacity": {
-                    "type": "integer"
+                    "type": "boolean",
+                    "default": "",
+                    "description": "Webinar capacity, can be 100, 500, 1000, 3000, 5000 or 10000, depends on if having related webinar capacity plan subscription or not."
+                }
+            }
+        },
+        "UserUpdate": {
+            "title": "User object with details",
+            "description": "Reference to a User object with details.",
+            "type": "object",
+            "properties": {
+                "timezone": {
+                    "type": "string",
+                    "description": "The time zone id for user profile"
+                },
+                "dept": {
+                    "type": "string",
+                    "description": "Department for user profile, used for reports."
+                },
+                "vanity_url": {
+                    "type": "string",
+                    "description": "Personal meeting room name"
+                },
+                "host_key": {
+                    "type": "string",
+                    "description": "Host Key, should be 6-digit number"
+                },
+                "cms_user_id": {
+                    "type": "string",
+                    "description": "Kaltura User Id"
                 }
             }
         },

@@ -22,38 +22,42 @@ $ curl https://api.zoom.us/v2/users/{userId}/settings
 
 ```json
 {
-    "feature": {
-        "meeting_capacity": "integer",
-        "large_meeting": "boolean",
-        "large_meeting_capacity": "integer",
-        "webinar": "boolean",
-        "webinar_capacity": "integer"
+    "scheduled_meeting": {
+        "host_video": "boolean",
+        "participants_video": "boolean",
+        "audio_type": "string",
+        "join_before_host": "boolean",
+        "enforce_login": "boolean",
+        "not_store_meeting_topic": "boolean",
+        "force_pmi_jbh_password": "boolean",
+        "pstn_password_protected": "boolean"
     },
-    "meeting": {
+    "in_meeting": {
+        "e2e_encryption": "boolean",
         "chat": "boolean",
         "private_chat": "boolean",
         "auto_saving_chat": "boolean",
-        "attendee_on_hold": "boolean",
-        "entry_exit_chime_host": "boolean",
-        "entry_exit_chime_all": "boolean",
+        "entry_exit_chime": "string",
         "record_play_voice": "boolean",
-        "group_hd": "boolean",
+        "file_transfer": "boolean",
         "feedback": "boolean",
         "co_host": "boolean",
-        "annotation": "boolean",
         "polling": "boolean",
+        "attendee_on_hold": "boolean",
+        "annotation": "boolean",
         "non_verbal_feedback": "boolean",
         "breakout_room": "boolean",
         "remote_support": "boolean",
-        "file_transfer": "boolean",
-        "virtual_background": "boolean",
         "closed_caption": "boolean",
+        "group_hd": "boolean",
+        "virtual_background": "boolean",
         "far_end_camera_control": "boolean",
         "share_dual_camera": "boolean",
         "attention_tracking": "boolean",
-        "waiting_room": "boolean"
+        "waiting_room": "boolean",
+        "manage_zr": "boolean"
     },
-    "notification": {
+    "email_notification": {
         "jbh_reminder": "boolean",
         "cancel_meeting_reminder": "boolean",
         "alternative_host_reminder": "boolean"
@@ -66,14 +70,23 @@ $ curl https://api.zoom.us/v2/users/{userId}/settings
         "record_audio_file": "boolean",
         "save_chat_text": "boolean",
         "show_timestamp": "boolean",
-        "local_auto_recording": "boolean",
+        "recording_audio_transcript": "boolean",
+        "auto_recording": "string",
         "cloud_auto_recording": "boolean",
         "auto_delete_cmr": "boolean",
-        "auto_delete_cmr_days": "integer"
+        "auto_delete_cmr_days": "int"
     },
-    "_security": {
-        "e2e_encryption": "boolean",
-        "pstn_password_protected": "boolean"
+    "telephony": {
+        "third_party_audio": "boolean",
+        "audio_conference_info": "string",
+        "show_international_numbers_link": "boolean"
+    },
+    "feature": {
+        "meeting_capacity": "int",
+        "large_meeting": "boolean",
+        "large_meeting_capacity": "int",
+        "webinar": "boolean",
+        "webinar_capacity": "boolean"
     }
 }
 ```
@@ -81,8 +94,4 @@ $ curl https://api.zoom.us/v2/users/{userId}/settings
 Path Arguments | &nbsp;
 --- | ---
 userId **required** | The user ID
-
-Query Arguments | &nbsp;
---- | ---
-login_type | 
 
