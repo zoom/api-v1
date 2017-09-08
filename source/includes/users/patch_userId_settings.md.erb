@@ -1,0 +1,127 @@
+## Update a user's settings
+
+Update a user's settings
+
+> Definition
+
+```shell
+PATCH https://api.zoom.us/v2/users/{userId}/settings
+```
+
+> Example Request
+
+```shell
+$ curl https://api.zoom.us/v2/users/{userId}/settings \
+   -d '{
+    "feature": {
+        "meeting_capacity": "integer",
+        "large_meeting": "boolean",
+        "large_meeting_capacity": "integer",
+        "webinar": "boolean",
+        "webinar_capacity": "integer"
+    },
+    "meeting": {
+        "chat": "boolean",
+        "private_chat": "boolean",
+        "auto_saving_chat": "boolean",
+        "attendee_on_hold": "boolean",
+        "entry_exit_chime_host": "boolean",
+        "entry_exit_chime_all": "boolean",
+        "record_play_voice": "boolean",
+        "group_hd": "boolean",
+        "feedback": "boolean",
+        "co_host": "boolean",
+        "annotation": "boolean",
+        "polling": "boolean",
+        "non_verbal_feedback": "boolean",
+        "breakout_room": "boolean",
+        "remote_support": "boolean",
+        "file_transfer": "boolean",
+        "virtual_background": "boolean",
+        "closed_caption": "boolean",
+        "far_end_camera_control": "boolean",
+        "share_dual_camera": "boolean",
+        "attention_tracking": "boolean",
+        "waiting_room": "boolean"
+    },
+    "notification": {
+        "jbh_reminder": "boolean",
+        "cancel_meeting_reminder": "boolean",
+        "alternative_host_reminder": "boolean"
+    },
+    "recording": {
+        "local_recording": "boolean",
+        "cloud_recording": "boolean",
+        "record_speaker_view": "boolean",
+        "record_gallery_view": "boolean",
+        "record_audio_file": "boolean",
+        "save_chat_text": "boolean",
+        "show_timestamp": "boolean",
+        "local_auto_recording": "boolean",
+        "cloud_auto_recording": "boolean",
+        "auto_delete_cmr": "boolean",
+        "auto_delete_cmr_days": "integer"
+    },
+    "_security": {
+        "e2e_encryption": "boolean",
+        "pstn_password_protected": "boolean"
+    }
+}'
+```
+
+> Example Response
+
+```text
+204 No Content
+```
+
+Path Arguments | &nbsp;
+--- | ---
+userId **required** | The user ID
+
+Body Arguments | &nbsp;
+--- | ---
+feature.meeting_capacity | 
+feature.large_meeting | 
+feature.large_meeting_capacity | 
+feature.webinar | 
+feature.webinar_capacity | 
+meeting.chat | 
+meeting.private_chat | 
+meeting.auto_saving_chat | 
+meeting.attendee_on_hold | 
+meeting.entry_exit_chime_host | 
+meeting.entry_exit_chime_all | 
+meeting.record_play_voice | 
+meeting.group_hd | 
+meeting.feedback | 
+meeting.co_host | 
+meeting.annotation | 
+meeting.polling | 
+meeting.non_verbal_feedback | 
+meeting.breakout_room | 
+meeting.remote_support | 
+meeting.file_transfer | 
+meeting.virtual_background | 
+meeting.closed_caption | 
+meeting.far_end_camera_control | 
+meeting.share_dual_camera | 
+meeting.attention_tracking | 
+meeting.waiting_room | 
+notification.jbh_reminder | 
+notification.cancel_meeting_reminder | 
+notification.alternative_host_reminder | 
+recording.local_recording | 
+recording.cloud_recording | 
+recording.record_speaker_view | 
+recording.record_gallery_view | 
+recording.record_audio_file | 
+recording.save_chat_text | 
+recording.show_timestamp | 
+recording.local_auto_recording | 
+recording.cloud_auto_recording | 
+recording.auto_delete_cmr | 
+recording.auto_delete_cmr_days | 
+_security.e2e_encryption | 
+_security.pstn_password_protected | 
+

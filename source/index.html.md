@@ -1,149 +1,116 @@
 ---
 title: Zoom REST API
 
+search: true
+
 language_tabs:
   - shell: curl
-  - javascript: Node
 
 toc_footers:
-  - <a href='https://zoom.us/developer'>Zoom Developers</a>
+  - <a href='https://developer.zoom.us/'>Zoom Developers</a>
   - <a href='https://github.com/zoom/api/issues'>Report An Issue</a>
 
 includes:
+  - reference/index
+  - reference/webhooks
+  - reference/rate_limits
+  - reference/before_core
 
-    - reference/index
-    - reference/rate_limits
-    - reference/webhooks
-    
-    - core/index
-    
-    - core/account/index
-    - core/account/create
-    - core/account/list
-    - core/account/get
-    - core/account/update
-    - core/account/delete
-    - core/account/subscribe
-    - core/account/add_plan
-    - core/account/get_plan
-    - core/account/update_plan
-    - core/account/update_billing
-    
-    - core/user/index
-    - core/user/create
-    - core/user/auto_create
-    - core/user/cust_create
-    - core/user/list
-    - core/user/list_pending
-    - core/user/get
-    - core/user/get_by_email
-    - core/user/update
-    - core/user/update_password
-    - core/user/upload_picture
-    - core/user/activate
-    - core/user/deactivate
-    - core/user/delete
-    - core/user/delete_permanently
-    - core/user/provision_sso
-    - core/user/revoke_sso
-    - core/user/set_assistant
-    - core/user/delete_assistant
-    - core/user/list_assistant
-    - core/user/check_email
-    - core/user/check_zpk
-    
-    - core/meeting/index
-    - core/meeting/create
-    - core/meeting/list
-    - core/meeting/list_live
-    - core/meeting/get
-    - core/meeting/update
-    - core/meeting/delete
-    - core/meeting/end
-    - core/meeting/registration
-    
-    - core/webinar/index
-    - core/webinar/create
-    - core/webinar/list
-    - core/webinar/get
-    - core/webinar/update
-    - core/webinar/delete
-    - core/webinar/end
-    - core/webinar/register
-    - core/webinar/list_registration
-    - core/webinar/get_registration
-    - core/webinar/delete_registration
-    - core/webinar/list_manual_registration
-    - core/webinar/approve_pending
-    - core/webinar/get_panelists
-    - core/webinar/get_ended_uuid
-    - core/webinar/get_ended_attendees
-    - core/webinar/get_ended_polls
-    - core/webinar/get_ended_qa
-    
-    - core/group/index
-    - core/group/create
-    - core/group/list
-    - core/group/get
-    - core/group/update
-    - core/group/delete
-    - core/group/list_members
-    - core/group/add_members
-    - core/group/delete_members
-    
-    - core/im_group/index
-    - core/im_group/create
-    - core/im_group/list
-    - core/im_group/get
-    - core/im_group/update
-    - core/im_group/delete
-    - core/im_group/list_members
-    - core/im_group/add_members
-    - core/im_group/delete_members
-    
-    - core/cloud_recording/index
-    - core/cloud_recording/list
-    - core/cloud_recording/list_for_mc
-    - core/cloud_recording/get
-    - core/cloud_recording/delete
-    
-    - core/device/index
-    - core/device/create
-    - core/device/list
-    - core/device/update
-    - core/device/delete
-    
-    - core/archived_chat_messages/index
-    - core/archived_chat_messages/list
-    - core/archived_chat_messages/get
-    
-    - analytics/report/index
-    - analytics/report/get_account
-    - analytics/report/get_audio
-    - analytics/report/get_daily
-    - analytics/report/get_user
-    
-    - analytics/dashboard/index
-    - analytics/dashboard/list-meeting
-    - analytics/dashboard/get-meeting
-    - analytics/dashboard/list-webinar
-    - analytics/dashboard/get-webinar
-    - analytics/dashboard/list-zoom-room
-    - analytics/dashboard/get-zoom-room
-    - analytics/dashboard/get-user-qos
-    - analytics/dashboard/get-crc-port-usage
-    - analytics/dashboard/get-im
-    
-    - appendix/index
-    - appendix/recurrence
-    - appendix/plans
-    
-    - appendix/lists/index
-    - appendix/lists/state
-    - appendix/lists/country
-    - appendix/lists/timezone
-    - appendix/lists/tollfree_countries
-    - appendix/lists/premium_countries
+  - accounts/index
+  - accounts/get_
+  - accounts/post_
+  - accounts/get_accountId
+  - accounts/delete_accountId
+  - accounts/patch_accountId_options
+  - accounts/get_accountId_settings
+  - accounts/patch_accountId_settings
+  - accounts/get_accountId_billing
+  - accounts/patch_accountId_billing
+  - accounts/get_accountId_plans
+  - accounts/put_accountId_plans
 
-search: true
+  - users/index
+  - users/get_
+  - users/post_
+  - users/get_userId
+  - users/patch_userId
+  - users/delete_userId
+  - users/get_userId_assistants
+  - users/post_userId_assistants
+  - users/delete_userId_assistants
+  - users/delete_userId_assistants_assistantId
+  - users/put_userId_picture
+  - users/get_userId_settings
+  - users/patch_userId_settings
+  - users/put_userId_status
+  - users/delete_userId_ssoToken
+  - users/get_userId_token
+  - users/get_userId_zpk
+
+  - meetings/index
+  - meetings/get_userId_meetings
+  - meetings/post_userId_meetings
+  - meetings/get_meetingId
+  - meetings/patch_meetingId
+  - meetings/delete_meetingId
+  - meetings/put_meetingId_status
+  - meetings/get_meetingId_registrants
+  - meetings/post_meetingId_registrants
+  - meetings/put_meetingId_registrants_registrantId_status
+
+  - webinars/index
+  - webinars/get_userId_webinars
+  - webinars/post_userId_webinars
+  - webinars/get_webinarId
+  - webinars/patch_webinarId
+  - webinars/delete_webinarId
+  - webinars/put_webinarId_status
+  - webinars/get_webinarId_panelists
+  - webinars/post_webinarId_panelists
+  - webinars/delete_webinarId_panelists
+  - webinars/delete_webinarId_panelists_panelistId
+  - webinars/get_webinarId_registrants
+  - webinars/post_webinarId_registrants
+  - webinars/put_webinarId_registrants_registrantId_status
+
+  - groups/index
+  - groups/get_
+  - groups/post_
+  - groups/get_groupId
+  - groups/patch_groupId
+  - groups/delete_groupId
+  - groups/get_groupId_members
+  - groups/post_groupId_members
+  - groups/delete_groupId_members_userId
+
+  - im_groups/index
+  - im_groups/get_
+  - im_groups/post_
+  - im_groups/get_groupId
+  - im_groups/patch_groupId
+  - im_groups/delete_groupId
+  - im_groups/get_groupId_members
+  - im_groups/post_groupId_members
+  - im_groups/delete_groupId_members_userId
+
+  - tsp/index
+  - tsp/get_userId_tsp
+  - tsp/post_userId_tsp
+  - tsp/get_userId_tsp_tspId
+  - tsp/patch_userId_tsp_tspId
+  - tsp/delete_userId_tsp_tspId
+
+  - zoom_rooms/index
+  - zoom_rooms/post_userId_meetings
+
+  - appendix/index
+  - appendix/recurrence
+  - appendix/plans
+  - appendix/lists/index
+  - appendix/lists/state
+  - appendix/lists/country
+  - appendix/lists/timezone
+  - appendix/lists/tollfree_countries
+  - appendix/lists/premium_countries
+
 ---

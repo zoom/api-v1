@@ -1,0 +1,37 @@
+## Create an IM Group
+
+Create a IM Group under your account
+
+> Definition
+
+```shell
+POST https://api.zoom.us/v2/im_groups
+```
+
+> Example Request
+
+```shell
+$ curl https://api.zoom.us/v2/im_groups \
+   -d '{
+    "name": "string",
+    "type": "string",
+    "search_by_domain": "boolean",
+    "search_by_account": "boolean",
+    "search_by_ma_account": "boolean"
+}'
+```
+
+> Example Response
+
+```text
+201 Created
+```
+
+Body Arguments | &nbsp;
+--- | ---
+name | IM Group name.
+type | 
+search_by_domain | 
+search_by_account | 
+search_by_ma_account | 
+

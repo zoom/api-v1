@@ -30,7 +30,8 @@
     "paths": {
         "/accounts": {
             "get": {
-                "description": "List all Accounts.",
+                "summary" : "List accounts",
+                "description" : "List the sub accounts under the master account",
                 "tags": [
                     "Accounts"
                 ],
@@ -53,7 +54,8 @@
                 }
             },
             "post": {
-                "description": "Create an account",
+                "summary": "Create an account",
+                "description" : "Create a sub account under the master account",
                 "tags": [
                     "Accounts"
                 ],
@@ -95,7 +97,8 @@
         },
         "/accounts/{accountId}": {
             "get": {
-                "description": "List an account",
+                "summary": "Retrieve an account",
+                "description" : "Retrieve a sub account under the master account",
                 "tags": [
                     "Accounts"
                 ],
@@ -143,7 +146,8 @@
                 }
             },
             "delete": {
-                "description": "Delete an account",
+                "summary": "Delete an account",
+                "description" : "Delete a sub account under the master account",
                 "tags": [
                     "Accounts"
                 ],
@@ -165,7 +169,8 @@
         },
         "/accounts/{accountId}/options": {
             "patch": {
-                "description": "Update an account",
+                "summary": "Update an account's options",
+                "description" : "Update a sub account's options under the master account",
                 "tags": [
                     "Accounts"
                 ],
@@ -195,7 +200,8 @@
         },
         "/accounts/{accountId}/settings": {
             "get": {
-                "description": "Get an account's settings",
+                "summary": "Retrieve an account's settings",
+                "description" : "Retrieve a sub account's settings under the master account",
                 "tags": [
                     "Accounts"
                 ],
@@ -218,7 +224,8 @@
                 }
             },
             "patch": {
-                "description": "Update an account's settings",
+                "summary": "Update an account's settings",
+                "description" : "Update a sub account's settings under the master account",
                 "tags": [
                     "Accounts"
                 ],
@@ -248,9 +255,10 @@
         },
         "/accounts/{accountId}/billing": {
             "get": {
-                "description": "Get an account's billing information",
+                "summary": "Retrieve an account's billing information",
+                "description" : "Retrieve a sub account's billing information under the master account",
                 "tags": [
-                    "Billing"
+                    "Accounts"
                 ],
                 "operationId": "accountBilling",
                 "parameters": [
@@ -271,9 +279,10 @@
                 }
             },
             "patch": {
-                "description": "Update an account's billing information",
+                "summary": "Update an account's billing information",
+                "description" : "Update a sub account's billing information under the master account",
                 "tags": [
-                    "Billing"
+                    "Accounts"
                 ],
                 "operationId": "accountBillingUpdate",
                 "parameters": [
@@ -301,9 +310,10 @@
         },
         "/accounts/{accountId}/plans": {
             "get": {
-                "description": "Get an account's plans",
+                "summary": "Retrieve an account's plans",
+                "description" : "Retrieve a sub account's plans under the master account",
                 "tags": [
-                    "Billing"
+                    "Accounts"
                 ],
                 "operationId": "accountPlans",
                 "parameters": [
@@ -324,9 +334,10 @@
                 }
             },
             "put": {
-                "description": "Add to an account's plans",
+                "summary": "Add to an account's plans",
+                "description" : "Add a plan to sub account under the master account",
                 "tags": [
-                    "Billing"
+                    "Accounts"
                 ],
                 "operationId": "accountPlanAdd",
                 "parameters": [
@@ -351,9 +362,10 @@
         },
         "/groups": {
             "get": {
-                "description": "List groups on your account.",
+                "summary": "List groups",
+                "description" : "List groups under your account",
                 "tags": [
-                    "Group"
+                    "Groups"
                 ],
                 "parameters": [
                     {
@@ -373,9 +385,10 @@
                 }
             },
             "post": {
-                "description": "Create a group",
+                "summary": "Create a group",
+                "description" : "Create a group under your account",
                 "tags": [
-                    "Group"
+                    "Groups"
                 ],
                 "parameters": [
                     {
@@ -415,9 +428,10 @@
         },
         "/groups/{groupId}": {
             "get": {
-                "description": "Get a group by ID",
+                "summary": "Retrieve a group",
+                "description" : "Retrieve a group under your account",
                 "tags": [
-                    "Group"
+                    "Groups"
                 ],
                 "parameters": [
                     {
@@ -449,9 +463,10 @@
                 }
             },
             "patch": {
-                "description": "Update a group",
+                "summary": "Update a group",
+                "description" : "Update a group under your account",
                 "tags": [
-                    "Group"
+                    "Groups"
                 ],
                 "parameters": [
                     {
@@ -481,9 +496,10 @@
                 }
             },
             "delete": {
-                "description": "Delete a group",
+                "summary": "Delete a group",
+                "description" : "Delete a group under your account",
                 "tags": [
-                    "Group"
+                    "Groups"
                 ],
                 "parameters": [
                     {
@@ -502,9 +518,10 @@
         },
         "/groups/{groupId}/members": {
             "get": {
-                "description": "Get a group's members",
+                "summary": "List a group's members",
+                "description" : "List a group's members under your account",
                 "tags": [
-                    "Group"
+                    "Groups"
                 ],
                 "parameters": [
                     {
@@ -530,9 +547,10 @@
                 }
             },
             "post": {
-                "description": "Update a group",
+                "summary": "Add a group member",
+                "description" : "Add a member to a group under your account",
                 "tags": [
-                    "Group"
+                    "Groups"
                 ],
                 "parameters": [
                     {
@@ -568,9 +586,10 @@
         },
         "/groups/{groupId}/members/{userId}": {
             "delete": {
-                "description": "Delete a group member",
+                "summary": "Delete a group member",
+                "description" : "Delete a member from a group under your account",
                 "tags": [
-                    "Group"
+                    "Groups"
                 ],
                 "parameters": [
                     {
@@ -592,9 +611,10 @@
         },
         "/im_groups": {
             "get": {
-                "description": "List IM Groups on your account.",
+                "summary": "List IM Groups",
+                "description" : "List IM groups under your account",
                 "tags": [
-                    "IM Group"
+                    "IM Groups"
                 ],
                 "parameters": [
                     {
@@ -614,9 +634,10 @@
                 }
             },
             "post": {
-                "description": "Create an IM Group",
+                "summary": "Create an IM Group",
+                "description" : "Create a IM Group under your account",
                 "tags": [
-                    "IM Group"
+                    "IM Groups"
                 ],
                 "parameters": [
                     {
@@ -668,9 +689,10 @@
         },
         "/im_groups/{groupId}": {
             "get": {
-                "description": "Get a IM Group by ID",
+                "summary": "Retrieve an IM Group",
+                "description" : "Retrieve an IM Group under your account",
                 "tags": [
-                    "IM Group"
+                    "IM Groups"
                 ],
                 "parameters": [
                     {
@@ -702,9 +724,10 @@
                 }
             },
             "patch": {
-                "description": "Update an IM Group",
+                "summary": "Update an IM Group",
+                "description" : "Update an IM Group under your account",
                 "tags": [
-                    "IM Group"
+                    "IM Groups"
                 ],
                 "parameters": [
                     {
@@ -746,9 +769,10 @@
                 }
             },
             "delete": {
-                "description": "Delete an IM Group",
+                "summary": "Delete an IM Group",
+                "description" : "Delete an IM Group under your account",
                 "tags": [
-                    "IM Group"
+                    "IM Groups"
                 ],
                 "parameters": [
                     {
@@ -767,9 +791,10 @@
         },
         "/im_groups/{groupId}/members": {
             "get": {
-                "description": "Get a IM Group's members",
+                "summary": "List an IM Group's members",
+                "description" : "List an IM Group's members under your account",
                 "tags": [
-                    "IM Group"
+                    "IM Groups"
                 ],
                 "parameters": [
                     {
@@ -795,9 +820,10 @@
                 }
             },
             "post": {
-                "description": "Update an IM Group",
+                "summary": "Add an IM Group member",
+                "description" : "Add a member to an IM Group under your account",
                 "tags": [
-                    "IM Group"
+                    "IM Groups"
                 ],
                 "parameters": [
                     {
@@ -833,9 +859,10 @@
         },
         "/im_groups/{groupId}/members/{userId}": {
             "delete": {
-                "description": "Delete a IM Group member",
+                "summary": "Delete an IM Group member",
+                "description" : "Delete a member from an IM Group under your account",
                 "tags": [
-                    "IM Group"
+                    "IM Groups"
                 ],
                 "parameters": [
                     {
@@ -857,9 +884,10 @@
         },
         "/users/{userId}/meetings": {
             "get": {
-                "description": "Get a user's meeting",
+                "summary": "List meetings",
+                "description": "List meetings for a user",
                 "tags": [
-                    "Meeting"
+                    "Meetings"
                 ],
                 "operationId": "userGetMeetings",
                 "parameters": [
@@ -889,9 +917,10 @@
                 }
             },
             "post": {
-                "description": "Create meeting",
+                "summary": "Create a meeting",
+                "description": "Create a meeting for a user",
                 "tags": [
-                    "Meeting"
+                    "Meetings"
                 ],
                 "operationId": "userCreateMeetings",
                 "parameters": [
@@ -934,14 +963,15 @@
         },
         "/meetings/{meetingId}": {
             "get": {
-                "description": "Get a meeting",
+                "summary": "Retrieve a meeting",
+                "description": "Retrieve a meeting's details",
                 "tags": [
-                    "Meeting"
+                    "Meetings"
                 ],
                 "operationId": "meetingGet",
                 "parameters": [
                     {
-                        "$ref": "#/parameters/MeetingNumber"
+                        "$ref": "#/parameters/MeetingID"
                     }
                 ],
                 "responses": {
@@ -978,14 +1008,15 @@
                 }
             },
             "patch": {
-                "description": "Update a meeting",
+                "summary": "Update a meeting",
+                "description": "Update a meeting's details",
                 "tags": [
-                    "Meeting"
+                    "Meetings"
                 ],
                 "operationId": "meetingUpdate",
                 "parameters": [
                     {
-                        "$ref": "#/parameters/MeetingNumber"
+                        "$ref": "#/parameters/MeetingID"
                     },
                     {
                         "in": "body",
@@ -1007,14 +1038,15 @@
                 }
             },
             "delete": {
+                "summary": "Delete a meeting",
                 "description": "Delete a meeting",
                 "tags": [
-                    "Meeting"
+                    "Meetings"
                 ],
                 "operationId": "meetingDelete",
                 "parameters": [
                     {
-                        "$ref": "#/parameters/MeetingNumber"
+                        "$ref": "#/parameters/MeetingID"
                     }
                 ],
                 "responses": {
@@ -1027,16 +1059,58 @@
                 }
             }
         },
+        "/meetings/{meetingId}/status": {
+            "put": {
+                "summary": "Update a meeting's status",
+                "description": "Update a meeting's status",
+                "tags": [
+                    "Meetings"
+                ],
+                "operationId": "meetingStatus",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/MeetingID"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "enum": [
+                                        "end"
+                                    ],
+                                    "x-enum-descriptions": [
+                                        "end a meeting"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Meeting updated"
+                    },
+                    "404": {
+                        "description": "Meeting not found"
+                    }
+                }
+            }
+        },
         "/meetings/{meetingId}/registrants": {
             "get": {
-                "description": "",
+                "summary": "List a meeting's registrants",
+                "description": "List registrants of a meeting",
                 "tags": [
-                    "Meeting"
+                    "Meetings"
                 ],
                 "operationId": "meetingRegGet",
                 "parameters": [
                     {
-                        "$ref": "#/parameters/MeetingNumber"
+                        "$ref": "#/parameters/MeetingID"
                     },
                     {
                         "$ref": "#/parameters/OccurenceId"
@@ -1064,14 +1138,15 @@
                 }
             },
             "post": {
-                "description": "",
+                "summary": "Add a meeting registrant",
+                "description": "Register a participant for a meeting",
                 "tags": [
-                    "Meeting"
+                    "Meetings"
                 ],
                 "operationId": "meetingRegCreate",
                 "parameters": [
                     {
-                        "$ref": "#/parameters/MeetingNumber"
+                        "$ref": "#/parameters/MeetingID"
                     },
                     {
                         "in": "body",
@@ -1107,14 +1182,15 @@
         },
         "/meetings/{meetingId}/registrants/{registrantId}/status": {
             "put": {
-                "description": "",
+                "summary": "Update a meeting registrant's status",
+                "description": "Update  a registrants status for a meeting",
                 "tags": [
-                    "Meeting"
+                    "Meetings"
                 ],
                 "operationId": "meetingRegistrantStatus",
                 "parameters": [
                     {
-                        "$ref": "#/parameters/MeetingNumber"
+                        "$ref": "#/parameters/MeetingID"
                     },
                     {
                         "$ref": "#/parameters/RegistrantId"
@@ -1131,6 +1207,11 @@
                                         "pending",
                                         "approved",
                                         "denied"
+                                    ],
+                                    "x-enum-descriptions": [
+                                        "set registrant status to pending",
+                                        "set registrant status to approved",
+                                        "set registrant status to denied"
                                     ]
                                 }
                             }
@@ -1147,48 +1228,12 @@
                 }
             }
         },
-        "/meetings/{meetingId}/status": {
-            "put": {
-                "description": "",
-                "tags": [
-                    "Meeting"
-                ],
-                "operationId": "meetingStatus",
-                "parameters": [
-                    {
-                        "$ref": "#/parameters/MeetingNumber"
-                    },
-                    {
-                        "in": "body",
-                        "name": "body",
-                        "required": true,
-                        "schema": {
-                            "properties": {
-                                "status": {
-                                    "type": "string",
-                                    "enum": [
-                                        "end"
-                                    ]
-                                }
-                            }
-                        }
-                    }
-                ],
-                "responses": {
-                    "204": {
-                        "description": "Meeting updated"
-                    },
-                    "404": {
-                        "description": "Meeting not found"
-                    }
-                }
-            }
-        },
         "/users": {
             "get": {
-                "description": "List all Users on Zoom.",
+                "summary": "List Users",
+                "description": "List users on your account",
                 "tags": [
-                    "User"
+                    "Users"
                 ],
                 "operationId": "users",
                 "parameters": [
@@ -1202,6 +1247,11 @@
                             "active",
                             "inactive",
                             "pending"
+                        ],
+                        "x-enum-descriptions": [
+                            "users with active status",
+                            "users with inactive status",
+                            "users with pending status"
                         ]
                     },
                     {
@@ -1221,9 +1271,10 @@
                 }
             },
             "post": {
-                "description": "Create a user on Zoom",
+                "summary": "Create a user",
+                "description": "Create a user on your account",
                 "tags": [
-                    "User"
+                    "Users"
                 ],
                 "operationId": "userCreate",
                 "parameters": [
@@ -1236,11 +1287,19 @@
                             "properties": {
                                 "action": {
                                     "type": "string",
+                                    "description" : "Action to take for user creation",
+                                    "required" : true,
                                     "enum": [
                                         "create",
                                         "custCreate",
                                         "autoCreate",
                                         "ssoCreate"
+                                    ],
+                                    "x-enum-descriptions" : [
+                                        "User will get an email sent from Zoom. There is a confirmation link in this email. User will then need to click this link to activate their account to the Zoom service. The user can set or change their password in Zoom. <br/>",
+                                        "This action is provided for enterprise customer who has a managed domain. This feature is disabled by default because of the security risk involved in creating a user who does not belong to your domain without notifying the user. <br/>",
+                                        "This action is provided for API partner only. User created in this way has no password and is not able to log into the Zoom web site or client. <br/>",
+                                        "This action is provided for enabled \"Pre-provisioning SSO User\" option. User created in this way has no password. If it is not a basic user, will generate a Personal Vanity URL using user name (no domain) of the provisioning email. If user name or pmi is invalid or occupied, will use random number/random personal vanity URL. <br/>"
                                     ]
                                 },
                                 "user_info": {
@@ -1276,9 +1335,10 @@
         },
         "/users/{userId}": {
             "get": {
-                "description": "Get a user",
+                "summary": "Retrieve a user",
+                "description": "Retrieve a user on your account",
                 "tags": [
-                    "User"
+                    "Users"
                 ],
                 "operationId": "user",
                 "parameters": [
@@ -1314,9 +1374,10 @@
                 }
             },
             "patch": {
-                "description": "Update a user",
+                "summary": "Update a user",
+                "description": "Update a user on your account",
                 "tags": [
-                    "User"
+                    "Users"
                 ],
                 "operationId": "userUpdate",
                 "parameters": [
@@ -1350,9 +1411,10 @@
                 }
             },
             "delete": {
-                "description": "Delete a user on Zoom",
+                "summary": "Delete a user",
+                "description": "Delete a user on your account",
                 "tags": [
-                    "User"
+                    "Users"
                 ],
                 "operationId": "userDelete",
                 "parameters": [
@@ -1372,9 +1434,10 @@
         },
         "/users/{userId}/assistants": {
             "get": {
-                "description": "List user's assistants",
+                "summary": "List a user's assistants",
+                "description": "List a user's assistants",
                 "tags": [
-                    "User"
+                    "Users"
                 ],
                 "operationId": "userListAssistants",
                 "parameters": [
@@ -1412,9 +1475,10 @@
                 }
             },
             "post": {
-                "description": "Update user's assistants",
+                "summary": "Add a user's assistant",
+                "description": "Add an assistant to a user",
                 "tags": [
-                    "User"
+                    "Users"
                 ],
                 "operationId": "userUpdateAssistants",
                 "parameters": [
@@ -1429,7 +1493,8 @@
                             "type": "object",
                             "properties": {
                                 "email_or_id": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "description": "ID or Email of assistant"
                                 }
                             }
                         }
@@ -1459,9 +1524,10 @@
                 }
             },
             "delete": {
-                "description": "Delete all of user's assistants",
+                "summary": "Delete a user's assistants",
+                "description": "Delete all of a user'sassitants",
                 "tags": [
-                    "User"
+                    "Users"
                 ],
                 "operationId": "userDeleteAssistants",
                 "parameters": [
@@ -1481,9 +1547,10 @@
         },
         "/users/{userId}/assistants/{assistantId}": {
             "delete": {
-                "description": "Delete one of a user's assistant",
+                "summary": "Delete a user's assistant",
+                "description": "Delete one of a user's assistants",
                 "tags": [
-                    "User"
+                    "Users"
                 ],
                 "operationId": "userDeleteAssistant",
                 "parameters": [
@@ -1492,7 +1559,7 @@
                     },
                     {
                         "name": "assistantId",
-                        "description": "Assistant",
+                        "description": "Assistant's ID",
                         "in": "path",
                         "type": "string",
                         "required": true
@@ -1510,9 +1577,10 @@
         },
         "/users/{userId}/picture": {
             "put": {
-                "description": "Update a user's picture",
+                "summary": "Update a user's picture",
+                "description": "Update a user's profile picture",
                 "tags": [
-                    "User"
+                    "Users"
                 ],
                 "operationId": "userPicture",
                 "parameters": [
@@ -1554,19 +1622,15 @@
         },
         "/users/{userId}/settings": {
             "get": {
-                "description": "Get a user's settings on Zoom",
+                "summary": "Retrieve a user's settings",
+                "description": "Retrieve a user's settings",
                 "tags": [
-                    "User"
+                    "Users"
                 ],
                 "operationId": "userGetSettings",
                 "parameters": [
                     {
                         "$ref": "#/parameters/UserId"
-                    },
-                    {
-                        "in": "query",
-                        "name": "login_type",
-                        "type": "integer"
                     }
                 ],
                 "responses": {
@@ -1582,9 +1646,10 @@
                 }
             },
             "patch": {
-                "description": "Update a user on Zoom",
+                "summary": "Update a user's settings",
+                "description": "Update a user's settings",
                 "tags": [
-                    "User"
+                    "Users"
                 ],
                 "operationId": "userUpdateSettings",
                 "parameters": [
@@ -1613,9 +1678,10 @@
         },
         "/users/{userId}/status": {
             "put": {
+                "summary": "Update a user's status",
                 "description": "Update a user's status",
                 "tags": [
-                    "User"
+                    "Users"
                 ],
                 "operationId": "userStatus",
                 "parameters": [
@@ -1634,6 +1700,10 @@
                                     "enum": [
                                         "active",
                                         "deactive"
+                                    ],
+                                    "x-enum-descriptions": [
+                                        "set users status to active",
+                                        "set users status to deactive"
                                     ]
                                 }
                             }
@@ -1652,9 +1722,10 @@
         },
         "/users/{userId}/ssoToken": {
             "delete": {
-                "description": "Revoke a user's token on Zoom via user ID",
+                "summary": "Revoke a user's SSO token",
+                "description": "Revoke a user's SSO token",
                 "tags": [
-                    "User"
+                    "Users"
                 ],
                 "operationId": "userTokenDelete",
                 "parameters": [
@@ -1674,7 +1745,8 @@
         },
         "/users/{userId}/tsp": {
             "get": {
-                "description": "Get a user's tsp config",
+                "summary": "List user's TSP config",
+                "description": "List user's TSP config",
                 "tags": [
                     "TSP"
                 ],
@@ -1682,26 +1754,20 @@
                 "parameters": [
                     {
                         "$ref": "#/parameters/UserId"
-                    },
-                    {
-                        "name": "type",
-                        "description": "User token",
-                        "in": "query",
-                        "type": "string",
-                        "enum": [
-                            "token",
-                            "zpk"
-                        ]
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success"
+                        "description": "TSP Config list returned"
+                    },
+                    "404": {
+                        "description": "User not found"
                     }
                 }
             },
             "post": {
-                "description": "Add a user's tsp config",
+                "summary": "Add a user's TSP config",
+                "description": "Add a user's TSP config",
                 "tags": [
                     "TSP"
                 ],
@@ -1711,26 +1777,26 @@
                         "$ref": "#/parameters/UserId"
                     },
                     {
-                        "name": "type",
-                        "description": "User token",
-                        "in": "query",
-                        "type": "string",
-                        "enum": [
-                            "token",
-                            "zpk"
-                        ]
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "description": "TSP Config",
+                        "schema": {
+                            "$ref": "#/definitions/TSPConfig"
+                        }
                     }
                 ],
                 "responses": {
-                    "200": {
-                        "description": "Success"
+                    "201": {
+                        "description": "TSP Config added"
                     }
                 }
             }
         },
         "/users/{userId}/tsp/{tspId}": {
             "get": {
-                "description": "Get a user's tsp config",
+                "summary": "Retrieve a user's TSP config",
+                "description": "Retrieve a user's TSP config",
                 "tags": [
                     "TSP"
                 ],
@@ -1740,31 +1806,18 @@
                         "$ref": "#/parameters/UserId"
                     },
                     {
-                        "name": "tspId",
-                        "description": "TSP ID",
-                        "in": "path",
-                        "type": "string",
-                        "required": true
-                    },
-                    {
-                        "name": "type",
-                        "description": "User token",
-                        "in": "query",
-                        "type": "string",
-                        "enum": [
-                            "token",
-                            "zpk"
-                        ]
+                        "$ref": "#/parameters/TSPId"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success"
+                        "description": "TSP Config returned"
                     }
                 }
             },
             "patch": {
-                "description": "Update tsp config",
+                "summary": "Update a TSP config",
+                "description": "Update a user's TSP config",
                 "tags": [
                     "TSP"
                 ],
@@ -1774,31 +1827,27 @@
                         "$ref": "#/parameters/UserId"
                     },
                     {
-                        "name": "tspId",
-                        "description": "TSP ID",
-                        "in": "path",
-                        "type": "string",
-                        "required": true
+                        "$ref": "#/parameters/TSPId"
                     },
                     {
-                        "name": "type",
-                        "description": "User token",
-                        "in": "query",
-                        "type": "string",
-                        "enum": [
-                            "token",
-                            "zpk"
-                        ]
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "description": "TSP Config",
+                        "schema": {
+                            "$ref": "#/definitions/TSPConfig"
+                        }
                     }
                 ],
                 "responses": {
-                    "200": {
-                        "description": "Success"
+                    "204": {
+                        "description": "TSP Config updated"
                     }
                 }
             },
             "delete": {
-                "description": "Delete tsp config",
+                "summary": "Delete a TSP config",
+                "description": "Delete a user's TSP config",
                 "tags": [
                     "TSP"
                 ],
@@ -1808,35 +1857,22 @@
                         "$ref": "#/parameters/UserId"
                     },
                     {
-                        "name": "tspId",
-                        "description": "TSP ID",
-                        "in": "path",
-                        "type": "string",
-                        "required": true
-                    },
-                    {
-                        "name": "type",
-                        "description": "User token",
-                        "in": "query",
-                        "type": "string",
-                        "enum": [
-                            "token",
-                            "zpk"
-                        ]
+                        "$ref": "#/parameters/TSPId"
                     }
                 ],
                 "responses": {
-                    "200": {
-                        "description": "Success"
+                    "204": {
+                        "description": "TSP Config deleted"
                     }
                 }
             }
         },
         "/users/{userId}/token": {
             "get": {
-                "description": "Get a user's token on Zoom via user ID",
+                "summary": "Retrieve a user's token",
+                "description": "Retrieve a user's token",
                 "tags": [
-                    "User"
+                    "Users"
                 ],
                 "operationId": "userToken",
                 "parameters": [
@@ -1851,6 +1887,10 @@
                         "enum": [
                             "token",
                             "zpk"
+                        ],
+                        "x-enum-descriptions": [
+                            "used for starting meeting with client SDK",
+                            "used for generating the start meeting url"
                         ]
                     }
                 ],
@@ -1874,9 +1914,10 @@
         },
         "/users/{userId}/zpk": {
             "get": {
+                "summary": "Verify a user's zpk",
                 "description": "Check if the zpk is expired. The zpk is used to authenticate a user.",
                 "tags": [
-                    "User"
+                    "Users"
                 ],
                 "operationId": "userZPK",
                 "parameters": [
@@ -1885,14 +1926,9 @@
                     },
                     {
                         "name": "type",
-                        "description": "User token",
+                        "description": "User zpk",
                         "in": "query",
-                        "type": "string",
-                        "default": "token",
-                        "enum": [
-                            "token",
-                            "zpk"
-                        ]
+                        "type": "string"
                     }
                 ],
                 "responses": {
@@ -1904,9 +1940,10 @@
         },
         "/users/{userId}/webinars": {
             "get": {
-                "description": "Get user's webinars",
+                "summary": "List webinars",
+                "description": "List webinars for a user",
                 "tags": [
-                    "Webinar"
+                    "Webinars"
                 ],
                 "operationId": "userGetWebinars",
                 "parameters": [
@@ -1933,9 +1970,10 @@
                 }
             },
             "post": {
-                "description": "Create webinar",
+                "summary": "Create a webinar",
+                "description": "Create a webinars for a user",
                 "tags": [
-                    "Webinar"
+                    "Webinars"
                 ],
                 "parameters": [
                     {
@@ -1978,9 +2016,10 @@
         },
         "/webinars/{webinarId}": {
             "get": {
-                "description": "Get a webinar",
+                "summary": "Retrieve a webinar",
+                "description": "Retrieve a webinar",
                 "tags": [
-                    "Webinar"
+                    "Webinars"
                 ],
                 "operationId": "webinarGet",
                 "parameters": [
@@ -2022,9 +2061,10 @@
                 }
             },
             "patch": {
+                "summary": "Update a webinar",
                 "description": "Update a webinar",
                 "tags": [
-                    "Webinar"
+                    "Webinars"
                 ],
                 "operationId": "webinarUpdate",
                 "parameters": [
@@ -2051,9 +2091,10 @@
                 }
             },
             "delete": {
+                "summary": "Delete a webinar",
                 "description": "Delete a webinar",
                 "tags": [
-                    "Webinar"
+                    "Webinars"
                 ],
                 "operationId": "webinarDelete",
                 "parameters": [
@@ -2071,11 +2112,53 @@
                 }
             }
         },
+        "/webinars/{webinarId}/status": {
+            "put": {
+                "summary": "Update a webinar's status",
+                "description": "Update a webinar's status",
+                "tags": [
+                    "Webinars"
+                ],
+                "operationId": "webinarStatus",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/WebinarNumber"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "enum": [
+                                        "end"
+                                    ],
+                                    "x-enum-descriptions": [
+                                        "end a webinar"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Webinar updated"
+                    },
+                    "404": {
+                        "description": "Webinar not found"
+                    }
+                }
+            }
+        },
         "/webinars/{webinarId}/panelists": {
             "get": {
-                "description": "",
+                "summary": "List a webinar's panelists",
+                "description": "List panelists for a webinar",
                 "tags": [
-                    "Webinar"
+                    "Webinars"
                 ],
                 "operationId": "webinarPanelistGet",
                 "parameters": [
@@ -2105,9 +2188,10 @@
                 }
             },
             "post": {
-                "description": "Register panelist for webinar",
+                "summary": "Add a webinar panelist",
+                "description": "Add panelist to webinar",
                 "tags": [
-                    "Webinar"
+                    "Webinars"
                 ],
                 "operationId": "webinarPanelistCreate",
                 "parameters": [
@@ -2146,9 +2230,10 @@
                 }
             },
             "delete": {
-                "description": "Remove all panelist for webinar",
+                "summary": "Remove a webinar's panelists",
+                "description": "Remove all panelists from a webinar",
                 "tags": [
-                    "Webinar"
+                    "Webinars"
                 ],
                 "operationId": "webinarPanelistsCancelAll",
                 "parameters": [
@@ -2168,9 +2253,10 @@
         },
         "/webinars/{webinarId}/panelists/{panelistId}": {
             "delete": {
-                "description": "Cancel panelist for webinar",
+                "summary": "Remove a webinar panelist",
+                "description": "Remove a panelist from a webinar",
                 "tags": [
-                    "Webinar"
+                    "Webinars"
                 ],
                 "operationId": "webinarPanelistCancel",
                 "parameters": [
@@ -2196,9 +2282,10 @@
         },
         "/webinars/{webinarId}/registrants": {
             "get": {
-                "description": "",
+                "summary": "List a webinar's registrants",
+                "description": "List registrants for a webinar",
                 "tags": [
-                    "Webinar"
+                    "Webinars"
                 ],
                 "operationId": "webinarRegGet",
                 "parameters": [
@@ -2231,9 +2318,10 @@
                 }
             },
             "post": {
-                "description": "",
+                "summary": "Add a webinar registrant",
+                "description": "Add a registrant for a webinar",
                 "tags": [
-                    "Webinar"
+                    "Webinars"
                 ],
                 "operationId": "webinarRegCreate",
                 "parameters": [
@@ -2274,9 +2362,10 @@
         },
         "/webinars/{webinarId}/registrants/{registrantId}/status": {
             "put": {
-                "description": "",
+                "summary": "Update a webinar registrant's status",
+                "description": "Update a webinar registrant's status",
                 "tags": [
-                    "Webinar"
+                    "Webinars"
                 ],
                 "operationId": "webinarRegistrantStatus",
                 "parameters": [
@@ -2298,6 +2387,11 @@
                                         "pending",
                                         "approved",
                                         "denied"
+                                    ],
+                                    "x-enum-descriptions": [
+                                        "set registrant status to pending",
+                                        "set registrant status to approved",
+                                        "set registrant status to denied"
                                     ]
                                 }
                             }
@@ -2314,39 +2408,47 @@
                 }
             }
         },
-        "/webinars/{webinarId}/status": {
-            "put": {
-                "description": "",
-                "tags": [
-                    "Webinar"
+        "/rooms/{userId}/meetings" : {
+            "post" : {
+                "summary" : "Create a meeting",
+                "description" : "Create a meeting",
+                "tags" : [
+                    "Zoom Rooms"
                 ],
-                "operationId": "webinarStatus",
-                "parameters": [
+                "parameters" : [
                     {
-                        "$ref": "#/parameters/WebinarNumber"
+                        "$ref": "#/parameters/UserId"
                     },
                     {
                         "in": "body",
                         "name": "body",
                         "required": true,
+                        "description": "User",
                         "schema": {
-                            "properties": {
-                                "status": {
-                                    "type": "string",
-                                    "enum": [
-                                        "end"
-                                    ]
-                                }
-                            }
+                            "$ref": "#/definitions/Meeting"
                         }
                     }
                 ],
                 "responses": {
-                    "204": {
-                        "description": "Webinar updated"
+                    "201": {
+                        "description": "Meeting Created",
+                        "headers": {
+                            "Content-Location": {
+                                "description": "Location of created Meeting",
+                                "type": "string"
+                            }
+                        },
+                        "schema": {
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "description": "Meeting ID"
+                                }
+                            }
+                        }
                     },
                     "404": {
-                        "description": "Webinar not found"
+                        "description": "User not found"
                     }
                 }
             }
@@ -2356,33 +2458,42 @@
         "AccountId": {
             "in": "path",
             "name": "accountId",
+            "description" : "The account ID",
             "type": "string",
             "required": true
         },
         "GroupId": {
             "in": "path",
             "name": "groupId",
+            "description" : "The group ID",
             "type": "string",
             "required": true
         },
-        "MeetingNumber": {
+        "MeetingID": {
             "in": "path",
             "name": "meetingId",
+            "description" : "The meeting ID",
             "type": "integer",
             "required": true
         },
         "MeetingType": {
             "in": "query",
             "name": "type",
+            "description" : "The meeting type",
             "type": "string",
             "enum": [
                 "scheduled",
                 "live"
+            ],
+            "x-enum-descriptions" : [
+                "all the scheduled meetings",
+                "all the live meetings"
             ]
         },
         "OccurenceId": {
             "in": "query",
             "name": "occurrence_id",
+            "description" : "The the meeting occurence ID",
             "type": "string"
         },
         "PageNumber": {
@@ -2402,29 +2513,45 @@
         "RegistrantId": {
             "in": "path",
             "name": "registrantId",
+            "description" : "The registrant ID",
             "type": "string",
             "required": true
         },
         "RegistrantStatus": {
             "in": "query",
             "name": "status",
+            "description" : "The registrant status",
             "type": "string",
             "default": "approved",
             "enum": [
                 "approved",
                 "pending",
                 "denied"
+            ],
+            "x-enum-descriptions" : [
+                "registrants status is approved",
+                "registrants status is pending",
+                "registrants status is denied"
             ]
+        },
+        "TSPId" : {
+            "name": "tspId",
+            "description": "TSP ID",
+            "in": "path",
+            "type": "string",
+            "required": true
         },
         "UserId": {
             "in": "path",
             "name": "userId",
+            "description" : "The user ID",
             "type": "string",
             "required": true
         },
         "WebinarNumber": {
             "in": "path",
             "name": "webinarId",
+            "description" : "The webinar ID",
             "type": "integer",
             "required": true
         }
@@ -2433,6 +2560,12 @@
         "Account": {
             "type": "object",
             "description": "Account object",
+            "required" : [
+                "email",
+                "first_name",
+                "last_name",
+                "password"
+            ],
             "properties": {
                 "email": {
                     "type": "string",
@@ -2475,19 +2608,11 @@
                                             "id": {
                                                 "type": "string",
                                                 "description": "Account ID"
-                                            }
-                                        }
-                                    },
-                                    {
-                                        "properties": {
+                                            },
                                             "owner_email": {
                                                 "type": "string",
                                                 "description": "Account Owner email"
-                                            }
-                                        }
-                                    },
-                                    {
-                                        "properties": {
+                                            },
                                             "created_at": {
                                                 "type": "string",
                                                 "format": "dateTime",
@@ -2531,6 +2656,10 @@
                         "master",
                         "sub"
                     ],
+                    "x-enum-descriptions": [
+                        "Master Account holder pays",
+                        "Sub Account holders pays"
+                    ],
                     "default": "master"
                 }
             }
@@ -2564,36 +2693,53 @@
                 },
                 "plan_large_meeting": {
                     "type": "array",
+                    "description" : "Additional Large Meeting Plans",
                     "items": {
                         "$ref": "#/definitions/AccountPlan"
                     }
                 },
                 "plan_webinar": {
                     "type": "array",
+                    "description": "Additional Webinar Plans",
                     "items": {
                         "$ref": "#/definitions/AccountPlan"
                     }
                 },
                 "plan_recording": {
-                    "type": "string"
+                    "type": "string",
+                    "description" : "Additional Cloud Recording Plan"
                 },
                 "plan_audio": {
                     "type": "object",
+                    "description" : "Additional Audio Conferencing Plan type",
                     "properties": {
                         "type": {
-                            "type": "string"
+                            "type": "string",
+                            "description" : "Additional Audio Conferencing Plan type"
                         },
                         "tollfree_country": {
-                            "type": "string"
+                            "type": "string",
+                            "description" : "Toll-free countries, multiple value separated by comma"
                         },
                         "premium_country": {
-                            "type": "string"
+                            "type": "string",
+                            "description" : "Premium countries, multiple value separated by comma"
                         },
                         "callout": {
-                            "type": "boolean"
+                            "type": "boolean",
+                            "description": "Call-out type",
+                            "enum" : [
+                                1,
+                                2
+                            ],
+                            "x-enum-descriptions" : [
+                                "US-only",
+                                "US and International"
+                            ]
                         },
                         "ddi_numbers": {
-                            "type": "integer"
+                            "type": "integer",
+                            "description": "Dedicated Dial-In Numbers"
                         }
                     }
                 }
@@ -2923,7 +3069,7 @@
             "properties": {
                 "stereo_audio": {
                     "type": "boolean",
-                    "description": "",
+                    "description": "Stereo Audio",
                     "default": false
                 },
                 "original_audio": {
@@ -3101,27 +3247,27 @@
                 },
                 "address": {
                     "type": "string",
-                    "description": "Billing Contact address."
+                    "description": "Billing Contact's address."
                 },
                 "apt": {
                     "type": "string",
-                    "description": "Billing Contact apartment/suite."
+                    "description": "Billing Contact's apartment/suite."
                 },
                 "city": {
                     "type": "string",
-                    "description": "Billing Contact city."
+                    "description": "Billing Contact's city."
                 },
                 "state": {
                     "type": "string",
-                    "description": "Billing Contact state."
+                    "description": "Billing Contact's state."
                 },
                 "zip": {
                     "type": "string",
-                    "description": "Billing Contact zip/postal code."
+                    "description": "Billing Contact's zip/postal code."
                 },
                 "country": {
                     "type": "string",
-                    "description": "Billing Contact country."
+                    "description": "Billing Contact's country."
                 }
             }
         },
@@ -3346,34 +3492,42 @@
             "properties": {
                 "host_video": {
                     "type": "boolean",
+                    "description" : "Start video when host join meeting",
                     "default": true
                 },
                 "participant_video": {
                     "type": "boolean",
+                    "description": "Start video when participants join meeting",
                     "default": true
                 },
                 "cn_meeting": {
                     "type": "boolean",
+                    "description": "Host meeting in China",
                     "default": false
                 },
                 "in_meeting": {
                     "type": "boolean",
+                    "description": "Host meeting in India",
                     "default": false
                 },
                 "join_before_host": {
                     "type": "boolean",
+                    "description": "Join meeting before host start the meeting. Only used for scheduled or recurring meetings",
                     "default": false
                 },
                 "mute_upon_entry": {
                     "type": "boolean",
+                    "description": "Mute participants upon entry",
                     "default": false
                 },
                 "watermark": {
                     "type": "boolean",
+                    "description": "Enable watermark when viewing the shared screen",
                     "default": false
                 },
                 "use_pmi": {
                     "type": "boolean",
+                    "description": "Use Personal Meeting ID. Only used for scheduled meetings and recurring meetings with no fixed time",
                     "default": false
                 },
                 "approval_type": {
@@ -3383,24 +3537,41 @@
                         0,
                         1,
                         2
+                    ],
+                    "x-enum-descriptions": [
+                        "Automatically Approve",
+                        "Manually Approve",
+                        "No Registration Required"
                     ]
                 },
                 "registration_type": {
                     "type": "integer",
+                    "description" : "Registration type. Used for recurring meeting with fixed time only.",
                     "default": 1,
                     "enum": [
                         1,
                         2,
                         3
+                    ],
+                    "x-enum-descriptions": [
+                        "Attendees register once and can attend any of the occurrences",
+                        "Attendees need to register for each occurrence to attend",
+                        "Attendees register once and can choose one or more occurrences to attend"
                     ]
                 },
                 "audio": {
                     "type": "string",
+                    "description"  : "Meeting audio options",
                     "default": "both",
                     "enum": [
-                        "boht",
+                        "both",
                         "telephony",
                         "voip"
+                    ],
+                    "x-enum-descriptions": [
+                        "Both Telephony and VoIP",
+                        "Telephony only",
+                        "VoIP only"
                     ]
                 },
                 "auto_recording": {
@@ -3410,13 +3581,24 @@
                         "local",
                         "cloud",
                         "none"
+                    ],
+                    "x-enum-descriptions": [
+                        "Record to local device",
+                        "Record to cloud",
+                        "No Recording"
                     ]
                 },
+                "enforce_login": {
+                    "type": "boolean",
+                    "description": "Only signed-in users can join this meeting"
+                },
                 "enforce_login_domains": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Only signed-in users with specified domains can join meetings"
                 },
                 "alternatice_hosts": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Alternative hosts emails or IDs. Multiple value separated by comma."
                 }
             }
         },
@@ -3503,28 +3685,98 @@
             "description": "Recurrence object",
             "properties": {
                 "type": {
-                    "type": "integer"
+                    "type": "integer",
+                    "description" : "Recurrence meeting type",
+                    "enum" : [
+                        1,
+                        2,
+                        3
+                    ],
+                    "x-enum-descriptions" : [
+                        "Daily",
+                        "Weekly",
+                        "Monthly"
+                    ]
                 },
                 "repeat_interval": {
-                    "type": "integer"
+                    "type": "integer",
+                    "description" : "Recurrence meeting repeat interval. For a Daily Meeting, max of 90. For a Weekly Meeting, max of 12. For a Monthly Meeting, max of 3."
                 },
                 "weekly_days": {
-                    "type": "integer"
+                    "type": "integer",
+                    "description" : "Recurrence Meeting Occurs on week days, multiple value separated by comma",
+                    "enum": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7
+                    ],
+                    "x-enum-descriptions": [
+                        "Sunday",
+                        "Monday",
+                        "Tuesday",
+                        "Wednesday",
+                        "Thursday",
+                        "Friday",
+                        "Saturday"
+                    ]
                 },
                 "monthly_day": {
-                    "type": "integer"
+                    "type": "integer",
+                    "description" : "Recurrence Meeting Occurs on a month day. The value range is from 1 to 31"
                 },
                 "monthly_week": {
-                    "type": "integer"
+                    "type": "integer",
+                    "description": "Recurrence Meeting Occurs on the week of a month.",
+                    "enum" : [
+                        -1,
+                        1,
+                        2,
+                        3,
+                        4
+                    ],
+                    "x-enum-descriptions" : [
+                        "Last week",
+                        "First week",
+                        "Second week",
+                        "Third week",
+                        "Fourth week"
+                    ]
                 },
                 "monthly_week_day": {
-                    "type": "integer"
+                    "type": "integer",
+                    "description" : "Recurrence Meeting Occurs on the week day of a month",
+                    "enum" : [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7
+                    ],
+                    "x-enum-descriptions": [
+                        "Sunday",
+                        "Monday",
+                        "Tuesday",
+                        "Wednesday",
+                        "Thursday",
+                        "Friday",
+                        "Saturday"
+                    ]
                 },
                 "end_times": {
-                    "type": "integer"
+                    "type": "integer",
+                    "description" : "Recurrence Meeting End occurrences times",
+                    "default" : 1,
+                    "maximum": 50
                 },
                 "end_date_time": {
                     "type": "string",
+                    "description": "Recurrence Meeting End Date. Should be UTC time, such as 2017-11-25T12:00:00Z.",
                     "format": "dateTime"
                 }
             }
@@ -3626,6 +3878,12 @@
                         2,
                         3,
                         8
+                    ],
+                    "x-enum-descriptions": [
+                        "Instant Meeting",
+                        "Scheduled Meeting",
+                        "Recurring Meeting with no fixed time",
+                        "Recurring Meeting with fixed time"
                     ]
                 },
                 "start_time": {
@@ -3639,144 +3897,7 @@
                 },
                 "timezone": {
                     "type": "string",
-                    "description": "Timezone to format start_time",
-                    "enum": [
-                        "Pacific/Midway",
-                        "Pacific/Pago_Pago",
-                        "Pacific/Honolulu",
-                        "America/Anchorage",
-                        "America/Vancouver",
-                        "America/Los_Angeles",
-                        "America/Tijuana",
-                        "America/Edmonton",
-                        "America/Denver",
-                        "America/Phoenix",
-                        "America/Mazatlan",
-                        "America/Winnipeg",
-                        "America/Regina",
-                        "America/Chicago",
-                        "America/Mexico_City",
-                        "America/Guatemala",
-                        "America/El_Salvador",
-                        "America/Managua",
-                        "America/Costa_Rica",
-                        "America/Montreal",
-                        "America/New_York",
-                        "America/Indianapolis",
-                        "America/Panama",
-                        "America/Bogota",
-                        "America/Lima",
-                        "America/Halifax",
-                        "America/Puerto_Rico",
-                        "America/Caracas",
-                        "America/Santiago",
-                        "America/St_Johns",
-                        "America/Montevideo",
-                        "America/Araguaina",
-                        "America/Argentina/Buenos_Aires",
-                        "America/Godthab",
-                        "America/Sao_Paulo",
-                        "Atlantic/Azores",
-                        "Canada/Atlantic",
-                        "Atlantic/Cape_Verde",
-                        "UTC",
-                        "Etc/Greenwich",
-                        "Europe/Belgrade",
-                        "CET",
-                        "Atlantic/Reykjavik",
-                        "Europe/Dublin",
-                        "Europe/London",
-                        "Europe/Lisbon",
-                        "Africa/Casablanca",
-                        "Africa/Nouakchott",
-                        "Europe/Oslo",
-                        "Europe/Copenhagen",
-                        "Europe/Brussels",
-                        "Europe/Berlin",
-                        "Europe/Helsinki",
-                        "Europe/Amsterdam",
-                        "Europe/Rome",
-                        "Europe/Stockholm",
-                        "Europe/Vienna",
-                        "Europe/Luxembourg",
-                        "Europe/Paris",
-                        "Europe/Zurich",
-                        "Europe/Madrid",
-                        "Africa/Bangui",
-                        "Africa/Algiers",
-                        "Africa/Tunis",
-                        "Africa/Harare",
-                        "Africa/Nairobi",
-                        "Europe/Warsaw",
-                        "Europe/Prague",
-                        "Europe/Budapest",
-                        "Europe/Sofia",
-                        "Europe/Istanbul",
-                        "Europe/Athens",
-                        "Europe/Bucharest",
-                        "Asia/Nicosia",
-                        "Asia/Beirut",
-                        "Asia/Damascus",
-                        "Asia/Jerusalem",
-                        "Asia/Amman",
-                        "Africa/Tripoli",
-                        "Africa/Cairo",
-                        "Africa/Johannesburg",
-                        "Europe/Moscow",
-                        "Asia/Baghdad",
-                        "Asia/Kuwait",
-                        "Asia/Riyadh",
-                        "Asia/Bahrain",
-                        "Asia/Qatar",
-                        "Asia/Aden",
-                        "Asia/Tehran",
-                        "Africa/Khartoum",
-                        "Africa/Djibouti",
-                        "Africa/Mogadishu",
-                        "Asia/Dubai",
-                        "Asia/Muscat",
-                        "Asia/Baku",
-                        "Asia/Kabul",
-                        "Asia/Yekaterinburg",
-                        "Asia/Tashkent",
-                        "Asia/Calcutta",
-                        "Asia/Kathmandu",
-                        "Asia/Novosibirsk",
-                        "Asia/Almaty",
-                        "Asia/Dacca",
-                        "Asia/Krasnoyarsk",
-                        "Asia/Dhaka",
-                        "Asia/Bangkok",
-                        "Asia/Saigon",
-                        "Asia/Jakarta",
-                        "Asia/Irkutsk",
-                        "Asia/Shanghai",
-                        "Asia/Hong_Kong",
-                        "Asia/Taipei",
-                        "Asia/Kuala_Lumpur",
-                        "Asia/Singapore",
-                        "Australia/Perth",
-                        "Asia/Yakutsk",
-                        "Asia/Seoul",
-                        "Asia/Tokyo",
-                        "Australia/Darwin",
-                        "Australia/Adelaide",
-                        "Asia/Vladivostok",
-                        "Pacific/Port_Moresby",
-                        "Australia/Brisbane",
-                        "Australia/Sydney",
-                        "Australia/Hobart",
-                        "Asia/Magadan",
-                        "SST",
-                        "Pacific/Noumea",
-                        "Asia/Kamchatka",
-                        "Pacific/Fiji",
-                        "Pacific/Auckland",
-                        "Asia/Kolkata",
-                        "Europe/Kiev",
-                        "America/Tegucigalpa",
-                        "Pacific/Apia"
-                    ]
+                    "description": "Timezone to format start_time"
                 },
                 "password": {
                     "type": "string",
@@ -3794,21 +3915,49 @@
                 }
             }
         },
+        "TSPConfig" : {
+            "type" : "object",
+            "description": "TSP Configuration object",
+            "properties" : {
+                "conference_code" : {
+                    "type": "string",
+                    "description": "Conference code, length is less than 16."
+                },
+                "leader_pin" : {
+                    "type": "string",
+                    "description": "Leader PIN, length is less than 16."
+                },
+                "dial_in_numbers" : {
+                    "type": "object",
+                    "description": "Dial In Numbers object",
+                    "properties": {
+                        "id" : {
+                          "type" : "string",
+                          "description" : "Country ID"
+                        },
+                        "code" : {
+                            "type" : "string",
+                            "description" : "Country Code"
+                        },
+                        "number" : {
+                            "type" : "string",
+                            "description" : "Dial-in number, length is less than 16."
+                        }
+                    }
+                }
+            }
+        },
         "User": {
             "type": "object",
             "description": "User object",
+            "required" : [
+                "email",
+                "type"
+            ],
             "properties": {
                 "email": {
                     "type": "string",
                     "description": "User's email address."
-                },
-                "first_name": {
-                    "type": "string",
-                    "description": "User's first name."
-                },
-                "last_name": {
-                    "type": "string",
-                    "description": "User's last name."
                 },
                 "type": {
                     "type": "integer",
@@ -3817,7 +3966,20 @@
                         2,
                         3
                     ],
-                    "description": "User's type. 1: Basic; 2: Pro; 3: Corp;"
+                    "x-enum-descriptions" : [
+                        "basic",
+                        "pro",
+                        "corp"
+                    ],
+                    "description": "User's type"
+                },
+                "first_name": {
+                    "type": "string",
+                    "description": "User's first name."
+                },
+                "last_name": {
+                    "type": "string",
+                    "description": "User's last name."
                 }
             }
         },
@@ -4173,32 +4335,32 @@
             "description": "Account operations"
         },
         {
-            "name": "Billing",
-            "description": "Account Billing operations"
-        },
-        {
-            "name": "User",
+            "name": "Users",
             "description": "User operations"
         },
         {
-            "name": "Meeting",
+            "name": "Meetings",
             "description": "Meeting operations"
         },
         {
-            "name": "Webinar",
+            "name": "Webinars",
             "description": "Webinar operations"
         },
         {
-            "name": "Group",
+            "name": "Groups",
             "description": "Group operations"
         },
         {
-            "name": "IM Group",
+            "name": "IM Groups",
             "description": "IM Group operations"
         },
         {
             "name": "TSP",
             "description": "TSP operations"
+        },
+        {
+            "name": "Zoom Rooms",
+            "description": "Zoom Rooms operations"
         }
     ],
     "externalDocs": {

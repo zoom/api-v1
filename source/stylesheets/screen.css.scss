@@ -239,7 +239,8 @@ html, body {
     }
 
     li {
-      font-size: 1em;
+      font-size: .8em;
+      font-weight: 400;
       line-height: 1.7;
       text-decoration: none;
     }
@@ -466,6 +467,7 @@ html, body {
     margin-bottom: 1em;
     width: (95% - $examples-width);
     margin-left: 28px;
+    font-size: 13px;
 
     th,td {
       text-align: left;
@@ -505,6 +507,10 @@ html, body {
           font-weight: 400;
           color: #bbb;
         }
+      }
+
+      &:nth-child(2) {
+        width: 100px;
       }
 
       &:last-child {
@@ -624,6 +630,16 @@ html, body {
     border: 1px solid #F7E633;
     text-shadow: 1px 1px 0 #666;
     background: linear-gradient(to top left, #F7E633 0%, #F1D32F 100%);
+  }
+
+  div.enum,
+  div.enum code {
+    font-size: 1em;
+  }
+
+  div.argument-type {
+    font-size: .7em;
+    text-transform: uppercase;
   }
 }
 

@@ -1,0 +1,70 @@
+## Add a webinar registrant
+
+Add a registrant for a webinar
+
+> Definition
+
+```shell
+POST https://api.zoom.us/v2/webinars/{webinarId}/registrants
+```
+
+> Example Request
+
+```shell
+$ curl https://api.zoom.us/v2/webinars/{webinarId}/registrants \
+   -d '{
+    "email": "string",
+    "first_name": "string",
+    "last_name": "string",
+    "address": "string",
+    "city": "string",
+    "country": "string",
+    "zip": "string",
+    "state": "string",
+    "phone": "string",
+    "industry": "string",
+    "org": "string",
+    "job_title": "string",
+    "purchasing_time_frame": "string",
+    "role_in_purchase_process": "string",
+    "no_of_employees": "string",
+    "comments": "string",
+    "custom_questions": [
+        {
+            "title": "string",
+            "value": "string"
+        }
+    ]
+}'
+```
+
+> Example Response
+
+```text
+201 Created
+```
+
+Path Arguments | &nbsp;
+--- | ---
+webinarId **required** | The webinar ID
+
+Body Arguments | &nbsp;
+--- | ---
+email | 
+first_name | 
+last_name | 
+address | 
+city | 
+country | 
+zip | 
+state | 
+phone | 
+industry | 
+org | 
+job_title | 
+purchasing_time_frame | 
+role_in_purchase_process | 
+no_of_employees | 
+comments | 
+custom_questions | 
+

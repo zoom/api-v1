@@ -1,0 +1,129 @@
+## Retrieve an account's settings
+
+Retrieve a sub account's settings under the master account
+
+> Definition
+
+```shell
+GET https://api.zoom.us/v2/accounts/{accountId}/settings
+```
+
+> Example Request
+
+```shell
+$ curl https://api.zoom.us/v2/accounts/{accountId}/settings
+```
+
+> Example Response
+
+```text
+200 OK
+```
+
+```json
+{
+    "in_meeting": {
+        "e2e_encryption": "boolean",
+        "chat": "boolean",
+        "private_chat": "boolean",
+        "auto_saving_chat": "boolean",
+        "feedback": "boolean",
+        "post_meeting_feedback": "boolean",
+        "co_host": "boolean",
+        "polling": "boolean",
+        "attendee_on_hold": "boolean",
+        "show_meeting_control_toolbar": "boolean",
+        "allow_show_zoom_windows": "boolean",
+        "alert_guest_join": "boolean",
+        "webinar_question_answer": "boolean",
+        "anonymous_question_answer": "boolean",
+        "breakout_room": "boolean",
+        "file_transfer": "boolean",
+        "closed_caption": "boolean",
+        "far_end_camera_control": "boolean",
+        "group_hd": "boolean",
+        "dscp_marking": "boolean",
+        "dscp_audio": "integer",
+        "dscp_video": "integer",
+        "virtual_background": "boolean",
+        "sending_default_email_invites": "boolean",
+        "p2p_connetion": "boolean",
+        "p2p_ports": "string"
+    },
+    "schedule_meting": {
+        "join_before_host": "boolean",
+        "host_video": "boolean",
+        "participant_video": "boolean",
+        "both_audio": "boolean",
+        "not_store_meeting_topic": "boolean",
+        "force_pmi_jbh_password": "boolean"
+    },
+    "join_meeting": {
+        "auto_answer": "boolean",
+        "enforce_login": "boolean",
+        "enforce_login_domains": "string",
+        "watermark": "boolean"
+    },
+    "recording": {
+        "local_recording": "boolean",
+        "cloud_recording": "boolean",
+        "auto_recording": "boolean",
+        "cloud_recording_download": "boolean",
+        "cloud_recording_download_host": "boolean",
+        "account_user_access_recording": "boolean",
+        "cloud_recording_notification": "boolean",
+        "auto_delete_cmr": "boolean",
+        "auto_delete_cmr_days": "integer"
+    },
+    "notification": {
+        "cloud_recording_avaliable_reminder": "boolean",
+        "jbh_reminder": "boolean",
+        "cancel_meeting_reminder": "boolean",
+        "low_host_count_reminder": "boolean",
+        "alternative_host_reminder": "boolean"
+    },
+    "audio": {
+        "stereo_audio": "boolean",
+        "original_audio": "boolean",
+        "third_party_audio": "boolean"
+    },
+    "zoom_rooms": {
+        "upcoming_meeting_alert": "boolean",
+        "start_airplay_manually": "boolean",
+        "weekly_system_restart": "boolean",
+        "list_meetings_with_calendar": "boolean",
+        "ultrasonic": "boolean",
+        "force_private_meeting": "boolean",
+        "hide_host_information": "boolean",
+        "cmr_for_instant_meeting": "boolean",
+        "auto_start_stop_scheduled_meetings": "boolean"
+    },
+    "admin": {
+        "hide_billing_info": "boolean",
+        "auto_active_import_users": "boolean"
+    },
+    "integration": {
+        "google_calendar": "boolean",
+        "google_drive": "boolean",
+        "dropbox": "boolean",
+        "box": "boolean",
+        "microsoft_one_drive": "boolean",
+        "kubi": "boolean"
+    },
+    "html_email_template": {
+        "use_html_format_email": "boolean"
+    },
+    "user_profile": {
+        "admin_change_name_pic": "boolean",
+        "import_photos_from_devices": "boolean"
+    },
+    "feature": {
+        "meeting_capacity": "integer"
+    }
+}
+```
+
+Path Arguments | &nbsp;
+--- | ---
+accountId **required** | The account ID
+
