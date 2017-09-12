@@ -410,7 +410,8 @@
                         "name": "api_secret",
                         "required": true,
                         "description": "Your API Secret"
-                    },],
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "Success",
