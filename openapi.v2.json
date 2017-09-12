@@ -55,7 +55,7 @@
             },
             "post": {
                 "summary": "Create an account",
-                "description" : "Create a sub account under the master account",
+                "description" : "Create a sub account under the master account <aside>Your account must be a master account and have this privilege to create sub account. Zoom only assign this privilege to trusted partner. The created user will not receive the confirmation email.</aside>",
                 "tags": [
                     "Accounts"
                 ],
@@ -98,7 +98,7 @@
         "/accounts/{accountId}": {
             "get": {
                 "summary": "Retrieve an account",
-                "description" : "Retrieve a sub account under the master account",
+                "description" : "Retrieve a sub account under the master account <aside>Your account must be a master account and have this privilege to get sub account. Zoom only assign this privilege to trusted partner</aside>",
                 "tags": [
                     "Accounts"
                 ],
@@ -280,7 +280,7 @@
             },
             "patch": {
                 "summary": "Update an account's billing information",
-                "description" : "Update a sub account's billing information under the master account",
+                "description" : "Update a sub account's billing information under the master account <aside>Only for the sub account which is paid by master account</aside>",
                 "tags": [
                     "Accounts"
                 ],
@@ -311,7 +311,7 @@
         "/accounts/{accountId}/plans": {
             "get": {
                 "summary": "Retrieve an account's plans",
-                "description" : "Retrieve a sub account's plans under the master account",
+                "description" : "Retrieve a sub account's plans under the master account  <aside>Only for the sub account which is paid by master account</aside>",
                 "tags": [
                     "Accounts"
                 ],
@@ -335,7 +335,7 @@
             },
             "put": {
                 "summary": "Add to an account's plans",
-                "description" : "Add a plan to sub account under the master account",
+                "description" : "Add a plan to sub account under the master account <aside>Can only subscribe plans for the sub account which is a free account and paid by master account</aside><aside>Can only add an Additional plan for the sub account which is a paid account and paid by master account</aside>",
                 "tags": [
                     "Accounts"
                 ],
