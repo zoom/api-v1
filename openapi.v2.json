@@ -4661,7 +4661,7 @@
     "securityDefinitions": {
         "global": {
             "type": "apiKey",
-            "name": "jwt",
+            "name": "access_token",
             "in": "query"
         }
     },
