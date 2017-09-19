@@ -61,7 +61,6 @@ includes:
     - core/meeting/delete
     - core/meeting/end
     - core/meeting/registration
-    - core/meeting/get_share_record_details
     
     - core/webinar/index
     - core/webinar/create
@@ -129,6 +128,7 @@ includes:
     - analytics/dashboard/get-meeting
     - analytics/dashboard/list-webinar
     - analytics/dashboard/get-webinar
+    - analytics/dashboard/get_share_record_details
     - analytics/dashboard/list-zoom-room
     - analytics/dashboard/get-zoom-room
     - analytics/dashboard/get-user-qos
