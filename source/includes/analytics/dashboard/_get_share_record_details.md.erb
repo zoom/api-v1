@@ -1,0 +1,54 @@
+## Get Meeting Share Details
+
+Get meeting share/recording details.
+
+> Definition
+
+```shell
+POST <%= config[:api_host] %>metrics/sharerecorddetail
+```
+
+> Example Request
+
+```shell
+$ curl <%= config[:api_host] %>metrics/sharerecorddetail \
+    -X POST \
+    -d api_key=<%= config[:ex_api_key] %> \
+    -d api_secret=<%= config[:ex_api_secret] %> \
+    -d meeting_id="<%= config[:ex_uuid] %>"
+```
+
+> Example Response
+
+```json
+{  
+  "page_count": 1,
+  "page_number": 10,
+  "page_size": 1,
+  "total_records": 1,
+  "participants": [
+      {
+          "user_id": "<%= config[:ex_uuid] %>",
+          "user_name": "<%= config[:ex_first_name] %> <%= config[:ex_last_name] %>",
+          "details": [
+              { 
+                  "content": "desktop",
+                  "start_time": "2017-08-09T06:59:05Z",
+                  "end_time": "2017-08-09T06:59:12Z" 
+               },
+              { 
+                  "content": "cloud_recording",
+                  "start_time": "2017-08-09T06:58:50Z",
+                  "end_time": "2017-08-09T06:58:48Z"
+               }
+          ]
+      }
+  ]
+}
+```
+
+Arguments | &nbsp;
+--- | ---
+meeting_id **required** | Meeting ID.
+page_size *optional* | The amount of records returns within a single API call. Defaults to 30. Max of 300 meetings. *Default: 30*
+page_number *optional* | Current page number of returned records. Default to 1. *Default: 1*
