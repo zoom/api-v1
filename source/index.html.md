@@ -101,7 +101,15 @@ includes:
   - tsp/delete_userId_tsp_tspId
 
   - zoom_rooms/index
-  - zoom_rooms/post_userId_meetings
+  - zoom_rooms/post_zoomId_zrclient
+  - zoom_rooms/post_zoomId_meetings_schedule
+  - zoom_rooms/post_zoomId_meetings_join
+  - zoom_rooms/post_zoomId_meetings_invite
+  - zoom_rooms/post_zoomId_meetings_cancel
+  - zoom_rooms/post_zoomId_meetings_leave
+  - zoom_rooms/post_zoomId_meetings_end
+  
+
 
   - appendix/index
   - appendix/recurrence

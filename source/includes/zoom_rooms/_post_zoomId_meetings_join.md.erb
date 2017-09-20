@@ -1,0 +1,75 @@
+## Start/Join a meeting
+
+Start an instant meeting or join a meeting from zoom room client
+
+> Definition
+
+```shell
+POST https://api.zoom.us/v2/rooms/{roomId}/meetings
+```
+
+> Example Request: Start an instant meeting
+
+```shell
+$ curl https://api.zoom.us/v2/rooms/{roomId}/meetings \
+  -d '{
+  	"jsonrpc": "2.0",
+  	"method": "join"
+}'
+```
+> Example Request: Join a meeting with meeting number
+
+```shell
+$ curl https://api.zoom.us/v2/rooms/{roomId}/meetings \
+  -d '{
+  	"jsonrpc": "2.0",
+ 	"method": "join",
+  	"params": {
+   	  "meeting_number": 2011092323
+  }
+}'
+```
+> Example Request: Join a meeting
+
+```shell
+$ curl https://api.zoom.us/v2/rooms/{roomId}/meetings \
+  -d '{
+  	"jsonrpc": "2.0",
+ 	"method": "join",
+  	"params": {
+   	  "meeting_number": 2011092323,
+   	  "password": "Aa123",
+      "force_accept": false,
+      "callback_url": "https://<api.yourcompany.com>"
+  	}
+}'
+```
+> Example Response
+
+```text
+200 OK
+```
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "room_id": "63UtYMhSQZaBRPCNRXrD8A",
+    "send_at": "2017-09-15T01:26:05Z"
+  },
+  "id": "49cf01a4-517e-4a49-b4d6-07237c38b749"
+}
+```
+
+
+Path Arguments | &nbsp;
+--- | ---
+roomId **required** | The id of zoom room
+
+Body Arguments | &nbsp;
+--- | ---
+jsonrpc | A String specifying the version of the JSON-RPC protocol.
+method **required** | The name of starting an instant meeting or joining a meeting method to be invoked.
+params.meeting_number | Start an instant meeting if meeting number is empty, otherwise join specified meeting.
+params.password | Meeting password. Password may only contain the following characters: [a-z A-Z 0-9 @ - _ *]. Max of <strong style="color: red">10</strong> characters.
+params.force_accept | The default value is false and current user is in a meeting, the client will ignore the request. Join the meeting immediately if current user is not in any meeting. The value is true means the user will be forced to leave current meeting and join the meeting immediately.
+params.callback_url | Provide a callback url if need to get the meeting number for the meeting. Send a post request with json payload using the callback url once zoom room client completed join meeting request. Callback url looks like this - https://api.zoom.us/callback?token=test123, Context-Type is application/json, the payload is <br/>{"request_id": "49cf01a4-517e-4a49-b4d6-07237c38b749", "meeting_number":"1234567890"}.

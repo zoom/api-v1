@@ -1,0 +1,74 @@
+## Cancel a meeting
+
+Cancel a meeting via zoom room client
+
+> Definition
+
+```shell
+POST https://api.zoom.us/v2/rooms/{roomId}/meetings
+```
+
+> Example Request: Cancel a meeting with UTC time
+
+```shell
+$ curl https://api.zoom.us/v2/rooms/{roomId}/meetings \
+  -d '{
+  	"jsonrpc": "2.0",
+  	"method": "cancel",
+  	"params": {
+    	"meeting_info": {
+      		"topic": "my meeting",
+      		"start_time": "2017-11-25T12:00:00Z",
+      		"duration": "10"
+    	}
+  	}
+  }'
+```
+
+> Example Request: Cancel a meeting with time zone
+
+```shell
+$ curl https://api.zoom.us/v2/rooms/{roomId}/meetings \
+  -d '{
+  	"jsonrpc": "2.0",
+  	"method": "cancel",
+  	"params": {
+    	"meeting_info": {
+      		"topic": "my meeting",
+      		"start_time": "2017-11-25T12:00:00",
+      		"timezone": "America/Los_Angeles",
+      		"duration": "10"
+    	}
+  	}
+  }'
+```
+> Example Response
+
+```text
+200 OK
+```
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "room_id": "63UtYMhSQZaBRPCNRXrD8A",
+    "send_at": "2017-09-15T01:26:05Z"
+  },
+  "id": "49cf01a4-517e-4a49-b4d6-07237c38b749"
+}
+```
+
+
+Path Arguments | &nbsp;
+--- | ---
+roomId **required** | The id of zoom room
+
+Body Arguments | &nbsp;
+--- | ---
+jsonrpc | A String specifying the version of the JSON-RPC protocol.
+method **required** | The name of canceling a meeting method to be invoked.
+params.meeting_number | Cancel a meeting with specified meeting number.
+params.meeting_info.topic **required** | Meeting topic. Max of 200 characters.
+params.meeting_info.start_time **required** | Meeting start time can be UTC time, such as 2017-11-25T12:00:00Z. A time zone offset is required unless a time zone is explicitly specified in <strong>timezone</strong> such as 2017-11-25T12:00:00, timezone is "America/Los_Angeles".
+params.meeting_info.timezone | Time zone is required if start time without time zone offset. it looks like America/Los_Angeles.
+params.meeting_info.duration **required** | Meeting duration of minutes

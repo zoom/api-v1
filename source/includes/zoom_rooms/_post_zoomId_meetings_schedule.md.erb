@@ -1,0 +1,61 @@
+## Schedule a meeting
+
+Schedule a meeting from zoom room client
+
+> Definition
+
+```shell
+POST https://api.zoom.us/v2/rooms/{roomId}/meetings
+```
+
+> Example Request
+
+```shell
+$ curl https://api.zoom.us/v2/rooms/{roomId}/meetings \
+  -d '{
+  "jsonrpc": "2.0",
+  "method": "schedule",
+  "params": {
+  	"meeting_info": {
+     	"topic": "my meeting",
+      	"start_time": "2017-11-25T12:00:00",
+      	"timezone": "America/Los_Angeles",
+      	"duration": "10"
+    }
+  }
+}'
+```
+> Example Response
+
+```text
+200 OK
+```
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "room_id": "63UtYMhSQZaBRPCNRXrD8A",
+    "send_at": "2017-09-15T01:26:05Z"
+  },
+  "id": "49cf01a4-517e-4a49-b4d6-07237c38b749"
+}
+```
+
+
+Path Arguments | &nbsp;
+--- | ---
+roomId **required** | The id of zoom room
+
+Body Arguments | &nbsp;
+--- | ---
+jsonrpc | A String specifying the version of the JSON-RPC protocol.
+method **required** | The name of scheduling a meeting method to be invoked.
+params.meeting_info.topic **required** | Meeting topic. Max of 200 characters.
+params.meeting_info.start_time **required** | Meeting start time can be UTC time, such as 2017-11-25T12:00:00Z. A time zone offset is required unless a time zone is explicitly specified in <strong>timezone</strong> such as 2017-11-25T12:00:00, timezone is "America/Los_Angeles".
+params.meeting_info.timezone | Time zone is required if start time without time zone offset. it looks like America/Los_Angeles.
+params.meeting_info.duration **required** | Meeting duration of minutes
+params.password | Meeting password. Password may only contain the following characters: [a-z A-Z 0-9 @ - _ *]. Max of <strong style="color: red">10</strong> characters.
+params.callback_url | Provide a callback url if need to get the meeting number for the meeting. Send a post request with json payload using the callback url once zoom room client completed join meeting request. Callback url looks like this - https://api.zoom.us/callback?token=test123, Context-Type is application/json, the payload is <br/>{"request_id": "49cf01a4-517e-4a49-b4d6-07237c38b749", "meeting_number":"1234567890"}.
+params.meeting_info.settings.join_before_host | Join meeting before host start the meeting. 
+
+

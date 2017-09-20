@@ -1,0 +1,62 @@
+## Invite contacts
+
+Invite a contact or contacts from zoom room client
+
+> Definition
+
+```shell
+POST https://api.zoom.us/v2/rooms/{roomId}/meetings
+```
+
+> Example Request: Invite a contact
+
+```shell
+$ curl https://api.zoom.us/v2/rooms/{roomId}/meetings \
+  -d '{
+    "jsonrpc": "2.0",
+    "method": "invite",
+    "params": {
+    	"callee": "kYAJ5yMfTCe0npL2_w3agw"
+    }
+}'
+```
+> Example Request: Invite contacts
+
+```shell
+$ curl https://api.zoom.us/v2/rooms/{roomId}/meetings \
+  -d '{
+    "jsonrpc": "2.0",
+    "method": "invite",
+    "params": {
+    	"callee": ["kYAJ5yMfTCe0npL2_w3agw","jAXKRO6yRZWkdkZxbUuI_Q"]
+    }
+}'
+```
+
+> Example Response
+
+```text
+200 OK
+```
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "room_id": "63UtYMhSQZaBRPCNRXrD8A",
+    "send_at": "2017-09-15T01:26:05Z"
+  },
+  "id": "49cf01a4-517e-4a49-b4d6-07237c38b749"
+}
+```
+
+
+Path Arguments | &nbsp;
+--- | ---
+roomId **required** | The id of zoom room
+
+Body Arguments | &nbsp;
+--- | ---
+jsonrpc | A String specifying the version of the JSON-RPC protocol.
+method **required** | The name of inviting contacts method to be invoked.
+params.callee **required** | Callee's user id or the list of callees' user ids,<br/>the maximum size of the callee list is <strong style="color: red">10</strong> items.
+

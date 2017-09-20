@@ -1,0 +1,45 @@
+## End a meeting
+
+End a meeting from zoom room client
+
+> Definition
+
+```shell
+POST https://api.zoom.us/v2/rooms/{roomId}/meetings
+```
+
+> Example Request
+
+```shell
+$ curl https://api.zoom.us/v2/rooms/{roomId}/meetings \
+  -d '{
+    "jsonrpc": "2.0",
+    "method": "end"
+}'
+```
+
+> Example Response
+
+```text
+200 OK
+```
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "room_id": "63UtYMhSQZaBRPCNRXrD8A",
+    "send_at": "2017-09-15T01:26:05Z"
+  },
+  "id": "49cf01a4-517e-4a49-b4d6-07237c38b749"
+}
+```
+
+
+Path Arguments | &nbsp;
+--- | ---
+roomId **required** | The id of zoom room
+
+Body Arguments | &nbsp;
+--- | ---
+jsonrpc | A String specifying the version of the JSON-RPC protocol.
+method **required** | The name of ending a meeting method to be invoked.
