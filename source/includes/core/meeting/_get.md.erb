@@ -19,7 +19,7 @@ $ curl <%= config[:api_host] %>meeting/get \
     -X POST \
     -d api_key=<%= config[:ex_api_key] %> \
     -d api_secret=<%= config[:ex_api_secret] %> \
-    -d id=<%= config[:ex_uuid] %> \
+    -d id=<%= config[:ex_meeting_number] %> \
     -d host_id=<%= config[:ex_uuid] %>
 ```
 
@@ -27,7 +27,7 @@ $ curl <%= config[:api_host] %>meeting/get \
 <%= config[:ex_node_init] %>
 
 var meeting = {
-    id: "<%= config[:ex_uuid] %>",
+    id: "<%= config[:ex_meeting_number] %>",
     host_id: "<%= config[:ex_uuid] %>"
 }
 
