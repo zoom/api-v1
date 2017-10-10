@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Zoom REST API</title>
+    <title>Zoom API</title>
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
@@ -233,63 +233,82 @@
 
 <h1 id="introduction">Introduction</h1>
 
-<p>All the REST API calls should be POST HTTP requests server-side. This request cannot be initiated on the web client using AJAX approaches.</p>
+<p>The Zoom API provides the ability for developers to easily add Video, Voice and Screen Sharing to your application. Our API is a server side implementation designed around REST, it does not support cross-origin resource sharing or access via a client side web application. </p>
 
-<h2 id="endpoint">Endpoint</h2>
+<p>The Zoom API helps manage the pre-meeting experience such as creating, editing and deleting resources like users, meetings and webinars. It also provides access to post-meeting information for tasks such as reporting and analytics. It does not provide access to the in-meeting experience such as current attendee list, who is current speaker or ability to mute participants; if you seek these features please have a look at our SDKs.</p>
 
-<p><code class="prettyprint">https://api.zoom.us/v1/</code></p>
+<p>Subscribe to the Zoom API announce mailing list to stay informed on all new features and changes.</p>
 
-<aside class="notice">You must use HTTPS, otherwise you will get a 302 redirect response code</aside>
+<h3 id="endpoint">Endpoint</h3>
 
-<h2 id="common-parameters">Common Parameters</h2>
+<p><code class="prettyprint">https://api.zoom.us/v2/</code></p>
 
-<p>The following are common parameters that should be included in each REST API request</p>
+<p>The Zoom API endpoint is pretty straight forward. We require that you send all requests via https, requests sent to http will receive a 302 HTTP response code. The base URL is api.zoom.us followed by the version number of the API, currently at version 2.</p>
 
-<table><thead>
-<tr>
-<th>Arguments</th>
-<th>&nbsp;</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>api_key <strong>required</strong></td>
-<td>API Key</td>
-</tr>
-<tr>
-<td>api_secret <strong>required</strong></td>
-<td>API Secret</td>
-</tr>
-<tr>
-<td>data_type <em>optional</em></td>
-<td>The type of data that you&rsquo;re expecting back from the server <code class="prettyprint">JSON</code> or <code class="prettyprint">XML</code> <em>Default: JSON</em></td>
-</tr>
-</tbody></table>
+          <h1 id="authentication">Authentication</h1>
 
-<h2 id="error-handle">Error Handle</h2>
+<p>Zoom API version 2 implements <a href="https://jwt.io">JSON Web Tokens</a> (JWT) for authentication. It is recommended you use one of the existing JWT <a href="https://jwt.io/#libraries">libraries</a> to generate the token.</p>
 
-<blockquote>
-<p>Example Error Response</p>
-</blockquote>
+<p>You can pass the token to the API either in the HTTP Authorization Header using &lsquo;Bearer&rsquo; or via Query Parameter in your API call as &lsquo;access_token&rsquo;.</p>
+
+<p>Header</p>
+
+<p><code class="prettyprint">Authorization: Bearer &lt;token&gt;</code></p>
+
+<p>Query Parameter</p>
+
+<p><code class="prettyprint">&lt;api_path&gt;?access_token=&lt;token&gt;</code></p>
+
+<h2 id="generating-token">Generating Token</h2>
+
+<p>You can find more details and specifics about JWT at <a href="https://jwt.io">jwt.io</a>, below is and example of the minimum properties needed for the Zoom API.</p>
+
+<h3 id="header">Header</h3>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">102</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You app key and secret doesn't match."</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+    </span><span class="s2">"alg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HS256"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"typ"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JWT"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>When getting a response from the server, you should first check the response body for the &ldquo;error&rdquo; section. The &ldquo;error&rdquo; section indicates this is a failed request, and then you can get the failed code and message from this section.</p>
+<p><code class="prettyprint">alg</code> refers to the algorithm being used, Zoom API uses HMAC SHA256 (HS256 for short)</p>
 
-<h2 id="api-libraries">API Libraries</h2>
+<p><code class="prettyprint">typ</code> refers to the type of token, always JWT</p>
 
-<p>Zoom has created a <a href="https://www.npmjs.com/package/zoomus">library for Node.js</a> with more coming soon</p>
+<h3 id="payload">Payload</h3>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"iss"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HS256"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"exp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1496091964000</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code class="prettyprint">iss</code> is the issuer of the token, this is your Zoom API Key</p>
 
-<h3 id="node-js-quick-start">Node.js Quick Start</h3>
+<p><code class="prettyprint">exp</code> is the expiration timestamp of the token. It is recommended to use one of the JWT libraries to generate your tokens and to set this timestamp for a short period (like seconds), that way if someone intercepts your token it won&rsquo;t be valid for very long.</p>
 
-<p>Install via <a href="https://www.npmjs.com/package/zoomus">npm</a></p>
+<h3 id="signature">Signature</h3>
 
-<p><code class="prettyprint">npm install zoomus</code></p>
+<blockquote>
+<p>Algorithm</p>
+</blockquote>
+<pre class="highlight java tab-java"><code><span class="n">HMACSHA256</span><span class="o">(</span>
+    <span class="n">base64UrlEncode</span><span class="o">(</span><span class="n">header</span><span class="o">)</span> <span class="o">+</span> <span class="s">"."</span> <span class="o">+</span>
+    <span class="n">base64UrlEncode</span><span class="o">(</span><span class="n">payload</span><span class="o">),</span>
+    <span class="n">api_secret</span><span class="o">)</span>
+</code></pre>
+<blockquote>
+<p>Node.js Library example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">jwt</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'jsonwebtoken'</span><span class="p">);</span>
 
-<p>View the source on <a href="https://github.com/zoom/zoom-lib-node">Github</a></p>
+<span class="kd">var</span> <span class="nx">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">iss</span><span class="p">:</span> <span class="nx">api_key</span><span class="p">,</span>
+    <span class="na">exp</span><span class="p">:</span> <span class="p">((</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()).</span><span class="nx">getTime</span><span class="p">()</span> <span class="o">+</span> <span class="mi">5000</span><span class="p">)</span>
+<span class="p">};</span>
+
+<span class="c1">//Automatically creates header, and returns JWT</span>
+<span class="kd">var</span> <span class="nx">token</span> <span class="o">=</span> <span class="nx">jwt</span><span class="p">.</span><span class="nx">sign</span><span class="p">(</span><span class="nx">payload</span><span class="p">,</span> <span class="nx">api_secret</span><span class="p">);</span>
+</code></pre>
+<p>To the right you&rsquo;ll find an example algorithm for generating a signature, again highly recommend using a library to do this for you</p>
+
+          <h1 id="errors">Errors</h1>
 
           <h1 id="webhooks">Webhooks</h1>
 
@@ -350,7 +369,7 @@
 
           <h1 id="rate-limits">Rate Limits</h1>
 
-<p>Our REST APIs have the following rate limits.</p>
+<p>Our APIs have the following rate limits.</p>
 
 <h2 id="all-api-endpoints">All API Endpoints</h2>
 
@@ -461,7 +480,7 @@
 
           <h2 id="create-an-account">Create an account</h2>
 
-<p>Create a sub account under the master account</p>
+<p>Create a sub account under the master account <aside>Your account must be a master account and have this privilege to create sub account. Zoom only assign this privilege to trusted partner. The created user will not receive the confirmation email.</aside></p>
 
 <blockquote>
 <p>Definition</p>
@@ -537,7 +556,7 @@
 
           <h2 id="retrieve-an-account">Retrieve an account</h2>
 
-<p>Retrieve a sub account under the master account</p>
+<p>Retrieve a sub account under the master account <aside>Your account must be a master account and have this privilege to get sub account. Zoom only assign this privilege to trusted partner</aside></p>
 
 <blockquote>
 <p>Definition</p>
@@ -696,11 +715,23 @@
 </blockquote>
 <pre class="highlight plaintext"><code>200 OK
 </code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"schedule_meting"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"host_video"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"participant_video"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"audio_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"join_before_host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"enforce_login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"enforce_login_with_domains"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"enforce_login_domains"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"not_store_meeting_topic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"force_pmi_jbh_password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
     </span><span class="s2">"in_meeting"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"e2e_encryption"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"chat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"private_chat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"auto_saving_chat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"file_transfer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"feedback"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"post_meeting_feedback"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"co_host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
@@ -708,35 +739,54 @@
         </span><span class="s2">"attendee_on_hold"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"show_meeting_control_toolbar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"allow_show_zoom_windows"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"alert_guest_join"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"annotation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"whiteboard"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"webinar_question_answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"anonymous_question_answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"breakout_room"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"file_transfer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"closed_caption"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"far_end_camera_control"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"group_hd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"virtual_background"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"watermark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"alert_guest_join"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"auto_answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"p2p_connetion"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"p2p_ports"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ports_range"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sending_default_email_invites"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"use_html_format_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"dscp_marking"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"dscp_audio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"dscp_video"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"virtual_background"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sending_default_email_invites"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"p2p_connetion"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"p2p_ports"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+        </span><span class="s2">"stereo_audio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"original_audio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"screen_sharing"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"remote_control"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"attention_tracking"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"schedule_meting"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"join_before_host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"host_video"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"participant_video"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"both_audio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"not_store_meeting_topic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"force_pmi_jbh_password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
+    </span><span class="s2">"email_notification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"cloud_recording_avaliable_reminder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"jbh_reminder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cancel_meeting_reminder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"low_host_count_reminder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"alternative_host_reminder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"join_meeting"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"auto_answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"enforce_login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"enforce_login_domains"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"watermark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
+    </span><span class="s2">"zoom_rooms"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"upcoming_meeting_alert"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"start_airplay_manually"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"weekly_system_restart"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"list_meetings_with_calendar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zr_post_meeting_feedback"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ultrasonic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"force_private_meeting"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"hide_host_information"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cmr_for_instant_meeting"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"auto_start_stop_scheduled_meetings"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"_security"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"import_photos_from_devices"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"hide_billing_info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"recording"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"local_recording"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
@@ -745,36 +795,11 @@
         </span><span class="s2">"cloud_recording_download"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"cloud_recording_download_host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"account_user_access_recording"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"cloud_recording_notification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"auto_delete_cmr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"auto_delete_cmr_days"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="w">
+        </span><span class="s2">"auto_delete_cmr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"notification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"cloud_recording_avaliable_reminder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"jbh_reminder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"cancel_meeting_reminder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"low_host_count_reminder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"alternative_host_reminder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"audio"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"stereo_audio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"original_audio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"third_party_audio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"zoom_rooms"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"upcoming_meeting_alert"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"start_airplay_manually"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"weekly_system_restart"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"list_meetings_with_calendar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"ultrasonic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"force_private_meeting"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"hide_host_information"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"cmr_for_instant_meeting"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"auto_start_stop_scheduled_meetings"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"admin"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"hide_billing_info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"auto_active_import_users"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
+    </span><span class="s2">"telephony"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"third_party_audio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"audio_conference_info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"integration"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"google_calendar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
@@ -783,13 +808,6 @@
         </span><span class="s2">"box"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"microsoft_one_drive"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"kubi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"html_email_template"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"use_html_format_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"user_profile"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"admin_change_name_pic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"import_photos_from_devices"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"feature"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"meeting_capacity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="w">
@@ -822,11 +840,23 @@
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v2/accounts/<span class="o">{</span>accountId<span class="o">}</span>/settings <span class="se">\</span>
    -d <span class="s1">'{
+    "schedule_meting": {
+        "host_video": "boolean",
+        "participant_video": "boolean",
+        "audio_type": "string",
+        "join_before_host": "boolean",
+        "enforce_login": "boolean",
+        "enforce_login_with_domains": "boolean",
+        "enforce_login_domains": "boolean",
+        "not_store_meeting_topic": "boolean",
+        "force_pmi_jbh_password": "boolean"
+    },
     "in_meeting": {
         "e2e_encryption": "boolean",
         "chat": "boolean",
         "private_chat": "boolean",
         "auto_saving_chat": "boolean",
+        "file_transfer": "boolean",
         "feedback": "boolean",
         "post_meeting_feedback": "boolean",
         "co_host": "boolean",
@@ -834,35 +864,54 @@
         "attendee_on_hold": "boolean",
         "show_meeting_control_toolbar": "boolean",
         "allow_show_zoom_windows": "boolean",
-        "alert_guest_join": "boolean",
+        "annotation": "boolean",
+        "whiteboard": "boolean",
         "webinar_question_answer": "boolean",
         "anonymous_question_answer": "boolean",
         "breakout_room": "boolean",
-        "file_transfer": "boolean",
         "closed_caption": "boolean",
         "far_end_camera_control": "boolean",
         "group_hd": "boolean",
+        "virtual_background": "boolean",
+        "watermark": "boolean",
+        "alert_guest_join": "boolean",
+        "auto_answer": "boolean",
+        "p2p_connetion": "boolean",
+        "p2p_ports": "string",
+        "ports_range": "string",
+        "sending_default_email_invites": "boolean",
+        "use_html_format_email": "boolean",
         "dscp_marking": "boolean",
         "dscp_audio": "integer",
         "dscp_video": "integer",
-        "virtual_background": "boolean",
-        "sending_default_email_invites": "boolean",
-        "p2p_connetion": "boolean",
-        "p2p_ports": "string"
+        "stereo_audio": "boolean",
+        "original_audio": "boolean",
+        "screen_sharing": "boolean",
+        "remote_control": "boolean",
+        "attention_tracking": "boolean"
     },
-    "schedule_meting": {
-        "join_before_host": "boolean",
-        "host_video": "boolean",
-        "participant_video": "boolean",
-        "both_audio": "boolean",
-        "not_store_meeting_topic": "boolean",
-        "force_pmi_jbh_password": "boolean"
+    "email_notification": {
+        "cloud_recording_avaliable_reminder": "boolean",
+        "jbh_reminder": "boolean",
+        "cancel_meeting_reminder": "boolean",
+        "low_host_count_reminder": "boolean",
+        "alternative_host_reminder": "boolean"
     },
-    "join_meeting": {
-        "auto_answer": "boolean",
-        "enforce_login": "boolean",
-        "enforce_login_domains": "string",
-        "watermark": "boolean"
+    "zoom_rooms": {
+        "upcoming_meeting_alert": "boolean",
+        "start_airplay_manually": "boolean",
+        "weekly_system_restart": "boolean",
+        "list_meetings_with_calendar": "boolean",
+        "zr_post_meeting_feedback": "boolean",
+        "ultrasonic": "boolean",
+        "force_private_meeting": "boolean",
+        "hide_host_information": "boolean",
+        "cmr_for_instant_meeting": "boolean",
+        "auto_start_stop_scheduled_meetings": "boolean"
+    },
+    "_security": {
+        "import_photos_from_devices": "boolean",
+        "hide_billing_info": "boolean"
     },
     "recording": {
         "local_recording": "boolean",
@@ -871,36 +920,11 @@
         "cloud_recording_download": "boolean",
         "cloud_recording_download_host": "boolean",
         "account_user_access_recording": "boolean",
-        "cloud_recording_notification": "boolean",
-        "auto_delete_cmr": "boolean",
-        "auto_delete_cmr_days": "integer"
+        "auto_delete_cmr": "boolean"
     },
-    "notification": {
-        "cloud_recording_avaliable_reminder": "boolean",
-        "jbh_reminder": "boolean",
-        "cancel_meeting_reminder": "boolean",
-        "low_host_count_reminder": "boolean",
-        "alternative_host_reminder": "boolean"
-    },
-    "audio": {
-        "stereo_audio": "boolean",
-        "original_audio": "boolean",
-        "third_party_audio": "boolean"
-    },
-    "zoom_rooms": {
-        "upcoming_meeting_alert": "boolean",
-        "start_airplay_manually": "boolean",
-        "weekly_system_restart": "boolean",
-        "list_meetings_with_calendar": "boolean",
-        "ultrasonic": "boolean",
-        "force_private_meeting": "boolean",
-        "hide_host_information": "boolean",
-        "cmr_for_instant_meeting": "boolean",
-        "auto_start_stop_scheduled_meetings": "boolean"
-    },
-    "admin": {
-        "hide_billing_info": "boolean",
-        "auto_active_import_users": "boolean"
+    "telephony": {
+        "third_party_audio": "boolean",
+        "audio_conference_info": "string"
     },
     "integration": {
         "google_calendar": "boolean",
@@ -909,13 +933,6 @@
         "box": "boolean",
         "microsoft_one_drive": "boolean",
         "kubi": "boolean"
-    },
-    "html_email_template": {
-        "use_html_format_email": "boolean"
-    },
-    "user_profile": {
-        "admin_change_name_pic": "boolean",
-        "import_photos_from_devices": "boolean"
     },
     "feature": {
         "meeting_capacity": "integer"
@@ -946,6 +963,42 @@
 </tr>
 </thead><tbody>
 <tr>
+<td>schedule_meting.host_video</td>
+<td>Host Video</td>
+</tr>
+<tr>
+<td>schedule_meting.participant_video</td>
+<td>Participants Video</td>
+</tr>
+<tr>
+<td>schedule_meting.audio_type</td>
+<td>Audio Type</td>
+</tr>
+<tr>
+<td>schedule_meting.join_before_host</td>
+<td>Join Before Host</td>
+</tr>
+<tr>
+<td>schedule_meting.enforce_login</td>
+<td>Required user to be logged in</td>
+</tr>
+<tr>
+<td>schedule_meting.enforce_login_with_domains</td>
+<td>Logged in user must be part of domain</td>
+</tr>
+<tr>
+<td>schedule_meting.enforce_login_domains</td>
+<td>PList of domains accepted</td>
+</tr>
+<tr>
+<td>schedule_meting.not_store_meeting_topic</td>
+<td>Always display &lsquo;Zoom Meeting&rsquo; as the meeting topic</td>
+</tr>
+<tr>
+<td>schedule_meting.force_pmi_jbh_password</td>
+<td>Require a password for Personal Meetings if attendees can join before host</td>
+</tr>
+<tr>
 <td>in_meeting.e2e_encryption</td>
 <td>End-to-End Encryption</td>
 </tr>
@@ -960,6 +1013,10 @@
 <tr>
 <td>in_meeting.auto_saving_chat</td>
 <td>Auto Saving Chats</td>
+</tr>
+<tr>
+<td>in_meeting.file_transfer</td>
+<td>File transfer</td>
 </tr>
 <tr>
 <td>in_meeting.feedback</td>
@@ -990,8 +1047,12 @@
 <td>Allow to share Zoom windows in desktop sharing</td>
 </tr>
 <tr>
-<td>in_meeting.alert_guest_join</td>
-<td>Alert internal participants when a guest joins a meeting</td>
+<td>in_meeting.annotation</td>
+<td>Allow to share Zoom windows in desktop sharing</td>
+</tr>
+<tr>
+<td>in_meeting.whiteboard</td>
+<td>Allow to share Zoom windows in desktop sharing</td>
 </tr>
 <tr>
 <td>in_meeting.webinar_question_answer</td>
@@ -1006,10 +1067,6 @@
 <td>Breakout room</td>
 </tr>
 <tr>
-<td>in_meeting.file_transfer</td>
-<td>File transfer</td>
-</tr>
-<tr>
 <td>in_meeting.closed_caption</td>
 <td>Closed caption</td>
 </tr>
@@ -1020,6 +1077,42 @@
 <tr>
 <td>in_meeting.group_hd</td>
 <td>Group HD video</td>
+</tr>
+<tr>
+<td>in_meeting.virtual_background</td>
+<td>Virtual background</td>
+</tr>
+<tr>
+<td>in_meeting.watermark</td>
+<td>Alert internal participants when a guest joins a meeting</td>
+</tr>
+<tr>
+<td>in_meeting.alert_guest_join</td>
+<td>Alert internal participants when a guest joins a meeting</td>
+</tr>
+<tr>
+<td>in_meeting.auto_answer</td>
+<td>Peer to Peer connection while only 2 people in a meeting Learn More</td>
+</tr>
+<tr>
+<td>in_meeting.p2p_connetion</td>
+<td>Peer to Peer connection while only 2 people in a meeting Learn More</td>
+</tr>
+<tr>
+<td>in_meeting.p2p_ports</td>
+<td>Listening ports range, separated by comma, such as 55,56</td>
+</tr>
+<tr>
+<td>in_meeting.ports_range</td>
+<td>Peer to Peer connection while only 2 people in a meeting Learn More</td>
+</tr>
+<tr>
+<td>in_meeting.sending_default_email_invites</td>
+<td>Only show default email when sending email invites</td>
+</tr>
+<tr>
+<td>in_meeting.use_html_format_email</td>
+<td>Only show default email when sending email invites</td>
 </tr>
 <tr>
 <td>in_meeting.dscp_marking</td>
@@ -1034,60 +1127,92 @@
 <td>DSCP Video</td>
 </tr>
 <tr>
-<td>in_meeting.virtual_background</td>
-<td>Virtual background</td>
+<td>in_meeting.stereo_audio</td>
+<td>DSCP Video</td>
 </tr>
 <tr>
-<td>in_meeting.sending_default_email_invites</td>
-<td>Only show default email when sending email invites</td>
+<td>in_meeting.original_audio</td>
+<td>DSCP Video</td>
 </tr>
 <tr>
-<td>in_meeting.p2p_connetion</td>
-<td>Peer to Peer connection while only 2 people in a meeting Learn More</td>
+<td>in_meeting.screen_sharing</td>
+<td>DSCP Video</td>
 </tr>
 <tr>
-<td>in_meeting.p2p_ports</td>
-<td>Listening ports range, separated by comma, such as 55,56</td>
+<td>in_meeting.remote_control</td>
+<td>DSCP Video</td>
 </tr>
 <tr>
-<td>schedule_meting.join_before_host</td>
-<td>Join Before Host</td>
+<td>in_meeting.attention_tracking</td>
+<td>DSCP Video</td>
 </tr>
 <tr>
-<td>schedule_meting.host_video</td>
-<td>Host Video</td>
+<td>email_notification.cloud_recording_avaliable_reminder</td>
+<td>Allow keep recording from being automatically deleted</td>
 </tr>
 <tr>
-<td>schedule_meting.participant_video</td>
-<td>Participants Video</td>
+<td>email_notification.jbh_reminder</td>
+<td>When attendees join meeting before host</td>
 </tr>
 <tr>
-<td>schedule_meting.both_audio</td>
-<td>Audio: Telephony and VoIP</td>
+<td>email_notification.cancel_meeting_reminder</td>
+<td>When a meeting is cancelled</td>
 </tr>
 <tr>
-<td>schedule_meting.not_store_meeting_topic</td>
-<td>Always display &lsquo;Zoom Meeting&rsquo; as the meeting topic</td>
+<td>email_notification.low_host_count_reminder</td>
+<td>When host count is low</td>
 </tr>
 <tr>
-<td>schedule_meting.force_pmi_jbh_password</td>
-<td>Require a password for Personal Meetings if attendees can join before host</td>
+<td>email_notification.alternative_host_reminder</td>
+<td>When an alternative host is set or removed from a meeting</td>
 </tr>
 <tr>
-<td>join_meeting.auto_answer</td>
-<td>Enable Auto Answer Group</td>
+<td>zoom_rooms.upcoming_meeting_alert</td>
+<td>Upcoming meeting alert</td>
 </tr>
 <tr>
-<td>join_meeting.enforce_login</td>
-<td>Only signed-in users can join meetings</td>
+<td>zoom_rooms.start_airplay_manually</td>
+<td>Start AirPlay service manually</td>
 </tr>
 <tr>
-<td>join_meeting.enforce_login_domains</td>
-<td>Only signed-in users with specified domains can join meetings</td>
+<td>zoom_rooms.weekly_system_restart</td>
+<td>Weekly system restart</td>
 </tr>
 <tr>
-<td>join_meeting.watermark</td>
-<td>Add watermark when viewing the shared screen</td>
+<td>zoom_rooms.list_meetings_with_calendar</td>
+<td>Display meeting list with calendar integration</td>
+</tr>
+<tr>
+<td>zoom_rooms.zr_post_meeting_feedback</td>
+<td>Display meeting list with calendar integration</td>
+</tr>
+<tr>
+<td>zoom_rooms.ultrasonic</td>
+<td>Automatic direct sharing using ultrasonic proximity signal</td>
+</tr>
+<tr>
+<td>zoom_rooms.force_private_meeting</td>
+<td>Transform all meetings to private</td>
+</tr>
+<tr>
+<td>zoom_rooms.hide_host_information</td>
+<td>Hide host and meeting ID from private meetings</td>
+</tr>
+<tr>
+<td>zoom_rooms.cmr_for_instant_meeting</td>
+<td>Cloud recording for instant meetings</td>
+</tr>
+<tr>
+<td>zoom_rooms.auto_start_stop_scheduled_meetings</td>
+<td>Automatic start/stop scheduled meetings</td>
+</tr>
+<tr>
+<td>_security.import_photos_from_devices</td>
+<td></td>
+</tr>
+<tr>
+<td>_security.hide_billing_info</td>
+<td></td>
 </tr>
 <tr>
 <td>recording.local_recording</td>
@@ -1114,92 +1239,16 @@
 <td>Only users on my account can access cloud recordings</td>
 </tr>
 <tr>
-<td>recording.cloud_recording_notification</td>
-<td>Push notification to subscription URL when a cloud recording is available</td>
-</tr>
-<tr>
 <td>recording.auto_delete_cmr</td>
 <td>Auto delete cloud recordings after days</td>
 </tr>
 <tr>
-<td>recording.auto_delete_cmr_days</td>
-<td>Number of auto delete cloud recordings after days</td>
+<td>telephony.third_party_audio</td>
+<td></td>
 </tr>
 <tr>
-<td>notification.cloud_recording_avaliable_reminder</td>
-<td>Allow keep recording from being automatically deleted</td>
-</tr>
-<tr>
-<td>notification.jbh_reminder</td>
-<td>When attendees join meeting before host</td>
-</tr>
-<tr>
-<td>notification.cancel_meeting_reminder</td>
-<td>When a meeting is cancelled</td>
-</tr>
-<tr>
-<td>notification.low_host_count_reminder</td>
-<td>When host count is low</td>
-</tr>
-<tr>
-<td>notification.alternative_host_reminder</td>
-<td>When an alternative host is set or removed from a meeting</td>
-</tr>
-<tr>
-<td>audio.stereo_audio</td>
-<td>Stereo Audio</td>
-</tr>
-<tr>
-<td>audio.original_audio</td>
-<td>Allow users to select original sound in their client settings</td>
-</tr>
-<tr>
-<td>audio.third_party_audio</td>
-<td>3rd party audio conference</td>
-</tr>
-<tr>
-<td>zoom_rooms.upcoming_meeting_alert</td>
-<td>Upcoming meeting alert</td>
-</tr>
-<tr>
-<td>zoom_rooms.start_airplay_manually</td>
-<td>Start AirPlay service manually</td>
-</tr>
-<tr>
-<td>zoom_rooms.weekly_system_restart</td>
-<td>Weekly system restart</td>
-</tr>
-<tr>
-<td>zoom_rooms.list_meetings_with_calendar</td>
-<td>Display meeting list with calendar integration</td>
-</tr>
-<tr>
-<td>zoom_rooms.ultrasonic</td>
-<td>Automatic direct sharing using ultrasonic proximity signal</td>
-</tr>
-<tr>
-<td>zoom_rooms.force_private_meeting</td>
-<td>Transform all meetings to private</td>
-</tr>
-<tr>
-<td>zoom_rooms.hide_host_information</td>
-<td>Hide host and meeting ID from private meetings</td>
-</tr>
-<tr>
-<td>zoom_rooms.cmr_for_instant_meeting</td>
-<td>Cloud recording for instant meetings</td>
-</tr>
-<tr>
-<td>zoom_rooms.auto_start_stop_scheduled_meetings</td>
-<td>Automatic start/stop scheduled meetings</td>
-</tr>
-<tr>
-<td>admin.hide_billing_info</td>
-<td>Hide billing information from administrators</td>
-</tr>
-<tr>
-<td>admin.auto_active_import_users</td>
-<td>Auto activation when import users</td>
+<td>telephony.audio_conference_info</td>
+<td></td>
 </tr>
 <tr>
 <td>integration.google_calendar</td>
@@ -1224,18 +1273,6 @@
 <tr>
 <td>integration.kubi</td>
 <td>Kubi</td>
-</tr>
-<tr>
-<td>html_email_template.use_html_format_email</td>
-<td>Use HTML format email for Outlook plugin</td>
-</tr>
-<tr>
-<td>user_profile.admin_change_name_pic</td>
-<td>Only account administrators can change users&rsquo; usernames and profile pictures</td>
-</tr>
-<tr>
-<td>user_profile.import_photos_from_devices</td>
-<td>Allow importing of photos from the photo library on the user&rsquo;s device</td>
 </tr>
 <tr>
 <td>feature.meeting_capacity</td>
@@ -1288,7 +1325,7 @@
 
           <h2 id="update-an-accounts-billing-information">Update an account&rsquo;s billing information</h2>
 
-<p>Update a sub account&rsquo;s billing information under the master account</p>
+<p>Update a sub account&rsquo;s billing information under the master account <aside>Only for the sub account which is paid by master account</aside></p>
 
 <blockquote>
 <p>Definition</p>
@@ -1379,7 +1416,7 @@
 
           <h2 id="retrieve-an-accounts-plans">Retrieve an account&rsquo;s plans</h2>
 
-<p>Retrieve a sub account&rsquo;s plans under the master account</p>
+<p>Retrieve a sub account&rsquo;s plans under the master account  <aside>Only for the sub account which is paid by master account</aside></p>
 
 <blockquote>
 <p>Definition</p>
@@ -1444,18 +1481,30 @@
 
           <h2 id="add-to-an-accounts-plans">Add to an account&rsquo;s plans</h2>
 
-<p>Add a plan to sub account under the master account</p>
+<p>Add a plan to sub account under the master account <aside>Can only subscribe plans for the sub account which is a free account and paid by master account</aside><aside>Can only add an Additional plan for the sub account which is a paid account and paid by master account</aside></p>
 
 <blockquote>
 <p>Definition</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>PUT https://api.zoom.us/v2/accounts/<span class="o">{</span>accountId<span class="o">}</span>/plans
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v2/accounts/<span class="o">{</span>accountId<span class="o">}</span>/plans
 </code></pre>
 <blockquote>
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v2/accounts/<span class="o">{</span>accountId<span class="o">}</span>/plans <span class="se">\</span>
    -d <span class="s1">'{
+    "contact": {
+        "first_name": "string",
+        "last_name": "string",
+        "email": "string",
+        "phone_number": "string",
+        "address": "string",
+        "apt": "string",
+        "city": "string",
+        "state": "string",
+        "zip": "string",
+        "country": "string"
+    },
     "plan_base": {
         "type": "string",
         "hosts": "integer"
@@ -1514,6 +1563,46 @@
 </tr>
 </thead><tbody>
 <tr>
+<td>contact.first_name</td>
+<td>Billing Contact&rsquo;s first name.</td>
+</tr>
+<tr>
+<td>contact.last_name</td>
+<td>Billing Contact&rsquo;s last name.</td>
+</tr>
+<tr>
+<td>contact.email</td>
+<td>Billing Contact&rsquo;s email address.</td>
+</tr>
+<tr>
+<td>contact.phone_number</td>
+<td>Billing Contact&rsquo;s phone number.</td>
+</tr>
+<tr>
+<td>contact.address</td>
+<td>Billing Contact&rsquo;s address.</td>
+</tr>
+<tr>
+<td>contact.apt</td>
+<td>Billing Contact&rsquo;s apartment/suite.</td>
+</tr>
+<tr>
+<td>contact.city</td>
+<td>Billing Contact&rsquo;s city.</td>
+</tr>
+<tr>
+<td>contact.state</td>
+<td>Billing Contact&rsquo;s state.</td>
+</tr>
+<tr>
+<td>contact.zip</td>
+<td>Billing Contact&rsquo;s zip/postal code.</td>
+</tr>
+<tr>
+<td>contact.country</td>
+<td>Billing Contact&rsquo;s country.</td>
+</tr>
+<tr>
 <td>plan_base.type</td>
 <td>Account plan type</td>
 </tr>
@@ -1568,6 +1657,159 @@
 <tr>
 <td>plan_audio.ddi_numbers</td>
 <td>Dedicated Dial-In Numbers</td>
+</tr>
+</tbody></table>
+
+          <h2 id="update-an-accounts-base-plan">Update an account&rsquo;s base plan</h2>
+
+<p>Update a base plan for a sub account <aside>Can only subscribe plans for the sub account which is a free account and paid by master account</aside><aside>Can only add an Additional plan for the sub account which is a paid account and paid by master account</aside></p>
+
+<blockquote>
+<p>Definition</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>PUT https://api.zoom.us/v2/accounts/<span class="o">{</span>accountId<span class="o">}</span>/plans/base
+</code></pre>
+<blockquote>
+<p>Example Request</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v2/accounts/<span class="o">{</span>accountId<span class="o">}</span>/plans/base <span class="se">\</span>
+   -d <span class="s1">'{
+    "type": "string",
+    "hosts": "integer"
+}'</span>
+</code></pre>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<pre class="highlight plaintext"><code>204 No Content
+</code></pre>
+<table><thead>
+<tr>
+<th>Path Arguments</th>
+<th>&nbsp;</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>accountId <strong>required</strong></td>
+<td>The account ID</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Body Arguments</th>
+<th>&nbsp;</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
+<td>Account plan type</td>
+</tr>
+<tr>
+<td>hosts</td>
+<td>Account plan number of hosts</td>
+</tr>
+</tbody></table>
+
+          <h2 id="add-an-account-add-on-plan">Add an account add on plan</h2>
+
+<p>Add an add on plan for a sub account <aside>Can only subscribe plans for the sub account which is a free account and paid by master account</aside><aside>Can only add an Additional plan for the sub account which is a paid account and paid by master account</aside></p>
+
+<blockquote>
+<p>Definition</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v2/accounts/<span class="o">{</span>accountId<span class="o">}</span>/plans/addons
+</code></pre>
+<blockquote>
+<p>Example Request</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v2/accounts/<span class="o">{</span>accountId<span class="o">}</span>/plans/addons <span class="se">\</span>
+   -d <span class="s1">'{
+    "type": "string",
+    "hosts": "integer"
+}'</span>
+</code></pre>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<pre class="highlight plaintext"><code>204 No Content
+</code></pre>
+<table><thead>
+<tr>
+<th>Path Arguments</th>
+<th>&nbsp;</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>accountId <strong>required</strong></td>
+<td>The account ID</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Body Arguments</th>
+<th>&nbsp;</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
+<td>Account plan type</td>
+</tr>
+<tr>
+<td>hosts</td>
+<td>Account plan number of hosts</td>
+</tr>
+</tbody></table>
+
+          <h2 id="update-an-accounts-add-on-plans">Update an account&rsquo;s add on plans</h2>
+
+<p>Update as add on plan for a sub account <aside>Can only subscribe plans for the sub account which is a free account and paid by master account</aside><aside>Can only add an Additional plan for the sub account which is a paid account and paid by master account</aside></p>
+
+<blockquote>
+<p>Definition</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>PUT https://api.zoom.us/v2/accounts/<span class="o">{</span>accountId<span class="o">}</span>/plans/addons
+</code></pre>
+<blockquote>
+<p>Example Request</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v2/accounts/<span class="o">{</span>accountId<span class="o">}</span>/plans/addons <span class="se">\</span>
+   -d <span class="s1">'{
+    "type": "string",
+    "hosts": "integer"
+}'</span>
+</code></pre>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<pre class="highlight plaintext"><code>204 No Content
+</code></pre>
+<table><thead>
+<tr>
+<th>Path Arguments</th>
+<th>&nbsp;</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>accountId <strong>required</strong></td>
+<td>The account ID</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Body Arguments</th>
+<th>&nbsp;</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
+<td>Account plan type</td>
+</tr>
+<tr>
+<td>hosts</td>
+<td>Account plan number of hosts</td>
 </tr>
 </tbody></table>
 
@@ -1671,7 +1913,7 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>action <strong>required</strong></td>
+<td>action</td>
 <td>Action to take for user creation<div class="enum"><code class="prettyprint">create</code> User will get an email sent from Zoom. There is a confirmation link in this email. User will then need to click this link to activate their account to the Zoom service. The user can set or change their password in Zoom. <br/><br/><code class="prettyprint">custCreate</code> This action is provided for enterprise customer who has a managed domain. This feature is disabled by default because of the security risk involved in creating a user who does not belong to your domain without notifying the user. <br/><br/><code class="prettyprint">autoCreate</code> This action is provided for API partner only. User created in this way has no password and is not able to log into the Zoom web site or client. <br/><br/><code class="prettyprint">ssoCreate</code> This action is provided for enabled &ldquo;Pre-provisioning SSO User&rdquo; option. User created in this way has no password. If it is not a basic user, will generate a Personal Vanity URL using user name (no domain) of the provisioning email. If user name or pmi is invalid or occupied, will use random number/random personal vanity URL. <br/><br/></div></td>
 </tr>
 <tr>
@@ -2105,11 +2347,8 @@
         </span><span class="s2">"record_audio_file"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"save_chat_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"show_timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"recording_audio_transcript"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"auto_recording"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"cloud_auto_recording"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"auto_delete_cmr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"auto_delete_cmr_days"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+        </span><span class="s2">"auto_delete_cmr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"telephony"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"third_party_audio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
@@ -2117,9 +2356,9 @@
         </span><span class="s2">"show_international_numbers_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"feature"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"meeting_capacity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"meeting_capacity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"large_meeting"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"large_meeting_capacity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"large_meeting_capacity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"webinar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"webinar_capacity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -2199,11 +2438,8 @@
         "record_audio_file": "boolean",
         "save_chat_text": "boolean",
         "show_timestamp": "boolean",
-        "recording_audio_transcript": "boolean",
         "auto_recording": "string",
-        "cloud_auto_recording": "boolean",
-        "auto_delete_cmr": "boolean",
-        "auto_delete_cmr_days": "int"
+        "auto_delete_cmr": "boolean"
     },
     "telephony": {
         "third_party_audio": "boolean",
@@ -2211,9 +2447,9 @@
         "show_international_numbers_link": "boolean"
     },
     "feature": {
-        "meeting_capacity": "int",
+        "meeting_capacity": "integer",
         "large_meeting": "boolean",
-        "large_meeting_capacity": "int",
+        "large_meeting_capacity": "integer",
         "webinar": "boolean",
         "webinar_capacity": "boolean"
     }
@@ -2407,24 +2643,12 @@
 <td>Show timestamp on video</td>
 </tr>
 <tr>
-<td>recording.recording_audio_transcript</td>
-<td>Audio transcript</td>
-</tr>
-<tr>
 <td>recording.auto_recording</td>
 <td>Automatic recording<div class="enum"><code class="prettyprint">Record on local</code> local<br/><code class="prettyprint">Record on cloud</code> cloud<br/><code class="prettyprint">Disabled</code> none<br/></div></td>
 </tr>
 <tr>
-<td>recording.cloud_auto_recording</td>
-<td>Automatic recording on cloud</td>
-</tr>
-<tr>
 <td>recording.auto_delete_cmr</td>
 <td>Auto delete cloud recordings</td>
-</tr>
-<tr>
-<td>recording.auto_delete_cmr_days</td>
-<td>Auto delete cloud recordings after days</td>
 </tr>
 <tr>
 <td>telephony.third_party_audio</td>
@@ -5597,203 +5821,6 @@
 <tr>
 <td>tspId <strong>required</strong></td>
 <td>TSP ID</td>
-</tr>
-</tbody></table>
-
-          <h1 id="zoom-rooms">Zoom Rooms</h1>
-
-          <h2 id="create-a-meeting">Create a meeting</h2>
-
-<p>Create a meeting</p>
-
-<blockquote>
-<p>Definition</p>
-</blockquote>
-<pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v2/rooms/<span class="o">{</span>userId<span class="o">}</span>/meetings
-</code></pre>
-<blockquote>
-<p>Example Request</p>
-</blockquote>
-<pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://api.zoom.us/v2/rooms/<span class="o">{</span>userId<span class="o">}</span>/meetings <span class="se">\</span>
-   -d <span class="s1">'{
-    "topic": "string",
-    "type": "integer",
-    "start_time": "string",
-    "duration": "integer",
-    "timezone": "string",
-    "password": "string",
-    "description": "string",
-    "recurrence": {
-        "type": "integer",
-        "repeat_interval": "integer",
-        "weekly_days": "integer",
-        "monthly_day": "integer",
-        "monthly_week": "integer",
-        "monthly_week_day": "integer",
-        "end_times": "integer",
-        "end_date_time": "string"
-    },
-    "settings": {
-        "host_video": "boolean",
-        "participant_video": "boolean",
-        "cn_meeting": "boolean",
-        "in_meeting": "boolean",
-        "join_before_host": "boolean",
-        "mute_upon_entry": "boolean",
-        "watermark": "boolean",
-        "use_pmi": "boolean",
-        "approval_type": "integer",
-        "registration_type": "integer",
-        "audio": "string",
-        "auto_recording": "string",
-        "enforce_login": "boolean",
-        "enforce_login_domains": "boolean",
-        "alternatice_hosts": "boolean"
-    }
-}'</span>
-</code></pre>
-<blockquote>
-<p>Example Response</p>
-</blockquote>
-<pre class="highlight plaintext"><code>201 Created
-</code></pre>
-<table><thead>
-<tr>
-<th>Path Arguments</th>
-<th>&nbsp;</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>userId <strong>required</strong></td>
-<td>The user ID</td>
-</tr>
-</tbody></table>
-
-<table><thead>
-<tr>
-<th>Body Arguments</th>
-<th>&nbsp;</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>topic</td>
-<td>Meeting topic</td>
-</tr>
-<tr>
-<td>type</td>
-<td>Meeting Type<div class="enum"><code class="prettyprint">1</code> Instant Meeting<br/><code class="prettyprint">2</code> Scheduled Meeting<br/><code class="prettyprint">3</code> Recurring Meeting with no fixed time<br/><code class="prettyprint">8</code> Recurring Meeting with fixed time<br/></div></td>
-</tr>
-<tr>
-<td>start_time</td>
-<td>Meeting start time</td>
-</tr>
-<tr>
-<td>duration</td>
-<td>Meeting duration</td>
-</tr>
-<tr>
-<td>timezone</td>
-<td>Timezone to format start_time</td>
-</tr>
-<tr>
-<td>password</td>
-<td>Password to join the meeting</td>
-</tr>
-<tr>
-<td>description</td>
-<td>Meeting description</td>
-</tr>
-<tr>
-<td>recurrence.type</td>
-<td>Recurrence meeting type<div class="enum"><code class="prettyprint">1</code> Daily<br/><code class="prettyprint">2</code> Weekly<br/><code class="prettyprint">3</code> Monthly<br/></div></td>
-</tr>
-<tr>
-<td>recurrence.repeat_interval</td>
-<td>Recurrence meeting repeat interval. For a Daily Meeting, max of 90. For a Weekly Meeting, max of 12. For a Monthly Meeting, max of 3.</td>
-</tr>
-<tr>
-<td>recurrence.weekly_days</td>
-<td>Recurrence Meeting Occurs on week days, multiple value separated by comma<div class="enum"><code class="prettyprint">1</code> Sunday<br/><code class="prettyprint">2</code> Monday<br/><code class="prettyprint">3</code> Tuesday<br/><code class="prettyprint">4</code> Wednesday<br/><code class="prettyprint">5</code> Thursday<br/><code class="prettyprint">6</code> Friday<br/><code class="prettyprint">7</code> Saturday<br/></div></td>
-</tr>
-<tr>
-<td>recurrence.monthly_day</td>
-<td>Recurrence Meeting Occurs on a month day. The value range is from 1 to 31</td>
-</tr>
-<tr>
-<td>recurrence.monthly_week</td>
-<td>Recurrence Meeting Occurs on the week of a month.<div class="enum"><code class="prettyprint">-1</code> Last week<br/><code class="prettyprint">1</code> First week<br/><code class="prettyprint">2</code> Second week<br/><code class="prettyprint">3</code> Third week<br/><code class="prettyprint">4</code> Fourth week<br/></div></td>
-</tr>
-<tr>
-<td>recurrence.monthly_week_day</td>
-<td>Recurrence Meeting Occurs on the week day of a month<div class="enum"><code class="prettyprint">1</code> Sunday<br/><code class="prettyprint">2</code> Monday<br/><code class="prettyprint">3</code> Tuesday<br/><code class="prettyprint">4</code> Wednesday<br/><code class="prettyprint">5</code> Thursday<br/><code class="prettyprint">6</code> Friday<br/><code class="prettyprint">7</code> Saturday<br/></div></td>
-</tr>
-<tr>
-<td>recurrence.end_times</td>
-<td>Recurrence Meeting End occurrences times</td>
-</tr>
-<tr>
-<td>recurrence.end_date_time</td>
-<td>Recurrence Meeting End Date. Should be UTC time, such as 2017-11-25T12:00:00Z.</td>
-</tr>
-<tr>
-<td>settings.host_video</td>
-<td>Start video when host join meeting</td>
-</tr>
-<tr>
-<td>settings.participant_video</td>
-<td>Start video when participants join meeting</td>
-</tr>
-<tr>
-<td>settings.cn_meeting</td>
-<td>Host meeting in China</td>
-</tr>
-<tr>
-<td>settings.in_meeting</td>
-<td>Host meeting in India</td>
-</tr>
-<tr>
-<td>settings.join_before_host</td>
-<td>Join meeting before host start the meeting. Only used for scheduled or recurring meetings</td>
-</tr>
-<tr>
-<td>settings.mute_upon_entry</td>
-<td>Mute participants upon entry</td>
-</tr>
-<tr>
-<td>settings.watermark</td>
-<td>Enable watermark when viewing the shared screen</td>
-</tr>
-<tr>
-<td>settings.use_pmi</td>
-<td>Use Personal Meeting ID. Only used for scheduled meetings and recurring meetings with no fixed time</td>
-</tr>
-<tr>
-<td>settings.approval_type</td>
-<td><div class="enum"><code class="prettyprint">0</code> Automatically Approve<br/><code class="prettyprint">1</code> Manually Approve<br/><code class="prettyprint">2</code> No Registration Required<br/></div></td>
-</tr>
-<tr>
-<td>settings.registration_type</td>
-<td>Registration type. Used for recurring meeting with fixed time only.<div class="enum"><code class="prettyprint">1</code> Attendees register once and can attend any of the occurrences<br/><code class="prettyprint">2</code> Attendees need to register for each occurrence to attend<br/><code class="prettyprint">3</code> Attendees register once and can choose one or more occurrences to attend<br/></div></td>
-</tr>
-<tr>
-<td>settings.audio</td>
-<td>Meeting audio options<div class="enum"><code class="prettyprint">both</code> Both Telephony and VoIP<br/><code class="prettyprint">telephony</code> Telephony only<br/><code class="prettyprint">voip</code> VoIP only<br/></div></td>
-</tr>
-<tr>
-<td>settings.auto_recording</td>
-<td><div class="enum"><code class="prettyprint">local</code> Record to local device<br/><code class="prettyprint">cloud</code> Record to cloud<br/><code class="prettyprint">none</code> No Recording<br/></div></td>
-</tr>
-<tr>
-<td>settings.enforce_login</td>
-<td>Only signed-in users can join this meeting</td>
-</tr>
-<tr>
-<td>settings.enforce_login_domains</td>
-<td>Only signed-in users with specified domains can join meetings</td>
-</tr>
-<tr>
-<td>settings.alternatice_hosts</td>
-<td>Alternative hosts emails or IDs. Multiple value separated by comma.</td>
 </tr>
 </tbody></table>
 
