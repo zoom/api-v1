@@ -27,7 +27,7 @@ $ curl <%= config[:api_host] %>meeting/delete \
 <%= config[:ex_node_init] %>
 
 var meeting = {
-    id: "<%= config[:ex_uuid] %>",
+    id: <%= config[:ex_uuid] %>,
     host_id: "<%= config[:ex_uuid] %>"
 }
 
@@ -38,7 +38,7 @@ Zoom.meeting.delete(meeting, <%= config[:ex_node_res] %>);
 
 ```json
 {
-  "id": "<%= config[:ex_meeting_number] %>",
+  "id": <%= config[:ex_meeting_number] %>,
   "deleted_at": "2012-11-25T12:00:00Z"
 }
 ```

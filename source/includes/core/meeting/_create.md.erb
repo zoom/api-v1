@@ -41,8 +41,8 @@ Zoom.meeting.create(meeting, <%= config[:ex_node_res] %>);
 ```json
 {
   "uuid": "<%= config[:ex_uuid] %>",
-  "id": "<%= config[:ex_meeting_number] %>",
-  "real_id": "<%= config[:ex_meeting_number] %>",
+  "id": <%= config[:ex_meeting_number] %>,
+  "real_id": <%= config[:ex_meeting_number] %>,
   "start_url": "https://zoom.us/s/<%= config[:ex_meeting_number] %>?zpk=hs65q23kd9sqliy612h23k",
   "join_url": "https://zoom.us/j/<%= config[:ex_meeting_number] %>",
   "created_at": "2012-11-25T12:00:00Z",

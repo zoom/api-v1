@@ -39,7 +39,7 @@ Zoom.dashboard.webinar(dashboard, <%= config[:ex_node_res] %>);
 ```json
 {
   "uuid": "<%= config[:ex_uuid] %>",
-  "id": "<%= config[:ex_meeting_number] %>",
+  "id": <%= config[:ex_meeting_number] %>,
   "type": "Past Webinar",
   "host": "<%= config[:ex_first_name] %> <%= config[:ex_last_name] %>",
   "email": "<%= config[:ex_email] %>",

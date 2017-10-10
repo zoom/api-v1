@@ -50,7 +50,7 @@ Zoom.dashboard.meetings(dashboard, <%= config[:ex_node_res] %>);
   "meetings": [
     {
       "uuid": "<%= config[:ex_uuid] %>",
-      "id": "<%= config[:ex_meeting_number] %>",
+      "id": <%= config[:ex_meeting_number] %>,
       "host": "<%= config[:ex_first_name] %> <%= config[:ex_last_name] %>",
       "email": "<%= config[:ex_email] %>",
       "user_type": "Pro",

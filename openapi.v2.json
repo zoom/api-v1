@@ -38,20 +38,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "access_token",
                         "required": true,
                         "description": "Archived chat messages access token. Admin who has the view privilege of Archived chat messages will get it."
@@ -124,20 +110,6 @@
                 ],
                 "operationId": "chatList",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -215,20 +187,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "name",
                         "required": true,
                         "description": "Group name, must be unique in one account."
@@ -260,20 +218,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "id",
                         "required": true,
                         "description": "Group ID."
@@ -301,20 +245,6 @@
                 ],
                 "operationId": "groupEdit",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -352,20 +282,6 @@
                 ],
                 "operationId": "groupGet",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -443,20 +359,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "id",
                         "required": true,
                         "description": "Group ID."
@@ -494,20 +396,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "id",
                         "required": true,
                         "description": "Group ID."
@@ -542,20 +430,6 @@
                 ],
                 "operationId": "groupMemberList",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -613,20 +487,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "name",
                         "required": true,
                         "description": "Display Name."
@@ -680,20 +540,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "id",
                         "required": true,
                         "description": "Device ID."
@@ -720,20 +566,6 @@
                 ],
                 "operationId": "deviceDeviceList",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -781,20 +613,6 @@
                 ],
                 "operationId": "deviceDeviceUpdate",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -850,20 +668,6 @@
                 ],
                 "operationId": "imGroupGroupCreate",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -929,20 +733,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "id",
                         "required": true,
                         "description": "Group ID."
@@ -970,20 +760,6 @@
                 ],
                 "operationId": "imGroupGroupEdit",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -1052,20 +828,6 @@
                 ],
                 "operationId": "imGroupGroupGet",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -1150,20 +912,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "id",
                         "required": true,
                         "description": "Group ID."
@@ -1198,20 +946,6 @@
                 ],
                 "operationId": "imGroupGroupMemberList",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -1266,20 +1000,6 @@
                 ],
                 "operationId": "accountBillingUpdate",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -1363,20 +1083,6 @@
                 ],
                 "operationId": "accountCreate",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -1526,20 +1232,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "account_id",
                         "required": true,
                         "description": "The sub account ID."
@@ -1566,20 +1258,6 @@
                 ],
                 "operationId": "accountGet",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -1659,20 +1337,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "account_id",
                         "required": true,
                         "description": "The sub account ID."
@@ -1706,20 +1370,6 @@
                 ],
                 "operationId": "accountPlanGet",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -1821,20 +1471,6 @@
                 ],
                 "operationId": "accountPlanSubscribe",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -2040,20 +1676,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "account_id",
                         "required": true,
                         "description": "The sub account ID."
@@ -2095,20 +1717,6 @@
                 ],
                 "operationId": "accountUpdate",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -2238,20 +1846,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "host_id",
                         "required": true,
                         "description": "Meeting host user ID. Can be any user under this account."
@@ -2338,20 +1932,6 @@
                 ],
                 "operationId": "meetingCreate",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -2552,20 +2132,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "id",
                         "required": true,
                         "description": "Meeting ID."
@@ -2608,20 +2174,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "id",
                         "required": true,
                         "description": "Meeting ID."
@@ -2655,20 +2207,6 @@
                 ],
                 "operationId": "meetingGet",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -2735,20 +2273,6 @@
                 ],
                 "operationId": "meetingList",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -2884,20 +2408,6 @@
                 ],
                 "operationId": "meetingRegister",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -3047,20 +2557,6 @@
                 ],
                 "operationId": "meetingUpdate",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -3247,20 +2743,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "from",
                         "required": true,
                         "description": "Start date."
@@ -3306,20 +2788,6 @@
                 ],
                 "operationId": "dashboardIm",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -3397,20 +2865,6 @@
                 ],
                 "operationId": "dashboardMeetingdetail",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -3499,20 +2953,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "type",
                         "required": true,
                         "default": "1",
@@ -3592,20 +3032,6 @@
                 ],
                 "operationId": "dashboardQos",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -3732,20 +3158,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "meeting_id",
                         "required": true,
                         "description": "The meeting ID Example: ucc69C82Q5mTNyCRWE29Aw== Or B9C73AF4-2F36-4399-9337-2091584DBD03"
@@ -3831,20 +3243,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "type",
                         "required": true,
                         "default": "1",
@@ -3924,20 +3322,6 @@
                 ],
                 "operationId": "dashboardZoomroomdetail",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -4054,20 +3438,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "page_size",
                         "default": "30",
                         "description": "The amount of records returns within a single API call. Defaults to 30. Max of 30 records."
@@ -4124,20 +3494,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "meeting_id",
                         "required": true,
                         "description": "The meeting ID. Example: ucc69C82Q5mTNyCRWE29Aw== Or B9C73AF4-2F36-4399-9337-2091584DBD03"
@@ -4170,20 +3526,6 @@
                 ],
                 "operationId": "recordingGet",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -4233,20 +3575,6 @@
                 ],
                 "operationId": "recordingList",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -4340,20 +3668,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "from",
                         "required": true,
                         "description": "Start date."
@@ -4420,20 +3734,6 @@
                 ],
                 "operationId": "reportGetaudioreport",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -4512,20 +3812,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "year",
                         "required": true,
                         "description": "Year for this report."
@@ -4568,20 +3854,6 @@
                 ],
                 "operationId": "reportGetuserreport",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -4662,20 +3934,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "id",
                         "description": "The host’s user id."
                     },
@@ -4708,20 +3966,6 @@
                 ],
                 "operationId": "userAssistantSet",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -4764,20 +4008,6 @@
                 ],
                 "operationId": "userAutocreate",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -5148,20 +4378,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "email",
                         "required": true,
                         "description": "User email."
@@ -5190,20 +4406,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "zpk",
                         "required": true,
                         "description": "User zpk."
@@ -5229,20 +4431,6 @@
                 ],
                 "operationId": "userCreate",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -5606,20 +4794,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "email",
                         "required": true,
                         "description": "A valid email address. It must be unique in Zoom service. If an email address is existed, a \"user existing\" error message will be return"
@@ -5980,20 +5154,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "id",
                         "required": true,
                         "description": "User id."
@@ -6023,20 +5183,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "id",
                         "required": true,
                         "description": "User id."
@@ -6063,20 +5209,6 @@
                 ],
                 "operationId": "userDelete",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -6197,20 +5329,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "email",
                         "required": true,
                         "description": "Email, String"
@@ -6279,20 +5397,6 @@
                 ],
                 "operationId": "userList",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -6370,20 +5474,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "page_size",
                         "default": "30",
                         "description": "The amount of records returns within a single API call. Max of 300 users."
@@ -6458,20 +5548,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "id",
                         "description": "The user’s user id."
                     },
@@ -6507,20 +5583,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "id",
                         "description": "The SSO user’s user id."
                     },
@@ -6553,20 +5615,6 @@
                 ],
                 "operationId": "userScheduleforhostList",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -6608,20 +5656,6 @@
                 ],
                 "operationId": "userSsocreate",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -6757,20 +5791,6 @@
                 ],
                 "operationId": "userUpdate",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -7142,20 +6162,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "id",
                         "required": true,
                         "description": "User id."
@@ -7189,20 +6195,6 @@
                 ],
                 "operationId": "webinarAttendeesList",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -7263,20 +6255,6 @@
                 ],
                 "operationId": "webinarCreate",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -7464,20 +6442,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "id",
                         "required": true,
                         "description": "Webinar ID."
@@ -7520,20 +6484,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "id",
                         "required": true,
                         "description": "Webinar ID."
@@ -7567,20 +6517,6 @@
                 ],
                 "operationId": "webinarGet",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -7641,20 +6577,6 @@
                 ],
                 "operationId": "webinarList",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -7725,20 +6647,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "host_id",
                         "required": true,
                         "description": "Webinar host user ID. Can be any user who enabled webinar under this account."
@@ -7803,20 +6711,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "id",
                         "required": true,
                         "description": "Webinar ID."
@@ -7856,20 +6750,6 @@
                 ],
                 "operationId": "webinarPolls",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -7928,20 +6808,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "id",
                         "required": true,
                         "description": "Webinar ID."
@@ -7994,20 +6860,6 @@
                 ],
                 "operationId": "webinarRegister",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -8160,20 +7012,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "id",
                         "required": true,
                         "description": "Webinar ID."
@@ -8214,20 +7052,6 @@
                 ],
                 "operationId": "webinarRegistrantsList",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -8300,20 +7124,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "id",
                         "required": true,
                         "description": "Webinar ID."
@@ -8383,20 +7193,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "id",
                         "required": true,
                         "description": "Webinar ID."
@@ -8443,20 +7239,6 @@
                 ],
                 "operationId": "webinarUpdate",
                 "parameters": [
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
                     {
                         "in": "formData",
                         "type": "string",
@@ -8631,20 +7413,6 @@
                     {
                         "in": "formData",
                         "type": "string",
-                        "name": "api_key",
-                        "required": true,
-                        "description": "Your API Key"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
-                        "name": "api_secret",
-                        "required": true,
-                        "description": "Your API Secret"
-                    },
-                    {
-                        "in": "formData",
-                        "type": "string",
                         "name": "id",
                         "required": true,
                         "description": "Webinar ID."
@@ -8724,5 +7492,25 @@
     "externalDocs": {
         "description": "Zoom REST API Documentation",
         "url": "https://zoom.github.io/api"
-    }
+    },
+    "securityDefinitions": {
+        "api_key": {
+            "type": "apiKey",
+            "name": "api_key",
+            "in": "query"
+        },
+        "api_secret": {
+            "type": "apiKey",
+            "name": "api_secret",
+            "in": "query"
+        }
+    },
+    "security": [
+        {
+            "api_key": []
+        },
+        {
+            "api_secret": []
+        }
+    ]
 }

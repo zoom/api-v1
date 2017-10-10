@@ -41,7 +41,7 @@ Zoom.webinar.create(webinar, <%= config[:ex_node_res] %>);
 ```json
 {
   "uuid": "<%= config[:ex_uuid] %>",
-  "id": "<%= config[:ex_meeting_number] %>",
+  "id": <%= config[:ex_meeting_number] %>,
   "host_id": "<%= config[:ex_uuid] %>",
   "topic": "create webinar via rest api",
   "agenda": "",
