@@ -39,7 +39,7 @@ Zoom.webinar.get(webinar, <%= config[:ex_node_res] %>);
 ```json
 {
   "uuid": "<%= config[:ex_uuid] %>",
-  "id": "<%= config[:ex_meeting_number] %>",
+  "id": <%= config[:ex_meeting_number] %>,
   "start_url": "https://zoom.us/s/<%= config[:ex_meeting_number] %>?zpk=hs65q23kd9sqliy612h23k",
   "join_url": "https://zoom.us/j/<%= config[:ex_meeting_number] %>",
   "registration_url": "",

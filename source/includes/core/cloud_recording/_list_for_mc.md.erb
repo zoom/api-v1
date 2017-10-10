@@ -29,7 +29,7 @@ $ curl <%= config[:api_host] %>mc/recording/list \
   "meetings": [
     {
       "uuid": "<%= config[:ex_uuid] %>",
-      "meeting_number": "<%= config[:ex_meeting_number] %>",
+      "meeting_number": <%= config[:ex_meeting_number] %>,
       "host_id": "<%= config[:ex_uuid] %>",
       "account_id": "<%= config[:ex_uuid] %>",
       "topic": "<%= config[:ex_meeting_topic] %>",
