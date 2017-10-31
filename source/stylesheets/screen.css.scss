@@ -102,6 +102,22 @@ html, body {
       margin-left: 5px;
       color: #909090;
     }
+
+    #version {
+      background-color: white;
+      color: #707070;
+      border: 1px solid #cccccc;
+      width: 140px;
+      position: absolute;
+      right: -43px;
+      top: 20px;
+      transform: rotate(45deg);
+      text-align: center;
+      font-weight: 700;
+      font-size: 12px;
+      vertical-align: middle;
+      padding: 2px
+    }
   }
 
 
@@ -116,7 +132,7 @@ html, body {
     position: relative;
 
     input {
-      background: $nav-bg;
+      background: transparent;
       border-width: 0 0 1px 0;
       border-color: $search-box-border-color;
       padding: 6px 0 6px 20px;
@@ -624,6 +640,13 @@ html, body {
     border: 1px solid #F7E633;
     text-shadow: 1px 1px 0 #666;
     background: linear-gradient(to top left, #F7E633 0%, #F1D32F 100%);
+  }
+
+  #api-version-notice aside {
+    margin-right: $examples-width;
+    padding: 0.5em 28px;
+    margin-top: 0;
+    margin-bottom: -48px;
   }
 }
 
