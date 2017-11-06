@@ -1,8 +1,8 @@
 # Zoom API Version 1
 
-This repo is the source code for our documentation. You can view the documentation [here](https://zoom.github.io/api).
+This repo is the source code for our documentation. You can view the documentation [here](https://zoom.github.io/api-v1).
 
-Feel free to submit [issues](https://github.com/zoom/api/issues) or fork this repo and contribute changes.
+Feel free to submit [issues](https://github.com/zoom/api-v1/issues) or fork this repo and contribute changes.
 
 ## Getting Started
 
