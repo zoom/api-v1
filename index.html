@@ -213,6 +213,7 @@
         <div class="logo">
             <span class="site" href="/"></span>
             <span class="api" href="/">api</span>
+            <span id="version">Version 1</span>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -228,6 +229,7 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
+        <div id="api-version-notice"><aside class="warning"><a href="https://zoom.github.io/api/">Version 2</a> of the Zoom API was released on November 4th, 2017. Version 1 of the Zoom API is being sunset and will no longer be supported after November 1st, 2018. It is recommended that you start developing with <a href="https://zoom.github.io/api/">Version 2</a> of the Zoom API.</aside></div>
         
           <header>API Reference</header>
 
@@ -592,7 +594,12 @@
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unique_id"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"owner_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user@company.com"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-27T140508Z"</span><span class="w">
+      </span><span class="s2">"account_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test api"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"account_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pro"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"seats"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"subscription_start_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-19T00:00:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"subscription_end_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-19T00:00:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-19T00:00:00Z"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -4038,7 +4045,8 @@ User created in this way has no password and is not able to log into the Zoom we
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"occurrence_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1483210260000"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-01T02:51:00Z"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="w">
+      </span><span class="s2">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"available"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -4637,6 +4645,18 @@ User created in this way has no password and is not able to log into the Zoom we
 <td>Invitation Email to Panelists</td>
 </tr>
 <tr>
+<td>option_close_registration <em>optional</em></td>
+<td>Close registration after event date.</td>
+</tr>
+<tr>
+<td>option_show_share_button <em>optional</em></td>
+<td>Show social share buttons on registration page.</td>
+</tr>
+<tr>
+<td>option_allow_multiple_devices <em>optional</em></td>
+<td>Allow attendees to join from multiple devices.</td>
+</tr>
+<tr>
 <td>panelists <em>optional</em></td>
 <td>Webinar Panelists, should be JSON format: [{&ldquo;name&rdquo;:&ldquo;xxx&rdquo;,&ldquo;email&rdquo;:&ldquo;test1@zoom.us&rdquo;}, {&ldquo;name&rdquo;:&ldquo;xxx&rdquo;,&ldquo;email&rdquo;:&ldquo;test2@zoom.us&rdquo;}].</td>
 </tr>
@@ -4797,7 +4817,8 @@ User created in this way has no password and is not able to log into the Zoom we
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"occurrence_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1483210260000"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-01T02:51:00Z"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="w">
+      </span><span class="s2">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"available"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -4956,6 +4977,18 @@ User created in this way has no password and is not able to log into the Zoom we
 <tr>
 <td>option_panelists_reminder <em>optional</em></td>
 <td>Invitation Email to Panelists</td>
+</tr>
+<tr>
+<td>option_close_registration <em>optional</em></td>
+<td>Close registration after event date.</td>
+</tr>
+<tr>
+<td>option_show_share_button <em>optional</em></td>
+<td>Show social share buttons on registration page.</td>
+</tr>
+<tr>
+<td>option_allow_multiple_devices <em>optional</em></td>
+<td>Allow attendees to join from multiple devices.</td>
 </tr>
 <tr>
 <td>panelists <em>optional</em></td>
@@ -8593,7 +8626,8 @@ User created in this way has no password and is not able to log into the Zoom we
   </span><span class="s2">"total_records"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
   </span><span class="s2">"participants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unique_id"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unique_id"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16778240"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"user_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Zoomie Userton"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
               </span><span class="p">{</span><span class="w"> 
