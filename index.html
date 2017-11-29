@@ -295,15 +295,13 @@
 
           <h1 id="rate-limits">Rate Limits</h1>
 
-<p>Our REST APIs have the following rate limits.</p>
+<p>To preserve the integrity and reliability of the platform our APIs have the following rate limits.</p>
 
 <h2 id="all-api-endpoints">All API Endpoints</h2>
 
-<p>You can run a max of ten requests per second (10 requests/second)</p>
+<p>You can run a max of ten requests per second (10 requests/second) unless otherwise noted below.</p>
 
-<h2 id="report-billing-apis">Report/Billing APIs</h2>
-
-<p>You can run a max of one request per second (1 request/second)</p>
+<h3 id="you-can-run-a-max-of-one-request-per-second-1-request-second">You can run a max of one request per second (1 request/second)</h3>
 
 <p>Includes:</p>
 
@@ -318,9 +316,16 @@
 <li>/v1/webinar/poll</li>
 </ul>
 
-<h2 id="report-apis">Report APIs</h2>
+<h3 id="you-can-run-a-max-of-one-request-per-minute-1-request-minute">You can run a max of one request per minute (1 request/minute)</h3>
 
-<p>You can run a max of two thousand request per day (2000 requests/day)</p>
+<p>Includes:</p>
+
+<ul>
+<li>/v1/metrics/meetings</li>
+<li>/v1/metrics/webinars</li>
+</ul>
+
+<h3 id="in-addition-you-can-run-a-max-of-two-thousand-request-per-day-2000-requests-day">In addition, You can run a max of two thousand request per day (2000 requests/day)</h3>
 
 <p>Includes:</p>
 
@@ -331,20 +336,7 @@
 <li>/v1/report/*</li>
 </ul>
 
-<h2 id="metrics-apis">Metrics APIs</h2>
-
-<p>You can run a max of one request per minute (1 request/minute)</p>
-
-<p>Includes:</p>
-
-<ul>
-<li>/v1/metrics/meetings</li>
-<li>/v1/metrics/webinars</li>
-</ul>
-
-<h2 id="user-report-api">User Report API</h2>
-
-<p>You can run a max of one request per day (1 request/day)</p>
+<h3 id="in-addition-you-can-run-a-max-of-one-request-per-day-1-request-day">In addition, You can run a max of one request per day (1 request/day)</h3>
 
 <p>Includes:</p>
 
