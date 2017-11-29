@@ -1,15 +1,12 @@
 # Rate Limits
 
-Our REST APIs have the following rate limits.
-
+To preserve the integrity and reliability of the platform our APIs have the following rate limits.
 
 ## All API Endpoints
 
-You can run a max of ten requests per second (10 requests/second)
+You can run a max of ten requests per second (10 requests/second) unless otherwise noted below.
 
-## Report/Billing APIs
-
-You can run a max of one request per second (1 request/second)
+### You can run a max of one request per second (1 request/second)
 
 Includes:
 
@@ -22,9 +19,14 @@ Includes:
 - /v1/report/\*
 - /v1/webinar/poll
 
-## Report APIs
+### You can run a max of one request per minute (1 request/minute)
 
-You can run a max of two thousand request per day (2000 requests/day)
+Includes:
+
+- /v1/metrics/meetings
+- /v1/metrics/webinars
+
+### In addition, You can run a max of two thousand request per day (2000 requests/day)
 
 Includes:
 
@@ -33,18 +35,7 @@ Includes:
 - /v1/metrics/webinars
 - /v1/report/\*
 
-## Metrics APIs
-
-You can run a max of one request per minute (1 request/minute)
-
-Includes:
-
-- /v1/metrics/meetings
-- /v1/metrics/webinars
-
-## User Report API
-
-You can run a max of one request per day (1 request/day)
+### In addition, You can run a max of one request per day (1 request/day)
 
 Includes:
 
