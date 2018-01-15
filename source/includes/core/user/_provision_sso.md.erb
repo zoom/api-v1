@@ -85,8 +85,8 @@ Arguments | &nbsp;
 --- | ---
 email **required** | A valid email address. It must be unique in Zoom service.
 type **required** | User’s type. 1 means it is a basic user. 2 means a pro user, 3 means a corp user. Basic user can host up to 40 minutes meeting.
-first_name *optional* | User’s first name.
-last_name *optional* | User’s last name.
+first_name *optional* | User’s first name. Cannot contain more than 5 Chinese words.
+last_name *optional* | User’s last name. Cannot contain more than 5 Chinese words.
 meeting_capacity *optional* | User’s meeting capacity, 0 means following account’s meeting capacity. *Default: 0*
 enable_webinar *optional* | Enable webinar feature true or false.
 webinar_capacity *optional* | Enable webinar capacity, can be 100, 500, 1000, 3000, 5000 or 10000, depends on if having related webinar capacity plan subscription or not. *Default: 0*

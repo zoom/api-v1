@@ -101,8 +101,8 @@ Arguments | &nbsp;
 -------- | -----------
 email **required**                                  | A valid email address. It must be unique in Zoom service. If an email address is existed, a "user existing" error message will be return
 type **required**                                   | User’s type. 1 for basic user, 2 for pro user, 3 for corp user. Basic user can host up to 40 minutes meeting
-first_name *optional*                               | User's first name
-last_name *optional*                                | User's last name
+first_name *optional*                               | User's first name. Cannot contain more than 5 Chinese words.
+last_name *optional*                                | User's last name. Cannot contain more than 5 Chinese words.
 disable_chat *optional*                             | Disable in-meeting chat *Deafult: false*
 enable_e2e_encryption *optional*                    | Enable end-to-end encryption *Deafult: false*
 enable_silent_mode *optional*                       | Enable attendee on-hold *Deafult: false*
