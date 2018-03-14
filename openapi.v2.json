@@ -14,7 +14,7 @@
         },
         "version": "1.0.0"
     },
-    "host": "api.zoom.us",
+    "host": "devep.zoom.us",
     "basePath": "/v1",
     "schemes": [
         "https"
