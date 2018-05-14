@@ -41,7 +41,7 @@ Zoom.webinar.create(webinar, <%= config[:ex_node_res] %>);
 ```json
 {
   "uuid": "<%= config[:ex_uuid] %>",
-  "id": <%= config[:ex_meeting_number] %>,
+  "id": "<%= config[:ex_meeting_number] %>",
   "host_id": "<%= config[:ex_uuid] %>",
   "topic": "create webinar via rest api",
   "agenda": "",
@@ -55,7 +55,7 @@ Zoom.webinar.create(webinar, <%= config[:ex_node_res] %>);
   "start_time": " 2015-02-08T12:50:30Z",
   "duration": 0,
   "timezone": "America/Los_Angeles",
-  "start_url": "https://zoom.us/s/<%= config[:ex_meeting_number] %>?zpk=0Oti_Z0tCy ",
+  "start_url": "https://zoom.us/s/<%= config[:ex_meeting_number] %>?zak=xxxxxx",
   "join_url": "https://zoom.us/j/<%= config[:ex_meeting_number] %>",
   "registration_url": "",
   "created_at": "2015-01-22T07:09:49Z"
