@@ -9,3 +9,6 @@ Feel free to submit [issues](https://github.com/zoom/api-v1/issues) or fork this
 Zoom exposes REST interfaces which allows the developers and solution providers to manage meetings, users, recordings, settings and get usage reports. These APIs will be useful when you as a solution provider, build your own web portal to front end Zoom services and present as a login point to your end users.
 
 These management APIs are auto-enabled if you have a paid Zoom account. If you don’t have a zoom account, go ahead, create a free account and [sign up](https://zoom.us/signup) for a 60 days free trial of our developer platform
+
+## Support
+For any questions or issues, please visit our new Community Support Forum at https://devforum.zoom.us/
