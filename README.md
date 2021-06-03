@@ -10,6 +10,6 @@ No exceptions will be made and Zoom Customer Support will be unable to assist yo
 
 Read our blog [Your Guide to Migrating From v1 to v2 APIs](https://medium.com/zoom-developer-blog/your-guide-to-migrating-from-v1-to-v2-apis-d4ded0474c04) and [review our new API documentation](https://marketplace.zoom.us/docs/api-reference/zoom-api) to learn the differences between the v1 and v2 APIs, and for instructions how your developer can successfully migrate your integrations to our new v2 APIs.
 
-## Support
+## Need help?
 
-For any questions or issues, please visit our Community Support Forum at https://devforum.zoom.us/
+If you're looking for help, try [Developer Support](https://devsupport.zoom.us) or our [Developer Forum](https://devforum.zoom.us). Priority support is also available with [Premier Developer Support](https://zoom.us/docs/en-us/developer-support-plans.html) plans.
